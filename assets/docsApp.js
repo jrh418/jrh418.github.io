@@ -2620,7 +2620,7 @@ angular.module("blt_appViews", [])
    * restrictions and an authentication service must be available that exposes, at a minimum, login and logout
    * RPC endpoints.
    *
-   * Please see the [WAMP Authentication Guide]() for more information on configuration and usage.
+   * Please see the [WAMP Authentication Guide](https://ngbolt.github.io/#/guides/authentication#generic-wamp-authentication) for more information on configuration and usage.
    *
    * @requires https://docs.angularjs.org/api/ng/service/$q
    * @requires https://docs.angularjs.org/api/ng/service/$timeout
@@ -10946,13 +10946,6 @@ angular.module("truncate",[]).filter("characters",function(){return function(a,b
 (function() {
   'use strict';
 
-  angular.module('home', [
-    
-  ]);
-})();
-(function() {
-  'use strict';
-
   /**
    * @ngdoc module
    * @name bltDocs.guides
@@ -10962,6 +10955,13 @@ angular.module("truncate",[]).filter("characters",function(){return function(a,b
    * 
    */
   angular.module('guides', []);
+})();
+(function() {
+  'use strict';
+
+  angular.module('home', [
+    
+  ]);
 })();
 (function() {
   'use strict';
@@ -11073,29 +11073,6 @@ angular.module("truncate",[]).filter("characters",function(){return function(a,b
     }
   }
 })();
-(function() {
-'use strict';
-
-  angular
-    .module('home')
-    .controller('HomeController', HomeController);
-
-  HomeController.$inject = ['HOME_DATA', 'Shared'];
-  function HomeController(HOME_DATA, Shared) {
-    var vm = this;
-    
-
-    activate();
-
-    ////////////////
-
-    function activate() {
-      Shared.sidebarData = HOME_DATA;
-      Shared.showSidebar = false;
-      Shared.currentPage = 'home';
-    }
-  }
-})();
 (function () {
   'use strict';
 
@@ -11134,6 +11111,29 @@ angular.module("truncate",[]).filter("characters",function(){return function(a,b
     .controller('GuidesController', GuidesController);
   
   GuidesController.$inject = ['GUIDES_DATA', 'Shared', '$scope', '$timeout'];
+})();
+(function() {
+'use strict';
+
+  angular
+    .module('home')
+    .controller('HomeController', HomeController);
+
+  HomeController.$inject = ['HOME_DATA', 'Shared'];
+  function HomeController(HOME_DATA, Shared) {
+    var vm = this;
+    
+
+    activate();
+
+    ////////////////
+
+    function activate() {
+      Shared.sidebarData = HOME_DATA;
+      Shared.showSidebar = false;
+      Shared.currentPage = 'home';
+    }
+  }
 })();
 (function() {
 'use strict';
