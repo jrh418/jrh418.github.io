@@ -1,0 +1,267 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_fileloader">blt_fileloader</a>
+    <span class="api-header-divider">/</span>
+    bltFileloader
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>The bltFileloader provides simple file selection capability. Upon selection, a JavaScript
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/File">File</a> object representing the selected file will be set
+into the controller model specified in the <code>data-model</code> attribute.</p>
+<div class="note-tip"><strong>BEST PRACTICE</strong> The <code>data-</code> prefix is not required for ngBoltJS attributes, but is highly
+recommended to prevent conflicts with standard HTML attributes.</div>
+</section>
+
+
+
+
+
+
+
+
+<section class="api-dependencies edge-top">
+  <h2 id="dependencies">Dependencies</h2>
+  <ul class="api-dependencies-list">
+    
+    <li class="api-dependencies-item"><a href="api/blt_core/service/BltApi"><code>BltApi</code></a></li>
+    
+  </ul>
+</section>
+
+
+
+
+  
+  
+  
+<section class="api-params edge-top">
+  
+  <h2>Attributes</h2>
+  
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-name</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>This attribute indicates the name of this form element and will be used during form
+traversal by the ngBoltJS framework.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-model</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>This attribute is used to bind the value of this component to a property in the
+containing scope. Functionality is based on the Angular ngModel directive.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-disabled</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-boolean">boolean</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Disables the field. Any value set in this attribute will cause the field to be
+disabled.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-autofocus</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-boolean">boolean</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Indicates whether or not this field should autofocus on page load.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-required</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-value">value</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Indicates whether or not this field is required.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-tabindex</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-value">value</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Specifies the tab order of an element</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Example</h2>
+  <div class="api-example">
+    <p><caption>Basic Usage</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&#39;bltDocs&#39;)&#10;  .controller(&quot;FileExCtrl&quot;, function(){&#10;    var ctrl = this;&#10;    ctrl.file = undefined;&#10;  });</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div ng-controller=&quot;FileExCtrl as ctrl&quot;&gt;&#10;  &lt;form name=&quot;ctrl.myForm&quot; class=&quot;form&quot; novalidate&gt;&#10;      &lt;blt-fileloader data-name=&quot;fileloader&quot;&#10;                      data-model=&quot;ctrl.file&quot;&gt;&#10;      &lt;/blt-fileloader&gt;&#10;  &lt;/form&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <div ng-controller="FileExCtrl as ctrl">
+      <form name="ctrl.myForm" class="form" novalidate>
+          <blt-fileloader data-name="fileloader"
+                          data-model="ctrl.file">
+          </blt-fileloader>
+      </form>
+    </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

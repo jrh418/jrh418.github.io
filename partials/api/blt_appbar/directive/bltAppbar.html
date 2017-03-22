@@ -1,0 +1,588 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_appbar">blt_appbar</a>
+    <span class="api-header-divider">/</span>
+    bltAppbar
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+    <span class="tag-since">since 1.0.0</span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>The bltAppbar component is the main application bar that sits at the top of the window and contains app-specific information, navigation, and global actions.</p>
+<div class="note-tip"><strong>Best Practice</strong> Place the Appbar component&#39;s content in an HTML partial and load with ng-include in order to
+minimize the amount of code in your <code>main.template.html</code> file.</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <section class="api-usage edge-top">
+    <h2 id="usage">Basic Usage</h2>
+    
+    <div class="note-info">
+      <p><strong>NOTE</strong>Restrict directive to an HTML  Element tag Element tag or Attribute Attribute.</p>
+    </div>
+    
+    <div class="usage">
+      <p><caption><h3>Usage</h3></p>
+<p><p>To use the Appbar component in your ngBoltJS application, simply add your appbar partial to the top of your
+<i>main.template.html</i> file. The presentation of the appbar options can be customized through the class elements
+and modifiers supported on this component.</p></p>
+<p><p><b>Minimal Usage</b></p></caption></p>
+<pre><code class="lang-html">&lt;header class=&quot;appbar&quot;&gt;
+  &lt;div class=&quot;appbar-section&quot;&gt;
+    &lt;h1 class=&quot;appbar-title&quot;&gt;My App&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+</code></pre>
+
+    <div>
+  </section>
+  
+  
+<section class="api-params edge-top">
+  <h2>CSS Classes</h2>
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The main appbar container. Should be used on an HTML <code>&lt;header&gt;</code> tag and can include
+<code>.edge-bottom</code> modifiers for displaying a bottom border.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-section</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The basic building block of the appbar. All other elements should be
+contained within these elements. Can be modified with <code>.appbar–shrink</code>, <code>.appbar–right</code>, <code>.appbar–vertical</code> and
+<code>.appbar-collapse</code>.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-logo</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The logo or any other image to be contained in the appbar. Must be used on
+an HTML <code>&lt;img&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-title</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The main title of the application and the appbar. Can also be used to
+indicate what section of the app the user is currently in. Should be used on an HTML <code>&lt;h1&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-text</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Default sized text for the appbar. Should be used on an HTML <code>&lt;p&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-caption</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Small-sized text for the appbar. Can either be used in conjunction with
+<code>.appbar-text</code> or <code>.appbar-title</code> or on its own. Should be used on an HTML <code>&lt;p&gt;</code> or <code>&lt;span&gt;</code> tag and is usually
+contained in an <code>.appbar-section</code> with a <code>.appbar-vertical</code> modifier.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-icon</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Button used for global actions. Should be used on an HTML <code>&lt;button&gt;</code> tag and
+should be contained in an <code>.appbar-section</code> with an <code>.appbar-shrink</code> modifier. <em>ngBoltJS uses
+<a href="http://fontawesome.io/">Font Awesome</a> icons.</em></p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-tab</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Navigation tabs for main application navigation. Tab can contain text links or
+icons and should be used on an HTML <code>&lt;button&gt;</code> tag. Usually contained in an <code>.appbar-section</code> with an
+<code>.appbar-shrink</code> modifier.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-search</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The main application search bar. Must contain the <code>.appbar-search-field</code>
+element and optionally the <code>.appbar-search-clear</code> element. Will adjust style depending on whether the appbar
+component has an <code>.edge-bottom</code> class or not.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-search-field</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The input form control for the <code>.appbar-search</code> element. Must be
+used on an HTML <code>&lt;input type=&quot;search&quot;&gt;</code> tag and bound to with the
+<a href="https://docs.angularjs.org/api/ng/directive/ngModel">ng-model directive</a>.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-search-clear</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>A clear button for resetting the search form. To activate, use the
+<a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click directive</a> to clear the data bound to the
+<code>.appbar-search-field</code> with ng-model.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-shrink</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Limits the width of an <code>.appbar-section</code> to the size of its content.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-shrink-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>&#39;appbar-shrink&#39; with media query support for various screen sizes
+(see example) where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-vertical</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Stacks an element&#39;s content vertically.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-vertical-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>&#39;appbar-vertical&#39; with media query support for various screen
+sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-collapse</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Removes margin from an <code>.appbar-section</code> element.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-collapse-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>&#39;appbar-collapse&#39; with media query support for various screen
+sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>appbar-right</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Aligns the content of an <code>.appbar-section</code> to the right.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Examples</h2>
+  <div class="api-example">
+    <p><caption>Common Use Cases</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;header class=&quot;appbar&quot;&gt;&#13;&#10;  &lt;!-- Tabs --&gt;&#13;&#10;  &lt;div class=&quot;appbar-section appbar-shrink&quot;&gt;&#13;&#10;    &lt;button class=&quot;appbar-tab&quot; blt-open-view=&quot;view1&quot;&gt;View 1&lt;/button&gt;&#13;&#10;    &lt;button class=&quot;appbar-tab&quot; blt-open-view=&quot;view2&quot;&gt;View 2&lt;/button&gt;&#13;&#10;  &lt;/div&gt;&#13;&#10;&#10;  &lt;!-- Logo and Title --&gt;&#13;&#10;  &lt;div class=&quot;appbar-section appbar-shrink&quot;&gt;&#13;&#10;    &lt;img class=&quot;appbar-logo&quot; src=&quot;assets/logo.png&quot;&gt;&#13;&#10;    &lt;h1 class=&quot;appbar-title appbar-vertical&quot;&gt;ngBoltJS&#13;&#10;      &lt;span class=&quot;appbar-caption&quot;&gt;v2.0.0&lt;/span&gt;&#13;&#10;    &lt;/h1&gt;&#13;&#10;  &lt;/div&gt;&#13;&#10;&#10;  &lt;!-- Text --&gt;&#13;&#10;  &lt;div class=&quot;appbar-section appbar-vertical appbar-right&quot; ng-hide=&quot;Main.search.show&quot;&gt;&#13;&#10;    &lt;p class=&quot;appbar-text&quot;&gt;Front-end framework for web applications&lt;/p&gt;&#13;&#10;    &lt;p class=&quot;appbar-caption&quot;&gt;Built on AngularJs&lt;/p&gt;&#13;&#10;  &lt;/div&gt;&#13;&#10;&#10;  &lt;!-- Search --&gt;&#13;&#10;  &lt;div class=&quot;appbar-search&quot; ng-show=&quot;Main.search.show&quot;&gt;&#13;&#10;    &lt;input class=&quot;appbar-search-field&quot; type=&quot;search&quot; placeholder=&quot;Search&quot; ng-model=&quot;Main.search.keyword&quot;&gt;&#13;&#10;    &lt;button class=&quot;appbar-search-clear&quot; ng-show=&quot;Main.search.keyword&quot; ng-click=&quot;Main.search.keyword = &#39;&#39;;&quot;&gt;&#13;&#10;      &lt;span class=&quot;fa fa-times-circle&quot;&gt;&lt;/span&gt;&#13;&#10;    &lt;/button&gt;&#13;&#10;  &lt;/div&gt;&#13;&#10;&#10;  &lt;!-- Actions --&gt;&#13;&#10;  &lt;div class=&quot;appbar-section appbar-shrink&quot;&gt;&#13;&#10;    &lt;button class=&quot;appbar-icon&quot; ng-click=&quot;Main.search.show = !Main.search.show&quot;&gt;&#13;&#10;      &lt;span class=&quot;fa fa-search&quot;&gt;&lt;/span&gt;&#13;&#10;    &lt;/button&gt;&#13;&#10;    &lt;button class=&quot;appbar-icon&quot; blt-open=&quot;createModal&quot;&gt;&#13;&#10;      &lt;span class=&quot;fa fa-plus&quot;&gt;&lt;/span&gt;&#13;&#10;    &lt;/button&gt;&#13;&#10;    &lt;button class=&quot;appbar-icon&quot; ng-click=&quot;Main.openNotifications()&quot;&gt;&#13;&#10;      &lt;span class=&quot;fa fa-exclamation-circle&quot;&gt;&lt;/span&gt;&#13;&#10;    &lt;/button&gt;&#13;&#10;    &lt;button class=&quot;appbar-icon&quot; blt-open=&quot;settingsPanel&quot;&gt;&#13;&#10;      &lt;span class=&quot;fa fa-bars&quot;&gt;&lt;/span&gt;&#13;&#10;    &lt;/button&gt;&#13;&#10;  &lt;/div&gt;&#13;&#10;&lt;/header&gt;&#13;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <header class="appbar">
+      <!-- Tabs -->
+      <div class="appbar-section appbar-shrink">
+        <button class="appbar-tab" blt-open-view="view1">View 1</button>
+        <button class="appbar-tab" blt-open-view="view2">View 2</button>
+      </div>
+
+      <!-- Logo and Title -->
+      <div class="appbar-section appbar-shrink">
+        <img class="appbar-logo" src="assets/logo.png">
+        <h1 class="appbar-title appbar-vertical">ngBoltJS
+          <span class="appbar-caption">v2.0.0</span>
+        </h1>
+      </div>
+
+      <!-- Text -->
+      <div class="appbar-section appbar-vertical appbar-right" ng-hide="Main.search.show">
+        <p class="appbar-text">Front-end framework for web applications</p>
+        <p class="appbar-caption">Built on AngularJs</p>
+      </div>
+
+      <!-- Search -->
+      <div class="appbar-search" ng-show="Main.search.show">
+        <input class="appbar-search-field" type="search" placeholder="Search" ng-model="Main.search.keyword">
+        <button class="appbar-search-clear" ng-show="Main.search.keyword" ng-click="Main.search.keyword = '';">
+          <span class="fa fa-times-circle"></span>
+        </button>
+      </div>
+
+      <!-- Actions -->
+      <div class="appbar-section appbar-shrink">
+        <button class="appbar-icon" ng-click="Main.search.show = !Main.search.show">
+          <span class="fa fa-search"></span>
+        </button>
+        <button class="appbar-icon" blt-open="createModal">
+          <span class="fa fa-plus"></span>
+        </button>
+        <button class="appbar-icon" ng-click="Main.openNotifications()">
+          <span class="fa fa-exclamation-circle"></span>
+        </button>
+        <button class="appbar-icon" blt-open="settingsPanel">
+          <span class="fa fa-bars"></span>
+        </button>
+      </div>
+    </header>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption><h3>Using Media Queries</h3></p>
+<p><p>See the <a href="guides/breakpoints">Media Queries Guide</a> for more information on using media queries.
+</p></caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;!-- Appbar Shrink --&gt;&#13;&#10;&lt;header class=&quot;appbar&quot;&gt;&#13;&#10;  &lt;!-- This only affects small screens --&gt;&#13;&#10;  &lt;div class=&quot;appbar-section appbar-shrink-sm-only&quot;&gt;&#13;&#10;  ...&#13;&#10;  &lt;/div&gt;&#13;&#10;  &lt;!-- Appbar Vertical --&gt;&#13;&#10;  &lt;!-- This only affects screens size medium and smaller --&gt;&#13;&#10;  &lt;div class=&quot;appbar-section appbar-vertical-md-down&quot;&gt;&#13;&#10;  ...&#13;&#10;  &lt;/div&gt;&#13;&#10;  &lt;!-- Appbar Collapse --&gt;&#13;&#10;  &lt;!-- This only affects screens medium and larger --&gt;&#13;&#10;  &lt;div class=&quot;appbar-section appbar-collapse-md-up&quot;&gt;&#13;&#10;  ...&#13;&#10;  &lt;/div&gt;&#13;&#10;&lt;/header&gt;&#13;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

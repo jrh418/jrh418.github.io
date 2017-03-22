@@ -1,0 +1,82 @@
+
+  <h1 id="configuring-your-ngboltjs-application">Configuring your ngBoltJS Application</h1>
+<p>As a rapid development framework for web applications, ngBoltJS follows a <em>configuration over code</em> philosophy. When setting up your application, there are a few configuration steps that you should take.</p>
+<ol>
+<li><a href="#configure-your-application-s-build">Configure your Application&#39;s Build</a></li>
+<li><a href="#configure-data-and-authentication-services">Configure Data and Authentication Services</a></li>
+<li><a href="#configure-your-application-s-theme">Configure your Application&#39;s Theme</a></li>
+</ol>
+<hr>
+<h2 id="configure-your-application-s-build">Configure your Application&#39;s Build</h2>
+<h3 id="settings">Settings</h3>
+<p>We expose several global build settings that you can set in the <code>build.json</code> configuration file, found in the config folder of your project&#39;s root directory. Additionally, you can override the global settings in your <code>build.json</code> file with properties in a <code>build</code> object in one of your <a href="api/blt_appProfile">application profiles</a>, allowing you to have different build settings for various application builds, such as one for development, production, and tests. </p>
+<!-- TODO: add graphic here diagraming how build settings work -->
+<p><strong><a href="api/blt_config">Edit Build Settings</a></strong></p>
+<!-- TODO: update CLI link -->
+<h4 id="cli-flags">CLI flags</h4>
+<p>You can also override certain build settings with CLI flags when using the <a href="https://github.com/ngBolt/ng-bolt-cli">ngBoltJS CLI</a>. Those flags are:</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-f</code>, <code>--fatal</code></td>
+<td>The error level that will exit the build process. Valid values are <code>error</code>(default), <code>warning</code>, and <code>off</code>.</td>
+</tr>
+<tr>
+<td><code>-e</code>, <code>--env</code></td>
+<td>The environment for the gulp build. Valid values are <code>development</code>(default) and <code>production</code>.</td>
+</tr>
+<tr>
+<td><code>-s</code>, <code>--serve</code></td>
+<td>Run a server as part of a gulp build. This is default behavior when using the <code>bolt run</code> command.</td>
+</tr>
+<tr>
+<td><code>-b</code>, <code>--beautify</code></td>
+<td>Prevent minification of assets.</td>
+</tr>
+<tr>
+<td><code>-r</code>, <code>--root</code></td>
+<td>The relative path of the root directory of the ng-bolt application to build from the current directory.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="using-third-party-libraries">Using Third-party Libraries</h3>
+<p>In addition to the libaries used by ngBoltJS, you can include third-party libraries in your application&#39;s build. Javascript files will be minified and concacted into a <code>libs.js</code>, and CSS libraries into <code>libs.css</code>. These are automatically linked in your app&#39;s <code>index.html</code> file. Third-party font libraries will also be copied to a fonts folder in the build directory.</p>
+<div class="note-info">
+<strong>Note</strong> We bundle ngBoltJS dependencies like <code>angular.js</code> and deploy with your application code. If you would prefer to use a CDN for these libraries, you can comment out the <code>libs.*</code> files in your <code>index.html</code> and add the CDN links instead. A list of bundled libraries can be found <a href="api/blt_config#libraries">here</a>.
+</div>
+
+<p><strong><a href="api/blt_config#libraries">Add Third-party Libraries</a></strong></p>
+<h3 id="components">Components</h3>
+<p>All ngBoltJS components are availabe to you by default, but you can optionally remove components source code you will not be using in your application. This is a best practice as it keeps the size of your final application code smaller and can improve application performance.</p>
+<p><strong><a href="api/blt_config#components">Configure Components</a></strong></p>
+<hr>
+<h2 id="configure-data-and-authentication-services">Configure Data and Authentication Services</h2>
+<p>The configuration for the Data and Authentication Services is defined in your application&#39;s <a href="api/blt_appProfile">profile</a>. When you use <code>$ bolt run</code> to build your application it is using the default <code>development</code> profile that is included with the ngBoltJS boilerplate application. You can modify the default profile and additional profiles to use when you run a build. To use custom profiles for a build, you can pass it to the <code>bolt run</code> command or as the value for the <code>--pr</code> flag to gulp. </p>
+<p>For example, if you created a profile named <code>testing.json</code> you could use it with the ngBoltJS CLI by running:</p>
+<pre><code class="lang-bash">$ bolt run testing
+</code></pre>
+<p>or with gulp:</p>
+<pre><code class="lang-bash">$ gulp --pr testing --gulpfile ./node_modues/ng-bolt/gulpfile.js
+</code></pre>
+<div class="note-tip">
+When not using the ngBoltJS CLI, you need to pass a value for the <code>--gulpfile</code> flag to use ngBoltJS&#39;s gulpfile.
+</div>
+
+<p>Profiles also provide the ability to override global build settings. Therefore, you can have several profiles with unique settings for various application builds and deployments. </p>
+<p><strong><a href="api/blt_appProfile">Create a Profile</a></strong></p>
+<p>In addition to creating an application profile, you will need to define routes (endpoints) in your <code>routes.json</code> configuration file for the Data API to use.</p>
+<p><strong><a href="api/blt_dataRoutes">Create Routes</a></strong></p>
+<p>For more information on the using the Auth API and Data API in your application, see:</p>
+<p><strong><a href="guides/authentication">Authenticating your App</a></strong></p>
+<p><strong><a href="guides/data-api">Connecting to Data Services</a></strong></p>
+<hr>
+<h2 id="configure-your-application-s-theme">Configure your Application&#39;s Theme</h2>
+<p>Editing the theme of your ngBoltJS application can be done by changing properties in the <code>styles.json</code> configuration file. All packaged ngBoltJS components are styled using Sass variables, most of which are exposed as json properties in the <code>styles.json</code> file. During your application&#39;s build, this json file is compiled into Sass variables file and imported into ngBoltJS. Many of ngBoltJS styles are relative to the values of these variables, so if you changed the global background color the colors of severl other elements and fonts would adjust in relation to that change.</p>
+<p><strong><a href="guides/theme">Edit your Application&#39;s Theme</a></strong></p>
+

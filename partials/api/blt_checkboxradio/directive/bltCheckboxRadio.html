@@ -1,0 +1,379 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_checkboxradio">blt_checkboxradio</a>
+    <span class="api-header-divider">/</span>
+    bltCheckboxRadio
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>This component can be used much like a standard HTML checkbox or radio button
+and is primarily just a thin cosmetic layer around the standard functionality.</p>
+<p>To use this as a checkbox, set the <code>data-type=&quot;checkbox&quot;</code> and attach the <code>data-model</code> to a boolean attribute in
+your controller model. Selection/deselection of a checkbox will toggle this value between true and false. If
+<code>data-type</code> is not defined, this component will default to <code>checkbox</code>.</p>
+<p>When used as a radio button, this component is most often used in a group with other radio buttons. The <code>data-type</code>
+attribute should be set to <code>radio</code> and a value should be provided in the <code>data-value</code> attribute to indicate
+the value to be assigned to the model bound in <code>data-model</code> when this radio button is activated.</p>
+<div class="note-tip">Best Practice: The <code>data-</code> prefix is not required for ngBoltJS attributes but is highly recommended to prevent
+conflicts with standard HTML attributes.</div>
+</section>
+
+
+
+
+
+
+
+
+<section class="api-dependencies edge-top">
+  <h2 id="dependencies">Dependencies</h2>
+  <ul class="api-dependencies-list">
+    
+    <li class="api-dependencies-item"><a href="api/blt_core/service/BltApi"><code>BltApi</code></a></li>
+    
+    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$timeout">$timeout</a></li>
+    
+  </ul>
+</section>
+
+
+
+
+  
+  
+  
+<section class="api-params edge-top">
+  
+  <h2>Attributes</h2>
+  
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-label</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">String</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>This attribute specifies the label for this component.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-model</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-two-way">Two-Way</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>This attribute is used to bind the value of this component to a property in the
+containing scope. Functionality is based on the Angular ngModel directive.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-name</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-value">Value</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>This attribute indicates the name of this form element and will be used during
+form traversal by the ngBoltJS framework.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-autofocus</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-value">Value</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Indicates whether or not this field should autofocus on page load.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-change</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-expression">Expression</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>This attribute is used to bind an expression in the containing scope that
+will be invoked any time the value of this component changes. Functionality is based on the Angular ngChange
+directive.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-required</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-value">Value</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Indicates whether or not this field is required.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-type</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-value">Value</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Indicates whether this should be presented as a checkbox or radio button. Valid
+values are &quot;checkbox&quot; and &quot;radio&quot;. Defaults to &quot;checkbox&quot; if not specified.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-value</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-value">Value</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Only relevant when <code>data-type=&quot;radio&quot;</code>. Specifies the value to apply to <code>data-model</code>
+when this radio button is selected.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-tabindex</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-number">Number</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Specifies the tab order of an element.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-disabled</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-value">Value</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Disables the field. Any value set in this attribute will cause the field to be disabled.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Example</h2>
+  <div class="api-example">
+    <p>
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;CheckboxRadioExampleCtrl&quot;, function(){&#10;    var ctrl = this;&#10;    ctrl.doWhenValueChanges = function(){alert(ctrl.checkbox2)};&#10;    ctrl.checkboxOptions = [&quot;Option 1&quot;, &quot;Option 2&quot;, &quot;Option 3&quot;];&#10;  });</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div ng-controller=&quot;CheckboxRadioExampleCtrl as ctrl&quot;&gt;&#10;  &lt;form name=&quot;MyCtrl.myForm&quot; class=&quot;form&quot; novalidate&gt;&#10;      &lt;blt-checkbox-radio data-name=&quot;checkbox&quot;&#10;                          data-label=&quot;Simple Checkbox&quot;&#10;                          data-model=&quot;ctrl.checkbox1&quot;&gt;&#10;      &lt;/blt-checkbox-radio&gt;&#10;      &lt;hr class=&quot;form-divider&quot;&gt;&#10;      &lt;blt-checkbox-radio data-name=&quot;checkbox&quot;&#10;                          data-label=&quot;Checkbox With Change Listener&quot;&#10;                          data-model=&quot;ctrl.checkbox2&quot;&#10;                          data-change=&quot;ctrl.doWhenValueChanges()&quot;&gt;&#10;      &lt;/blt-checkbox-radio&gt;&#10;      &lt;hr class=&quot;form-divider&quot;&gt;&#10;      &lt;div class=&quot;form-row&quot;&gt;&#10;         &lt;blt-checkbox-radio data-name=&quot;optionSelection&quot;&#10;                          data-label=&quot;{{option}}&quot;&#10;                          data-model=&quot;ctrl.radio1&quot;&#10;                          data-type=&quot;radio&quot;&#10;                          data-value=&quot;{{option}}&quot;&#10;                          data-required=&quot;true&quot;&#10;                          ng-repeat=&quot;option in ctrl.checkboxOptions&quot;&gt;&#10;        &lt;/blt-checkbox-radio&gt;&#10;      &lt;/div&gt;&#10;      &lt;hr class=&quot;form-divider&quot;&gt;&#10;      &lt;blt-checkbox-radio data-name=&quot;optionSelection&quot;&#10;                          data-label=&quot;{{option}}&quot;&#10;                          data-model=&quot;ctrl.radio2&quot;&#10;                          data-type=&quot;radio&quot;&#10;                          data-value=&quot;{{option}}&quot;&#10;                          data-required=&quot;true&quot;&#10;                          ng-repeat=&quot;option in ctrl.checkboxOptions&quot;&gt;&#10;      &lt;/blt-checkbox-radio&gt;&#10;  &lt;/form&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <div ng-controller="CheckboxRadioExampleCtrl as ctrl">
+      <form name="MyCtrl.myForm" class="form" novalidate>
+          <blt-checkbox-radio data-name="checkbox"
+                              data-label="Simple Checkbox"
+                              data-model="ctrl.checkbox1">
+          </blt-checkbox-radio>
+          <hr class="form-divider">
+          <blt-checkbox-radio data-name="checkbox"
+                              data-label="Checkbox With Change Listener"
+                              data-model="ctrl.checkbox2"
+                              data-change="ctrl.doWhenValueChanges()">
+          </blt-checkbox-radio>
+          <hr class="form-divider">
+          <div class="form-row">
+             <blt-checkbox-radio data-name="optionSelection"
+                              data-label="{{option}}"
+                              data-model="ctrl.radio1"
+                              data-type="radio"
+                              data-value="{{option}}"
+                              data-required="true"
+                              ng-repeat="option in ctrl.checkboxOptions">
+            </blt-checkbox-radio>
+          </div>
+          <hr class="form-divider">
+          <blt-checkbox-radio data-name="optionSelection"
+                              data-label="{{option}}"
+                              data-model="ctrl.radio2"
+                              data-type="radio"
+                              data-value="{{option}}"
+                              data-required="true"
+                              ng-repeat="option in ctrl.checkboxOptions">
+          </blt-checkbox-radio>
+      </form>
+    </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

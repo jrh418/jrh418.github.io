@@ -1,0 +1,218 @@
+<a id="top"></a>
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="/api">ngBoltJS</a> / blt_appProfile
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-module"></span>
+  </div>
+</header>
+
+<section class="api-profile-description">
+  <p>Application profiles define settings for the <a href="api/blt_data/service/BltData">Data API</a> and
+<a href="api/blt_auth/service/BltAuth">Auth API</a> as well provide a mechanism for overriding global
+build settings. Multiple profiles may be defined for an application and are
+placed in the <code>config/profiles</code> directory in the project root. For example,
+your application can have a <code>development</code> profile that defines a different
+data and authentication settings than is used in a <code>production</code> environment.</p>
+<div class="note-tip">
+<strong>Tip</strong> Profiles are read by the Gulp build process and incorporated into
+your application as an angular module, so there is no need to distribute
+them with your application.
+</div>
+
+<h2 id="creating-profiles">Creating Profiles</h2>
+<p>You can create a profile by adding a uniquely named JSON file in the profiles
+directory. If you are using the ngBoltJS Boilerplate template, you will notice
+that one named <code>development</code> has been provided.</p>
+<p>A profile is composed of five sections:</p>
+<ul>
+<li><a href="#data">data</a></li>
+<li><a href="#auth">auth</a></li>
+<li><a href="#servers">servers</a></li>
+<li><a href="#database">database</a></li>
+<li><a href="#build">build</a> (optional)</li>
+</ul>
+<h2 id="accessing-profile-data">Accessing Profile Data</h2>
+<p>You can access profile data from within your app by injecting the <code>blt_appProfile</code> module into your module, or by
+accessing the <code>blt_appProfile</code> module directly using the angular injector interface. The following examples show
+equivalent code to access the <code>auth</code> attribute of the profile configuration.</p>
+<pre><code class="lang-javascript">angular.module(&#39;myModule&#39;, [&#39;blt_appProfile&#39;])
+  .controller(&#39;MyController&#39;, MyController)
+;
+
+MyController.$inject = [&#39;auth&#39;];
+
+function MyController(auth) {
+  ...
+}
+</code></pre>
+<pre><code class="lang-javascript">var $profile = angular.injector([&#39;blt_appProfile&#39;]);
+var auth = $profile.get(&#39;auth&#39;);
+</code></pre>
+<h3 id="data">Data</h3>
+<p>The data section of a configuration profile defines the data source and
+reconnection parameters of the data service.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>protocol</code></td>
+<td>string</td>
+<td>This property defines which supported data source the data service will use to make requests. Allowed values are: <code>rest</code>, <code>wamp</code>, and <code>sqlite</code>. Any other values will result in a configuration error, rendering the data service inoperable.</td>
+</tr>
+<tr>
+<td><code>retryMax</code></td>
+<td>integer</td>
+<td>Controls how many times the data service will retry when attempting to connect to a data source. Setting the property to any negative value will cause the data service to retry connecting indefinitely.</td>
+</tr>
+<tr>
+<td><code>retryDelay</code></td>
+<td>integer</td>
+<td>Controls how long, in milliseconds, the data service will wait between retry attempts. The value supplied must be an integer equal to or greater than zero. Any other values may result in undefined behavior.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="auth">Auth</h3>
+<p>The auth object of a profile defines the authentication service and settings
+for the <a href="api/blt_auth/service/BltAuth">Auth API</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>authService</code></td>
+<td>string</td>
+<td>The name of the angular service to use for authetication. E.g. <code>DevAuthService</code></td>
+</tr>
+<tr>
+<td><code>wampAuthMethod</code></td>
+<td>string</td>
+<td>(Optional) Required when using the <code>WampAuthService</code>. Allowed values are: <code>ticket</code> and <code>wampcra</code></td>
+</tr>
+<tr>
+<td><code>authKey</code></td>
+<td>string</td>
+<td>(Optional) A key to pass the authetication service when not using a user login form</td>
+</tr>
+<tr>
+<td><code>authSecret</code></td>
+<td>string</td>
+<td>(Optional) A secret to pass the authentication service when not using a user login form</td>
+</tr>
+</tbody>
+</table>
+<h3 id="servers">Servers</h3>
+<p>The servers section of a configuration profile defines the non-database remote
+data sources of the data service. Currently, we only support WAMP.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>wamp</code></td>
+<td>object</td>
+<td>The WAMP server configuration object</td>
+</tr>
+<tr>
+<td><code>wamp.url</code></td>
+<td>string</td>
+<td>Defines the address of the remote WAMP server to which the data service will attempt to connect. E.g. <code>ws://some.wamp.server/</code></td>
+</tr>
+<tr>
+<td><code>wamp.realm</code></td>
+<td>string</td>
+<td>Defines the realm to which the data service should join. E.g. <code>some_realm</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="database">Database</h3>
+<p>The database configuration section defines both the SQLite and Web SQL data
+sources.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>Defines the name of the database to which the data service will attempt to connect. E.g. <code>MY_DATABASE</code></td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td>string</td>
+<td>TODO: add description</td>
+</tr>
+<tr>
+<td><code>createFromLocation</code></td>
+<td>integer</td>
+<td>TODO: add description</td>
+</tr>
+</tbody>
+</table>
+<h3 id="build">Build</h3>
+<p>The build configuration sections allows you to override global build settings
+for a particular profile. For example, in a production profile, you may wish
+to minify all of the generated assets. To do so, you would set the <code>minify</code>
+property to <code>true</code>.</p>
+<p>For full list of build properties, see <a href="api/blt_config"><code>blt_config</code></a>.</p>
+<h2 id="example">Example</h2>
+<p> <caption><code>development.json</code></caption></p>
+<pre><code class="lang-json">{
+  &quot;data&quot;: {
+    &quot;protocol&quot;: &quot;wamp&quot;,
+    &quot;retryMax&quot;: 1,
+    &quot;retryDelay&quot;: 100
+  },
+  &quot;auth&quot;: {
+    &quot;authService&quot;: &quot;DevAuthService&quot;
+  },
+  &quot;servers&quot;: {
+    &quot;wamp&quot;: {
+      &quot;url&quot;: &quot;ws://localhost:8080&quot;,
+      &quot;realm&quot;: &quot;wamp_realm&quot;
+    }
+  },
+  &quot;database&quot;: {
+    &quot;name&quot;: &quot;EXAMPLE_DB&quot;,
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;createFromLocation&quot;: 1
+  },
+  &quot;build&quot;: {
+    &quot;generateBoltDocs&quot;: false,
+    &quot;docsLogLevel&quot; : &quot;warn&quot;
+  }
+}
+</code></pre>
+
+</section>
+
+
+
+
+
+
+
+

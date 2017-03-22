@@ -1,0 +1,411 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_tab">blt_tab</a>
+    <span class="api-header-divider">/</span>
+    bltTab
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>The bltTab component is primarily used for navigation within the application and is displayed as a
+horizontal row of tabs.</p>
+<p>Can be placed under the appbar for global navigation, at the top of a view for
+navigating sections within a view, or at the bottom of the window for global navigation in mobile applications.
+The presentation of the menu options can be customized through the class elements and modifiers supported by this
+component.</p>
+<p>To use the bltTab component in your ngBoltJS application, include the relevant class elements inside an HTML
+<code>&lt;nav&gt;</code> element in your application. Use <a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click</a> to toggle
+tab actions.</p>
+<div class="note-tip"><strong>Tip:</strong> Place a <code>.tabs</code> element inside a grid element with a class of <code>.grid-shrink</code> to display correctly in your
+layout.</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <section class="api-usage edge-top">
+    <h2 id="usage">Basic Usage</h2>
+    
+    <div class="note-info">
+      <p><strong>NOTE</strong>Restrict directive to an HTML  Element tag Element tag or Attribute Attribute.</p>
+    </div>
+    
+    <div class="usage">
+      <p><caption>Minimal Usage</caption></p>
+<pre><code class="lang-html">&lt;div class=&quot;grid-content grid-shrink&quot;&gt;
+  &lt;nav class=&quot;tabs&quot;&gt;
+    &lt;button class=&quot;tabs-btn&quot; ng-click=&quot;Main.activeTab = 1;&quot;&gt;Tab One&lt;/button&gt;
+    &lt;button class=&quot;tabs-btn&quot; ng-click=&quot;Main.activeTab = 2;&quot;&gt;Tab Two&lt;/button&gt;
+    &lt;button class=&quot;tabs-btn&quot; ng-click=&quot;Main.activeTab = 3;&quot;&gt;Tab Three&lt;/button&gt;
+    &lt;button class=&quot;tabs-btn&quot; ng-click=&quot;Main.activeTab = 4;&quot;&gt;Tab Four&lt;/button&gt;
+    &lt;button class=&quot;tabs-btn&quot; ng-click=&quot;Main.activeTab = 5;&quot;&gt;Tab Five&lt;/button&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;
+</code></pre>
+
+    <div>
+  </section>
+  
+  
+<section class="api-params edge-top">
+  <h2>CSS Classes</h2>
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>tabs</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>The main containing element. Should be placed on an HTML <code>&lt;nav&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>tabs-btn</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>The actionable item of the bltTab component. Should be placed on an HTML <code>&lt;button&gt;</code> tag,
+and must be the child of the <code>.tabs</code> element.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>tabs-icon</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Optional icon to add as a child of the <code>.tabs-btn</code> element. Should be placed on
+an HTML <code>&lt;span&gt;</code> tag and must be a direct child of a <code>.tabs-btn</code> element. ngBoltJS supports Font Awesome for icons.
+<strong>Must add the <code>.tabs–icons</code> modifier to the <code>.tabs</code> element when using icons.</strong></p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>tabs-label</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Adds a label to a tab with an icon. Displays as small text under the
+icon. Should limit to one in order to work and will truncate with an ellipsis if the text overflows. Should be placed on
+an HTML <code>&lt;span&gt;</code> tag and be a direct child of a <code>.tabs-btn</code> element.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>tabs-active</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Displays an active tab. Must add to the <code>.tabs-btn</code> element.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>tabs-icons</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Adds to the <code>.tabs</code> element when you want to use icons in your <code>.tab-btn</code>
+elements.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Examples</h2>
+  <div class="api-example">
+    <p><caption><h3>Triggering Actions</h3><p>Use ng-click to trigger actions when clicking a <code>.tabs-btn</code>. Additionally, use the
+<a href="https://docs.angularjs.org/api/ng/directive/ngClass">ng-class</a> directive to add the
+<code>.tabs-active</code> class to the respective <code>.tabs-btn</code> when that tab is currently selected.
+</p></caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'css'" ng-class="{'tabs-active': exCtrl.showExample == 'css'}">CSS</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;    .controller(&#39;TabExController&#39;, TabExController)&#10;;&#10;function TabExController() {&#10;    var ctrl = this;&#10;    ctrl.activeTab = 1&#10;    ctrl.selectTab = function() {&#10;        (ctrl.activeTab == 2) ? ctrl.activeTab = 1 : ctrl.activeTab = 2;&#10;    }&#10;}</code></pre>
+  </div>
+  
+
+  
+  <div class="runnable-example-css" ng-show="exCtrl.showExample == 'css'">
+    <pre><code>.tabs-example {&#10;    background-color: #f4f5f6;&#10;    border: 1px solid #bdc3c7;&#10;    border-top: 0;&#10;    padding: 2rem;&#10;}</code></pre>
+  </div>
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div ng-controller= &quot;TabExController as ctrl&quot;&gt;&#10;   &lt;nav class=&quot;tabs&quot;&gt;&#10;       &lt;!-- Simple Trigger --&gt;&#10;       &lt;button class=&quot;tabs-btn&quot; ng-class=&quot;{&#39;tabs-active&#39;: ctrl.activeTab == 1}&quot; ng-click=&quot;ctrl.activeTab = 1;&quot;&gt;Tab One&lt;/button&gt;&#10;&#10;       &lt;!-- Advanced Trigger, Run function in your controller and toggle property after some work. --&gt;&#10;       &lt;button class=&quot;tabs-btn&quot; ng-class=&quot;{&#39;tabs-active&#39;: ctrl.activeTab == 2}&quot; ng-click=&quot;ctrl.selectTab()&quot;&gt;Tab Two&lt;/button&gt;&#10;   &lt;/nav&gt;&#10;   &lt;div class=&quot;tabs-example&quot;&gt;&#10;       &lt;div class=&quot;ng-hide&quot; ng-show=&quot;ctrl.activeTab == 1&quot;&gt;&#10;           &lt;p&gt;Simple Trigger Tab Open&lt;/p&gt;&#10;           &lt;p&gt;Tab One Content&lt;/p&gt;&#10;           &lt;p&gt;Click Tab Two to view Tab Two content.&lt;/p&gt;&#10;       &lt;/div&gt;&#10;       &lt;div class=&quot;ng-hide&quot; ng-show=&quot;ctrl.activeTab == 2&quot;&gt;&#10;           &lt;p&gt;Advanced Trigger Tab Open&lt;/p&gt;&#10;           &lt;p&gt;Tab Two Content&lt;/p&gt;&#10;           &lt;p&gt;Click Tab One or Tab Two tab to view Tab One content.&lt;/p&gt;&#10;       &lt;/div&gt;&#10;   &lt;/div&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+  <div ng-controller= "TabExController as ctrl">
+     <nav class="tabs">
+         <!-- Simple Trigger -->
+         <button class="tabs-btn" ng-class="{'tabs-active': ctrl.activeTab == 1}" ng-click="ctrl.activeTab = 1;">Tab One</button>
+
+         <!-- Advanced Trigger, Run function in your controller and toggle property after some work. -->
+         <button class="tabs-btn" ng-class="{'tabs-active': ctrl.activeTab == 2}" ng-click="ctrl.selectTab()">Tab Two</button>
+     </nav>
+     <div class="tabs-example">
+         <div class="ng-hide" ng-show="ctrl.activeTab == 1">
+             <p>Simple Trigger Tab Open</p>
+             <p>Tab One Content</p>
+             <p>Click Tab Two to view Tab Two content.</p>
+         </div>
+         <div class="ng-hide" ng-show="ctrl.activeTab == 2">
+             <p>Advanced Trigger Tab Open</p>
+             <p>Tab Two Content</p>
+             <p>Click Tab One or Tab Two tab to view Tab One content.</p>
+         </div>
+     </div>
+  </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Icons</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'css'" ng-class="{'tabs-active': exCtrl.showExample == 'css'}">CSS</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;    .controller(&#39;TabIconExController&#39;, TabIconExController)&#10;;&#10;function TabIconExController() {&#10;    var ctrl = this;&#10;    ctrl.activeIconTab = 1;&#10;}&#10;angular.module(&quot;bltDocs&quot;)&#10;    .controller(&quot;MenuExCtrl&quot;, function(){&#10;        var ctrl = this;&#10;});</code></pre>
+  </div>
+  
+
+  
+  <div class="runnable-example-css" ng-show="exCtrl.showExample == 'css'">
+    <pre><code>.tabs-icon-example {&#10;    background-color: #f4f5f6;&#10;    border: 1px solid #bdc3c7;&#10;    border-top: 0;&#10;    padding: 2rem;&#10;}</code></pre>
+  </div>
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div ng-controller=&quot;TabIconExController as ctrl&quot;&gt;&#10;  &lt;nav class=&quot;tabs tabs-icons&quot;&gt; &#10;    &lt;!-- Icon with label --&gt;&#10;    &lt;button class=&quot;tabs-btn&quot; ng-class=&quot;{&#39;tabs-active&#39;: ctrl.activeIconTab == 1}&quot; ng-click=&quot;ctrl.activeIconTab = 1;&quot;&gt;&#10;      &lt;span class=&quot;tabs-icon fa fa-home&quot;&gt;&lt;/span&gt;&#10;      &lt;span class=&quot;tabs-label&quot;&gt;Home&lt;/span&gt;&#10;    &lt;/button&gt;&#10;&#10;    &lt;!-- Icon only --&gt;&#10;    &lt;button class=&quot;tabs-btn&quot; ng-class=&quot;{&#39;tabs-active&#39;: ctrl.activeIconTab == 2}&quot; ng-click=&quot;ctrl.activeIconTab = 2;&quot;&gt;&#10;      &lt;span class=&quot;tabs-icon fa fa-folder&quot;&gt;&lt;/span&gt;&#10;    &lt;/button&gt;&#10;  &lt;/nav&gt;&#10;  &lt;div class=&quot;tabs-icon-example&quot;&gt;&#10;    &lt;div class=&quot;ng-hide&quot; ng-show=&quot;ctrl.activeIconTab == 1&quot;&gt;&#10;     &lt;p&gt;This is the Homepage&lt;/p&gt;&#10;     &lt;p&gt;Click on the Folders tab to view folders.&lt;/p&gt;&#10;     &lt;/div&gt;&#10;    &lt;div class=&quot;ng-hide&quot; ng-show=&quot;ctrl.activeIconTab == 2&quot;&gt;&#10;     &lt;p&gt;Folders&lt;/p&gt;&#10;    &lt;ul class=&quot;menu&quot; ng-controller=&quot;MenuExCtrl as ctrl&quot;&gt;&#10;        &lt;li class=&quot;menu-item&quot; ng-class=&quot;{&#39;menu-active&#39;: ctrl.currentItem == &#39;item1&#39;}&quot;&gt;&#10;            &lt;button class=&quot;menu-link&quot; ng-click=&quot;ctrl.currentItem = &#39;item1&#39;;&quot;&gt;&lt;span class=&quot;fa fa-folder&quot;&gt;&lt;/span&gt; Folder 1&lt;/button&gt;&#10;        &lt;/li&gt;&#10;        &lt;li class=&quot;menu-item&quot; ng-class=&quot;{&#39;menu-active&#39;: ctrl.currentItem == &#39;item2&#39;}&quot;&gt;&#10;            &lt;button class=&quot;menu-link&quot; ng-click=&quot;ctrl.currentItem = &#39;item2&#39;;&quot;&gt;&lt;span class=&quot;fa fa-folder&quot;&gt;&lt;/span&gt; Folder 2&lt;/button&gt;&#10;        &lt;/li&gt;&#10;        &lt;li class=&quot;menu-item&quot; ng-class=&quot;{&#39;menu-active&#39;: ctrl.currentItem == &#39;item3&#39;}&quot;&gt;&#10;            &lt;button class=&quot;menu-link&quot; ng-click=&quot;ctrl.currentItem = &#39;item3&#39;;&quot;&gt;&lt;span class=&quot;fa fa-folder&quot;&gt;&lt;/span&gt; Folder 3&lt;/button&gt;&#10;        &lt;/li&gt;&#10;        &lt;li class=&quot;menu-item&quot;&gt;&#10;            &lt;button class=&quot;menu-link&quot; ng-click=&quot;ctrl.currentItem = &#39;item4&#39;;&quot;&gt;&lt;span class=&quot;fa fa-folder&quot;&gt;&lt;/span&gt; Folder 4&lt;/button&gt;&#10;        &lt;/li&gt;&#10;    &lt;/ul&gt;&#10;    &lt;/div&gt;&#10;  &lt;/div&gt;&#10; &lt;/div&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+ <div ng-controller="TabIconExController as ctrl">
+   <nav class="tabs tabs-icons"> 
+     <!-- Icon with label -->
+     <button class="tabs-btn" ng-class="{'tabs-active': ctrl.activeIconTab == 1}" ng-click="ctrl.activeIconTab = 1;">
+       <span class="tabs-icon fa fa-home"></span>
+       <span class="tabs-label">Home</span>
+     </button>
+
+     <!-- Icon only -->
+     <button class="tabs-btn" ng-class="{'tabs-active': ctrl.activeIconTab == 2}" ng-click="ctrl.activeIconTab = 2;">
+       <span class="tabs-icon fa fa-folder"></span>
+     </button>
+   </nav>
+   <div class="tabs-icon-example">
+     <div class="ng-hide" ng-show="ctrl.activeIconTab == 1">
+      <p>This is the Homepage</p>
+      <p>Click on the Folders tab to view folders.</p>
+      </div>
+     <div class="ng-hide" ng-show="ctrl.activeIconTab == 2">
+      <p>Folders</p>
+     <ul class="menu" ng-controller="MenuExCtrl as ctrl">
+         <li class="menu-item" ng-class="{'menu-active': ctrl.currentItem == 'item1'}">
+             <button class="menu-link" ng-click="ctrl.currentItem = 'item1';"><span class="fa fa-folder"></span> Folder 1</button>
+         </li>
+         <li class="menu-item" ng-class="{'menu-active': ctrl.currentItem == 'item2'}">
+             <button class="menu-link" ng-click="ctrl.currentItem = 'item2';"><span class="fa fa-folder"></span> Folder 2</button>
+         </li>
+         <li class="menu-item" ng-class="{'menu-active': ctrl.currentItem == 'item3'}">
+             <button class="menu-link" ng-click="ctrl.currentItem = 'item3';"><span class="fa fa-folder"></span> Folder 3</button>
+         </li>
+         <li class="menu-item">
+             <button class="menu-link" ng-click="ctrl.currentItem = 'item4';"><span class="fa fa-folder"></span> Folder 4</button>
+         </li>
+     </ul>
+     </div>
+   </div>
+  </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

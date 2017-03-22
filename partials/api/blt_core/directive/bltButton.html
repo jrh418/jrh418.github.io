@@ -1,0 +1,466 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_core">blt_core</a>
+    <span class="api-header-divider">/</span>
+    bltButton
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+    <span class="tag-since">since 1.0.0</span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>The ngBoltJS Button component is used for triggering actions within an ngBoltJS application. The presentation of
+the button can be customized through the class elements and modifiers supported by this component.</p>
+<p>To use the Button component in your ngBoltJS application, simply include the relevant classes on an HTML <code>&lt;button&gt;</code>
+tag in your application and use the <a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click</a> to handle the
+button click event.</p>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+<section class="api-params edge-top">
+  <h2>CSS Classes</h2>
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>btn-text</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Default text button for secondary actions. Must be used on an HTML <code>&lt;button&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>btn-text-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>&#39;btn-text&#39; with media query support for various screen sizes where <code>bp</code> is
+the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>btn-solid</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>A text button with a color background used for secondary actions. Must be used on
+an HTML <code>&lt;button&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>btn-solid-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>&#39;btn-solid&#39; with media query support for various screen sizes where <code>bp</code>
+is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>btn-icon</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>An icon button. Must be used on an HTML <code>&lt;button&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>btn-icon-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>&#39;btn-icon&#39; with media query support for various screen sizes where <code>bp</code> is
+the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>btn-link</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>A button that looks similar to hyperlinks without an underline. Use on an HTML
+<code>&lt;a&gt;</code> tag or <code>&lt;button&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>btn-link-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>&#39;btn-link&#39; with media query support for various screen sizes where <code>bp</code> is
+the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>btn-row</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>A container for displaying buttons horizontally and justifies the buttons to the
+right by default. Use on an HTML <code>&lt;div&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>btn-text-submit</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Colored, primary text button to use for primary actions. Must be used
+on an HTML <code>&lt;button&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>btn-solid-submit</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Colored, primary solid button to use for primary actions. Must be used
+on an HTML <code>&lt;button&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>btn-block</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Make a button the full width of its containers. Useful in modals, panels, or
+forms. Must be added to a <code>.btn-**</code> element.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>btn-row-left</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Left justify the content of a <code>.btn-row</code> element.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>btn-row-left-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>&#39;btn-row-left&#39; with media query support for various screen sizes
+where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>btn-row-center</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Center justify the content of a <code>.btn-row</code> element.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Examples</h2>
+  <div class="api-example">
+    <p><caption>Common Use Cases</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;!-- Text Buttons --&gt;&#10;&lt;button class=&quot;btn-text&quot; blt-close=&quot;&quot;&gt;Cancel&lt;/button&gt;&#10;&lt;button class=&quot;btn-text-submit&quot; ng-click=&quot;Main.submit()&quot;&gt;Submit&lt;/button&gt;&#10;&#10;&lt;!-- Solid Buttons --&gt;&#10;&lt;button class=&quot;btn-solid&quot; blt-close=&quot;&quot;&gt;Canel&lt;/button&gt;&#10;&lt;button class=&quot;btn-solid-submit&quot; ng-click=&quot;Main.submit()&quot;&gt;Submit&lt;/button&gt;&#10;&#10;&lt;!-- Icon Button --&gt;&#10;&lt;button class=&quot;btn-icon&quot; ng-click=&quot;Main.approve()&quot;&gt;&lt;span class=&#39;fa fa-check-circle&#39;&gt;&lt;/span&gt;&lt;/button&gt;&#10;&#10;&lt;!-- Link Buttons --&gt;&#10;&lt;button class=&quot;btn-link&quot; ng-click=&quot;Main.edit()&quot;&gt;Edit&lt;/button&gt;&#10;&lt;a class=&quot;btn-link&quot; href=&quot;http://some/url&quot;&gt;Open&lt;/a&gt;&#10;&#10;&lt;!-- Row of Buttons --&gt;&#10;&lt;div class=&quot;btn-row&quot;&gt;&#10;  &lt;button class=&quot;btn-solid&quot; blt-close=&quot;&quot;&gt;Canel&lt;/button&gt;&#10;  &lt;button class=&quot;btn-solid-submit&quot; ng-click=&quot;Main.submit()&quot;&gt;Submit&lt;/button&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption><h3>Disabled Buttons</h3><p>To disable a button, use an expression with
+<a href="https://docs.angularjs.org/api/ng/directive/ngDisabled">ng-disabled</a> to put the button in a disabled
+state. Disabled buttons will gray out and the cursor will be set to default.</p></caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;button class=&quot;btn-text-submit&quot; ng-click=&quot;Main.submit()&quot; ng-disabled=&quot;Main.formError == true&quot;&gt;Submit&lt;/button&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption><h3>Using Media Queries</h3><p>See the <a href="guides/breakpoints">Media Queries Guide</a> for more information on using media queries.</p></caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;!-- Text Button with Media Query --&gt;&#10;&lt;!-- For screens size medium and smaller--&gt;&#10;&lt;button class=&quot;btn-text-md-down&quot; blt-close=&quot;&quot;&gt;Cancel&lt;/button&gt;&#10;&#10;&lt;!-- Solid Button with Media Query --&gt;&#10;&lt;!-- For screens size large and smaller--&gt;&#10;&lt;button class=&quot;btn-solid-lg-down&quot; blt-close=&quot;&quot;&gt;Cancel&lt;/button&gt;&#10;&#10;&lt;!-- Icon Button with Media Query --&gt;&#10;&lt;!-- For small screens only --&gt;&#10;&lt;button class=&quot;btn-icon-sm-only&quot; ng-click=&quot;Main.approve()&quot;&gt;&lt;span class=&#39;fa fa-check-circle&#39;&gt;&lt;/span&gt;&lt;/button&gt;&#10;&#10;&lt;!-- Link Button with Media Query --&gt;&#10;&lt;!-- For screens size medium and larger --&gt;&#10;&lt;button class=&quot;btn-link-md-up&quot; ng-click=&quot;Main.edit()&quot;&gt;Edit&lt;/button&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

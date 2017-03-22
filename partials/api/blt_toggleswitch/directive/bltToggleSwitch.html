@@ -1,0 +1,417 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_toggleswitch">blt_toggleswitch</a>
+    <span class="api-header-divider">/</span>
+    bltToggleSwitch
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>The bltToggleSwitch directive can be used much like a standard HTML checkbox with the presentation of a
+switch with an &#39;on&#39; and &#39;off&#39; state. The toggle switch must be bound to a boolean attribute in your controller
+model. Selection/deselection of the toggle switch will toggle this value between true and false.</p>
+<div class="note-info"><strong>NOTE</strong> In order for the Toggle Switch to take input focus and support sequential keyboard navigation,
+you must add the <code>tabindex=&quot;0&quot;</code> attribute on the directive. Documentation on using tabindex can be found
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">here</a>.</div>
+
+<div class="note-tip"><strong>Best Practice</strong> The <code>data-</code> prefix is not required for ngBoltJS attributes, but is highly recommended to prevent
+conflicts with standard HTML attributes.</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+<section class="api-params edge-top">
+  
+  <h2>Attributes</h2>
+  
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-model</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>This attribute is used to bind the value of this directive to a property in the
+containing scope. Must be a boolean value.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-disabled</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-boolean">boolean</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Disables the switch. A property in the containing scope that will disable the
+control if truthy. The Toggle Switch can be disabled in the off or on state.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-label</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>An optional value to display a form control label above the Toggle Switch.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-justify</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>An optional value to justify the Toggle Switch and label (if applicable) to the &#39;left&#39;
+(default), &#39;right&#39;, or &#39;center&#39;.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Examples</h2>
+  <div class="api-example">
+    <p><caption>To use the Toggle Switch directive in your ngBoltJS application, include the <code>blt-toggle-switch</code>
+element in your HTML template. You can optionally include it inside a form.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;).controller(&quot;ToggleExCtrl1&quot;, function(){});</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div ng-controller=&quot;ToggleExCtrl1 as ctrl&quot;&gt;&#10;  &lt;blt-toggle-switch data-model=&quot;ctrl.someBooleanValue&quot;&gt;&lt;/blt-toggle-switch&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <div ng-controller="ToggleExCtrl1 as ctrl">
+      <blt-toggle-switch data-model="ctrl.someBooleanValue"></blt-toggle-switch>
+    </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Usage inside form with option to disable.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;).controller(&quot;ToggleExCtrl2&quot;, function(){});</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div ng-controller=&quot;ToggleExCtrl2 as ctrl&quot;&gt;&#10;  &lt;form class=&quot;form&quot; novalidate name=&quot;toggleTest&quot;&gt;&#10;    &lt;blt-toggle-switch data-model=&quot;ctrl.disableToggle&quot;&#10;                       data-label=&quot;Disable&quot;&gt;&#10;    &lt;/blt-toggle-switch&gt;&#10;    &lt;blt-toggle-switch data-model=&quot;ctrl.someBooleanValue&quot;&#10;                       data-disabled=&quot;ctrl.disableToggle&quot;&gt;&#10;    &lt;/blt-toggle-switch&gt;&#10;  &lt;/form&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <div ng-controller="ToggleExCtrl2 as ctrl">
+      <form class="form" novalidate name="toggleTest">
+        <blt-toggle-switch data-model="ctrl.disableToggle"
+                           data-label="Disable">
+        </blt-toggle-switch>
+        <blt-toggle-switch data-model="ctrl.someBooleanValue"
+                           data-disabled="ctrl.disableToggle">
+        </blt-toggle-switch>
+      </form>
+    </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>With a label. </p>
+<p><div class="note-tip"> <strong>Note</strong> You can bind Angular expressions to your label. </div>
+</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;).controller(&quot;ToggleExCtrl3&quot;, function(){});</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div ng-controller=&quot;ToggleExCtrl3 as ctrl&quot;&gt;&#10;  &lt;blt-toggle-switch data-model=&quot;ctrl.someBooleanValue&quot;&#10;                     tabindex=&quot;0&quot;&#10;                     data-label=&quot;Toggle Switch: {{ctrl.someBooleanValue}}&quot;&gt;&#10;  &lt;/blt-toggle-switch&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <div ng-controller="ToggleExCtrl3 as ctrl">
+      <blt-toggle-switch data-model="ctrl.someBooleanValue"
+                         tabindex="0"
+                         data-label="Toggle Switch: {{ctrl.someBooleanValue}}">
+      </blt-toggle-switch>
+    </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Justify right.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;).controller(&quot;ToggleExCtrl4&quot;, function(){});</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div ng-controller=&quot;ToggleExCtrl4 as ctrl&quot;&gt;&#10;  &lt;blt-toggle-switch data-model=&quot;ctrl.someBooleanValue&quot;&#10;    data-justify=&quot;right&quot;&#10;    tabindex=&quot;0&quot;&#10;    data-label=&quot;Right Justified&quot;&gt;&#10;  &lt;/blt-toggle-switch&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <div ng-controller="ToggleExCtrl4 as ctrl">
+      <blt-toggle-switch data-model="ctrl.someBooleanValue"
+        data-justify="right"
+        tabindex="0"
+        data-label="Right Justified">
+      </blt-toggle-switch>
+    </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

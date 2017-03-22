@@ -1,0 +1,141 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_core">blt_core</a>
+    <span class="api-header-divider">/</span>
+    bltOpenView
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+<div class="note-deprecated">
+  <p>Use the <code>href</code> attribute or <code>ngHref</code> directive on an HTML <code>&lt;a&gt;</code> tag instead.</p>
+
+</div>
+
+
+
+<section class="api-profile-description">
+  <p>Opens a new view and closes the current one. To open a view, pass the <code>path</code> of the view as the value
+of the directive. This directive should be used on an ngBoltJS <a href="api/blt_core/directive/bltButton">button</a> in place of an
+<a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click</a>.</p>
+<div class="note-info">
+<strong>Note</strong> If other functions need to be triggered before opening views, or if you need to pass other paramaters to
+the route, use <code>ng-click</code>. Call a function in your controller and use <a href="api/blt_core/service/BltApi#switchViews"><code>BltApi</code></a>.
+</div>
+</section>
+
+
+
+
+
+
+
+
+<section class="api-dependencies edge-top">
+  <h2 id="dependencies">Dependencies</h2>
+  <ul class="api-dependencies-list">
+    
+    <li class="api-dependencies-item"><a href="api/blt_core/service/BltApi"><code>BltApi</code></a></li>
+    
+  </ul>
+</section>
+
+
+
+
+  
+  
+  
+<section class="api-params edge-top">
+  
+  <h2>Attributes</h2>
+  
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>path</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>The string of the path to pass to <a href="api/blt_core/service/BltApi#switchViews"><code>BltApi</code></a>.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Example</h2>
+  <div class="api-example">
+    <p><caption>Open a view with a path of &#39;/my-view&#39;</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('js');"
+    >
+  
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>&lt;button class=&quot;btn-text&quot; blt-open-view=&quot;/my-view&quot;&gt;Open View&lt;/button&gt;</code></pre>
+  </div>
+  
+
+  
+
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

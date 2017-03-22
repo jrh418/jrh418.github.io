@@ -1,0 +1,347 @@
+<a id="top"></a>
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="/api">ngBoltJS</a> / blt_config
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-module"></span>
+  </div>
+</header>
+
+<section class="api-profile-description">
+  <p>The <code>blt_config</code> module is generated automatically during the application gulp
+build from the <code>build.json</code> config file and injected into ngBoltJS&#39;s core module.
+These settings define ngBoltJS&#39;s configuration and are accessible in your
+application from the <code>config</code> constant.</p>
+<p>The properties in the <code>build.json</code> file can be overriden by matching properties
+in a <code>build</code> object in your <a href="api/blt_appProfile">application&#39;s profile</a>.
+Because you can have multiple profiles, you can have different configurations
+for each profile. This is useful when wanting to override development settings
+when deploying to a production environment.</p>
+<p>The properties exposed in the build configuration are listed below.</p>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>appSrc</td>
+<td><code>ng-bolt-app</code></td>
+<td>The file path of the root directory of your application&#39;s source code.</td>
+</tr>
+<tr>
+<td>port</td>
+<td><code>9000</code></td>
+<td>The port number on your app&#39;s local dev server.</td>
+</tr>
+<tr>
+<td>docsPort</td>
+<td><code>9001</code></td>
+<td>The port number on the documentation app&#39;s local dev server.</td>
+</tr>
+<tr>
+<td>debug</td>
+<td><code>true</code></td>
+<td>Toggle console logging.</td>
+</tr>
+<tr>
+<td>defaultLogLevel</td>
+<td><code>debug</code></td>
+<td>The default logging level (<code>trace</code>, <code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code>). Log message below the set level will be turned off. E.g. if the level is &#39;warn&#39; only <code>console.warn</code> and <code>console.error</code> messages will be displayed.</td>
+</tr>
+<tr>
+<td>generateBoltDocs</td>
+<td><code>true</code></td>
+<td>Generate ngBoltJS documentation during a build.</td>
+</tr>
+<tr>
+<td>generateAppDocs</td>
+<td><code>true</code></td>
+<td>Generate your application&#39;s documentation during a build.</td>
+</tr>
+<tr>
+<td>buildDest</td>
+<td><code>build</code></td>
+<td>The file path to place all generated app files during a gulp build.</td>
+</tr>
+<tr>
+<td>docsDest</td>
+<td><code>build/docs</code></td>
+<td>The file path to place all generated documenation files during a gulp build.</td>
+</tr>
+<tr>
+<td>html5mode</td>
+<td><code>false</code></td>
+<td>Toggle Angular&#39;s <a href="https://docs.angularjs.org/guide/$location">html5mode</a>.</td>
+</tr>
+<tr>
+<td>baseUrl</td>
+<td><code>&#39;/&#39;</code></td>
+<td>The value of the <code>href</code> attribute on the HTML <code>base</code> tag. Required when <code>html5mode</code> is true.</td>
+</tr>
+<tr>
+<td>logoUrl</td>
+<td><code>images/logo.png</code></td>
+<td>The relative file path of your applications logo to use for the login screen.</td>
+</tr>
+<tr>
+<td>packagePath</td>
+<td><code>./package.json</code></td>
+<td>The file path of your application&#39;s <code>package.json</code> file.</td>
+</tr>
+<tr>
+<td>servce</td>
+<td><code>true</code></td>
+<td>Toggle a local server during the build.</td>
+</tr>
+<tr>
+<td>gzip</td>
+<td><code>false</code></td>
+<td>Gzip generated assets during a build.</td>
+</tr>
+<tr>
+<td>cleanIgnore</td>
+<td><code>Array</code></td>
+<td>An array of file paths to ignore when deleting files in a build directory before a build.</td>
+</tr>
+<tr>
+<td>breakpoints</td>
+<td><code>Object</code></td>
+<td>Object of breakpoint values.</td>
+</tr>
+<tr>
+<td>libraries</td>
+<td><code>Object</code></td>
+<td>Object of file paths of static libraries to include in the build files.</td>
+</tr>
+<tr>
+<td>components</td>
+<td><code>Object</code></td>
+<td>An object of <a href="#components">components</a> that can be set to be used in your application.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="breakpoints">Breakpoints</h2>
+<p>Breakpoints provide support for media queries and enable you to adjust your application&#39;s
+layout depending on the viewport width. See <a href="guides/breakpoints">Media Query Support Guide</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>breakpoints.sm</code></td>
+<td>0px</td>
+<td>The minimum viewport width for small screens.</td>
+</tr>
+<tr>
+<td><code>breakpoints.md</code></td>
+<td>600px</td>
+<td>The minimum viewport width for medium screens.</td>
+</tr>
+<tr>
+<td><code>breakpoints.lg</code></td>
+<td>900px</td>
+<td>The minimum viewport width for large screens.</td>
+</tr>
+<tr>
+<td><code>breakpoints.xl</code></td>
+<td>1200px</td>
+<td>The minimum viewport width for xlarge screens.</td>
+</tr>
+<tr>
+<td><code>breakpoints.xxl</code></td>
+<td>1800px</td>
+<td>The minimum viewport width for xxlarge screens.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="libraries">Libraries</h2>
+<p>Libaries allow you to bundle third-party libraries into your application&#39;s assets.
+See the <a href="guides/configuration#using-third-party-libraries">Build Configuration Guide</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>libraries.css</td>
+<td><code>[]</code></td>
+<td>An array of file paths of CSS libraries to include in <code>app.css</code>.</td>
+</tr>
+<tr>
+<td>libraries.js</td>
+<td><code>[]</code></td>
+<td>An array of file paths of JS libaries to include in <code>app.js</code>.</td>
+</tr>
+<tr>
+<td>libraries.fonts</td>
+<td><code>[]</code></td>
+<td>An array of file paths of font libraries to include in app&#39;s assets.</td>
+</tr>
+<tr>
+<td>libraries.static</td>
+<td><code>[]</code></td>
+<td>An array of objects and/or strings. If the item is a string, it represents a file path that will copied directly into the root of your build output. If the item is an object it can contain two properties, <code>src</code> and <code>dest</code>. The <code>src</code> property is a string file path relative to your project root. The <code>dest</code> directory is a directory, relative to the root of your build output directory where the asset(s) defined in the <code>src</code> property will be copied.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="components">Components</h2>
+<p>Most ngBoltJS components can be optionally included in your application&#39;s compiled code. If you know you will not
+need certain components for your application, you can set them to <code>false</code> and reduce the file size of your generated
+application code.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auth</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_auth"><code>blt_auth</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>appbar</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_appbar"><code>blt_appbar</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>cards</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_card"><code>blt_card</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>checkboxradio</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_checkboxradio"><code>blt_checkboxradio</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>classificationbar</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_classificationbar"><code>blt_classificationbar</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>counter</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_counter"><code>blt_counter</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>datepicker</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_datepicker"><code>blt_datepicker</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>fileloader</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_fileloader"><code>blt_fileloader</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>lists</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_list"><code>blt_list</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>login</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_login"><code>blt_login</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>menu</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_menu"><code>blt_menu</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>modal</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_modal"><code>blt_modal</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>notifications</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_notifications"><code>blt_notifications</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>panel</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_panel"><code>blt_panel</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>dropdown</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_dropdown"><code>blt_dropdown</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>tables</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_table"><code>blt_table</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>tabs</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_tab"><code>blt_tab</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>textfield</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_textfield"><code>blt_textfield</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>toggleswitch</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_toggleswitch"><code>blt_toggleswitch</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>view</td>
+<td><code>true</code></td>
+<td>Use <a href="api/blt_view"><code>blt_view</code></a> module in your application.</td>
+</tr>
+<tr>
+<td>data</td>
+<td><code>Object</code></td>
+<td>A list of data services to use in your application.</td>
+</tr>
+<tr>
+<td>data.http</td>
+<td><code>true</code></td>
+<td>Use the http data service in your application.</td>
+</tr>
+<tr>
+<td>data.sqlite</td>
+<td><code>true</code></td>
+<td>Use the sqlite data service in your application.</td>
+</tr>
+<tr>
+<td>data.wamp</td>
+<td><code>true</code></td>
+<td>Use the wamp data service in your application.</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+
+
+
+
+
+

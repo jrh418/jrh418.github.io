@@ -1,0 +1,307 @@
+<a id="top"></a>
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="/api">ngBoltJS</a> / blt_dataRoutes
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-module"></span>
+  </div>
+</header>
+
+<section class="api-profile-description">
+  <p>The routes module is automatically generated from the <code>routes.json</code> file
+found in the <code>config</code> directory in your applications project root. It defines
+a series of uniquely named routes that the data service will use to resolve
+calls from application code. Since the data service acts very much like a
+software router, this file can be considered the heart of the data service&#39;s
+ability to correctly identify which route to select and resolve calls from
+based on the application <a href="api/blt_appProfile">profile</a> specifications.</p>
+<h2 id="creating-routes">Creating Routes</h2>
+<p>Create a routes file is as simple as creating a new, specially named JSON file -
+<code>routes.json</code> - in the &#39;config&#39; directory under your application project&#39;s root.
+The routes file is read by the Gulp build process and incorporated into the
+application, so there is no need to distribute the routes file with your
+application.</p>
+<div class="note-info">
+<strong>Note</strong> The routes file must define an object, <code>routes</code>, that contains all
+application-specific routes. See the example for details and use it as a starting
+point.
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>routes</code></td>
+<td>object</td>
+<td>Collection of Routes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="defining-a-route">Defining a Route</h2>
+<p>Think of each route like a specification for how the data service should
+interface with a data source, what arguments to pass to that source, and what to
+return from the call. Each route should have a descriptive, unique name. The
+route definition is divided into several categories that describe how to execute
+the call, keyed by the protocol the data service is using.</p>
+<div class="note-tip">
+<strong>Best Practice</strong> Using the data service in an application data source is fairly
+trivial. However, if you are planning on deploying to different environments that
+will use different data sources, think <strong>very</strong> carefully about the format your
+application&#39;s data sources will return. To ensure that no platform-specific code
+needs to be written in your application, take steps to ensure that your data
+sources will return the same type of data in an identical format. (e.g., as an
+array, object, or plain text).
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>routes.&lt;Route&gt;</code></td>
+<td>object</td>
+<td>A uniquely named Route</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-route-return-"><code>Route.return</code></h3>
+<p>The data service can return data from a route call in several formats. Depending
+on the data protocol, this may automatically transform data into the appropriate
+format from the data returned from the call to the route. This may or may not be
+allowed, depending on the protocol. See the following table for what return data
+types are allowed with which protocols.</p>
+<table>
+<thead>
+<tr>
+<th>Return Value</th>
+<th>WAMP</th>
+<th>REST</th>
+<th>SQLite</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Returns a JavaScript object if it was able to be parsed from the data returned from the call. <strong>When using the <code>object</code> return type with SQLite, this will return the first returned row from the query as an object.</strong></td>
+</tr>
+<tr>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>This will return an array of JavaScript objects or primitives.</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>This will return plain text from the data returned from the call. <strong>Any calls made to an SQLite route with a <code>text</code> return type will automatically fail.</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Route.return</code></td>
+<td>string</td>
+<td>The return type can be one of the three values in the table above. When interacting with external data sources, the data service will make an attempt to convert the data returned from the data source to the defined return type if it can. If it cannot make the conversion, the raw data will be returned as a fallback.</td>
+</tr>
+</tbody>
+</table>
+<div class="note-info">
+<strong>Note</strong> If an unknown return type is supplied to the route, the data service
+will default to returning an object.
+</div>
+
+<hr>
+<h3 id="-route-protocol-"><code>Route.&lt;Protocol&gt;</code></h3>
+<p>Each route also contains a category for each protocol that the route supports
+whose names match the protocol declared in the application profile. Unused
+protocols can be safely excluded from the route destination.</p>
+<h4 id="rest-protocol">REST Protocol</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rest.url</code></td>
+<td>string</td>
+<td>The URL at which the data service should direct the request.</td>
+</tr>
+<tr>
+<td><code>rest.type</code></td>
+<td>string</td>
+<td>The method types the data service should make. This is one of the standard HTTP method types (e.g., GET, POST, etc...).</td>
+</tr>
+<tr>
+<td><code>rest.params</code></td>
+<td>array</td>
+<td>Array of strings that name the properties to extract from the object passed to the data service call that are to be sent as the REST request query parameters. This will extract and pass them to the REST endpoint in the order defined in the array.</td>
+</tr>
+<tr>
+<td><code>rest.body</code></td>
+<td>array</td>
+<td>Array of strings that name the properties to extract from the object passed to the data service call that are to be sent as the REST request body. This will extract and pass them to the REST endpoint in the order defined in the array.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example REST Properties</strong></p>
+<pre><code class="lang-json">&quot;rest&quot;: {
+   &quot;url&quot;: &quot;/some/endpoint/url&quot;,
+   &quot;type&quot;: &quot;GET&quot;,
+   &quot;params&quot;: [&quot;someData&quot;],
+   &quot;body&quot;: [&quot;moreData&quot;]
+}
+</code></pre>
+<p><strong>Dynamic URL Generation</strong></p>
+<p>The data service also supports dynamic URL generation by substituting keywords in
+the configuration URL with the values of properties of the object passed to the
+call. The to-be replaced keywords must be prefixed with a <code>$</code> followed by any
+valid object property name. The data service will attempt to extract the value of
+a parameter contained in the passed object, replacing the keyword with the value.</p>
+<p>For example, say that your application made the following call:</p>
+<pre><code class="lang-javascript">dataApi.call(&quot;uniquelyNamedRoute&quot;, {value: &quot;details&quot;, field: &quot;users&quot;, query: &quot;username&quot;});
+</code></pre>
+<p>and the route definition was defined as (abridged):</p>
+<pre><code class="lang-json">&quot;rest&quot;: {
+   &quot;url&quot;: &quot;/get/$value/from/$field&quot;
+}
+</code></pre>
+<p>The data service would then extract the parameters of the object passed to the
+call and replace the keywords in the defined URL. In this case, the data service
+would construct the following URL and make the request against it:</p>
+<pre><code>/get/details/from/users
+</code></pre>
+<div class="note-warning">
+<strong>Important</strong> Be aware that the data service will not pass parameters as query parameters that have been used to replace keywords in the URL. For example, in the above call only the <code>query</code> property would be forwarded to the REST endpoint as a query parameter.
+</div>
+
+<h4 id="wamp-protocol">WAMP Protocol</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>wamp.rpc</code></td>
+<td>string</td>
+<td>The URL of the WAMP remote procedure endpoint at which the data service should direct the request.</td>
+</tr>
+<tr>
+<td><code>wamp.args</code></td>
+<td>array</td>
+<td>An array of strings that name the properties to extract from the object passed to the data service call that are to be sent as an array of ordered arguments to the remote procedure.</td>
+</tr>
+<tr>
+<td><code>wamp.kargs</code></td>
+<td>array</td>
+<td>An array of strings that name the properties to extract from the object passed to the data service call that are to be sent as part of an object containing keyword arguments to the remote procedure call.</td>
+</tr>
+</tbody>
+</table>
+<p>**Example WAMP properties</p>
+<pre><code class="lang-json">&quot;wamp&quot;: {
+   &quot;rpc&quot;: &quot;f.some.rpc.endpoint&quot;,
+   &quot;args&quot;: [&quot;someData&quot;],
+   &quot;kargs&quot;: [&quot;moreData&quot;]
+}
+</code></pre>
+<h4 id="sqlite-protocol">SQLite Protocol</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sqlite.query</code></td>
+<td>string</td>
+<td>Defines the SQL query that the data service should execute.</td>
+</tr>
+<tr>
+<td><code>args</code></td>
+<td>array</td>
+<td>An array of strings that name the properties to extract from the object passed to the data service call that are to be sent as part of the query.</td>
+</tr>
+</tbody>
+</table>
+<p>** Example SQLite properties</p>
+<pre><code class="lang-json">&quot;sqlite&quot;: {
+   &quot;query&quot;: &quot;INSERT INTO EXAMPLE_ROUTES (aCol, bCol) VALUES (?,?);&quot;
+   &quot;args&quot;: [&quot;someData&quot;, &quot;moreData&quot;]
+}
+</code></pre>
+<h2 id="example-route">Example Route</h2>
+<p>Below is an example routes file that you may copy and modify to include in your
+application.</p>
+<pre><code class="lang-json">{
+ &quot;routes&quot;: {
+   &quot;uniquelyNamedExample&quot;: {
+     &quot;return&quot;: &quot;object&quot;,
+     &quot;rest&quot;: {
+       &quot;url&quot;: &quot;/some/endpoint/url&quot;,
+       &quot;type&quot;: &quot;POST&quot;,
+       &quot;params&quot;: [&quot;someData&quot;],
+       &quot;body&quot;: [&quot;moreData&quot;]
+     },
+     &quot;wamp&quot;: {
+       &quot;rpc&quot;: &quot;f.some.rpc.endpoint&quot;,
+       &quot;args&quot;: [&quot;someData&quot;],
+       &quot;kargs&quot;: [&quot;moreData&quot;]
+     },
+     &quot;sqlite&quot;: {
+       &quot;query&quot;: &quot;INSERT INTO EXAMPLE_ROUTES (aCol, bCol) VALUES (?,?);&quot;
+       &quot;args&quot;: [&quot;someData&quot;, &quot;moreData&quot;]
+     }
+   }
+ }
+}
+</code></pre>
+
+</section>
+
+
+
+
+
+
+
+

@@ -1,0 +1,341 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_classificationbar">blt_classificationbar</a>
+    <span class="api-header-divider">/</span>
+    bltClassificationBar
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>The bltClassificationBar component provides a simple, standardized way to add a DoD standards compliant
+classification label to pages/content in your application. The levels supported by this component are:
+<strong>Unclassified</strong>, <strong>Confidential</strong>, <strong>Secret</strong>, and <strong>Top Secret</strong>.</p>
+<p>To use this component, simply include the component element as the first element in your main html. (This
+element can be included anywhere in your application where you&#39;d like the classification bar to appear, but
+standard practice is to show it at the top of the main application page.)</p>
+<p>To define the classification level, provide one of the valid levels in the <code>data-classification</code> attribute.</p>
+<p>To define the verbosity of the classification label, assign a value to the <code>data-verbosity</code> attribute. A value of
+0 will result in only the specified classification label being displayed: &quot;UNCLASSIFIED&quot;. A level of 1 will
+increase verbosity to: &quot;Highest Possible Classification: UNCLASSIFIED&quot;. A level of 2 will increase verbosity
+further to: &quot;This page contains dynamic content - Highest Possible Classification: UNCLASSIFIED&quot;.</p>
+<p>To further customize the presentation of this text, you can use the <code>data-custom-text</code> attribute. This attribute
+accepts free text content which will be displayed in place of the default messaging. The only requirement is that
+the text contain at least one reference to the classification level specified in <code>data-classification</code>.</p>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+<section class="api-params edge-top">
+  
+  <h2>Attributes</h2>
+  
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-classification</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>Indicates the classification level of the content on the page being labeled.
+Valid values include &quot;unclassified&quot;, &quot;confidential&quot;, &quot;secret&quot;, and &quot;top secret&quot;. (Case insensitive)</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-verbosity</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Defines the verbosity with which to describe the specified classification level.
+Valid values are 0-2 with 0 being least verbose and 2 being most verbose.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-custom-text</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>This attribute can be used to specify custom messaging for the classification
+bar classification label. Any text defined here will replace the standard verbosity based label. The only
+requirement is that the standard verbosity level 0 label is contained somewhere in the custom text.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Examples</h2>
+  <div class="api-example">
+    <p><caption>Unclassified classification bar with default verbosity level label &quot;UNCLASSIFIED&quot;</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;blt-classificationbar data-classification=&quot;unclassified&quot;&gt;&lt;/blt-classificationbar&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <blt-classificationbar data-classification="unclassified"></blt-classificationbar>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Secret classification bar with label &quot;This page contains dynamic content -
+Highest Possible Classification: SECRET&quot;</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;blt-classificationbar data-classification=&quot;secret&quot;&#10;                       data-verbosity=&quot;2&quot;&gt;&#10;&lt;/blt-classificationbar&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <blt-classificationbar data-classification="secret"
+                           data-verbosity="2">
+    </blt-classificationbar>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Top Secret classification bar with VALID usage of custom text label &quot;CLASSIFICATION:
+TOP SECRET&quot;</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;blt-classificationbar data-classification=&quot;topsecret&quot;&#10;                       data-custom-text=&quot;CLASSIFICATION: TOP SECRET&quot;&gt;&#10;&lt;/blt-classificationbar&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <blt-classificationbar data-classification="topsecret"
+                           data-custom-text="CLASSIFICATION: TOP SECRET">
+    </blt-classificationbar>
+ 
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>INVALID custom text label &quot;Content Classification: UNCLASSED&quot; on unclassified classification
+bar. (Custom label <strong>MUST</strong> contain the word &quot;UNCLASSIFIED&quot;)</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;blt-classificationbar data-classification=&quot;unclassified&quot;&#10;                       data-custom-text=&quot;Content Classification: UNCLASSED&quot;&gt;&#10;&lt;/blt-classificationbar&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

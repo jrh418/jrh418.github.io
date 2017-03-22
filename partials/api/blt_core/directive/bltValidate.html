@@ -1,0 +1,125 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_core">blt_core</a>
+    <span class="api-header-divider">/</span>
+    bltValidate
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>Adds custom validators onto form controls. To add a custom validator, add a validator object
+in your controller and pass as the value of the directive. Your validation function will be added to the
+ngModelController async or sync validators depending on the validator type. Angular will run the validator in
+addition to its built-in validators on form controls. For more information on custom Angular validators, see their
+<a href="https://docs.angularjs.org/api/ng/type/ngModel.NgModelController">documentation</a>.</p>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Example</h2>
+  <div class="api-example">
+    <p>
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;BltValidateCtrl&quot;, function(){&#10;    var ctrl = this;&#10;    ctrl.customValidator = {&#10;      name: &#39;test&#39;, // The name of your custom validator object&#10;      type: &#39;sync&#39;, // The type of validator: async or sync. See the Angular docs for more information.&#10;      msg: &quot;We&#39;re looking for &#39;Test&#39;.&quot;, // The error message if invalid&#10;      validationFn: function(modelValue, viewValue){ // The function to run to determine validity&#10;        if( viewValue === &#39;Test&#39; ){&#10;          return true;&#10;        } else {&#10;          return false;&#10;        }&#10;      }&#10;    };&#10;  });</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div ng-controller=&quot;BltValidateCtrl as Example&quot;&gt;&#10;  &lt;form class=&quot;form&quot; name=&quot;myForm&quot; novalidate&gt;&#10;      &lt;blt-textfield data-name=&quot;validationTest&quot;&#10;                     data-label=&quot;Validation Test&quot;&#10;                     data-model=&quot;Example.myForm.validationTest&quot;&#10;                     data-type=&quot;text&quot;&#10;                     data-required=&quot;true&quot;&#10;                     data-validate=&quot;Example.customValidator&quot;&gt;&#10;      &lt;/blt-textfield&gt;&#10;  &lt;/form&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <div ng-controller="BltValidateCtrl as Example">
+      <form class="form" name="myForm" novalidate>
+          <blt-textfield data-name="validationTest"
+                         data-label="Validation Test"
+                         data-model="Example.myForm.validationTest"
+                         data-type="text"
+                         data-required="true"
+                         data-validate="Example.customValidator">
+          </blt-textfield>
+      </form>
+    </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

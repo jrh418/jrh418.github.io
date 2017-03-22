@@ -1,0 +1,667 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_panel">blt_panel</a>
+    <span class="api-header-divider">/</span>
+    bltPanel
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+    <span class="tag-since">since 1.0.0</span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>The bltPanel component is used for displaying menus, forms, small tables, and related content.
+Panels consist of two auto-generated elements: <code>.panel-overlay</code> and <code>.panel</code>. The <code>.panel-overlay</code> fades
+in and covers and darkens the application window when the panel is open. The <code>.panel</code> slides in from the
+right, top, left, or bottom. The presentation of the panel can be customized through the attributes,
+class elements, and modifiers supported on the component.</p>
+<div class="note-tip">
+<strong>Best Practice</strong> Keep the HTML template of your panel in an HTML partial file and load into the
+<code>.panel-content</code> element using <a href="https://docs.angularjs.org/api/ng/directive/ngInclude">ng-include</a>.
+</div>
+
+<p>You may optionally assign a controller for your panel on the <code>.panel-content</code> element as well.</p>
+<div class="note-tip">
+<strong>Best Practice</strong> Place your panel as a direct child of the <code>main.template.html</code> and give the panel its own controller.
+</div>
+</section>
+
+
+
+
+
+
+
+
+<section class="api-dependencies edge-top">
+  <h2 id="dependencies">Dependencies</h2>
+  <ul class="api-dependencies-list">
+    
+    <li class="api-dependencies-item"><a href="api/blt_core/service/BltApi"><code>BltApi</code></a></li>
+    
+    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$timeout">$timeout</a></li>
+    
+  </ul>
+</section>
+
+
+
+
+  
+  
+  
+<section class="api-params edge-top">
+  
+  <h2>Attributes</h2>
+  
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>id</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>Required in order for you to open and close the panel using the <a href="api/blt_core/service/BltApi"><code>BltApi</code></a> pub/sub methods.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-position</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>You can set the position of your panel. Valid values are: <code>right</code>, <code>left</code>, <code>top</code>, and <code>bottom</code>.</p>
+
+        <p class="font-caption"><strong>default:</strong> right</p>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-fixed</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>If the panel is nested inside a <a href="api/blt_view/directive/bltView"><code>bltView</code></a>, set to true to expand panel to the full height (or width if position is top or bottom) of the application window. The panel expands to the constraints of its parent.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+<section class="api-params edge-top">
+  <h2>CSS Classes</h2>
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>panel-content</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>The element that contains your code for the panel. Add this inside the <code>blt-panel</code> component opening tag and closing tags. Use <a href="https://docs.angularjs.org/api/ng/directive/ngInclude">ng-include</a> to load the rest of your panel content from an HTML partial. Use on an HTML <code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>, or <code>&lt;form&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>panel-body</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>The main content of the panel. The <code>.panel-body</code> does not have padding by default. To add padding, use the <code>.panel-wrapper</code> modifier. Should be used on the HTML <code>&lt;div&gt;</code> or <code>&lt;section&gt;</code> tags.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>panel-wrapper</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The <code>.panel-body</code> has no padding by default as most components to be placed in a panel (such as forms and menus) require no padding. To add padding around text elements, add the <code>.panel-wrapper</code> class to the text element or on a containing <code>&lt;div&gt;</code>.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>panel-header</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The header of the panel containing the <code>.panel-title</code> and optional buttons or icons. Should be used on an HTML <code>&lt;header&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>panel-footer</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Contains action buttons for the panel. Should be used on an HTML <code>&lt;footer&gt;</code> tag. By default, has no top-border. Menus, lists, forms, or tables used in a panel often have a border and another border on the footer would be redundant. If a border is needed, use the <code>.edge-top</code> utility class.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>panel-title</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The title of the panel. Must be a child of the <code>.panel-header</code> element and should be used on an HTML <code>&lt;h2&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>panel-heading</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>A heading element for sectioning content in the <code>.panel-body</code>. Should be used on an HTML <code>&lt;h3&gt;</code> tag. Add a <code>.panel-wrapper</code> class on the element to add padding around the heading unless the <code>.panel-body</code> already has <code>.panel-wrapper</code> on it.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>panel-text</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Default text for the panel. Use this on any text content inside the <code>.panel-body</code>. Should be used on the HTML <code>&lt;p&gt;</code> tag. If there is no <code>.panel-wrapper</code> on the <code>.panel-body</code>, use the <code>.panel-wrapper</code> class on the text to add padding.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>panel-divider</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>A thick horizontal border for sectioning <code>.panel-body</code> content. Only use if not using a <code>.panel-heading</code>. Should be used on an HTML <code>&lt;hr&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>panel-btn-text</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Default text button for panel secondary actions. Should be used on the HTML <code>&lt;button&gt;</code> tag. For primary actions use <code>.panel-btn-text-submit</code>.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>panel-btn-icon</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Icon button for panels, most often used in the <code>.panel-body</code>. Should be used on the HTML <code>&lt;button&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>panel-btn-solid</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Default solid button for panel secondary actions. Should only be used in the <code>.panel-body</code>. Should be used on the HTML <code>&lt;button&gt;</code> tag. For primary actions, use <code>.panel-btn-solid-submit</code>.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Examples</h2>
+  <div class="api-example">
+    <p><caption>To use the Panel component in your ngBoltJS application, include a
+<code>blt-panel</code> element in an HTML partial of your application. Most of the time, you will want to keep the markup
+of your <code>.panel-content</code> in a separate file and load it as a partial. This is easily done using
+<a href="https://docs.angularjs.org/api/ng/directive/ngInclude">ng-include</a> on the <code>.panel-content element</code>.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;blt-panel id=&quot;myPanel&quot; data-position=&quot;right&quot;&gt;&#10;  &lt;div class=&quot;panel-content&quot;&#10;       ng-include=&quot;&#39;partials/module/my-panel.template.html&#39;&quot;&#10;       ng-controller=&quot;PanelController as ctrl&quot;&gt;&lt;/div&gt;&#10;&lt;/blt-panel&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>The contents of your panel template: </caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;header class=&quot;panel-header&quot;&gt;&#10;    &lt;h2 class=&quot;panel-title&quot;&gt;Categories&lt;/h2&gt;&#10;&lt;/header&gt;&#10;&lt;div class=&quot;panel-body&quot;&gt;&#10;    &lt;ul class=&quot;menu&quot;&gt; ... &lt;/ul&gt;&#10;&lt;/div&gt;&#10;&lt;footer class=&quot;panel-footer&quot;&gt;&#10;    &lt;button class=&quot;panel-btn-text&quot; blt-close=&quot;&quot;&gt;Cancel&lt;/button&gt;&#10;    &lt;button class=&quot;panel-btn-text-submit&quot; ng-click=&quot;Main.saveCategory()&quot;&gt;Save&lt;/button&gt;&#10;&lt;footer&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>ngBoltJS has a custom directive for easily opening and closing panels and other components.
+Simply pass the id of the panel you&#39;d like to open or close.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;button blt-open=&quot;myPanel&quot;&gt;Open&lt;/button&gt;&#10;&lt;button blt-close=&quot;myPanel&quot;&gt;Close&lt;/button&gt;&#10;&#10;// If the close button is inside the modal component, you do not have to pass the id of the modal.&#10;&lt;footer class=&quot;panel-footer&quot;&gt;&#10;  &lt;button blt-close=&quot;&quot;&gt;Close&lt;/button&gt;&#10;&lt;/footer&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>You may need to do some other work/setup in your code before opening the panel.
+In that case, you can use the pub/sub methods of the <a href="api/blt_core/service/BltApi"><code>BltApi</code></a> to open and close the panel
+instead of the <code>blt-open</code> and <code>blt-close</code> directives. When closing a panel, include any functions to reset data in
+a <a href="https://docs.angularjs.org/api/ng/service/$timeout">$timeout</a> to run after the closing animation of the panel
+and to avoid resetting data and &#39;flashing&#39; the panel content as it animates out.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('js');"
+    >
+  
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&#39;myApp&#39;)&#10;   .controller(&#39;PanelController&#39;, PanelController);&#10;&#10;// NOTE: You must inject the ngBoltJS API service into the controller to open and close panels via the API.&#10;PanelController.$inject = [&#39;BltApi&#39;, &#39;$timeout&#39;];&#10;&#10;function PanelController(bltApi, $timeout) {&#10;  var ctrl = this;&#10;  ctrl.panel = { title: &#39;My Panel&#39;, activeMenu: 1 };&#10;  ctrl.openMyPanel = function(){&#10;    // Do some work here first...&#10;&#10;    // When ready, publish the id of the panel you wish to open&#10;    bltApi.publish(&#39;myPanel&#39;, &#39;open&#39;);&#10;  }&#10;&#10;  ctrl.closeMyPanel = function(){&#10;    // publish the id of the panel you wish to close&#10;    bltApi.publish(&#39;myPanel&#39;, &#39;close&#39;);&#10;&#10;    // reset panel data after the closing animation&#10;    $timeout(function(){&#10;        ctrl.panel.title = &#39;&#39;;&#10;        ctrl.panel.activeMenu = -1;&#10;    }, 350);&#10;  }&#10;}</code></pre>
+  </div>
+  
+
+  
+
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Common Use Cases</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;blt-panel id=&quot;menu&quot; position=&quot;right&quot;&gt;&#10;    &lt;div class=&quot;panel-content&quot;&gt;&#10;        &lt;header class=&quot;panel-header&quot;&gt;&#10;            &lt;h2 class=&quot;panel-title&quot;&gt;Table of Contents&lt;/h2&gt;&#10;        &lt;/header&gt;&#10;        &lt;div class=&quot;panel-body&quot;&gt;&#10;            &lt;p class=&quot;panel-text panel-wrapper&quot;&gt;Some instructions.&lt;/p&gt;&#10;&#10;            &lt;!-- Use a divider to separate blocks of content --&gt;&#10;            &lt;hr class=&quot;panel-divider&quot;&gt;&lt;/hr&gt;&#10;&#10;            &lt;ul class=&quot;menu&quot;&gt; ... &lt;/ul&gt;&#10;&#10;            &lt;!-- You can also use headers to divide sections of content --&gt;&#10;            &lt;h3 class=&quot;panel-heading panel-wrapper&quot;&gt;Chapter 1&lt;/h3&gt;&#10;&#10;            &lt;!-- For content such as menus do not use a wrapper --&gt;&#10;            &lt;ul class=&quot;menu&quot;&gt; ... &lt;/ul&gt;&#10;        &lt;/div&gt;&#10;        &lt;footer class=&quot;panel-footer&quot;&gt;&#10;            &lt;button class=&quot;panel-btn-text&quot; blt-close=&quot;&quot;&gt;Close&lt;/button&gt;&#10;        &lt;/footer&gt;&#10;    &lt;/div&gt;&#10;&lt;/blt-panel&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <blt-panel id="menu" position="right">
+        <div class="panel-content">
+            <header class="panel-header">
+                <h2 class="panel-title">Table of Contents</h2>
+            </header>
+            <div class="panel-body">
+                <p class="panel-text panel-wrapper">Some instructions.</p>
+
+                <!-- Use a divider to separate blocks of content -->
+                <hr class="panel-divider"></hr>
+
+                <ul class="menu"> ... </ul>
+
+                <!-- You can also use headers to divide sections of content -->
+                <h3 class="panel-heading panel-wrapper">Chapter 1</h3>
+
+                <!-- For content such as menus do not use a wrapper -->
+                <ul class="menu"> ... </ul>
+            </div>
+            <footer class="panel-footer">
+                <button class="panel-btn-text" blt-close="">Close</button>
+            </footer>
+        </div>
+    </blt-panel>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>MANUAL SIZING: To customize the width (vertical panels)
+or height (horizontal panels), change the CSS width (or height) property of the
+panel component by using its id in your <code>app.scss</code> file.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('css');"
+    >
+  
+  
+
+  
+
+  
+  <div class="runnable-example-css" ng-show="exCtrl.showExample == 'css'">
+    <pre><code>// Vertical Panels&#10;#myRightPanel{&#10;    .panel{&#10;        width: 12.5rem; //200px&#10;    }&#10;}&#10;&#10;// Horizontal Panels&#10;#myTopPanel{&#10;    .panel{&#10;        min-height: 10rem; //160px&#10;    }&#10;}</code></pre>
+  </div>
+  
+
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>FORMS AND PANELS: You may want to have a small form in a panel.
+In order to utilize default AngularJS functionality of validating and submitting forms,
+you must use the form tag on the <code>.panel-content</code> element.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;blt-panel id=&quot;myFormPanel&quot;&gt;&#10;    &lt;form class=&quot;panel-content&quot; ng-submit=&quot;ctrl.submitMyForm()&quot; novalidate&gt;&#10;        &lt;header class=&quot;panel-header&quot;&gt;&#10;            &lt;h2 class=&quot;panel-title&quot;&gt;Preferences&lt;/h2&gt;&#10;        &lt;/header&gt;&#10;        &lt;div class=&quot;panel-body&quot;&gt;&#10;            &lt;!-- Some Form Controls --&gt;&#10;        &lt;/div&gt;&#10;        &lt;footer class=&quot;panel-footer&quot;&gt;&#10;            &lt;!-- No ng-click needed as form will submit using expression of the ng-submit directive on button click or pressing &#39;Enter&#39; --&gt;&#10;            &lt;button class=&quot;panel-btn-text-submit&quot;&gt;Submit&lt;/button&gt;&#10;        &lt;footer&gt;&#10;    &lt;/form&gt;&#10;&lt;/blt-panel&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

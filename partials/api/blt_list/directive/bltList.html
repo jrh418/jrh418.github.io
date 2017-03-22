@@ -1,0 +1,1204 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_list">blt_list</a>
+    <span class="api-header-divider">/</span>
+    bltList
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+    <span class="tag-since">since 1.0.0</span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>The bltList component is used to display a set of text data in a vertical arrangement with the option
+of performing a few actions on the list item.</p>
+<ul>
+<li>If more than two lines of text are required to display, or images need to be displayed, use the <a href="api/blt_card/directive/bltCard"><code>bltCard</code></a>
+component instead.</li>
+<li>If multiple columns need to be displayed, use the <a href="api/blt_table/directive/bltTable"><code>bltTable</code></a> component.</li>
+</ul>
+<p>The presentation of the list options can be customized by using the class elements and modifiers supported by the
+component. To use the bltList component in your ngBoltJS application, include the relevant class elements inside
+an HTML <code>&lt;ul&gt;</code> element with a class of &quot;list&quot;.</p>
+<div class="note-tip">
+<strong>Best Practice</strong> Use <a href="https://docs.angularjs.org/api/ng/directive/ngRepeat">ng-repeat</a> to iterate over
+data-sets.
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+<section class="api-params edge-top">
+  <h2>CSS Classes</h2>
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>The main containing block. Should be placed on an HTML <code>&lt;ul&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-row</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>A wrapper element for a list item. Contains the <code>.list-tile</code> element and, optionally, a <code>.list-inner</code> if the list is an accordion list. Must be a direct child of the <code>.list</code> element. Should be placed on an HTML <code>&lt;li&gt;</code> tag. Can be modified by the <code>.list-pending</code> modifier.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-tile</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>A wrapper element for the content and actions of a list item. Must be a direct child of the <code>.list-row</code> element and should be used on a HTML <code>&lt;div&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-content</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>The text content of a list item that expands to fill the available width of its parent and stacks block content vertically. Must be a direct child of the <code>.list-tile</code> element and should be used on an HTML <code>&lt;div&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-title</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The title of a list item. Use an ng-click directive to select or open the list item by clicking the title. Should be used on an HTML <code>&lt;h2&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-text</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The default text of a list item. Should be used on an HTML <code>&lt;p&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-caption</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Small text on a list item. Can be used on an HTML <code>&lt;p&gt;</code> tag as its own line or on a <code>&lt;span&gt;</code> tag inside a <code>.list-text</code> element.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-tag</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Use to add a simple tag to the list item text. Should be used on an HTML <code>&lt;span&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-tag-solid</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Use to add a tag with background color to the list item text. Should be used on an HTML <code>&lt;span&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-actions</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>A container for list actions that displays actions in a row and will shrink to the width of its content. You can add as many actions as you like, but on smaller screens you may want to use the <code>*-vertical</code> modifier and arrange the actions vertically. Must be a direct child of the <code>.list-tile</code> and should be used on an HTML <code>&lt;div&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-actions-vertical</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The same as a <code>.list-actions</code> element except that actions are stacked vertically.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-btn-icon</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>An icon button for triggering an action on data bound to a list item. Should be used on an HTML <code>&lt;button&gt;</code> tag and must be a child of the <code>.list-actions</code> element.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-btn-text</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>A text button for triggering a list action. Should be used on an HTML <code>&lt;button&gt;</code> tag and must be a child of the <code>.list-actions</code> element.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-pending-msg</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>A pending message with loading spinner that takes the full width of the <code>.list-row</code>. Hidden by default, it is made visible when <code>.list-pending</code> is active. Must be a direct child of a <code>.list-row</code> element and a sibling of a <code>.list-tile</code> element. Should be used on a HTML <code>&lt;p&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-toggle</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Use on the outer list item to toggle an inner list item on an accordion list. Use in combination with a <code>.list-title</code> element and optionally include a <code>.fa-caret-down</code> as a child (see example).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-inner</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>A sub-list in an accordion list. Must be a direct child of a <code>.list-row</code> element. Can be used on an HTML <code>&lt;ul&gt;</code> or <code>&lt;div&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-collapse</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Remove padding around and between list items. This is a best practice when the list will be displayed in a modal or panel or on smaller screens. Must be used on the <code>.list</code> element.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-pending</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Hides the list item content and displays the list pending message instead. Must be used on the <code>.list-row</code> element and requires the <code>.list-pending-msg</code> as a child. Use ng-class to dynamically set the class (see example).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-link</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Use on a span of list item text to indicate a clickable item. Should use on an HTML <code>&lt;span&gt;</code> tag and should be the child of the <code>.list-text</code> element.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-open</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Shows the inner list on an accordion list. Must be used on the <code>.list</code> element and requires the <code>.list-inner</code> and <code>.list-toggle</code> elements as children. Use ng-class to dynamically set the class (see example).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-actions-secondary</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Add to a <code>.list-actions</code> element to hide the actions off screen and slide in when triggered by another action. This feature is useful on small screens. Requires the use of <code>list-actions-secondary-show</code> to activate (see example).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-actions-secondary-`bp`-`dir`</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p><code>list-actions-secondary</code> with media query support for various screen sizes (see example) where <code>bp</code> is the breakpoint(sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>list-actions-secondary-show</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Toggle <code>list-actions-secondary</code>.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Examples</h2>
+  <div class="api-example">
+    <p><caption>Basic Usage</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;ListExCtrl&quot;, function(){&#10;    var ctrl = this;&#10;    ctrl.listItems = [&quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot;, &quot;Item 5&quot;];&#10;  });</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;ul class=&quot;list&quot; ng-controller=&quot;ListExCtrl as ctrl&quot;&gt;&#10;  &lt;li class=&quot;list-row&quot; ng-repeat=&quot;item in ctrl.listItems&quot;&gt;&#10;    &lt;div class=&quot;list-tile&quot;&gt;&#10;      &lt;div class=&quot;list-content&quot;&gt;&#10;        &lt;h2 class=&quot;list-title&quot; ng-click=&quot;ctrl.selectItem(item)&quot;&gt;{{item}} Title&lt;/h2&gt;&#10;        &lt;p class=&quot;list-text&quot;&gt;{{item}} Text&lt;/p&gt;&#10;      &lt;/div&gt;&#10;      &lt;div class=&quot;list-actions&quot;&gt;&#10;        &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;ctrl.approveItem(item)&quot;&gt;&lt;span class=&quot;fa fa-check&quot;&gt;&lt;/span&gt;&lt;/button&gt;&#10;        &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;ctrl.deleteItem(item)&quot;&gt;&lt;span class=&quot;fa fa-times&quot;&gt;&lt;/span&gt;&lt;/button&gt;&#10;      &lt;/div&gt;&#10;    &lt;/div&gt;&#10;  &lt;/li&gt;&#10;&lt;/ul&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <ul class="list" ng-controller="ListExCtrl as ctrl">
+      <li class="list-row" ng-repeat="item in ctrl.listItems">
+        <div class="list-tile">
+          <div class="list-content">
+            <h2 class="list-title" ng-click="ctrl.selectItem(item)">{{item}} Title</h2>
+            <p class="list-text">{{item}} Text</p>
+          </div>
+          <div class="list-actions">
+            <button class="list-btn-icon" ng-click="ctrl.approveItem(item)"><span class="fa fa-check"></span></button>
+            <button class="list-btn-icon" ng-click="ctrl.deleteItem(item)"><span class="fa fa-times"></span></button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption><h3>Common Use Cases</h3></p>
+<p><p>Title, text, caption, and two actions:</p>
+</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;ListExCtrl2a&quot;, function(){&#10;    var ctrl = this; &#10;    ctrl.listItems = [&quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;]; &#10;  });</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;ul class=&quot;list&quot; ng-controller=&quot;ListExCtrl2a as ctrl&quot;&gt;&#10;  &lt;li class=&quot;list-row&quot; ng-repeat=&quot;item in ctrl.listItems&quot;&gt;&#10;    &lt;div class=&quot;list-tile&quot;&gt;&#10;      &lt;div class=&quot;list-content&quot;&gt;&#10;        &lt;h2 class=&quot;list-title&quot;&gt;List {{item}}&lt;/h2&gt;&#10;        &lt;p class=&quot;list-text&quot;&gt;&lt;span class=&quot;list-caption&quot;&gt;timestamp&lt;/span&gt; List item description text&lt;/p&gt;&#10;      &lt;/div&gt;&#10;      &lt;div class=&quot;list-actions&quot;&gt;&#10;        &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;ctrl.approveItem(item.id)&quot;&gt;&lt;span class=&quot;fa fa-check&quot;&gt;&lt;/span&gt;&lt;/button&gt;&#10;        &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;ctrl.deleteItem(item.id)&quot;&gt;&lt;span class=&quot;fa fa-times&quot;&gt;&lt;/span&gt;&lt;/button&gt;&#10;      &lt;/div&gt;&#10;    &lt;/div&gt;&#10;  &lt;/li&gt;&#10; &lt;/ul&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <ul class="list" ng-controller="ListExCtrl2a as ctrl">
+      <li class="list-row" ng-repeat="item in ctrl.listItems">
+        <div class="list-tile">
+          <div class="list-content">
+            <h2 class="list-title">List {{item}}</h2>
+            <p class="list-text"><span class="list-caption">timestamp</span> List item description text</p>
+          </div>
+          <div class="list-actions">
+            <button class="list-btn-icon" ng-click="ctrl.approveItem(item.id)"><span class="fa fa-check"></span></button>
+            <button class="list-btn-icon" ng-click="ctrl.deleteItem(item.id)"><span class="fa fa-times"></span></button>
+          </div>
+        </div>
+      </li>
+     </ul>
+   
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Vertical actions and clickable title:</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;ListExCtrl2b&quot;, function(){&#10;    var ctrl = this; &#10;    ctrl.listItems = [&quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;];&#10;  });</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;ul class=&quot;list&quot; ng-controller=&quot;ListExCtrl2b as ctrl&quot;&gt;&#10;  &lt;li class=&quot;list-row&quot; ng-repeat=&quot;item in ctrl.listItems&quot;&gt;&#10;    &lt;div class=&quot;list-tile&quot;&gt;&#10;      &lt;div class=&quot;list-content&quot;&gt;&#10;        &lt;h2 class=&quot;list-title&quot; ng-click=&quot;ctrl.openItem(item.id)&quot;&gt;List {{item}}&lt;/h2&gt;&#10;        &lt;p class=&quot;list-text&quot;&gt;Longer item description text that may wrap and take up two lines, making the vertical actions a better choice.&lt;/p&gt;&#10;      &lt;/div&gt;&#10;      &lt;div class=&quot;list-actions-vertical&quot;&gt;&#10;        &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;ctrl.approveItem(item.id)&quot;&gt;&lt;span class=&quot;fa fa-check&quot;&gt;&lt;/span&gt;&lt;/button&gt;&#10;        &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;ctrl.deleteItem(item.id)&quot;&gt;&lt;span class=&quot;fa fa-times&quot;&gt;&lt;/span&gt;&lt;/button&gt;&#10;      &lt;/div&gt;&#10;    &lt;/div&gt;&#10;  &lt;/li&gt;&#10;&lt;/ul&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <ul class="list" ng-controller="ListExCtrl2b as ctrl">
+      <li class="list-row" ng-repeat="item in ctrl.listItems">
+        <div class="list-tile">
+          <div class="list-content">
+            <h2 class="list-title" ng-click="ctrl.openItem(item.id)">List {{item}}</h2>
+            <p class="list-text">Longer item description text that may wrap and take up two lines, making the vertical actions a better choice.</p>
+          </div>
+          <div class="list-actions-vertical">
+            <button class="list-btn-icon" ng-click="ctrl.approveItem(item.id)"><span class="fa fa-check"></span></button>
+            <button class="list-btn-icon" ng-click="ctrl.deleteItem(item.id)"><span class="fa fa-times"></span></button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Todo list toggle with a link in the text and tags:</caption>
+  
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;ListExCtrl2c&quot;, function(){&#10;    var ctrl = this; &#10;    ctrl.listItems = [{id: &quot;Item 1&quot;, done: false}, {id: &quot;Item 2&quot;, done: false}, {id: &quot;Item 3&quot;, done: false}];&#10;  });</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>   &lt;ul class=&quot;list&quot; ng-controller=&quot;ListExCtrl2c as ctrl&quot;&gt;&#10;  &lt;li class=&quot;list-row&quot; ng-repeat=&quot;item in ctrl.listItems&quot;&gt;&#10;    &lt;div class=&quot;list-tile&quot;&gt;&#10;      &lt;div class=&quot;list-actions-vertical&quot;&gt;&#10;        &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;item.done = true;&quot;&gt;&#10;          &lt;span class=&quot;ng-class: item.done ? &#39;fa fa-circle&#39; : &#39;fa fa-circle-o&#39;;&quot;&gt;&lt;/span&gt;&#10;        &lt;/button&gt;&#10;      &lt;/div&gt;&#10;      &lt;div class=&quot;list-content&quot;&gt;&#10;        &lt;p class=&quot;list-text&quot;&gt;This list item contains just a small blurb of text with a contextual &lt;a class=&quot;list-link&quot; ng-click=&quot;ctrl.openLink()&quot;&gt;link&lt;/a&gt; to open a small modal window.&lt;/p&gt;&#10;        &lt;span class=&quot;list-tag&quot;&gt;Project1 &lt;/span&gt; &lt;span class=&quot;list-tag&quot;&gt;User Name&lt;/span&gt;&#10;      &lt;/div&gt;&#10;    &lt;/div&gt;&#10;  &lt;/li&gt;&#10;&lt;/ul&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+       <ul class="list" ng-controller="ListExCtrl2c as ctrl">
+      <li class="list-row" ng-repeat="item in ctrl.listItems">
+        <div class="list-tile">
+          <div class="list-actions-vertical">
+            <button class="list-btn-icon" ng-click="item.done = true;">
+              <span class="ng-class: item.done ? 'fa fa-circle' : 'fa fa-circle-o';"></span>
+            </button>
+          </div>
+          <div class="list-content">
+            <p class="list-text">This list item contains just a small blurb of text with a contextual <a class="list-link" ng-click="ctrl.openLink()">link</a> to open a small modal window.</p>
+            <span class="list-tag">Project1 </span> <span class="list-tag">User Name</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption><h3>Collapsed</h3><p>By default, lists are displayed as horizontal bars with padding and margin separating each bar. As a best
+practice, when a list is contained within a modal or panel, or a smaller screen, collapse the bars and separate
+list items with borders to save screen real-estate.</p></caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;ListExCtrl3&quot;, function(){&#10;    var ctrl = this; &#10;    ctrl.listItems = [&quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot;, &quot;Item 5&quot;];&#10;  });</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;ul class=&quot;list list-collapse&quot; ng-controller=&quot;ListExCtrl3 as ctrl&quot;&gt;&#10;  &lt;li class=&quot;list-row&quot; ng-repeat=&quot;item in ctrl.listItems&quot;&gt;{{item}}&lt;/li&gt;&#10;&lt;/ul&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <ul class="list list-collapse" ng-controller="ListExCtrl3 as ctrl">
+      <li class="list-row" ng-repeat="item in ctrl.listItems">{{item}}</li>
+    </ul>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption><h3>Pending Status</h3><p>Often when triggering a list item action a background process needs to complete before
+allowing the user to continue. When this happens use the <code>.list-pending</code> modifier to give the user feedback that their requested
+action is processing. Activate the pending class using an expression on the
+<a href="https://docs.angularjs.org/api/ng/directive/ngClass">ng-class</a> directive.</p></caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;ListExCtrl4&quot;, function(){&#10;    var ctrl = this; &#10;    ctrl.listItems = [{id: &quot;Item 1&quot;, pending: false}, {id: &quot;Item 2&quot;, pending: true}, &#10;      {id: &quot;Item 3&quot;, pending: true}];&#10;  });</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;ul class=&quot;list&quot; ng-controller=&quot;ListExCtrl4 as ctrl&quot;&gt;&#10;  &lt;li class=&quot;list-row&quot; ng-repeat=&quot;item in ctrl.listItems&quot; ng-class=&quot;{&#39;list-pending&#39;: item.pending}&quot;&gt;&#10;    &lt;!-- List Content --&gt;&#10;    &lt;div class=&quot;list-tile&quot;&gt;&#10;      &lt;div class=&quot;list-content&quot;&gt;&#10;        &lt;h2 class=&quot;list-title&quot;&gt;{{item.id}}&lt;/h2&gt;&#10;      &lt;/div&gt;&#10;      &lt;div class=&quot;list-actions&quot;&gt;&#10;        &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;ctrl.approveItem(item.id)&quot;&gt;&lt;span class=&quot;fa fa-check&quot;&gt;&lt;/span&gt;&lt;/button&gt;&#10;      &lt;/div&gt;&#10;    &lt;/div&gt;&#10;&#10;    &lt;!-- Pending message --&gt;&#10;    &lt;p class=&quot;list-pending-msg&quot;&gt;Loading Data... &lt;span class=&quot;fa fa-spinner fa-pulse&quot;&gt;&lt;/span&gt;&lt;/p&gt;&#10;  &lt;/li&gt;&#10;&lt;/ul&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <ul class="list" ng-controller="ListExCtrl4 as ctrl">
+      <li class="list-row" ng-repeat="item in ctrl.listItems" ng-class="{'list-pending': item.pending}">
+        <!-- List Content -->
+        <div class="list-tile">
+          <div class="list-content">
+            <h2 class="list-title">{{item.id}}</h2>
+          </div>
+          <div class="list-actions">
+            <button class="list-btn-icon" ng-click="ctrl.approveItem(item.id)"><span class="fa fa-check"></span></button>
+          </div>
+        </div>
+
+        <!-- Pending message -->
+        <p class="list-pending-msg">Loading Data... <span class="fa fa-spinner fa-pulse"></span></p>
+      </li>
+    </ul>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption><h3>Accordion Lists</h3><p>List items can contain sub-lists that are collapsible, creating an accordion list.
+To control the accordion, keep track of the <code>$index</code> of the list item and toggle the <code>.list-open</code> class on the
+respective <code>.list-inner</code>. Opening one list item will close any other open list item.</p></caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;ListExCtrl5&quot;, function(){&#10;    var ctrl = this; &#10;    ctrl.listItems = [&quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot;, &quot;Item 5&quot;];&#10;    ctrl.subItems = [&quot;Sub Item 1&quot;, &quot;Sub Item 2&quot;, &quot;Sub Item 3&quot;];&#10;  });</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;ul class=&quot;list&quot; ng-controller=&quot;ListExCtrl5 as ctrl&quot;&gt;&#10; &lt;li class=&quot;list-row&quot; ng-class=&quot;{&#39;list-open&#39;: ctrl.activeItem == $index}&quot; ng-repeat=&quot;item in ctrl.listItems&quot;&gt;&#10;     &lt;!-- Accordion List Toggle --&gt;&#10;     &lt;div class=&quot;list-tile&quot;&gt;&#10;         &lt;div class=&quot;list-content&quot;&gt;&#10;             &lt;button class=&quot;list-title list-toggle&quot; ng-click=&quot;ctrl.activeItem = $index;&quot;&gt;&#10;                 &lt;span class=&quot;fa fa-caret-down&quot;&gt;&lt;/span&gt;{{item}}&#10;             &lt;/button&gt;&#10;         &lt;/div&gt;&#10;         &lt;!-- Actions are optional on accordion headers and could represent bulk actions for the items sublist of items.--&gt;&#10;         &lt;div class=&quot;list-actions&quot;&gt;&#10;             &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;ctrl.deleteItem(item.id)&quot;&gt;&#10;                 &lt;span class=&quot;fa fa-trash&quot;&gt;&lt;/span&gt;&#10;             &lt;/button&gt;&#10;         &lt;/div&gt;&#10;     &lt;/div&gt;&#10;&#10;     &lt;!-- Accordion Content --&gt;&#10;     &lt;ul class=&quot;list-inner&quot;&gt;&#10;         &lt;li class=&quot;list-row&quot; ng-repeat=&quot;subItem in ctrl.subItems&quot;&gt;&#10;             &lt;div class=&quot;list-tile&quot;&gt;&#10;                 &lt;div class=&quot;list-content&quot;&gt;&#10;                     &lt;h2 class=&quot;list-title&quot;&gt;{{subItem}}&lt;/h2&gt;&#10;                 &lt;/div&gt;&#10;                 &lt;div class=&quot;list-actions&quot;&gt;&#10;                     &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;ctrl.approveItem(subItem.id)&quot;&gt;&#10;                         &lt;span class=&quot;fa fa-check&quot;&gt;&lt;/span&gt;&#10;                     &lt;/button&gt;&#10;                 &lt;/div&gt;&#10;             &lt;/div&gt;&#10;         &lt;/li&gt;&#10;     &lt;/ul&gt;&#10; &lt;/li&gt;&#10;&lt;/ul&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+<ul class="list" ng-controller="ListExCtrl5 as ctrl">
+ <li class="list-row" ng-class="{'list-open': ctrl.activeItem == $index}" ng-repeat="item in ctrl.listItems">
+     <!-- Accordion List Toggle -->
+     <div class="list-tile">
+         <div class="list-content">
+             <button class="list-title list-toggle" ng-click="ctrl.activeItem = $index;">
+                 <span class="fa fa-caret-down"></span>{{item}}
+             </button>
+         </div>
+         <!-- Actions are optional on accordion headers and could represent bulk actions for the items sublist of items.-->
+         <div class="list-actions">
+             <button class="list-btn-icon" ng-click="ctrl.deleteItem(item.id)">
+                 <span class="fa fa-trash"></span>
+             </button>
+         </div>
+     </div>
+
+     <!-- Accordion Content -->
+     <ul class="list-inner">
+         <li class="list-row" ng-repeat="subItem in ctrl.subItems">
+             <div class="list-tile">
+                 <div class="list-content">
+                     <h2 class="list-title">{{subItem}}</h2>
+                 </div>
+                 <div class="list-actions">
+                     <button class="list-btn-icon" ng-click="ctrl.approveItem(subItem.id)">
+                         <span class="fa fa-check"></span>
+                     </button>
+                 </div>
+             </div>
+         </li>
+     </ul>
+ </li>
+</ul>
+
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption><h3>Secondary Actions</h3><p>You can hide multiple list actions with another trigger using
+the <code>list-actions-secondary</code> class</p></caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;ListExCtrl6&quot;, function(){&#10;    var ctrl = this; &#10;    ctrl.listItems = [&quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot;, &quot;Item 5&quot;];&#10;  });</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;ul class=&quot;list&quot; ng-controller=&quot;ListExCtrl6 as ctrl&quot;&gt;&#10;  &lt;li class=&quot;list-row&quot; ng-repeat=&quot;item in ctrl.listItems&quot;&gt;&#10;    &lt;div class=&quot;list-tile&quot;&gt;&#10;        &lt;div class=&quot;list-actions&quot;&gt;&#10;          &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;ctrl.showListActions = true;&quot;&gt;&#10;              &lt;span class=&quot;fa fa-ellipsis-v&quot;&gt;&lt;/span&gt;&#10;             &lt;/button&gt;&#10;            &lt;/div&gt;&#10;            &lt;div class=&quot;list-content&quot;&gt;&#10;               &lt;h2 class=&quot;list-title&quot;&gt;{{item}}&lt;/h2&gt;&#10;      &lt;/div&gt;&#10;             &lt;!-- These actions will slide in from the right over the original list-actions --&gt;&#10;              &lt;div class=&quot;list-actions list-actions-secondary&quot; ng-class=&quot;{&#39;list-actions-secondary-show&#39;: ctrl.showListActions}&quot;&gt;&#10;              &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;ctrl.showListActions = false;&quot;&gt;&#10;               &lt;span class=&quot;fa fa-check&quot;&gt;&lt;/span&gt;&#10;                &lt;/button&gt;&#10;               &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;ctrl.showListActions = false;&quot;&gt;&#10;                 &lt;span class=&quot;fa fa-times&quot;&gt;&lt;/span&gt;&#10;               &lt;/button&gt;&#10;             &lt;/div&gt;&#10;       &lt;/div&gt;&#10;     &lt;/li&gt;&#10;  &lt;/ul&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <ul class="list" ng-controller="ListExCtrl6 as ctrl">
+      <li class="list-row" ng-repeat="item in ctrl.listItems">
+        <div class="list-tile">
+            <div class="list-actions">
+              <button class="list-btn-icon" ng-click="ctrl.showListActions = true;">
+                  <span class="fa fa-ellipsis-v"></span>
+                 </button>
+                </div>
+                <div class="list-content">
+                   <h2 class="list-title">{{item}}</h2>
+          </div>
+                 <!-- These actions will slide in from the right over the original list-actions -->
+                  <div class="list-actions list-actions-secondary" ng-class="{'list-actions-secondary-show': ctrl.showListActions}">
+                  <button class="list-btn-icon" ng-click="ctrl.showListActions = false;">
+                   <span class="fa fa-check"></span>
+                    </button>
+                   <button class="list-btn-icon" ng-click="ctrl.showListActions = false;">
+                     <span class="fa fa-times"></span>
+                   </button>
+                 </div>
+           </div>
+         </li>
+      </ul>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Secondary actions with media queries. See the <a href="guides/breakpoints">Media Queries Guide</a> for more information using media queries.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;ListExCtrl7&quot;, function(){&#10;    var ctrl = this; &#10;    ctrl.listItems = [&quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot;, &quot;Item 5&quot;];&#10;  });</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;ul class=&quot;list&quot; ng-controller=&quot;ListExCtrl7 as ctrl&quot;&gt;&#10;  &lt;li class=&quot;list-row&quot; ng-repeat=&quot;item in ctrl.listItems&quot;&gt;&#10;    &lt;div class=&quot;list-tile&quot;&gt;&#10;        &lt;!-- These actions will hide only on small screens. --&gt;&#10;         &lt;div class=&quot;list-actions hide-sm-only&quot;&gt;&#10;           &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;ctrl.showListActions = true;&quot;&gt;&#10;               &lt;span class=&quot;fa fa-ellipsis-v&quot;&gt;&lt;/span&gt;&#10;              &lt;/button&gt;&#10;             &lt;/div&gt;&#10;             &lt;div class=&quot;list-content&quot;&gt;&#10;              &lt;h2 class=&quot;list-title&quot;&gt;{{item}}&lt;/h2&gt;&#10;        &lt;/div&gt;&#10;           &lt;!-- These actions will slide in from the right over the original list-actions only on small screens (less than 640px wide).&#10;            On other screens they will be visible by default --&gt;&#10;             &lt;div class=&quot;list-actions list-actions-secondary&quot; ng-class=&quot;{&#39;list-actions-secondary-show&#39;: ctrl.showListActions}&quot;&gt;&#10;             &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;ctrl.showListActions = false;&quot;&gt;&#10;              &lt;span class=&quot;fa fa-check&quot;&gt;&lt;/span&gt;&#10;               &lt;/button&gt;&#10;               &lt;button class=&quot;list-btn-icon&quot; ng-click=&quot;ctrl.showListActions = false;&quot;&gt;&#10;               &lt;span class=&quot;fa fa-times&quot;&gt;&lt;/span&gt;&#10;               &lt;/button&gt;&#10;             &lt;/div&gt;&#10;         &lt;/div&gt;&#10;      &lt;/li&gt;&#10;  &lt;/ul&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <ul class="list" ng-controller="ListExCtrl7 as ctrl">
+      <li class="list-row" ng-repeat="item in ctrl.listItems">
+        <div class="list-tile">
+            <!-- These actions will hide only on small screens. -->
+             <div class="list-actions hide-sm-only">
+               <button class="list-btn-icon" ng-click="ctrl.showListActions = true;">
+                   <span class="fa fa-ellipsis-v"></span>
+                  </button>
+                 </div>
+                 <div class="list-content">
+                  <h2 class="list-title">{{item}}</h2>
+            </div>
+               <!-- These actions will slide in from the right over the original list-actions only on small screens (less than 640px wide).
+                On other screens they will be visible by default -->
+                 <div class="list-actions list-actions-secondary" ng-class="{'list-actions-secondary-show': ctrl.showListActions}">
+                 <button class="list-btn-icon" ng-click="ctrl.showListActions = false;">
+                  <span class="fa fa-check"></span>
+                   </button>
+                   <button class="list-btn-icon" ng-click="ctrl.showListActions = false;">
+                   <span class="fa fa-times"></span>
+                   </button>
+                 </div>
+             </div>
+          </li>
+      </ul>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

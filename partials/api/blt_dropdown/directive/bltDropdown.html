@@ -1,0 +1,495 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_dropdown">blt_dropdown</a>
+    <span class="api-header-divider">/</span>
+    bltDropdown
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>The bltDropdown component is used to collect input from the user from a list of known values. This
+is an extension of the HTML <code>&lt;select&gt;</code> element. The presentation of the dropdown options can be customized
+through the attributes supported on this directive.</p>
+<p>To use the bltDropdown component in your ngBoltJS application, you simply need to include a <code>blt-dropdown</code> element
+inside of a form in your application.</p>
+<div class="note-tip">
+<strong>Best Practice</strong> The <code>data-</code> prefix is not required for ngBoltJS attributes, but is highly recommended to prevent
+conflicts with standard HTML attributes.
+</div>
+</section>
+
+
+
+
+
+
+
+
+<section class="api-dependencies edge-top">
+  <h2 id="dependencies">Dependencies</h2>
+  <ul class="api-dependencies-list">
+    
+    <li class="api-dependencies-item"><a href="api/blt_core/service/BltApi"><code>BltApi</code></a></li>
+    
+    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$timeout">$timeout</a></li>
+    
+    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope">$rootScope.Scope</a></li>
+    
+  </ul>
+</section>
+
+
+
+
+  
+  
+  
+<section class="api-params edge-top">
+  
+  <h2>Attributes</h2>
+  
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-label</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>This attribute specifies the label for this component.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-model</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>This attribute is used to bind the value of this component to a property in the
+     containing scope. Functionality is based on the Angular ngModel directive.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-name</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>This attribute indicates the name of this form element and will be used during form
+     traversal by the ngBoltJS framework.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-options</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>This attribute is used to bind to a list of options that will be presented to the
+     user. This can either be an array of options or a model of value/label pairs to use as options.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-autofocus</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-boolean">boolean</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Indicates whether or not this field should autofocus on page load.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-change</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>This attribute is used to bind an expression in the containing scope that will
+     be invoked any time the value of this component changes. Functionality is based on the Angular ngChange
+     directive.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-required</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-boolean">boolean</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Indicates whether or not this field is required.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-type</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Specifies the dropdown type (dropdown, select, or searchable).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-tabindex</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-value">value</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Specifies the tab order of an element.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-disabled</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-value">value</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Disables the field. Any value set in this attribute will cause the field to be
+disabled.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Examples</h2>
+  <div class="api-example">
+    <p><caption>Standard select dropdown. The user will be presented with the options contained in the
+<code>arrayOfOptions</code>.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;DropdownExampleCtrl&quot;, function(){&#10;    var ctrl = this;&#10;    ctrl.arrayOfOptions = [&quot;Value 1&quot;, &quot;Value 2&quot;, &quot;Value 3&quot;];&#10;  });</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div ng-controller=&quot;DropdownExampleCtrl as ctrl&quot;&gt;&#10;  &lt;form name=&quot;ctrl.myForm&quot; class=&quot;form&quot; novalidate&gt;&#10;    &lt;blt-dropdown data-type=&quot;select&quot;&#10;                  data-name=&quot;dropdown1&quot;&#10;                  data-label=&quot;Select a Value&quot;&#10;                  data-options=&quot;ctrl.arrayOfOptions&quot;&#10;                  data-model=&quot;ctrl.dropdown1&quot;&gt;&#10;    &lt;/blt-dropdown&gt;&#10;  &lt;/form&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <div ng-controller="DropdownExampleCtrl as ctrl">
+      <form name="ctrl.myForm" class="form" novalidate>
+        <blt-dropdown data-type="select"
+                      data-name="dropdown1"
+                      data-label="Select a Value"
+                      data-options="ctrl.arrayOfOptions"
+                      data-model="ctrl.dropdown1">
+        </blt-dropdown>
+      </form>
+    </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Searchable dropdown. The user will be presented with the options contained in the <code>arrayOfOptions</code>.
+  When the list of options is opened for selection, the user will be able to type into the input field to
+  filter available options.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;DropdownExampleCtrl2&quot;, function(){&#10;    var ctrl = this;&#10;    ctrl.arrayOfOptions = [&quot;Value 1&quot;, &quot;Value 2&quot;, &quot;Value 3&quot;];&#10;  });</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div ng-controller=&quot;DropdownExampleCtrl2 as ctrl&quot;&gt;&#10;  &lt;form name=&quot;ctrl.myForm&quot; class=&quot;form&quot; novalidate&gt;&#10;    &lt;blt-dropdown data-type=&quot;searchable&quot;&#10;                  data-name=&quot;dropdown2&quot;&#10;                  data-label=&quot;Select a Value&quot;&#10;                  data-options=&quot;ctrl.arrayOfOptions&quot;&#10;                  data-model=&quot;ctrl.dropdown2&quot;&gt;&#10;    &lt;/blt-dropdown&gt;&#10;  &lt;/form&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <div ng-controller="DropdownExampleCtrl2 as ctrl">
+      <form name="ctrl.myForm" class="form" novalidate>
+        <blt-dropdown data-type="searchable"
+                      data-name="dropdown2"
+                      data-label="Select a Value"
+                      data-options="ctrl.arrayOfOptions"
+                      data-model="ctrl.dropdown2">
+        </blt-dropdown>
+      </form>
+    </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Dropdown with &quot;dropdown&quot; style. This will present the options contained in the <code>optionMap</code> as a
+  clickable dropdown link. The presentation is similar to that of a dropdown menu.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;DropdownExampleCtrl3&quot;, function(){&#10;    var ctrl = this;&#10;    ctrl.optionMap = {&#10;      value1: &quot;Value One&quot;,&#10;      value2: &quot;Value Two&quot;,&#10;      value3: &quot;Value Three&quot;&#10;    }&#10;  });</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div ng-controller=&quot;DropdownExampleCtrl3 as ctrl&quot;&gt;&#10;  &lt;form name=&quot;ctrl.myForm&quot; class=&quot;form&quot; novalidate&gt;&#10;    &lt;blt-dropdown data-type=&quot;dropdown&quot;&#10;            data-name=&quot;dropdown3&quot;&#10;            data-label=&quot;Select a Value&quot;&#10;            data-options=&quot;ctrl.optionMap&quot;&#10;            data-model=&quot;ctrl.select3&quot;&gt;&#10;    &lt;/blt-dropdown&gt;&#10;  &lt;/form&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <div ng-controller="DropdownExampleCtrl3 as ctrl">
+      <form name="ctrl.myForm" class="form" novalidate>
+        <blt-dropdown data-type="dropdown"
+                data-name="dropdown3"
+                data-label="Select a Value"
+                data-options="ctrl.optionMap"
+                data-model="ctrl.select3">
+        </blt-dropdown>
+      </form>
+    </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

@@ -1,0 +1,599 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_card">blt_card</a>
+    <span class="api-header-divider">/</span>
+    bltCard
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>The bltCard component is used to display content of similar or varying data types and serves as the entry
+point to more detailed information related to that content.</p>
+<p>They are also useful for displaying content whose size
+and/or actions vary, such as photos, videos, and other media. Use cards when displaying content that:</p>
+<ul>
+<li>as a collection, comprises multiple data types (for example, the card collection consists of images, videos, and text)</li>
+<li>does not require direct comparison (a user is not directly comparing data between cards)</li>
+<li>supports content of highly variable length, such as comments</li>
+<li>would otherwise be in a list but needs to display more than two lines of text</li>
+</ul>
+<p>The presentation of the card options can be customized by using the class elements and modifiers supported by the
+component.</p>
+<div class="note-tip"><strong>Best Practice:</strong> Use <a href="https://docs.angularjs.org/api/ng/directive/ngRepeat">ng-repeat</a>
+to iterate over data sets.</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <section class="api-usage edge-top">
+    <h2 id="usage">Basic Usage</h2>
+    
+    <div class="note-info">
+      <p><strong>NOTE</strong>Restrict directive to an HTML  Element tag Element tag or Attribute Attribute.</p>
+    </div>
+    
+    <div class="usage">
+      <p><caption><h3>Usage</h3></p>
+<p><p>To use the Card component in your ngBoltJS application, include the relevant classes inside an HTML
+<code>&lt;div&gt;</code> element with a class of &quot;card&quot;.</p></caption></p>
+<pre><code class="lang-html">&lt;div class=&quot;card&quot; ng-repeat=&quot;item in Main.cardData&quot;&gt;
+    &lt;div class=&quot;card-content&quot;&gt;
+        &lt;div class=&quot;card-primary&quot;&gt;
+            &lt;header class=&quot;card-header&quot;&gt;
+                &lt;h2 class=&quot;card-title&quot;&gt;{{item.title}}&lt;/h2&gt;
+                &lt;p class=&quot;card-caption&quot;&gt;{{item.createdDate}}&lt;/p&gt;
+            &lt;/header&gt;
+            &lt;div class=&quot;card-body&quot;&gt;
+                &lt;p class=&quot;card-text&quot;&gt;{{item.description}}&lt;/p&gt;
+                &lt;hr class=&quot;spacer&quot;&gt;&lt;/hr&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;footer class=&quot;card-footer edge-top&quot;&gt;
+        &lt;div class=&quot;card-actions justify-left&quot;&gt;
+            &lt;button class=&quot;card-btn-icon&quot; ng-click=&quot;Main.favoriteItem(item)&gt;&lt;span class=&quot;fa fa-star&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;card-actions&quot;&gt;
+            &lt;button class=&quot;card-btn-submit&quot; ng-click=&quot;Main.openItem(item)&gt;Open&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;
+</code></pre>
+
+    <div>
+  </section>
+  
+  
+<section class="api-params edge-top">
+  <h2>CSS Classes</h2>
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>The main container block. Should be used on an HTML <code>&lt;div&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-content</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>The wrapper around sections of card content. Must be a direct child of <code>.card</code>
+and should be used on an HTML <code>&lt;div&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-primary</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>The primary content of a card. Could be text, image, video, etc, or a combination
+of multiple content types. You can use <a href="">ngBoltJS Grid</a>
+elements to further divide the layout of the primary content. Must be a direct child of a <code>.card-content</code> element
+and should be used on an HTML <code>&lt;div&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-secondary</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Secondary content of a card such as icons (not actionable). The
+<code>.card-secondary</code> element shrinks to the width of its content and stacks its content vertically. Must be the direct
+child of a <code>.card-content</code> element and should be used on an HTML <code>&lt;div&gt;</code> tag. You can have more than one
+<code>.secondary-content</code>.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-footer</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The footer of a card containing any supported actions. Actions can be grouped
+into left and right justified blocks. Optionally add a top border to the footer by adding the <code>.edge-top</code> utility
+class. Must be a direct child of <code>.card</code> and should be used on an HTML <code>&lt;footer&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-header</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The header element inside a <code>.card-primary</code> element. Must be a direct child of
+<code>.card-primary</code> and should be used on an HTML <code>&lt;header&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-title</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The primary text content of a card. Can be a child of <code>.card-header</code> or
+<code>.card-body</code>. Should be used on an HTML <code>&lt;h2&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-text</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The default text content of a card. Must be a child of <code>.card-body</code> and should
+be used on an HTML <code>&lt;p&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-caption</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Smaller, secondary text content of a card. Can be a child of <code>.card-header</code>
+or <code>.card-body</code>. Should be used on an HTML <code>&lt;p&gt;</code> or <code>&lt;span&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-body</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Contains the bulk of the card content. Must be a child of <code>.card-primary</code> and
+should be used on an HTML <code>&lt;div&gt;</code> tag. Modify with <code>.card-collapse</code> to remove padding around content, for instance
+when displaying images or videos.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-image</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Any image content inside a <code>.card-body</code>. Must be a direct child of
+<code>.card-body</code> and used only one per <code>.card-body</code>. If displaying more than one image, use multiple <code>.card-body</code>
+elements. Must be used on an HTML <code>&lt;img&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-actions</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>A container for card action buttons. Must be a child of <code>.card-footer</code> and
+should be used on an HTML <code>&lt;div&gt;</code> tag. Use more than one <code>.card-actions</code> to group action buttons in the footer.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-btn</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Default text action button for a card. Must be a child of <code>.card-actions</code> and
+should be used on an HTML <code>&lt;button&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-btn-submit</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Primary text action button for a card. Must be a child of <code>.card-actions</code>
+and should be used on an HTML <code>&lt;button&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-btn-icon</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Icon action button for a card. Must be a child of <code>.card-actions</code> and
+should be used on an HTML <code>&lt;button&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-collapse</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Use on <code>.card-body</code> to remove padding around content.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>card-wrapper</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Use on <code>.card-header</code> or <code>.card-secondary</code> to add padding around content.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Example</h2>
+  <div class="api-example">
+    <p><caption>Common Use Cases</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'css'" ng-class="{'tabs-active': exCtrl.showExample == 'css'}">CSS</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-css" ng-show="exCtrl.showExample == 'css'">
+    <pre><code>.card-example-container &gt; .card{&#13;&#10;  min-width: 15rem;&#13;&#10;}&#13;</code></pre>
+  </div>
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div class=&quot;grid-block card-example-container&quot;&gt;&#13;&#10;&lt;!-- Basic Card with Secondary Content --&gt;&#13;&#10;&lt;div class=&quot;card&quot;&gt;&#13;&#10;  &lt;div class=&quot;card-content&quot;&gt;&#13;&#10;    &lt;div class=&quot;card-secondary card-wrapper&quot;&gt;&#13;&#10;      &lt;span class=&quot;font-icon fa fa-file&quot;&gt;&lt;/span&gt;&#13;&#10;    &lt;/div&gt;&#13;&#10;    &lt;div class=&quot;card-primary&quot;&gt;&#13;&#10;      &lt;header class=&quot;card-header&quot;&gt;&#13;&#10;        &lt;h2 class=&quot;card-title&quot;&gt;Basic Card&lt;/h2&gt;&#13;&#10;        &lt;p class=&quot;card-caption&quot;&gt;Card Id#&lt;/p&gt;&#13;&#10;      &lt;/header&gt;&#13;&#10;      &lt;div class=&quot;card-body&quot;&gt;&#13;&#10;        &lt;p class=&quot;card-text&quot;&gt;Some text here&lt;/p&gt;&#13;&#10;        &lt;p class=&quot;card-text&quot;&gt;Some more text here.&lt;/p&gt;&#13;&#10;        &lt;hr class=&quot;spacer&quot;&gt;&lt;/hr&gt;&#13;&#10;      &lt;/div&gt;&#13;&#10;    &lt;/div&gt;&#13;&#10;  &lt;/div&gt;&#13;&#10;  &lt;footer class=&quot;card-footer edge-top&quot;&gt;&#13;&#10;    &lt;div class=&quot;card-actions justify-left&quot;&gt;&#13;&#10;      &lt;button class=&quot;card-btn-icon&quot;&gt;&lt;span class=&quot;fa fa-star&quot;&gt;&lt;/span&gt;&lt;/button&gt;&#13;&#10;    &lt;/div&gt;&#13;&#10;    &lt;div class=&quot;card-actions&quot;&gt;&#13;&#10;      &lt;button class=&quot;card-btn-submit&quot;&gt;Open&lt;/button&gt;&#13;&#10;    &lt;/div&gt;&#13;&#10;  &lt;/footer&gt;&#13;&#10;&lt;/div&gt;&#13;&#10;&#10;&lt;!-- Displaying an image --&gt;&#13;&#10;&lt;div class=&quot;card&quot;&gt;&#13;&#10;  &lt;div class=&quot;card-content&quot;&gt;&#13;&#10;    &lt;div class=&quot;card-primary&quot;&gt;&#13;&#10;      &lt;header class=&quot;card-header card-wrapper&quot;&gt;&#13;&#10;        &lt;h2 class=&quot;card-title&quot;&gt;Image Card&lt;/h2&gt;&#13;&#10;        &lt;p class=&quot;card-caption&quot;&gt;March 20, 2016&lt;/p&gt;&#13;&#10;      &lt;/header&gt;&#13;&#10;      &lt;div class=&quot;card-body card-wrapper&quot;&gt;&#13;&#10;        &lt;img class=&quot;card-image&quot; src=&quot;assets/logo.png&quot;&gt;&#13;&#10;      &lt;/div&gt;&#13;&#10;    &lt;/div&gt;&#13;&#10;  &lt;/div&gt;&#13;&#10;  &lt;footer class=&quot;card-footer edge-top&quot;&gt;&#13;&#10;    &lt;div class=&quot;card-actions justify-left&quot;&gt;&#13;&#10;      &lt;button class=&quot;card-btn-icon&quot;&gt;&lt;span class=&quot;fa fa-star&quot;&gt;&lt;/span&gt;&lt;/button&gt;&#13;&#10;    &lt;/div&gt;&#13;&#10;    &lt;div class=&quot;card-actions&quot;&gt;&#13;&#10;      &lt;button class=&quot;card-btn-submit&quot;&gt;Open&lt;/button&gt;&#13;&#10;    &lt;/div&gt;&#13;&#10;  &lt;/footer&gt;&#13;&#10;&lt;/div&gt;&#13;&#10;&#10;&lt;!-- Display a map --&gt;&#13;&#10;&lt;div class=&quot;card&quot;&gt;&#13;&#10;  &lt;div class=&quot;card-content&quot;&gt;&#13;&#10;    &lt;div class=&quot;card-primary&quot;&gt;&#13;&#10;      &lt;header class=&quot;card-header card-wrapper&quot;&gt;&#13;&#10;        &lt;h2 class=&quot;card-title&quot;&gt;Map Card&lt;/h2&gt;&#13;&#10;        &lt;p class=&quot;card-caption&quot;&gt;State College, Pa&lt;/p&gt;&#13;&#10;      &lt;/header&gt;&#13;&#10;      &lt;div class=&quot;card-body card-collapse&quot;&gt;&#13;&#10;        &lt;!-- replace this image with embed code for map --&gt;&#13;&#10;        &lt;img class=&quot;card-image&quot; src=&quot;assets/map.jpg&quot;&gt;&#13;&#10;      &lt;/div&gt;&#13;&#10;    &lt;/div&gt;&#13;&#10;  &lt;/div&gt;&#13;&#10;  &lt;footer class=&quot;card-footer&quot;&gt;&#13;&#10;    &lt;div class=&quot;card-actions justify-left&quot;&gt;&#13;&#10;      &lt;button class=&quot;card-btn-icon&quot;&gt;&lt;span class=&quot;fa fa-star&quot;&gt;&lt;/span&gt;&lt;/button&gt;&#13;&#10;    &lt;/div&gt;&#13;&#10;    &lt;div class=&quot;card-actions&quot;&gt;&#13;&#10;      &lt;button class=&quot;card-btn-submit&quot;&gt;Open&lt;/button&gt;&#13;&#10;    &lt;/div&gt;&#13;&#10;  &lt;/footer&gt;&#13;&#10;&lt;/div&gt;&#13;&#10;&lt;/div&gt;&#13;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <div class="grid-block card-example-container">
+    <!-- Basic Card with Secondary Content -->
+    <div class="card">
+      <div class="card-content">
+        <div class="card-secondary card-wrapper">
+          <span class="font-icon fa fa-file"></span>
+        </div>
+        <div class="card-primary">
+          <header class="card-header">
+            <h2 class="card-title">Basic Card</h2>
+            <p class="card-caption">Card Id#</p>
+          </header>
+          <div class="card-body">
+            <p class="card-text">Some text here</p>
+            <p class="card-text">Some more text here.</p>
+            <hr class="spacer"></hr>
+          </div>
+        </div>
+      </div>
+      <footer class="card-footer edge-top">
+        <div class="card-actions justify-left">
+          <button class="card-btn-icon"><span class="fa fa-star"></span></button>
+        </div>
+        <div class="card-actions">
+          <button class="card-btn-submit">Open</button>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Displaying an image -->
+    <div class="card">
+      <div class="card-content">
+        <div class="card-primary">
+          <header class="card-header card-wrapper">
+            <h2 class="card-title">Image Card</h2>
+            <p class="card-caption">March 20, 2016</p>
+          </header>
+          <div class="card-body card-wrapper">
+            <img class="card-image" src="assets/logo.png">
+          </div>
+        </div>
+      </div>
+      <footer class="card-footer edge-top">
+        <div class="card-actions justify-left">
+          <button class="card-btn-icon"><span class="fa fa-star"></span></button>
+        </div>
+        <div class="card-actions">
+          <button class="card-btn-submit">Open</button>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Display a map -->
+    <div class="card">
+      <div class="card-content">
+        <div class="card-primary">
+          <header class="card-header card-wrapper">
+            <h2 class="card-title">Map Card</h2>
+            <p class="card-caption">State College, Pa</p>
+          </header>
+          <div class="card-body card-collapse">
+            <!-- replace this image with embed code for map -->
+            <img class="card-image" src="assets/map.jpg">
+          </div>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <div class="card-actions justify-left">
+          <button class="card-btn-icon"><span class="fa fa-star"></span></button>
+        </div>
+        <div class="card-actions">
+          <button class="card-btn-submit">Open</button>
+        </div>
+      </footer>
+    </div>
+    </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

@@ -1,0 +1,97 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_core">blt_core</a>
+    <span class="api-header-divider">/</span>
+    bltOpen
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>Use <code>blt-open</code> to open modals and directives. To open a modal or panel, pass the <code>id</code> of the modal or
+panel as the value of the directive. This directive should be used on an ngBoltJS <a href="api/blt_core/directive/bltButton">button</a> in place
+of an <a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click</a>.</p>
+<div class="note-info">
+<strong>Note</strong> If other functions need to be triggered when closing a component, use <code>ng-click</code>. Call a function in your
+controller and use <code><a href="api/blt_core/service/BltApi#publish"><code>BltApi</code></a></code> to open the component instead.
+</div>
+</section>
+
+
+
+
+
+
+
+
+<section class="api-dependencies edge-top">
+  <h2 id="dependencies">Dependencies</h2>
+  <ul class="api-dependencies-list">
+    
+    <li class="api-dependencies-item"><a href="api/blt_core/service/BltApi"><code>BltApi</code></a></li>
+    
+  </ul>
+</section>
+
+
+
+
+  
+  
+  
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Example</h2>
+  <div class="api-example">
+    <p><caption>Open a modal with an <code>id</code> of &#39;myModal&#39;</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('js');"
+    >
+  
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>&lt;button class=&quot;btn-text&quot; blt-open=&quot;myModal&quot;&gt;Open Modal&lt;/button&gt;</code></pre>
+  </div>
+  
+
+  
+
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

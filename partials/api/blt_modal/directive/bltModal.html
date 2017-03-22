@@ -1,0 +1,914 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_modal">blt_modal</a>
+    <span class="api-header-divider">/</span>
+    bltModal
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+    <span class="tag-since">since 1.0.0</span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>The bltModal component is used for simple confirmation dialog boxes, selection menus, simple forms, or
+larger dialogs that can contain tables, lists, and complex forms.</p>
+<p>Modals consist of a <code>.modal-overlay</code> element
+that covers and darkens the rest of the application window and a <code>.modal</code> element that serves as dialog window
+and contains the content of the modal. Both fade in and out when opening/closing. The presentation of the modal
+options can be customized through the attributes, class elements, and modifiers supported on this component.</p>
+<div class="note-tip">
+<strong>Best Practice</strong> Keep the HTML template of your modal in an HTML partial file and load into the <code>.modal-content</code>
+using <a href="https://docs.angularjs.org/api/ng/directive/ngInclude">ng-include</a>. You may optionally assign a
+controller for your modal on the <code>.modal-content</code> element as well.
+</div>
+</section>
+
+
+
+
+
+
+
+
+<section class="api-dependencies edge-top">
+  <h2 id="dependencies">Dependencies</h2>
+  <ul class="api-dependencies-list">
+    
+    <li class="api-dependencies-item"><a href="api/blt_core/service/BltApi"><code>BltApi</code></a></li>
+    
+    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$timeout">$timeout</a></li>
+    
+  </ul>
+</section>
+
+
+
+
+  
+  
+  
+<section class="api-params edge-top">
+  
+  <h2>Attributes</h2>
+  
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>id</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>Required in order for you to open and close the modal using the <a href="api/blt_core/service/BltApi"><code>BltApi</code></a> pub/sub methods.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-size</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>You can set the size of your modal. Valid values are <code>x-small</code>, <code>small</code>, <code>medium</code>, <code>large</code> and <code>full-screen</code>.</p>
+
+        <p class="font-caption"><strong>default:</strong> small</p>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-flip</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>An Angular expression. If the expression evaluates to true, the modal will have a front and back side and use a flipping animation to toggle between the two.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+<section class="api-params edge-top">
+  <h2>CSS Classes</h2>
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>modal-content</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>The element that contains your code for the modal. Add this inside the <code>blt-modal</code> directive opening and closing tag and use the <a href="https://docs.angularjs.org/api/ng/directive/ngInclude">ng-include</a> directive to load the rest of your modal content from a HTML partial. Used on an HTML <code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>, or <code>&lt;form&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>modal-body</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>The main content of a modal. The <code>.modal-body</code> has padding by default that can be removed by adding the <code>.modal-collapse</code> modifier - useful for modals containing menus, tables, forms, and lists. Should be used on the HTML <code>&lt;div&gt;</code> or <code>&lt;section&gt;</code> tags.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>modal-header</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The header of the modal containing the <code>.modal-title</code> and optional buttons or icons. The <code>.modal-header</code> element should only be used on modals that contain other components. Modals that contain a simple text message do not need a <code>.modal-header</code>. The <code>.modal-header</code> can be divided into sections using grid elements. Should be used on an HTML <code>&lt;header</code>&gt; tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>modal-footer</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Contains actions for the modal. Should be used on the HTML <code>&lt;footer&gt;</code> tag. By default the <code>.modal-footer</code> has no top border. For simple modals with only a short text message a border is not necessary, and sometimes when using menus, lists, or tables the top border was duplicated. If you need a top border on the footer element add the <code>.edge-top</code> utility class.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>modal-title</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The title of the modal. Must be contained inside the <code>.modal-header</code> or sectioning elements within the <code>.modal-header</code>. Should be used on an HTML <code>&lt;h2&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>modal-heading</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>A heading element for sectioning the <code>.modal-body</code> content. Should be used on an HTML <code>&lt;h3&gt;</code> tag. If the <code>.modal-body</code> is collapsed, add the <code>.grid-wrapper</code> modifier to add padding around the heading.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>modal-text</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Default text for the modal. Use this on any text content inside the <code>.modal-body</code>. Should be used on the HTML <code>&lt;p&gt;</code> tag. If the <code>.modal-body</code> is collapsed, add the <code>.grid-wrapper</code> modifier to add padding around the text.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>modal-divider</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>A thick horizontal border for sectioning <code>.modal-body</code> content. Only use if not using a <code>.modal-heading</code>. Should be used on an HTML <code>&lt;hr&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>modal-btn-text</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Default text button for modal secondary actions. Should be used on the HTML <code>&lt;button&gt;</code> tag. For primary actions, use <code>.modal-btn-text-submit</code>.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>modal-btn-icon</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Icon button for modals, most often placed in the <code>.modal-header</code> or <code>.modal-body</code>. Should be used on the HTML <code>&lt;button&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>modal-btn-solid</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Default solid button for modal secondary actions. Should only be used in the <code>.modal-body</code>. Should be used on the HTML <code>&lt;button&gt;</code> tag. For primary actions, use <code>.modal-btn-solid-submit</code>.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>modal-front</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The front side of a flipping modal. Must be a direct child of the <code>.modal-content</code> element. <strong>Required if <code>data-flip</code> is true.</strong></p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>modal-back</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The back side of a flipping modal. Must be a direct child of the <code>.modal-content</code> element. <strong>Required if <code>data-flip</code> is true.</strong></p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>modal-collapse</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Removes padding from the <code>.modal-body</code> element.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>modal-overflow</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Prevents absolutely positioned elements (like the options list of a searchable <a href="api/blt_dropdown/directive/bltDropdown"><code>bltDropdown</code></a> component) from being hidden by the <code>.modal-body</code> overflow or causing it to scroll. Add to the <code>.modal-body</code> element.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Examples</h2>
+  <div class="api-example">
+    <p><caption>To use the bltModal component in your ngBoltJS application, include a blt-modal
+element in an HTML partial of your application.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;blt-modal id=&quot;myModal&quot; data-size=&quot;small&quot;&gt;&#10;  &lt;div class=&quot;modal-content&quot; ng-include=&quot;&#39;partials/module/partial.template.html&#39;&quot; ng-controller=&quot;MyPanelController as MyPanel&quot;&gt;&lt;/div&gt;&#10;&lt;/blt-modal&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>ngBoltJS has a custom directive for easily opening and closing modals and other components.
+Simply pass the id of the modal you&#39;d like open/close.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;button blt-open=&quot;myModal&quot;&gt;Open&lt;/button&gt;&#10;&lt;button blt-close=&quot;myModal&quot;&gt;Close&lt;/button&gt;&#10;&#10;&lt;!--If the close button is inside the modal component, you do not have to pass the id of the modal.--&gt;&#10;&lt;footer class=&quot;modal-footer&quot;&gt;&#10;  &lt;button blt-close=&quot;&quot;&gt;Close&lt;/button&gt;&#10;&lt;/footer&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Often you may need to do some other work/set-up in your code before opening the modal. In that case, you
+can use the pub/sub service of the ngBoltJS API to open and close the modal instead of the blt-open and blt-close directives.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('js');"
+    >
+  
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&#39;myApp&#39;)&#10;  .controller(&#39;MainController&#39;, MainController);&#10;// You must inject the ngBoltJS API into the controller to open and close modals via the pub/sub methods.&#10;MainController.$inject = [&#39;BltApi&#39;];&#10;function MainController(bltApi) {&#10;  var ctrl = this;&#10;&#10;  ctrl.openMyModal = function(){&#10;    // Do some work here first...&#10;&#10;    // When ready, publish the id of the modal you wish to open&#10;    bltApi.publish(&#39;myModal&#39;, &#39;open&#39;);&#10;  }&#10;}</code></pre>
+  </div>
+  
+
+  
+
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>When closing a modal, include any functions to reset data inside a $timeout to run after the
+closing animation of the modal to avoid resetting data and &#39;flashing&#39; the modal content as it animates out.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('js');"
+    >
+  
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>MainController.$inject = [&#39;BltApi&#39;, &#39;$timeout&#39;];&#10;function MainController(bltApi, $timeout) {&#10;  var ctrl = this;&#10;&#10;  ctrl.modal = { title: &#39;My Modal&#39;, pending: true };&#10;&#10;  ctrl.closeMyModal = function(){&#10;    // publish the id of the modal you wish to close&#10;    bltApi.publish(&#39;myModal&#39;, &#39;close&#39;);&#10;&#10;    // reset modal data after the closing animation&#10;    $timeout(function(){&#10;      ctrl.modal.title = &#39;&#39;;&#10;      ctrl.modal.pending = false;&#10;    }, 350);&#10;  }&#10;}</code></pre>
+  </div>
+  
+
+  
+
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Most of the time, you will want to keep the markup of your modal-content  in a separate file and load it
+as a partial. This is easily done using the ng-include directive on the modal-content element.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;!--main.template.html--&gt;&#10;&lt;blt-modal id=&quot;mediumModal&quot; data-size=&quot;medium&quot;&gt;&#10;  &lt;div class=&quot;modal-content&quot; ng-include=&quot;&#39;partials/main/medium-modal.template.html&#39;&quot;&gt;&lt;/div&gt;&#10;&lt;/blt-modal&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p>
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;!--medium-modal.template.html--&gt;&#10;&lt;header class=&quot;modal-header&quot;&gt;&#10;  &lt;h2 class=&quot;modal-title&quot;&gt;Select an Item&lt;/h2&gt;&#10;&lt;/header&gt;&#10;&lt;!--Modal body&#39;s have padding by default, use the .modal-collapse class to remove padding when using menus, lists, tables, etc.--&gt;&#10;&lt;div class=&quot;modal-body modal-collapse&quot;&gt;&#10;  &lt;ul class=&quot;menu&quot;&gt; ... &lt;/ul&gt;&#10;&lt;/div&gt;&#10;&lt;footer class=&quot;modal-footer&quot;&gt;&#10;  &lt;button class=&quot;modal-btn-text&quot; ng-click=&quot;Main.closeModal()&quot;&gt;Close&lt;/button&gt;&#10;&lt;/footer&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Place all content into the modal-content element. Use the modal-header, modal-body, and modal-footer
+elements to organize your content.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;blt-modal id=&quot;myModal&quot; data-size=&quot;small&quot;&gt;&#10;  &lt;div class=&quot;modal-content&quot;&gt;&#10;    &lt;header class=&quot;modal-header&quot;&gt;&#10;      &lt;h2 class=&quot;modal-title&quot;&gt;My Modal&lt;/h2&gt;&#10;    &lt;/header&gt;&#10;&#10;    &lt;div class=&quot;modal-body&quot;&gt;&#10;      &lt;p class=&quot;modal-text&quot;&gt;Some simple content here, maybe asking for confirmation before taking an action.&#10;    &lt;/div&gt;&#10;&#10;    &lt;footer class=&quot;modal-footer&quot;&gt;&#10;      &lt;button class=&quot;modal-btn-text&quot; ng-click=&quot;Main.closeModal()&quot;&gt;Cancel&lt;/button&gt;&#10;      &lt;!-- Use a &#39;submit&#39; button for &#39;primary&#39; actions. Use regular buttons for &#39;secondary&#39; actions (e.g. Cancel or Close)--&gt;&#10;      &lt;button class=&quot;modal-btn-text-submit&quot; ng-click=&quot;Main.confirmModal()&quot;&gt;Confirm&lt;/button&gt;&#10;    &lt;/footer&gt;&#10;  &lt;/div&gt;&#10;&lt;/blt-modal&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>X-small and small are good for pop-up windows or confirmation dialogs. Using headers on these 
+sized modals is not recommended as the title is often redundant to the modal content.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;blt-modal id=&quot;xsmallModal&quot; data-size=&quot;x-small&quot;&gt;&#10;  &lt;div class=&quot;modal-content&quot;&gt;&#10;    &lt;div class=&quot;modal-body&quot;&gt;&#10;      &lt;p class=&quot;modal-text&quot;&gt;Are you sure you want to do what you are about to do? This action can not be undone.&lt;/p&gt;&#10;    &lt;/div&gt;&#10;&#10;    &lt;footer class=&quot;modal-footer&quot;&gt;&#10;      &lt;button class=&quot;modal-btn-text&quot; ng-click=&quot;Main.closeModal()&quot;&gt;Close&lt;/button&gt;&#10;      &lt;button class=&quot;modal-btn-text-submit&quot; ng-click=&quot;Main.confirmAction()&quot;&gt;Delete&lt;/button&gt;&#10;    &lt;/footer&gt;&#10;  &lt;/div&gt;&#10;&lt;/blt-modal&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Medium modals are a good size for menus and lists.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;blt-modal id=&quot;mediumModal&quot; data-size=&quot;medium&quot;&gt;&#10;  &lt;div class=&quot;modal-content&quot;&gt;&#10;    &lt;header class=&quot;modal-header&quot;&gt;&#10;      &lt;h2 class=&quot;modal-title&quot;&gt;Select an Item&lt;/h2&gt;&#10;    &lt;/header&gt;&#10;&#10;    &lt;!-- Modal body&#39;s have padding by default, use the .collapse class to remove padding when using menus, lists, tables, etc. --&gt;&#10;    &lt;div class=&quot;modal-body modal-collapse&quot;&gt;&#10;      &lt;p class=&quot;modal-text&quot;&gt;This is some modal text. It&#39;s often useful to use the .modal-divider element to section content in a modal.&lt;/p&gt;&#10;      &lt;hr class=&quot;modal-divider&quot;&gt;&lt;/hr&gt;&#10;      &lt;ul class=&quot;menu&quot;&gt; ... &lt;/ul&gt;&#10;    &lt;/div&gt;&#10;&#10;    &lt;!-- Use the utility class .edge-top to add a border on the top of footers for larger modals --&gt;&#10;    &lt;footer class=&quot;modal-footer edge-top&quot;&gt;&#10;      &lt;button class=&quot;modal-btn-text&quot; ng-click=&quot;Main.closeModal()&quot;&gt;Close&lt;/button&gt;&#10;    &lt;/footer&gt;&#10;  &lt;/div&gt;&#10;&lt;/blt-modal&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Large modals are good for more complex content, such as tables. Full screen modals expand to the full size of
+the window except for 1.5rem of padding around the edge to maintain the modal look.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;blt-modal id=&quot;tableModal&quot; data-size=&quot;full-screen&quot;&gt;&#10;  &lt;div class=&quot;modal-content&quot;&gt;&#10;    &lt;header class=&quot;modal-header&quot;&gt;&#10;      &lt;h2 class=&quot;modal-title&quot;&gt;Data Table&lt;/h2&gt;&#10;    &lt;/header&gt;&#10;&#10;    &lt;div class=&quot;modal-body modal-collapse&quot;&gt;&#10;      &lt;table class=&quot;table table-collapse&quot;&gt; ... &lt;/table&gt;&#10;    &lt;/div&gt;&#10;&#10;    &lt;!-- Use the utility class .edge-top to add a border on the top of footers for larger modals --&gt;&#10;   &lt;footer class=&quot;modal-footer edge-top&quot;&gt;&#10;      &lt;button class=&quot;modal-btn-text&quot; ng-click=&quot;Main.closeModal()&quot;&gt;Close&lt;/button&gt;&#10;    &lt;/footer&gt;&#10;  &lt;/div&gt;&#10;&lt;/blt-modal&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>You can place tables in modals. Add the <code>.table-collapse</code> class to any <code>.table</code> when you do so the table fills
+up available width of the modal.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;blt-modal id=&quot;tableModal&quot; data-size=&quot;large&quot;&gt;&#10;  &lt;div class=&quot;modal-content&quot;&gt;&#10;    &lt;header class=&quot;modal-header&quot;&gt;&#10;      &lt;h2 class=&quot;modal-title&quot;&gt;My Modal&lt;/h2&gt;&#10;    &lt;/header&gt;&#10;&#10;    &lt;!-- By default, modal bodies have padding. Add the .modal-collapse class to remove padding when adding content such as tables or menus in the modal body. --&gt;&#10;    &lt;div class=&quot;modal-body modal-collapse&quot;&gt;&#10;      &lt;table class=&quot;modal-table table-collapsed&quot;&gt; ... &lt;/table&gt;&#10;    &lt;/div&gt;&#10;&#10;    &lt;footer class=&quot;modal-footer&quot;&gt;&#10;      &lt;button class=&quot;modal-btn-text&quot; ng-click=&quot;Main.closeModal()&quot;&gt;Close&lt;/button&gt;&#10;      &lt;!-- Use a &#39;submit&#39; button for &#39;primary&#39; actions (e.g. &#39;Save&#39;, &#39;Done&#39;). Use regular buttons for &#39;secondary&#39; actions (e.g. &#39;Cancel&#39; or &#39;Close&#39;)--&gt;&#10;      &lt;button class=&quot;modal-btn-text-submit&quot; ng-click=&quot;Main.saveModal()&quot;&gt;Save&lt;/button&gt;&#10;    &lt;/footer&gt;&#10;  &lt;/div&gt;&#10;&lt;/blt-modal&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>You can also divide a modal&#39;s header into sections using basic grid classes. For instance, if you wanted to add
+a button in the header for an action that might not make sense in the footer. This is usually applicable in large
+and full-screen modals.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;header class=&quot;modal-header&quot;&gt;&#10;  &lt;div class=&quot;grid-block grid-align-center&quot;&gt;&#10;    &lt;h2 class=&quot;title&quot;&gt;My Modal&lt;/h2&gt;&#10;  &lt;/div&gt;&#10;  &lt;div class=&quot;grid-block grid-shrink&quot;&gt;&#10;    &lt;button class=&quot;btn-link&quot; ng-click=&quot;Main.editModal()&quot;&gt;Edit&lt;/button&gt;&#10;  &lt;/div&gt;&#10;&lt;/header&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>A flipping modal has a front and back that allows you to have two sections in one modal, making a great application for forms.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;!-- NOTE: In order for the flip animation to work correctly, both sides of the modal will be locked to the same height. Do not override the height value in your css as the flip animation will no longer work properly. --&gt;&#10;&lt;blt-modal id=&quot;flipModal&quot; data-flip=&quot;true&quot; data-size=&quot;x-small&quot;&gt;&#10;  &lt;div class=&quot;modal-content&quot;&gt;&#10;&#10;    &lt;!-- Front --&gt;&#10;    &lt;div class=&quot;modal-front&quot;&gt;&#10;      &lt;header class=&quot;modal-header&quot;&gt;&#10;        &lt;h2 class=&quot;modal-title&quot;&gt;Flip Modal Front&lt;/h2&gt;&#10;      &lt;/header&gt;&#10;      &lt;section class=&quot;modal-body&quot;&gt;&#10;        &lt;p class=&quot;modal-text&quot;&gt;This is the front of a flippin&#39; modal&lt;/p&gt;&#10;      &lt;/section&gt;&#10;      &lt;footer class=&quot;modal-footer edge-top&quot;&gt;&#10;        &lt;button class=&quot;modal-btn-text-submit&quot; ng-click=&quot;Main.flipModal(&#39;flipModal&#39;)&quot;&gt;Over&lt;/button&gt;&#10;      &lt;/footer&gt;&#10;    &lt;/div&gt;&#10;&#10;    &lt;!-- Back --&gt;&#10;    &lt;div class=&quot;modal-back&quot;&gt;&#10;      &lt;header class=&quot;modal-header&quot;&gt;&#10;        &lt;h2 class=&quot;modal-title&quot;&gt;Flip Modal Back&lt;/h2&gt;&#10;      &lt;/header&gt;&#10;      &lt;section class=&quot;modal-body&quot;&gt;&#10;        &lt;p class=&quot;modal-text&quot;&gt;This is the back of a flippin&#39; modal.&lt;/p&gt;&#10;      &lt;/section&gt;&#10;      &lt;footer class=&quot;modal-footer edge-top&quot;&gt;&#10;        &lt;button class=&quot;modal-btn-text&quot; ng-click=&quot;Main.flipModal(&#39;flipModal&#39;)&quot;&gt;Back&lt;/button&gt;&#10;        &lt;button class=&quot;modal-btn-text-submit&quot; blt-close=&quot;&quot;&gt;Close&lt;/button&gt;&#10;      &lt;/footer&gt;&#10;    &lt;/div&gt;&#10;  &lt;/div&gt;&#10;&lt;/blt-modal&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>To flip a modal, pass the id of the modal in an API call in your controller.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('js');"
+    >
+  
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>function flip(modalId){&#10;  bltApi.publish(modalId, &#39;flip&#39;);&#10;}</code></pre>
+  </div>
+  
+
+  
+
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Often you may want to have a small form in a modal. In order to tap into the default AngularJS
+functionality of validating and submitting forms, you must use the form tag on the <code>.modal-content</code> element.</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;blt-modal id=&quot;myFormModal&quot;&gt;&#10;  &lt;form class=&quot;modal-content&quot; ng-submit=&quot;Main.submitMyModal()&quot; novalidate&gt;&#10;    &lt;header class=&quot;modal-header&quot;&gt;&#10;      &lt;h2 class=&quot;modal-title&quot;&gt;My Form Modal&lt;/h2&gt;&#10;    &lt;/header&gt;&#10;    &lt;div class=&quot;modal-body&quot;&gt;&#10;      &lt;!-- Some Form Controls --&gt;&#10;    &lt;/div&gt;&#10;    &lt;footer class=&quot;modal-footer&quot;&gt;&#10;      &lt;!-- No ng-click needed as form will submit using expression of the ng-submit direction on button click or pressing &#39;Enter&#39;--&gt;&#10;      &lt;button class=&quot;modal-btn-text-submit&quot;&gt;Submit&lt;/button&gt;&#10;    &lt;/footer&gt;&#10;  &lt;/form&gt;&#10;&lt;/blt-modal&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

@@ -1,0 +1,113 @@
+
+<h1>Directive components in <code>blt_core</code></h1>
+
+
+
+<div class="component-breakdown">
+  <div>
+    <table class="definition-table">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+      
+      <tr>
+        <td><a href="api/blt_core/directive/bltClose">bltClose</a></td>
+        <td><p>Closes modals and panels. To close a modal or panel, pass the
+<code>id</code> of the modal or panel as the value of the directive. This directive
+should be used on an ngBoltJS <a href="api/blt_core/directive/bltButton">button</a> in place of an
+<a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click</a>.</p>
+</td>
+      </tr>
+      
+      <tr>
+        <td><a href="api/blt_core/directive/bltOpen">bltOpen</a></td>
+        <td><p>Use <code>blt-open</code> to open modals and directives. To open a modal or panel, pass the <code>id</code> of the modal or
+panel as the value of the directive. This directive should be used on an ngBoltJS <a href="api/blt_core/directive/bltButton">button</a> in place
+of an <a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click</a>.</p>
+</td>
+      </tr>
+      
+      <tr>
+        <td><a href="api/blt_core/directive/bltOpenView">bltOpenView</a></td>
+        <td><p>Opens a new view and closes the current one. To open a view, pass the <code>path</code> of the view as the value
+of the directive. This directive should be used on an ngBoltJS <a href="api/blt_core/directive/bltButton">button</a> in place of an
+<a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click</a>.</p>
+</td>
+      </tr>
+      
+      <tr>
+        <td><a href="api/blt_core/directive/bltValidate">bltValidate</a></td>
+        <td><p>Adds custom validators onto form controls. To add a custom validator, add a validator object
+in your controller and pass as the value of the directive. Your validation function will be added to the
+ngModelController async or sync validators depending on the validator type. Angular will run the validator in
+addition to its built-in validators on form controls. For more information on custom Angular validators, see their
+<a href="https://docs.angularjs.org/api/ng/type/ngModel.NgModelController">documentation</a>.</p>
+</td>
+      </tr>
+      
+      <tr>
+        <td><a href="api/blt_core/directive/bltMain">bltMain</a></td>
+        <td><p>Defines the main container of an ngBoltJS application and includes the <code>main.template.html</code> file.
+The bltMain directive communicates with <a href="api/blt_login/directive/bltLogin"><code>bltLogin</code></a> and is displayed depending on the logged in state.</p>
+</td>
+      </tr>
+      
+      <tr>
+        <td><a href="api/blt_core/directive/bltIfBp">bltIfBp</a></td>
+        <td><p>Provides <a href="https://docs.angularjs.org/api/ng/directive/ngIf">ng-if</a> functionality tied to viewport width via
+a set of defined media-query breakpoints. These breakpoints are as follows: &#39;sm&#39;, &#39;md&#39;, &#39;lg&#39;, &#39;xl&#39;, and &#39;xxl&#39;.
+Breakpoints can be used in this directive by assigning a string or model reference to the directive. The
+assignment of a breakpoint can also include a direction: &#39;down&#39;, &#39;up&#39; or &#39;only&#39;. If no direction is defined, the
+breakpoint is interpreted as &#39;only&#39;. It is important to note that, like ng-if, the blt-if-bp directive will add or
+remove your element from the DOM based on the breakpoint configuration and viewport width.</p>
+</td>
+      </tr>
+      
+      <tr>
+        <td><a href="api/blt_core/directive/bltSpinner">bltSpinner</a></td>
+        <td><p>The ngBoltJS Spinner provides a simple loading spinner.</p>
+</td>
+      </tr>
+      
+      <tr>
+        <td><a href="api/blt_core/directive/bltButton">bltButton</a></td>
+        <td><p>The ngBoltJS Button component is used for triggering actions within an ngBoltJS application. The presentation of
+the button can be customized through the class elements and modifiers supported by this component.</p>
+</td>
+      </tr>
+      
+      <tr>
+        <td><a href="api/blt_core/directive/bltCssUtilities">bltCssUtilities</a></td>
+        <td><p>ngBoltJS comes bundled with a few utility classes that can be applied to several components throughout your
+application.</p>
+</td>
+      </tr>
+      
+      <tr>
+        <td><a href="api/blt_core/directive/bltFont">bltFont</a></td>
+        <td><p>Defines basic styles for fonts in ngBoltJS applications. ngBoltJS uses <a href="https://fonts.google.com/specimen/Roboto">Roboto</a>
+as its default font-family but falls back to Helvetica, Arial, and sans-serif.</p>
+</td>
+      </tr>
+      
+      <tr>
+        <td><a href="api/blt_core/directive/bltForm">bltForm</a></td>
+        <td><p>Forms in ngBoltJS are really just HTML forms with some additional styling and built-in validation. This page
+will cover the recommended structure for forms in an ngBoltJS application, as well as some tips and pointers on
+handling data validation and form submission.</p>
+</td>
+      </tr>
+      
+      <tr>
+        <td><a href="api/blt_core/directive/bltGrid">bltGrid</a></td>
+        <td><p>The ngBoltJS Grid consists of a few elements to create the base layout of your application. Based on Foundation for
+Apps grid, it is built on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">CSS3&#39;s Flexbox</a>
+for advanced layouts and therefore can only be used in <a href="http://caniuse.com/#search=flex%20box">modern browsers</a>.</p>
+</td>
+      </tr>
+      
+    </table>
+  </div>
+</div>
+

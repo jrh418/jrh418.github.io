@@ -1,0 +1,435 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_core">blt_core</a>
+    <span class="api-header-divider">/</span>
+    bltForm
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+    <span class="tag-since">since 1.0.0</span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>Forms in ngBoltJS are really just HTML forms with some additional styling and built-in validation. This page
+will cover the recommended structure for forms in an ngBoltJS application, as well as some tips and pointers on
+handling data validation and form submission.</p>
+<p>To use Forms in your ngBoltJS application, simply include the required elements and form controls and bind
+functionality and data to a controller.</p>
+<h3 id="best-practices-and-recommendations">Best Practices and Recommendations</h3>
+<h4 id="submission">Submission</h4>
+<p>Form submission can either be triggered by binding a &#39;submit&#39; action to a button in your form using
+<a href="https://docs.angularjs.org/api/ng/directive/ngClick">ngClick</a> or to the
+<a href="https://docs.angularjs.org/api/ng/directive/ngSubmit">ngSubmit</a> directive on the form element itself. In
+the example above, we use the <code>ng-click</code> binding in our submit button. It doesn&#39;t really matter which of these you
+use as long as you follow these guidelines regarding form buttons and form submission state:</p>
+<ol>
+<li><p>When adding buttons to your form, please keep in mind that the first button that is encountered in the form
+that either has no type defined, or is defined as type &quot;submit&quot; will be interpreted by the browser (and AngularJS)
+as your submit button. Clicking that button will set the form state to <code>$submitted</code>, which will trigger all ngBoltJS
+error messaging. If you attach your &quot;submit&quot; action to the ng-submit directive on the form, this will also invoke
+that action. If you have buttons in your form that you do not intend to use to submit the form, you must set their
+type to something other than &quot;submit&quot;. (See the Cancel button in the example below.)</p>
+</li>
+<li><p>It is up to the developer to correctly handle form validation states in their &quot;submit&quot; action. This can be
+done by checking the $invalid attribute on the form object. You can either reference the form through the name
+bound to it in your form template html, or you could pass the form object into the submit function in your
+ng-submit/ng-click binding. See the example below.</p>
+</li>
+</ol>
+<div class="note-tip">
+<strong>Tip</strong> For more information on default Angular JS form behavior and validation, refer to their
+<a href="https://docs.angularjs.org/guide/forms">documentation on Forms</a>.
+</div>
+
+<h4 id="validation">Validation</h4>
+<p>Common form validation and error messaging is included by default in all ngBoltJS form components. Any supported
+attribute (max, maxLength, pattern, etc) comes with included error messaging that will be presented any time the
+form component has been touched or the user has attempted form submission. You can also supply custom validation
+for a select number of our form components using the <a href="api/blt_core/directive/bltValidate"><code>bltValidate</code></a> directive.</p>
+<div class="note-info">
+<strong>Note</strong> For the best user experience when using ngBoltJS forms, we highly recommend adding the <code>novalidate</code>
+attribute to your form, which prevents the standard HTML form validation and error messaging.
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+<section class="api-params edge-top">
+  <h2>CSS Classes</h2>
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>form</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>The main container of your form. Must be used on an HTML <code>&lt;form&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>form-heading</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>A heading to divide your form into sections. Should be used on an HTML <code>&lt;h2&gt;</code> or <code>&lt;h3&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>form-row</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Combine multiple form controls into one row. Should be used on an HTML <code>&lt;div&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>form-col-sm-only</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>When viewport width is narrow, form-rows will stack.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>form-divider</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Add a horizontal border between form controls or form-rows. <em>By default, forms do not add borders to form controls but it is considered a best practice that you add them explicitly.</em></p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>form-divider-vertical</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Add a vertical border between form controls in a form row. <em>By default, forms do not add borders to form controls but it is considered a best practice that you add them explicitly.</em></p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>form-spacer</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Add horizontal spacing between form controls or other elements contained in a
+form. Should be used on an HTML <code>&lt;hr&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>form-submit</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Submit button that expands to the width of the form. <em>Use only if the form is
+stand-alone and not included in a modal or panel - use the modal or panel action buttons for form submittal in
+those cases.</em> Should be used on an HTML <code>&lt;button&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Examples</h2>
+  <div class="api-example">
+    <p><caption>Example Form</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&#39;bltDocs&#39;)&#10;  .controller(&#39;FormExCtrl&#39;, FormExCtrl);&#10;&#10;  FormExCtrl.$inject = [&#39;BltApi&#39;];&#10;&#10;  function FormExCtrl(bltApi){&#10;     var ctrl = this;&#10;  &#10;     ctrl.arrayOfOptions = [&#39;Dropdown1&#39;, &#39;Dropdown2&#39;, &#39;Dropdown3&#39;, &#39;Dropdown4&#39;, &#39;Dropdown5&#39;, &#10;       &#39;Dropdown6&#39;, &#39;Dropdown7&#39;];&#10;   &#10;     ctrl.cancel = cancel;&#10;     ctrl.submit = submit;&#10;   &#10;     activate();&#10;  &#10;     // Public Functions&#10;     function cancel(){&#10;         //Close the form modal / view or clear out values to signify a form reset / cancel.&#10;     }&#10;  &#10;     function submit(){&#10;         // First we check the form to ensure that it is valid.&#10;         if( !ctrl.myForm.$invalid ){&#10;             // Form is valid. Do something with the data. As part of a successful submit, &#10;             //we&#39;ll also typically switch to a new view, or close the modal that was containing the form.&#10;             console.log(&#39;form valid. submitting.&#39;);&#10;         } else {&#10;             // Form is invalid. All relevant error messages will now be showing in the form.&#10;             console.log(&#39;form invalid&#39;);&#10;         }&#10;     }&#10;   &#10;     // Private Functions&#10;     // Activate the controller. Initialize form values. In this example demonstrate setting them as &#10;     // undefined, hard coded values, or values pulled from a service.&#10;     function activate(){&#10;         //Hard coded initial value&#10;         ctrl.textField = &quot;ABC123&quot;;&#10;         ctrl.checkboxFlag = true;&#10;         //Undefined&#10;         ctrl.option = undefined;&#10;         ctrl.select = ctrl.arrayOfOptions[0];&#10;     }&#10;  }</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div ng-controller=&quot;FormExCtrl as ctrl&quot;&gt;&#10;  &lt;form name=&quot;ctrl.myForm&quot; class=&quot;form&quot; novalidate&gt;&#10;      &lt;!-- Form titles / headings should be styled with the &quot;form-heading&quot; class. --&gt;&#10;      &lt;h2 class=&quot;form-heading&quot;&gt;Contact Info&lt;/h2&gt;&#10;      &lt;!-- A text field, labeled &quot;Required Text Field&quot; and bound to the scope property ctrl.textField2&quot;.&#10;      This field is marked as required and has a pattern defined. Valid values would be ABC123, XYZ789, etc. --&gt;&#10;      &lt;blt-textfield data-name=&quot;textfield&quot;&#10;                     data-required=&quot;true&quot;&#10;                     data-pattern=&quot;[A-Z]{3}[0-9]{3}&quot;&#10;                     data-label=&quot;Required Text Field&quot;&#10;                     data-model=&quot;ctrl.textField&quot;&gt;&#10;      &lt;/blt-textfield&gt;&#10;&#10;      &lt;!-- Adds a border between form controls. --&gt;&#10;      &lt;hr class=&quot;form-divider&quot;&gt;&#10;      &lt;!-- A simple checkbox bound to ctrl.checkboxFlag with the label of &quot;Checkbox&quot;. --&gt;&#10;      &lt;blt-checkbox-radio data-name=&quot;checkbox&quot;&#10;                          data-label=&quot;Checkbox&quot;&#10;                          data-model=&quot;ctrl.checkboxFlag&quot;&gt;&#10;      &lt;/blt-checkbox-radio&gt;&#10;&#10;      &lt;!-- Use form-heading to divide groups of controls --&gt;&#10;      &lt;h2 class=&quot;form-heading&quot;&gt;Select an option&lt;/h2&gt;&#10;&#10;      &lt;!-- A group of three radio boxes, presented in a horizontal row. --&gt;&#10;      &lt;div class=&quot;form-row&quot;&gt;&#10;          &lt;blt-checkbox-radio data-name=&quot;option1&quot;&#10;                              data-label=&quot;Option 1&quot;&#10;                              data-model=&quot;ctrl.option&quot;&#10;                              data-type=&quot;radio&quot;&#10;                              data-value=&quot;option1&quot;&#10;                              data-required=&quot;true&quot;&gt;&#10;          &lt;/blt-checkbox-radio&gt;&#10;&#10;          &lt;!-- Adds a border between form controls. --&gt;&#10;          &lt;div class=&quot;form-divider-vertical&quot;&gt;&lt;/div&gt;&#10;&#10;          &lt;blt-checkbox-radio data-name=&quot;option2&quot;&#10;                              data-label=&quot;Option 2&quot;&#10;                              data-model=&quot;ctrl.option&quot;&#10;                              data-type=&quot;radio&quot;&#10;                              data-value=&quot;option2&quot;&#10;                              data-required=&quot;true&quot;&gt;&#10;          &lt;/blt-checkbox-radio&gt;&#10;&#10;          &lt;!-- Adds a border between form controls. --&gt;&#10;          &lt;div class=&quot;form-divider-vertical&quot;&gt;&lt;/div&gt;&#10;&#10;          &lt;blt-checkbox-radio data-name=&quot;option3&quot;&#10;                              data-label=&quot;Option 3&quot;&#10;                              data-model=&quot;ctrl.option&quot;&#10;                              data-type=&quot;radio&quot;&#10;                              data-value=&quot;option3&quot;&#10;                              data-required=&quot;true&quot;&gt;&#10;          &lt;/blt-checkbox-radio&gt;&#10;      &lt;/div&gt;&#10;&#10;      &lt;!-- Use form-heading to divide groups of controls --&gt;&#10;      &lt;h2 class=&quot;form-heading&quot;&gt;Category&lt;/h2&gt;&#10;&#10;      &lt;!-- Standard select dropdown. The user will be presented with the options contained in the arrayOfOptions. --&gt;&#10;      &lt;blt-dropdown data-type=&quot;select&quot;&#10;                    data-name=&quot;dropdown&quot;&#10;                    data-label=&quot;Select a Value&quot;&#10;                    data-options=&quot;ctrl.arrayOfOptions&quot;&#10;                    data-model=&quot;ctrl.select&quot;&gt;&#10;      &lt;/blt-dropdown&gt;&#10;&#10;      &lt;!-- Creates a section of padding between form contents and button row. --&gt;&#10;      &lt;div class=&quot;form-spacer&quot;&gt;&lt;/div&gt;&#10;&#10;      &lt;!-- Cancel and Submit buttons at bottom, right-justified. --&gt;&#10;      &lt;div class=&quot;btn-row&quot;&gt;&#10;         &lt;button type=&quot;button&quot; class=&quot;btn-solid&quot; ng-click=&quot;ctrl.cancel()&quot;&gt;Cancel&lt;/button&gt;&#10;         &lt;button type=&quot;submit&quot; class=&quot;btn-solid-submit&quot; ng-click=&quot;ctrl.submit()&quot;&gt;Submit&lt;/button&gt;&#10;      &lt;/div&gt;&#10;  &lt;/form&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <div ng-controller="FormExCtrl as ctrl">
+      <form name="ctrl.myForm" class="form" novalidate>
+          <!-- Form titles / headings should be styled with the "form-heading" class. -->
+          <h2 class="form-heading">Contact Info</h2>
+          <!-- A text field, labeled "Required Text Field" and bound to the scope property ctrl.textField2".
+          This field is marked as required and has a pattern defined. Valid values would be ABC123, XYZ789, etc. -->
+          <blt-textfield data-name="textfield"
+                         data-required="true"
+                         data-pattern="[A-Z]{3}[0-9]{3}"
+                         data-label="Required Text Field"
+                         data-model="ctrl.textField">
+          </blt-textfield>
+
+          <!-- Adds a border between form controls. -->
+          <hr class="form-divider">
+          <!-- A simple checkbox bound to ctrl.checkboxFlag with the label of "Checkbox". -->
+          <blt-checkbox-radio data-name="checkbox"
+                              data-label="Checkbox"
+                              data-model="ctrl.checkboxFlag">
+          </blt-checkbox-radio>
+
+          <!-- Use form-heading to divide groups of controls -->
+          <h2 class="form-heading">Select an option</h2>
+
+          <!-- A group of three radio boxes, presented in a horizontal row. -->
+          <div class="form-row">
+              <blt-checkbox-radio data-name="option1"
+                                  data-label="Option 1"
+                                  data-model="ctrl.option"
+                                  data-type="radio"
+                                  data-value="option1"
+                                  data-required="true">
+              </blt-checkbox-radio>
+
+              <!-- Adds a border between form controls. -->
+              <div class="form-divider-vertical"></div>
+
+              <blt-checkbox-radio data-name="option2"
+                                  data-label="Option 2"
+                                  data-model="ctrl.option"
+                                  data-type="radio"
+                                  data-value="option2"
+                                  data-required="true">
+              </blt-checkbox-radio>
+
+              <!-- Adds a border between form controls. -->
+              <div class="form-divider-vertical"></div>
+
+              <blt-checkbox-radio data-name="option3"
+                                  data-label="Option 3"
+                                  data-model="ctrl.option"
+                                  data-type="radio"
+                                  data-value="option3"
+                                  data-required="true">
+              </blt-checkbox-radio>
+          </div>
+
+          <!-- Use form-heading to divide groups of controls -->
+          <h2 class="form-heading">Category</h2>
+
+          <!-- Standard select dropdown. The user will be presented with the options contained in the arrayOfOptions. -->
+          <blt-dropdown data-type="select"
+                        data-name="dropdown"
+                        data-label="Select a Value"
+                        data-options="ctrl.arrayOfOptions"
+                        data-model="ctrl.select">
+          </blt-dropdown>
+
+          <!-- Creates a section of padding between form contents and button row. -->
+          <div class="form-spacer"></div>
+
+          <!-- Cancel and Submit buttons at bottom, right-justified. -->
+          <div class="btn-row">
+             <button type="button" class="btn-solid" ng-click="ctrl.cancel()">Cancel</button>
+             <button type="submit" class="btn-solid-submit" ng-click="ctrl.submit()">Submit</button>
+          </div>
+      </form>
+    </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption><h3>With Media Query</h3></p>
+<p><p>See the <a href="guides/breakpoints">Media Queries Guide</a> for more information using media queries.
+</p>
+</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>    &lt;form name=&quot;Example.myForm&quot; class=&quot;form&quot; novalidate&gt;&#10;        ...&#10;        &lt;div class=&quot;form-col-sm-only&quot;&gt;&#10;            &lt;!-- Formatted for small screens only --&gt;&#10;                ...&#10;        &lt;/div&gt;&#10;    &lt;/form&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

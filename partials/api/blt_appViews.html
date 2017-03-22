@@ -1,0 +1,101 @@
+<a id="top"></a>
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="/api">ngBoltJS</a> / blt_appViews
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-module"></span>
+  </div>
+</header>
+
+<section class="api-profile-description">
+  <ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#defining-views">Defining Views</a></li>
+<li><a href="#html5mode">Html5Mode</a></li>
+</ul>
+<hr>
+<h2 id="overview">Overview</h2>
+<p>The views module is automatically generated from the <code>views.json</code> configuration
+file during the application build process. The views are added to the Angular
+<a href="https://docs.angularjs.org/api/ngRoute/provider/$routeProvider">$routeProvider</a>
+during run-time. Angular will use these views to load html partials into your
+application based on the current path of the URL. For more information on how
+Angular handles view routing, see <a href="https://docs.angularjs.org/api/ngRoute">ngRoute</a>.</p>
+<hr>
+<h2 id="defining-views">Defining Views</h2>
+<p>You define views by adding them to the <code>views</code> array in the <code>views.json</code> configuration
+file. Each view object has three properties:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td>string</td>
+<td>Path parameter passed to <a href="https://docs.angularjs.org/api/ngRoute/provider/$routeProvider">$routeProvider#when</a></td>
+</tr>
+<tr>
+<td><code>route</code></td>
+<td>object</td>
+<td>Route parameter passed to <a href="https://docs.angularjs.org/api/ngRoute/provider/$routeProvider">$routeProvider#when</a></td>
+</tr>
+<tr>
+<td><code>animation</code></td>
+<td>string</td>
+<td>(Optional) Animation to use when entering and leaving. Valid values are: <code>fade</code> and <code>slide</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-view-definition">Example View Definition</h3>
+<pre><code class="lang-json">&quot;views&quot;: [
+  {
+    &quot;path&quot;: &quot;/forms&quot;,
+    &quot;route&quot;: {
+       &quot;templateUrl&quot;: &quot;partials/forms/forms.template.html&quot;,
+       &quot;controller&quot;: &quot;FormsController&quot;,
+       &quot;controllerAs&quot;: &quot;ctrl&quot;
+    },
+    &quot;animation&quot;: &quot;fade&quot;
+  }
+]
+</code></pre>
+<div class="note-info">
+<strong>Note</strong> ngBoltJS does not currently support $routeProvider#otherwise.
+</div>
+
+<hr>
+<h2 id="html5mode">Html5Mode</h2>
+<p>To use Angular&#39;s <a href="https://docs.angularjs.org/guide/$location">$location</a> service
+HTML5 mode you need to set the <code>html5mode</code> property in your <a href="api/blt_config">build configuration</a>
+file to <code>true</code> as well as set a value for <code>baseUrl</code>.</p>
+<h3 id="html5mode-in-production">html5mode in production</h3>
+<p>The ngBoltJS development server provides HTML5 history API functionality so refreshing will work
+in <code>html5mode</code>. However, in production, you will need to add a configuration file or middleware
+to redirect all requests to <code>index.html</code>.</p>
+<p>For example, when hosted on apache servers, you can include a <code>.htaccess</code> file at the application
+root.</p>
+<pre><code>RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+
+RewriteRule ^(.*) /index.html [NC,L]
+</code></pre>
+
+</section>
+
+
+
+
+
+
+
+

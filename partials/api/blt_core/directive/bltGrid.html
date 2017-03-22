@@ -1,0 +1,613 @@
+<a id="top"></a>
+
+
+
+<header class="api-header">
+  <h1 class="api-header-title">
+    <a href="api/blt_core">blt_core</a>
+    <span class="api-header-divider">/</span>
+    bltGrid
+  </h1>
+  <div class="api-header-tags">
+    <span class="tag-directive"></span>
+    
+    <span class="tag-since">since 1.0.0</span>
+    
+  </div>
+  
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+  </ol>
+</header>
+
+
+
+
+
+<section class="api-profile-description">
+  <p>The ngBoltJS Grid consists of a few elements to create the base layout of your application. Based on Foundation for
+Apps grid, it is built on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">CSS3&#39;s Flexbox</a>
+for advanced layouts and therefore can only be used in <a href="http://caniuse.com/#search=flex%20box">modern browsers</a>.</p>
+<p>To use the Grid in your ngBoltJS application, include the relevant classnames inside your app&#39;s <code>&lt;body&gt;</code>
+tag.</p>
+<div class="note-info">
+<strong>Note</strong> Use grid elements to create the main layout of your application only. Most ngBoltJS components contain their
+own layout properties and do not require you to use grid elements inside them. An exception to this would be the
+large and full-screen <a href="api/blt_modal/directive/bltModal"><code>bltModal</code></a> and the <a href="api/blt_view/directive/bltView"><code>bltView</code></a>.
+</div>
+
+<div class="note-info">
+<strong>Note</strong> Always use <code>rem</code> units instead of px so components scale correctly if the user is using larger font or
+has zoomed in or out.
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+<section class="api-params edge-top">
+  <h2>CSS Classes</h2>
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th></th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-frame</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>The <code>.grid-frame</code> element is the outer-most container of your application and should be placed on the <code>&lt;body&gt;</code> tag of your application. If you are using the <a href="https://github.com/ngbolt/ng-bolt-template">ngBoltJS Template</a> boilerplate, the <code>.grid-frame</code> is already included. <em>You should only have one</em> <code>.grid-frame</code> <em>per application.</em></p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-block</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>The main building &#39;blocks&#39; of your application. The <code>.grid-block</code> element is the primary element for creating the main layout for your application and can be configured using many of the modifiers  listed below. The <code>.grid-block</code> can contain nested <code>.grid-block</code> or <code>.grid-content</code> elements. Should be used on an HTML <code>&lt;div&gt;</code> or <code>&lt;section&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-block-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p><code>grid-block</code> with media query support for various screen sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-content</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Similar to the <code>.grid-block</code> element, these can be configured with modifiers, but unlike <code>.grid-block</code> elements, the <code>.grid-content</code> is a container for default <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display"><code>display: block</code> element content</a> and is meant to contain the actual content of your application. You should not place <code>.grid-block</code> elements inside a <code>.grid-content</code>, except in rare cases. Should be used on an HTML <code>&lt;div&gt;</code> tag.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-content-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-element">element</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p><code>grid-content</code> with media query support for various screen sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-vertical</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>The <code>.grid-frame</code> and <code>.grid-block</code> arrange their content in rows by default. To organize content vertically add the <code>.grid-vertical</code> element to any grid element. This is the default configuration for the ngBoltJS Template, for example, so that the Appbar component stacks vertically on top of the <code>.grid-block</code> containing the View component. Can only be used on <code>.grid-frame</code> and <code>.grid-block</code>.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-vertical-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p><code>grid-vertical</code> with media query support for various screen sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-shrink</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>By default, grid elements scale to fill the width (or height if their parent uses <code>.grid-vertical</code>) of their container equally. In order to shrink the element to the width of their content, use the <code>.grid-shrink</code> class. This would be useful when wanting to create a sidebar next to a <a href="api/blt_view/directive/bltView"><code>bltView</code></a> component, for instance. <em>Can only be used on <code>.grid-block</code> and <code>.grid-content</code> elements.</em></p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-shrink-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p><code>grid-shrink</code> with media query support for various screen sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-expand</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p><code>.grid-expand</code> does the opposite of <code>.grid-shrink</code> and equally expands a grid element to the width of its container. This is the default behavior of grid elements but is sometimes necessary in rare cases. For example, when multiple elements are not equally dividing the width of their parent container. Can be used on <code>.grid-block</code> and <code>.grid-content</code> elements.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-expand-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p><code>grid-expand</code> with media query support for various screen sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-wrapper</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Adds padding to a grid element.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-wrapper-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p><code>grid-wrapper</code> with media query support for various screen sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-align-center</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Vertically center the content of a grid element. <em>Can only be used on <code>.grid-frame</code> and <code>.grid-block</code> elements.</em></p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-align-center-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p><code>grid-align-center</code> with media query support for various screen sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-justify-center</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Horizontally center the content of a grid element. Can only be used on <code>.grid-frame</code> and <code>.grid-block</code> elements.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-justify-center-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p><code>grid-justify-center</code> with media query support for various screen sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-center</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Absolutely center (horizontally and vertically) the content of a grid element. Can only be used on <code>.grid-frame</code> and <code>.grid-block</code> elements.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-center-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p><code>grid-center</code> with media query support for various screen sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-no-scroll</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Prevent the default behavior of scrolling vertical content of grid elements and make overflowed content visible. This is useful on grid elements that may hide a absolutely positioned child element such as a floating menu.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>grid-no-scroll-&#39;bp&#39;-&#39;dir&#39;</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-modifier">modifier</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p><code>grid-no-scroll</code> with media query support for various screen sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+
+<section class="api-examples edge-top">
+  
+  <h2 id="example">Examples</h2>
+  <div class="api-example">
+    <p><caption>Side Bar - Main View Layout</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;body class=&quot;grid-frame grid-vertical&quot;&gt;&#10;  &lt;!-- App Bar --&gt;&#10;  &lt;blt-appbar&gt; ... &lt;/blt-appbar&gt;&#10;&#10;  &lt;!-- Main Content --&gt;&#10;  &lt;div class=&quot;grid-block&quot;&gt;&#10;    &lt;!-- Sidebar menu --&gt;&#10;    &lt;div class=&quot;grid-block grid-shrink&gt;&#10;      &lt;ul class=&quot;menu&quot;&gt; ... &lt;/ul&gt;&#10;    &lt;/div&gt;&#10;    &lt;!-- Views --&gt;&#10;    &lt;blt-view id=&quot;First&quot;&gt; ... &lt;/blt-view&gt;&#10;    &lt;blt-view id=&quot;Second&quot;&gt; ... &lt;/blt-view&gt;&#10;  &lt;/div&gt;&#10;&lt;/body&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Side Bar - Main View - Side Bar Layout</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;body class=&quot;grid-frame grid-vertical&quot;&gt;&#10; &lt;!-- App Bar --&gt;&#10; &lt;blt-appbar&gt; ... &lt;/blt-appbar&gt;&#10;&#10; &lt;!-- Main Content --&gt;&#10; &lt;div class=&quot;grid-block&quot;&gt;&#10;     &lt;!-- Left Sidebar menu --&gt;&#10;     &lt;div class=&quot;grid-block grid-shrink&gt;&#10;         &lt;ul class=&quot;menu&quot;&gt; ... &lt;/ul&gt;&#10;     &lt;/div&gt;&#10;&#10;     &lt;!-- Views --&gt;&#10;     &lt;blt-view id=&quot;First&quot;&gt; ... &lt;/blt-view&gt;&#10;     &lt;blt-view id=&quot;Second&quot;&gt; ... &lt;/blt-view&gt;&#10;&#10;     &lt;!-- Right Sidebar --&gt;&#10;     &lt;div class=&quot;grid-block grid-shrink&gt;&#10;         &lt;!-- some other related content --&gt;&#10;     &lt;/div&gt;&#10; &lt;/div&gt;&#10;&lt;/body&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption>Two Columns Layout</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+  <div class="runnable-example-css" ng-show="exCtrl.showExample == 'css'">
+    <pre><code>// Custom width&#10;#sideNav {&#10;  width: 10rem; // 160px&#10;}&#10;&#10;// Custom height&#10;#topRow {&#10;  height:  12.5rem; // 200px&#10;}</code></pre>
+  </div>
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;!-- Define Custom width --&gt;&#10;&lt;div class=&quot;grid-block&quot;&gt;&#10;  &lt;!-- Will be the width of the child menu --&gt;&#10;  &lt;div class=&quot;grid-block grid-shrink&quot;&gt;&#10;      &lt;ul id=&quot;sideNav&quot; class=&quot;menu&quot;&gt; ... &lt;/ul&gt;&#10;  &lt;/div&gt;&#10;&#10;  &lt;!-- Will expand to fill remaining width --&gt;&#10;  &lt;div class=&quot;grid-content&quot;&gt; ... &lt;/div&gt;&#10;&lt;/div&gt;&#10;&#10;&lt;!-- Define custom height --&gt;&#10;&lt;div class=&quot;grid-block grid-vertical&quot;&gt;&#10;  &lt;!-- Will be a height of 200px --&gt;&#10;  &lt;div id=&quot;topRow&quot; class=&quot;grid-content grid-shrink&quot;&gt; ... &lt;/div&gt;&#10;&#10;  &lt;!-- Will expand to fill remaining height --&gt;&#10;  &lt;div class=&quot;grid-block&quot;&gt; ... &lt;/div&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
+    <p><caption><h3>Using Media Queries</h3></p>
+<p><p>See the <a href="guides/breakpoints">Media Queries Guide</a> for more information on using media queries.
+</p>
+</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;body class=&quot;grid-frame grid-vertical-xl-down&quot;&gt;&#10;  &lt;div class=&quot;grid-block-md-down&quot;&gt;&#10;    &lt;div class=&quot;grid-content grid-shrink-sm-only&quot;&gt;&#10;    ...&#10;    &lt;/div&gt;&#10;  &lt;/div&gt;&#10;&lt;/body&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div></section>
+
+
+
+

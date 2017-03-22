@@ -1,0 +1,133 @@
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('html');"
+    >
+  
+  
+
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;body class=&quot;grid-frame grid-vertical-xl-down&quot;&gt;&#10;  &lt;div class=&quot;grid-block-md-down&quot;&gt;&#10;    &lt;div class=&quot;grid-content grid-shrink-sm-only&quot;&gt;&#10;    ...&#10;    &lt;/div&gt;&#10;  &lt;/div&gt;&#10;&lt;/body&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+;&lt;div class=&quot;grid-block&quot;&gt;&#10;  &lt;!-- Will be the width of the child menu --&gt;&#10;  &lt;div class=&quot;grid-block grid-shrink&quot;&gt;&#10;      &lt;ul id=&quot;sideNav&quot; class=&quot;menu&quot;&gt; ... &lt;/ul&gt;&#10;  &lt;/div&gt;&#10;&#10;  &lt;!-- Will expand to fill remaining width --&gt;&#10;  &lt;div class=&quot;grid-content&quot;&gt; ... &lt;/div&gt;&#10;&lt;/div&gt;&#10;&#10;&lt;!-- Define custom height --&gt;&#10;&lt;div class=&quot;grid-block grid-vertical&quot;&gt;&#10;  &lt;!-- Will be a height of 200px --&gt;&#10;  &lt;div id=&quot;topRow&quot; class=&quot;grid-content grid-shrink&quot;&gt; ... &lt;/div&gt;&#10;&#10;  &lt;!-- Will expand to fill remaining height --&gt;&#10;  &lt;div class=&quot;grid-block&quot;&gt; ... &lt;/div&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+ues to signify a form reset / cancel.&#10;     }&#10;  &#10;     function submit(){&#10;         // First we check the form to ensure that it is valid.&#10;         if( !ctrl.myForm.$invalid ){&#10;             // Form is valid. Do something with the data. As part of a successful submit, &#10;             //we&#39;ll also typically switch to a new view, or close the modal that was containing the form.&#10;             console.log(&#39;form valid. submitting.&#39;);&#10;         } else {&#10;             // Form is invalid. All relevant error messages will now be showing in the form.&#10;             console.log(&#39;form invalid&#39;);&#10;         }&#10;     }&#10;   &#10;     // Private Functions&#10;     // Activate the controller. Initialize form values. In this example demonstrate setting them as &#10;     // undefined, hard coded values, or values pulled from a service.&#10;     function activate(){&#10;         //Hard coded initial value&#10;         ctrl.textField = &quot;ABC123&quot;;&#10;         ctrl.checkboxFlag = true;&#10;         //Undefined&#10;         ctrl.option = undefined;&#10;         ctrl.select = ctrl.arrayOfOptions[0];&#10;     }&#10;  }</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div ng-controller=&quot;FormExCtrl as ctrl&quot;&gt;&#10;  &lt;form name=&quot;ctrl.myForm&quot; class=&quot;form&quot; novalidate&gt;&#10;      &lt;!-- Form titles / headings should be styled with the &quot;form-heading&quot; class. --&gt;&#10;      &lt;h2 class=&quot;form-heading&quot;&gt;Contact Info&lt;/h2&gt;&#10;      &lt;!-- A text field, labeled &quot;Required Text Field&quot; and bound to the scope property ctrl.textField2&quot;.&#10;      This field is marked as required and has a pattern defined. Valid values would be ABC123, XYZ789, etc. --&gt;&#10;      &lt;blt-textfield data-name=&quot;textfield&quot;&#10;                     data-required=&quot;true&quot;&#10;                     data-pattern=&quot;[A-Z]{3}[0-9]{3}&quot;&#10;                     data-label=&quot;Required Text Field&quot;&#10;                     data-model=&quot;ctrl.textField&quot;&gt;&#10;      &lt;/blt-textfield&gt;&#10;&#10;      &lt;!-- Adds a border between form controls. --&gt;&#10;      &lt;hr class=&quot;form-divider&quot;&gt;&#10;      &lt;!-- A simple checkbox bound to ctrl.checkboxFlag with the label of &quot;Checkbox&quot;. --&gt;&#10;      &lt;blt-checkbox-radio data-name=&quot;checkbox&quot;&#10;                          data-label=&quot;Checkbox&quot;&#10;                          data-model=&quot;ctrl.checkboxFlag&quot;&gt;&#10;      &lt;/blt-checkbox-radio&gt;&#10;&#10;      &lt;!-- Use form-heading to divide groups of controls --&gt;&#10;      &lt;h2 class=&quot;form-heading&quot;&gt;Select an option&lt;/h2&gt;&#10;&#10;      &lt;!-- A group of three radio boxes, presented in a horizontal row. --&gt;&#10;      &lt;div class=&quot;form-row&quot;&gt;&#10;          &lt;blt-checkbox-radio data-name=&quot;option1&quot;&#10;                              data-label=&quot;Option 1&quot;&#10;                              data-model=&quot;ctrl.option&quot;&#10;                              data-type=&quot;radio&quot;&#10;                              data-value=&quot;option1&quot;&#10;                              data-required=&quot;true&quot;&gt;&#10;          &lt;/blt-checkbox-radio&gt;&#10;&#10;          &lt;!-- Adds a border between form controls. --&gt;&#10;          &lt;div class=&quot;form-divider-vertical&quot;&gt;&lt;/div&gt;&#10;&#10;          &lt;blt-checkbox-radio data-name=&quot;option2&quot;&#10;                              data-label=&quot;Option 2&quot;&#10;                              data-model=&quot;ctrl.option&quot;&#10;                              data-type=&quot;radio&quot;&#10;                              data-value=&quot;option2&quot;&#10;                              data-required=&quot;true&quot;&gt;&#10;          &lt;/blt-checkbox-radio&gt;&#10;&#10;          &lt;!-- Adds a border between form controls. --&gt;&#10;          &lt;div class=&quot;form-divider-vertical&quot;&gt;&lt;/div&gt;&#10;&#10;          &lt;blt-checkbox-radio data-name=&quot;option3&quot;&#10;                              data-label=&quot;Option 3&quot;&#10;                              data-model=&quot;ctrl.option&quot;&#10;                              data-type=&quot;radio&quot;&#10;                              data-value=&quot;option3&quot;&#10;                              data-required=&quot;true&quot;&gt;&#10;          &lt;/blt-checkbox-radio&gt;&#10;      &lt;/div&gt;&#10;&#10;      &lt;!-- Use form-heading to divide groups of controls --&gt;&#10;      &lt;h2 class=&quot;form-heading&quot;&gt;Category&lt;/h2&gt;&#10;&#10;      &lt;!-- Standard select dropdown. The user will be presented with the options contained in the arrayOfOptions. --&gt;&#10;      &lt;blt-dropdown data-type=&quot;select&quot;&#10;                    data-name=&quot;dropdown&quot;&#10;                    data-label=&quot;Select a Value&quot;&#10;                    data-options=&quot;ctrl.arrayOfOptions&quot;&#10;                    data-model=&quot;ctrl.select&quot;&gt;&#10;      &lt;/blt-dropdown&gt;&#10;&#10;      &lt;!-- Creates a section of padding between form contents and button row. --&gt;&#10;      &lt;div class=&quot;form-spacer&quot;&gt;&lt;/div&gt;&#10;&#10;      &lt;!-- Cancel and Submit buttons at bottom, right-justified. --&gt;&#10;      &lt;div class=&quot;btn-row&quot;&gt;&#10;         &lt;button type=&quot;button&quot; class=&quot;btn-solid&quot; ng-click=&quot;ctrl.cancel()&quot;&gt;Cancel&lt;/button&gt;&#10;         &lt;button type=&quot;submit&quot; class=&quot;btn-solid-submit&quot; ng-click=&quot;ctrl.submit()&quot;&gt;Submit&lt;/button&gt;&#10;      &lt;/div&gt;&#10;  &lt;/form&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+    <div ng-controller="FormExCtrl as ctrl">
+      <form name="ctrl.myForm" class="form" novalidate>
+          <!-- Form titles / headings should be styled with the "form-heading" class. -->
+          <h2 class="form-heading">Contact Info</h2>
+          <!-- A text field, labeled "Required Text Field" and bound to the scope property ctrl.textField2".
+          This field is marked as required and has a pattern defined. Valid values would be ABC123, XYZ789, etc. -->
+          <blt-textfield data-name="textfield"
+                         data-required="true"
+                         data-pattern="[A-Z]{3}[0-9]{3}"
+                         data-label="Required Text Field"
+                         data-model="ctrl.textField">
+          </blt-textfield>
+
+          <!-- Adds a border between form controls. -->
+          <hr class="form-divider">
+          <!-- A simple checkbox bound to ctrl.checkboxFlag with the label of "Checkbox". -->
+          <blt-checkbox-radio data-name="checkbox"
+                              data-label="Checkbox"
+                              data-model="ctrl.checkboxFlag">
+          </blt-checkbox-radio>
+
+          <!-- Use form-heading to divide groups of controls -->
+          <h2 class="form-heading">Select an option</h2>
+
+          <!-- A group of three radio boxes, presented in a horizontal row. -->
+          <div class="form-row">
+              <blt-checkbox-radio data-name="option1"
+                                  data-label="Option 1"
+                                  data-model="ctrl.option"
+                                  data-type="radio"
+                                  data-value="option1"
+                                  data-required="true">
+              </blt-checkbox-radio>
+
+              <!-- Adds a border between form controls. -->
+              <div class="form-divider-vertical"></div>
+
+              <blt-checkbox-radio data-name="option2"
+                                  data-label="Option 2"
+                                  data-model="ctrl.option"
+                                  data-type="radio"
+                                  data-value="option2"
+                                  data-required="true">
+              </blt-checkbox-radio>
+
+              <!-- Adds a border between form controls. -->
+              <div class="form-divider-vertical"></div>
+
+              <blt-checkbox-radio data-name="option3"
+                                  data-label="Option 3"
+                                  data-model="ctrl.option"
+                                  data-type="radio"
+                                  data-value="option3"
+                                  data-required="true">
+              </blt-checkbox-radio>
+          </div>
+
+          <!-- Use form-heading to divide groups of controls -->
+          <h2 class="form-heading">Category</h2>
+
+          <!-- Standard select dropdown. The user will be presented with the options contained in the arrayOfOptions. -->
+          <blt-dropdown data-type="select"
+                        data-name="dropdown"
+                        data-label="Select a Value"
+                        data-options="ctrl.arrayOfOptions"
+                        data-model="ctrl.select">
+          </blt-dropdown>
+
+          <!-- Creates a section of padding between form contents and button row. -->
+          <div class="form-spacer"></div>
+
+          <!-- Cancel and Submit buttons at bottom, right-justified. -->
+          <div class="btn-row">
+             <button type="button" class="btn-solid" ng-click="ctrl.cancel()">Cancel</button>
+             <button type="submit" class="btn-solid-submit" ng-click="ctrl.submit()">Submit</button>
+          </div>
+      </form>
+    </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
