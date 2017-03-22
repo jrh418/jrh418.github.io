@@ -1,27 +1,27 @@
 
   <h1 id="ngboltjs-data-api-configuration-guide">ngBoltJS Data API Configuration Guide</h1>
 <ul>
-<li><a href="#overview">Overview</a><ul>
-<li><a href="#before-you-begin">Before You Begin</a></li>
+<li><a href="/#/guides/data-api#overview">Overview</a><ul>
+<li><a href="/#/guides/data-api#before-you-begin">Before You Begin</a></li>
 </ul>
 </li>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#configuring-the-data-service">Configuring the Data Service</a><ul>
-<li><a href="#profiles">Profiles</a></li>
-<li><a href="#routes">Routes</a></li>
+<li><a href="/#/guides/data-api#installation">Installation</a></li>
+<li><a href="/#/guides/data-api#configuring-the-data-service">Configuring the Data Service</a><ul>
+<li><a href="/#/guides/data-api#profiles">Profiles</a></li>
+<li><a href="/#/guides/data-api#routes">Routes</a></li>
 </ul>
 </li>
-<li><a href="#using-the-data-service">Using the Data Service</a><ul>
-<li><a href="#connecting-the-data-service">Connecting the Data Service</a></li>
-<li><a href="#connection-state-messages-and-callbacks">Connection State, Messges, and Callbacks</a></li>
-<li><a href="#making-requests">Making Requests</a></li>
+<li><a href="/#/guides/data-api#using-the-data-service">Using the Data Service</a><ul>
+<li><a href="/#/guides/data-api#connecting-the-data-service">Connecting the Data Service</a></li>
+<li><a href="/#/guides/data-api#connection-state-messages-and-callbacks">Connection State, Messges, and Callbacks</a></li>
+<li><a href="/#/guides/data-api#making-requests">Making Requests</a></li>
 </ul>
 </li>
 </ul>
 <hr>
 <h2 id="overview">Overview</h2>
 <p>The ngBoltJS data service provides a unified interface for interacting with various data sources external to an application. Architecturally, think of it as an intermediary between the services that provide the supported data sources and your application&#39;s code, handling external data requests by your application in a consistent and controlled manner regardless of the supported data source in use. </p>
-<p>The data service accomplishes this by allowing the application developer to define configuration files for common data source routes and different application <a href="api/blt_appProfile">profiles</a> for each desired deployment environment. This allows application developers to deploy to multiple environments and interface with different data sources without having to change application code, (hopefully) speeding development time.</p>
+<p>The data service accomplishes this by allowing the application developer to define configuration files for common data source routes and different application <a href="/#/api/blt_appProfile">profiles</a> for each desired deployment environment. This allows application developers to deploy to multiple environments and interface with different data sources without having to change application code, (hopefully) speeding development time.</p>
 <p>Learning how to include the data service into your application, how to configure it, and how to use it will be covered in the following sections and sub-pages. Please pay attention to any highlighted sections, as using the data service will force you to consider how you interact with the data sources your application needs.</p>
 <h3 id="before-you-begin">Before You Begin</h3>
 <p>Before using the ngBoltJS data service, familiarize yourself with the following topics or gain a rudimentary understanding of them to make your life easier when using this service: </p>
@@ -32,7 +32,7 @@
 </ul>
 <hr>
 <h2 id="installation">Installation</h2>
-<p>Getting the data service into your project requires that the appropriate properties be selected in the ngBoltJS <a href="api/blt_config">build configuration</a> file. The data sources available to the data service will depend on which options are selected in the build configuration file. For example, if your application requires REST and WAMP, but not SQLite, the following configuration will only allow REST and WAMP to be included in your application: </p>
+<p>Getting the data service into your project requires that the appropriate properties be selected in the ngBoltJS <a href="/#/api/blt_config">build configuration</a> file. The data sources available to the data service will depend on which options are selected in the build configuration file. For example, if your application requires REST and WAMP, but not SQLite, the following configuration will only allow REST and WAMP to be included in your application: </p>
 <pre><code class="lang-json">&quot;components&quot;: {
   &quot;data&quot;: {
     &quot;http&quot;: true,
@@ -64,10 +64,10 @@ function SomeController(BltData) { ... };
 <p>These files are located in the config directory under your project root. </p>
 <h3 id="profiles">Profiles</h3>
 <p>Applications using the data service may have more than one profile. Each profile should represent a separate run-time environment. As an example, your application could use different data sources during development and testing than in production. Therefore, you would create at least two service profiles: one for development and one for production.</p>
-<p><strong><a href="api/blt_appProfile">Create a Profile</a></strong></p>
+<p><strong><a href="/#/api/blt_appProfile">Create a Profile</a></strong></p>
 <h3 id="routes">Routes</h3>
 <p>Applications using the data service must define all of their routes so that the data service knows how to construct the requests to each data source an application is using. </p>
-<p><strong><a href="api/blt_dataRoutes">Create Routes</a></strong> </p>
+<p><strong><a href="/#/api/blt_dataRoutes">Create Routes</a></strong> </p>
 <hr>
 <h2 id="using-the-data-service">Using the Data Service</h2>
 <p>Once the data service has been configured, given at least one profile, and has had the routes defined, it can then be used in application code. The data service exposes several methods and data members that application code can use to interface with the data sources that the service has been configured to support. Each method in the data service&#39;s interface returns a promise, so that application code can enforce an ordered resolution of requests. </p>
@@ -124,7 +124,7 @@ function SomeController(BltData) { ... };
 </tr>
 </tbody>
 </table>
-<p>For information on how to subscribe to these messages, see <a href="api/blt_core/service/BltApi#subscribe">BltApi#subscribe</a>.</p>
+<p>For information on how to subscribe to these messages, see <a href="/#/api/blt_core/service/BltApi#subscribe">BltApi#subscribe</a>.</p>
 <p>In addition to the messages published on the ngBoltJS message bus, two public data members exist as places to hook into the data service and respond to connection state changes by invoking a callback. The callbacks assigned to these members must have a method signature that returns nothing and takes no arguments. </p>
 <table>
 <thead>
@@ -232,7 +232,7 @@ BltData.onconnect = function() {
 <tr>
 <td>data</td>
 <td>The data returned from the request</td>
-<td>Undefined or a formatted object based on return type. See <a href="api/blt_dataRoutes">routes</a> for more information.</td>
+<td>Undefined or a formatted object based on return type. See <a href="/#/api/blt_dataRoutes">routes</a> for more information.</td>
 </tr>
 <tr>
 <td>details</td>
@@ -252,5 +252,5 @@ BltData.onconnect = function() {
 });
 </code></pre>
 <h4 id="api-reference">API Reference</h4>
-<p>To see the documentation on the various requests that the data service can make, see the <a href="api/blt_data/service/BltData">API Reference</a>.</p>
+<p>To see the documentation on the various requests that the data service can make, see the <a href="/#/api/blt_data/service/BltData">API Reference</a>.</p>
 

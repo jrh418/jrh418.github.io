@@ -1,10 +1,10 @@
 
   <h1 id="getting-started">Getting Started</h1>
 <ul>
-<li><a href="#requirements">Requirements</a></li>
-<li><a href="#quick-start">Quick Start</a></li>
-<li><a href="#configuration">Configuration</a></li>
-<li><a href="#start-developing">Start Developing</a></li>
+<li><a href="/#/guides/getting-started#requirements">Requirements</a></li>
+<li><a href="/#/guides/getting-started#quick-start">Quick Start</a></li>
+<li><a href="/#/guides/getting-started#configuration">Configuration</a></li>
+<li><a href="/#/guides/getting-started#start-developing">Start Developing</a></li>
 </ul>
 <!-- TODO: update cli url -->
 <div class="note-tip">
@@ -85,12 +85,12 @@ $ bolt run
 - styles.json
 </code></pre>
 <p>These configuration files allow you to override our defaults for the application build, configure data and authentication services in your application&#39;s profile, define routes for data calls, define your application&#39;s views, and adjust the style of your app&#39;s theme.</p>
-<p><strong><a href="guides/configuration">Configure your Application</a></strong></p>
+<p><strong><a href="/#/guides/configuration">Configure your Application</a></strong></p>
 <hr>
 <h2 id="start-developing">Start Developing</h2>
-<p>After completing the configuration steps, you are ready to begin writing your application&#39;s code. You will want to begin in your application&#39;s <a href="api/blt_core/directive/bltMain">main</a> module. The main module of your application is injected into your application&#39;s <code>index.html</code> during runtime. The index file loads your application&#39;s compiled javascript and CSS files, and initializes your AngularJS application. Generally, you won&#39;t have to make changes to the index file and instead will begin working in the <code>main.template.html</code> and <code>main.controller.js</code> found in the <code>main</code> folder. These two files serve as the main container and controller for your application. You can see that the main template that is included in the boilerplate application contains an appbar, menu, and buttons to navigate to three different views. If you&#39;re just getting started with ngBoltJS, try making small changes to the existing views and content to get a feel for the various components available in ngBoltJS.</p>
-<p>Once you get a feel for things, you will probably want to begin adding views to your application or new features. If you choose to use the <a href="api/blt_view/directive/bltView"><code>bltView</code></a> component, you will need to define your views in the <code>views.json</code>configuration file, which are passed into Angular&#39;s <a href="https://docs.angularjs.org/api/ngRoute/service/$route">$route service</a> at runtime. </p>
-<p><strong><a href="api/blt_appViews">Add Views to your Application</a></strong></p>
+<p>After completing the configuration steps, you are ready to begin writing your application&#39;s code. You will want to begin in your application&#39;s <a href="/#/api/blt_core/directive/bltMain">main</a> module. The main module of your application is injected into your application&#39;s <code>index.html</code> during runtime. The index file loads your application&#39;s compiled javascript and CSS files, and initializes your AngularJS application. Generally, you won&#39;t have to make changes to the index file and instead will begin working in the <code>main.template.html</code> and <code>main.controller.js</code> found in the <code>main</code> folder. These two files serve as the main container and controller for your application. You can see that the main template that is included in the boilerplate application contains an appbar, menu, and buttons to navigate to three different views. If you&#39;re just getting started with ngBoltJS, try making small changes to the existing views and content to get a feel for the various components available in ngBoltJS.</p>
+<p>Once you get a feel for things, you will probably want to begin adding views to your application or new features. If you choose to use the <a href="/#/api/blt_view/directive/bltView"><code>bltView</code></a> component, you will need to define your views in the <code>views.json</code>configuration file, which are passed into Angular&#39;s <a href="https://docs.angularjs.org/api/ngRoute/service/$route">$route service</a> at runtime. </p>
+<p><strong><a href="/#/api/blt_appViews">Add Views to your Application</a></strong></p>
 <p><strong><a href="/api">Use ngBoltJS Components in your Application</a></strong></p>
 <div class="note-tip"> 
 <strong>Best Practice</strong> While it may be tempting to place all of your custom code in the <code>main.template.html</code> and <code>main.controller.js</code> files as many online tutorials do, you should add new folders and files for each functional feature of your application. This will lead to a more maintainable and scalable application. For more information regarding this topic and other practices, see the <a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md">Angular 1 Style Guide by John Papa</a>.

@@ -4,7 +4,7 @@
 
 <header class="api-header">
   <h1 class="api-header-title">
-    <a href="api/blt_notifications">blt_notifications</a>
+    <a href="/#/api/blt_notifications">blt_notifications</a>
     <span class="api-header-divider">/</span>
     bltNotifications
   </h1>
@@ -32,7 +32,7 @@ notification panels as necessary to present all current notifications. When a no
 subscription, a new notification panel will be presented with an <code>OK</code> button and, optionally, a callback button
 depending on the configuration of the notification.</p>
 <div class="note-info">
-<strong>Note</strong> The <a href="api/blt_core/service/BltApi"><code>BltApi</code></a> must be injected into your controller in order to publish messages.
+<strong>Note</strong> The <a href="/#/api/blt_core/service/BltApi"><code>BltApi</code></a> must be injected into your controller in order to publish messages.
 </div>
 </section>
 
@@ -47,7 +47,7 @@ depending on the configuration of the notification.</p>
   <h2 id="dependencies">Dependencies</h2>
   <ul class="api-dependencies-list">
     
-    <li class="api-dependencies-item"><a href="api/blt_core/service/BltApi"><code>BltApi</code></a></li>
+    <li class="api-dependencies-item"><a href="/#/api/blt_core/service/BltApi"><code>BltApi</code></a></li>
     
     <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$timeout">$timeout</a></li>
     
@@ -71,7 +71,7 @@ depending on the configuration of the notification.</p>
 template and publish them via the Bolt API.</caption>
 <code>html
 &lt;blt-notifications&gt;&lt;/blt-notifications&gt;</code>
-<caption>To publish a notification, use the ngBoltJS API <a href="api/blt_core/service/BltApi#publish"><code>BltApi</code></a> method, using <code>&#39;notify&#39;</code> as your
+<caption>To publish a notification, use the ngBoltJS API <a href="/#/api/blt_core/service/BltApi#publish"><code>BltApi</code></a> method, using <code>&#39;notify&#39;</code> as your
 first parameter.The second argument should be your notification in the format shown below. The <code>text</code> of the
 notification will be presented, along with an OK button that the user can click to dismiss the notification. If
 the <code>callback</code> is defined, the <code>text</code> of the <code>callback</code> will be presented in the notification beside the <code>OK</code>
