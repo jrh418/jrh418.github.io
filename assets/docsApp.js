@@ -10946,6 +10946,13 @@ angular.module("truncate",[]).filter("characters",function(){return function(a,b
 (function() {
   'use strict';
 
+  angular.module('home', [
+    
+  ]);
+})();
+(function() {
+  'use strict';
+
   /**
    * @ngdoc module
    * @name bltDocs.guides
@@ -10955,13 +10962,6 @@ angular.module("truncate",[]).filter("characters",function(){return function(a,b
    * 
    */
   angular.module('guides', []);
-})();
-(function() {
-  'use strict';
-
-  angular.module('home', [
-    
-  ]);
 })();
 (function() {
   'use strict';
@@ -11073,6 +11073,29 @@ angular.module("truncate",[]).filter("characters",function(){return function(a,b
     }
   }
 })();
+(function() {
+'use strict';
+
+  angular
+    .module('home')
+    .controller('HomeController', HomeController);
+
+  HomeController.$inject = ['HOME_DATA', 'Shared'];
+  function HomeController(HOME_DATA, Shared) {
+    var vm = this;
+    
+
+    activate();
+
+    ////////////////
+
+    function activate() {
+      Shared.sidebarData = HOME_DATA;
+      Shared.showSidebar = false;
+      Shared.currentPage = 'home';
+    }
+  }
+})();
 (function () {
   'use strict';
 
@@ -11111,29 +11134,6 @@ angular.module("truncate",[]).filter("characters",function(){return function(a,b
     .controller('GuidesController', GuidesController);
   
   GuidesController.$inject = ['GUIDES_DATA', 'Shared', '$scope', '$timeout'];
-})();
-(function() {
-'use strict';
-
-  angular
-    .module('home')
-    .controller('HomeController', HomeController);
-
-  HomeController.$inject = ['HOME_DATA', 'Shared'];
-  function HomeController(HOME_DATA, Shared) {
-    var vm = this;
-    
-
-    activate();
-
-    ////////////////
-
-    function activate() {
-      Shared.sidebarData = HOME_DATA;
-      Shared.showSidebar = false;
-      Shared.currentPage = 'home';
-    }
-  }
 })();
 (function() {
 'use strict';
