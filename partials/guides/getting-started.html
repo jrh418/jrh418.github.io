@@ -49,15 +49,25 @@
 </code></pre>
 <hr>
 <h2 id="quick-start">Quick Start</h2>
-<!-- TODO: update cli url -->
 <ol>
 <li><p>Install the <a href="https://github.com/ngbolt/ng-bolt-cli">ngBoltJS CLI</a> globally.</p>
-<ul>
-<li>If you already have the ngBoltJS CLI installed globally, make sure you are running version 2.0+. If you are not, we recommend you uninstall your old version <code>$ npm rm ng-bolt-cli -g</code> and then install the current version.</li>
-</ul>
+<pre><code class="lang-bash">$ npm install ng-bolt-cli -g
+</code></pre>
+<p><div class="note-warning">
+If you participated in ngBoltJS pre-release testing and already have the ngBoltJS CLI installed globally we recommend you uninstall your old version and then install the current version.
+</div></p>
+<pre><code class="lang-bash">$ bolt version
+ ng-bolt-cli:   2.0.0-23
+$ npm remove ng-bolt-cli -g
+</code></pre>
 </li>
 <li><p>After ngBoltJS CLI has installed successfully, run the following to start a new project.</p>
 <pre><code class="lang-bash">$ bolt new
+</code></pre>
+<p><div class="note-tip"> 
+<strong>NOTE</strong> If this is your first time creating an ngBoltJS application, we recommend using the <a href="https://github.com/ngbolt/ng-bolt-example">Example Template</a> which provides several example views and controls.
+</div></p>
+<pre><code class="lang-bash">$ bolt new --template https://github.com/ngbolt/ng-bolt-example.git
 </code></pre>
 </li>
 <li><p>You will be asked a few questions by the installer, after which the installer will download the ngBoltJS boilerplate template and install all dependencies. When the process has completed, you are ready to run the ngBoltJS application. Do so by running the following in your command line:</p>

@@ -13,18 +13,14 @@
   
 
   
+  <div class="runnable-example-css" ng-show="exCtrl.showExample == 'css'">
+    <pre><code>// Custom width&#10;#sideNav {&#10;  width: 10rem; // 160px&#10;}&#10;&#10;// Custom height&#10;#topRow {&#10;  height:  12.5rem; // 200px&#10;}</code></pre>
+  </div>
+  
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;body class=&quot;grid-frame grid-vertical-xl-down&quot;&gt;&#10;  &lt;div class=&quot;grid-block-md-down&quot;&gt;&#10;    &lt;div class=&quot;grid-content grid-shrink-sm-only&quot;&gt;&#10;    ...&#10;    &lt;/div&gt;&#10;  &lt;/div&gt;&#10;&lt;/body&gt;</code></pre>
-  </div>
-  
-  
-
-</div>
-
-
-;&lt;div class=&quot;grid-block&quot;&gt;&#10;  &lt;!-- Will be the width of the child menu --&gt;&#10;  &lt;div class=&quot;grid-block grid-shrink&quot;&gt;&#10;      &lt;ul id=&quot;sideNav&quot; class=&quot;menu&quot;&gt; ... &lt;/ul&gt;&#10;  &lt;/div&gt;&#10;&#10;  &lt;!-- Will expand to fill remaining width --&gt;&#10;  &lt;div class=&quot;grid-content&quot;&gt; ... &lt;/div&gt;&#10;&lt;/div&gt;&#10;&#10;&lt;!-- Define custom height --&gt;&#10;&lt;div class=&quot;grid-block grid-vertical&quot;&gt;&#10;  &lt;!-- Will be a height of 200px --&gt;&#10;  &lt;div id=&quot;topRow&quot; class=&quot;grid-content grid-shrink&quot;&gt; ... &lt;/div&gt;&#10;&#10;  &lt;!-- Will expand to fill remaining height --&gt;&#10;  &lt;div class=&quot;grid-block&quot;&gt; ... &lt;/div&gt;&#10;&lt;/div&gt;</code></pre>
+      <pre><code>&lt;!-- Define Custom width --&gt;&#10;&lt;div class=&quot;grid-block&quot;&gt;&#10;  &lt;!-- Will be the width of the child menu --&gt;&#10;  &lt;div class=&quot;grid-block grid-shrink&quot;&gt;&#10;      &lt;ul id=&quot;sideNav&quot; class=&quot;menu&quot;&gt; ... &lt;/ul&gt;&#10;  &lt;/div&gt;&#10;&#10;  &lt;!-- Will expand to fill remaining width --&gt;&#10;  &lt;div class=&quot;grid-content&quot;&gt; ... &lt;/div&gt;&#10;&lt;/div&gt;&#10;&#10;&lt;!-- Define custom height --&gt;&#10;&lt;div class=&quot;grid-block grid-vertical&quot;&gt;&#10;  &lt;!-- Will be a height of 200px --&gt;&#10;  &lt;div id=&quot;topRow&quot; class=&quot;grid-content grid-shrink&quot;&gt; ... &lt;/div&gt;&#10;&#10;  &lt;!-- Will expand to fill remaining height --&gt;&#10;  &lt;div class=&quot;grid-block&quot;&gt; ... &lt;/div&gt;&#10;&lt;/div&gt;</code></pre>
   </div>
   
   
