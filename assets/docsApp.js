@@ -7850,6 +7850,7 @@ angular.module("blt_appViews", [])
         get returnType()   { return returnType; },
         get retryMax()     { return retryMax; },
         get retryDelay()   { return retryDelay; },
+        get routeTable()   { return routeTable; },
         getRouteData : getRouteData
       });
 
@@ -10921,6 +10922,15 @@ angular.module("truncate",[]).filter("characters",function(){return function(a,b
   }
 
   function normalizePath(path){
+    
+    //Polyfill that  provides .startsWith functionality in IE 11
+    if (!String.prototype.startsWith) {
+      String.prototype.startsWith = function(searchString, position) {
+      position = position || 0;
+      return this.indexOf(searchString, position) === position;
+      };
+    }
+    
     if( !path.startsWith('/') ){
       path = '/' + path;
     }
