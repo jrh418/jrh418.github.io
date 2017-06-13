@@ -204,6 +204,22 @@
 
   
     angular.module("bltDocs")
+         .controller('ModalExController', ModalExController)
+     ;
+     ModalExController.$inject=["BltApi"];
+     function ModalExController(bltApi) {
+         var ctrl = this;            
+         
+         ctrl.flip = function(modalId) {
+             bltApi.publish(modalId, 'flip');
+         }
+     }
+  
+
+  
+
+  
+    angular.module("bltDocs")
       .controller("NotifyExCtrl", NotifyExCtrl)
     ;
     NotifyExCtrl.$inject = ["BltApi"];

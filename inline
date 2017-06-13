@@ -24,7 +24,15 @@
 </div>
 
 
-;&lt;div class=&quot;grid-block&quot;&gt;&#10;  &lt;!-- Will be the width of the child menu --&gt;&#10;  &lt;div class=&quot;grid-block grid-shrink&quot;&gt;&#10;      &lt;ul id=&quot;sideNav&quot; class=&quot;menu&quot;&gt; ... &lt;/ul&gt;&#10;  &lt;/div&gt;&#10;&#10;  &lt;!-- Will expand to fill remaining width --&gt;&#10;  &lt;div class=&quot;grid-content&quot;&gt; ... &lt;/div&gt;&#10;&lt;/div&gt;&#10;&#10;&lt;!-- Define custom height --&gt;&#10;&lt;div class=&quot;grid-block grid-vertical&quot;&gt;&#10;  &lt;!-- Will be a height of 200px --&gt;&#10;  &lt;div id=&quot;topRow&quot; class=&quot;grid-content grid-shrink&quot;&gt; ... &lt;/div&gt;&#10;&#10;  &lt;!-- Will expand to fill remaining height --&gt;&#10;  &lt;div class=&quot;grid-block&quot;&gt; ... &lt;/div&gt;&#10;&lt;/div&gt;</code></pre>
+grid-shrink&gt;&#10;         &lt;ul class=&quot;menu&quot;&gt; ... &lt;/ul&gt;&#10;     &lt;/div&gt;&#10;&#10;     &lt;!-- Views --&gt;&#10;     &lt;blt-view id=&quot;First&quot;&gt; ... &lt;/blt-view&gt;&#10;     &lt;blt-view id=&quot;Second&quot;&gt; ... &lt;/blt-view&gt;&#10;&#10;     &lt;!-- Right Sidebar --&gt;&#10;     &lt;div class=&quot;grid-block grid-shrink&gt;&#10;         &lt;!-- some other related content --&gt;&#10;     &lt;/div&gt;&#10; &lt;/div&gt;&#10;&lt;/body&gt;</code></pre>
+  </div>
+  
+  
+
+</div>
+
+
+ll be a height of 200px --&gt;&#10;  &lt;div id=&quot;topRow&quot; class=&quot;grid-content grid-shrink&quot;&gt; ... &lt;/div&gt;&#10;&#10;  &lt;!-- Will expand to fill remaining height --&gt;&#10;  &lt;div class=&quot;grid-block&quot;&gt; ... &lt;/div&gt;&#10;&lt;/div&gt;</code></pre>
   </div>
   
   
@@ -123,6 +131,19 @@ ues to signify a form reset / cancel.&#10;     }&#10;  &#10;     function submit
           </div>
       </form>
     </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+on class="btn-solid-submit" blt-open="largeModal">Large Modal</button>
+            <button class="btn-solid-submit" blt-open="fullScreenModal">Full Screen Modal</button>
+            <button class="btn-solid-submit" blt-open="flipModal">Flipping Modal</button>
+       </div>
+  </div>
   
   </div>
   

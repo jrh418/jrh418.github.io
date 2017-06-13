@@ -450,6 +450,155 @@ controller for your modal on the <code>.modal-content</code> element as well.
   
   <h2 id="example">Examples</h2>
   <div class="api-example">
+    <p><caption>Runnable demo of some modals</caption>
+
+
+
+<div class="runnable-example"
+    ng-controller="RunnableExampleController as exCtrl"
+
+    
+    ng-init="exCtrl.setDefaultExample('demo');"
+    
+    runnable="true">
+  
+  
+  <div class="tabs">
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'demo'" ng-class="{'tabs-active': exCtrl.showExample == 'demo'}">Live Demo</button>
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'js'" ng-class="{'tabs-active': exCtrl.showExample == 'js'}">Javascript</button>
+    
+
+    
+
+    
+    <button class="tabs-btn" ng-click="exCtrl.showExample = 'html'" ng-class="{'tabs-active': exCtrl.showExample == 'html'}">HTML</button>
+    
+
+  </div>
+  
+
+  
+  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
+    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;     .controller(&#39;ModalExController&#39;, ModalExController)&#10; ;&#10; ModalExController.$inject=[&quot;BltApi&quot;];&#10; function ModalExController(bltApi) {&#10;     var ctrl = this;            &#10;     &#10;     ctrl.flip = function(modalId) {&#10;         bltApi.publish(modalId, &#39;flip&#39;);&#10;     }&#10; }</code></pre>
+  </div>
+  
+
+  
+
+  
+  <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
+      <pre><code>&lt;div ng-controller= &quot;ModalExController as ctrl&quot;&gt;&#10;&#10;  &lt;blt-modal id=&quot;simpleModal&quot; data-size=&quot;x-small&quot;&gt;&#10;      &lt;div class=&quot;modal-content&quot;&gt;&#10;          &lt;div class=&quot;modal-body&quot;&gt;&#10;              &lt;p class=&quot;modal-text&quot;&gt;Some simple content here, maybe asking for confirmation before taking an action.&#10;          &lt;/div&gt;&#10;          &lt;footer class=&quot;modal-footer&quot;&gt;&#10;              &lt;button class=&quot;modal-btn-text-submit&quot; blt-close=&quot;&quot;&gt;Confirm&lt;/button&gt;&#10;          &lt;/footer&gt;&#10;      &lt;/div&gt;&#10;  &lt;/blt-modal&gt;  &#10;&#10;  &lt;blt-modal id=&quot;mediumModal&quot; data-size=&quot;medium&quot;&gt;&#10;      &lt;div class=&quot;modal-content&quot;&gt;&#10;          &lt;header class=&quot;modal-header&quot;&gt;&#10;              &lt;h2 class=&quot;modal-title&quot;&gt;Medium Modal&lt;/h2&gt;&#10;          &lt;/header&gt;&#10;          &lt;div class=&quot;modal-body&quot;&gt;&#10;              &lt;p class=&quot;modal-text&quot;&gt;The medium modal is useful for showing bigger lists, small tables or forms.&#10;          &lt;/div&gt;&#10;          &lt;footer class=&quot;modal-footer&quot;&gt;&#10;              &lt;button class=&quot;modal-btn-text-submit&quot; blt-close=&quot;&quot;&gt;Close&lt;/button&gt;&#10;          &lt;/footer&gt;&#10;      &lt;/div&gt;&#10;  &lt;/blt-modal&gt;&#10;&#10;  &lt;blt-modal id=&quot;largeModal&quot; data-size=&quot;large&quot;&gt;&#10;      &lt;div class=&quot;modal-content&quot;&gt;&#10;          &lt;header class=&quot;modal-header&quot;&gt;&#10;              &lt;h2 class=&quot;modal-title&quot;&gt;Large Modal&lt;/h2&gt;&#10;          &lt;/header&gt;&#10;          &lt;div class=&quot;modal-body&quot;&gt;&#10;              &lt;p class=&quot;modal-text&quot;&gt;Large modals are useful for more complex tables or forms, or displaying large amounts of content such as code.&#10;          &lt;/div&gt;&#10;          &lt;footer class=&quot;modal-footer&quot;&gt;&#10;              &lt;button class=&quot;modal-btn-text-submit&quot; blt-close=&quot;&quot;&gt;Close&lt;/button&gt;&#10;          &lt;/footer&gt;&#10;      &lt;/div&gt;&#10;  &lt;/blt-modal&gt;&#10;&#10;  &lt;blt-modal id=&quot;fullScreenModal&quot; data-size=&quot;full-screen&quot;&gt;&#10;      &lt;div class=&quot;modal-content&quot;&gt;&#10;           &lt;header class=&quot;modal-header&quot;&gt;&#10;               &lt;h2 class=&quot;modal-title&quot;&gt;Full Screen Modal&lt;/h2&gt;&#10;           &lt;/header&gt;&#10;           &lt;div class=&quot;modal-body&quot;&gt;&#10;               &lt;p class=&quot;modal-text&quot;&gt;The full screen modal is essentially a floating view. It is big enough to section off and include multiple components such as menus, complex lists, tables and forms. Full screen modals expand to the full size of the window except for 1.5rem of padding around the edge to maintain the modal look.&#10;           &lt;/div&gt;&#10;           &lt;footer class=&quot;modal-footer&quot;&gt;&#10;               &lt;button class=&quot;modal-btn-text-submit&quot; blt-close=&quot;&quot;&gt;Close&lt;/button&gt;&#10;           &lt;/footer&gt;&#10;       &lt;/div&gt;&#10;  &lt;/blt-modal&gt;  &#10;&#10;  &lt;blt-modal id=&quot;flipModal&quot; data-flip=&quot;true&quot; data-size=&quot;large&quot;&gt;&#10;      &lt;div class=&quot;modal-content&quot;&gt;&#10;          &lt;div class=&quot;modal-front&quot;&gt;&#10;              &lt;header class=&quot;modal-header&quot;&gt;&#10;                  &lt;h2 class=&quot;modal-title&quot;&gt;Flipping Modal Front&lt;/h2&gt;&#10;              &lt;/header&gt;&#10;              &lt;section class=&quot;modal-body&quot;&gt;&#10;                  &lt;p class=&quot;modal-text&quot;&gt;Some content for the front modal here.&#10;              &lt;/section&gt;&#10;              &lt;footer class=&quot;modal-footer&quot;&gt;&#10;                  &lt;button class=&quot;modal-btn-text-submit&quot; ng-click=&quot;ctrl.flip(&#39;flipModal&#39;)&quot;&gt;Flip Over&lt;/button&gt;&#10;              &lt;/footer&gt;&#10;          &lt;/div&gt;&#10;          &lt;div class=&quot;modal-back&quot;&gt;&#10;              &lt;header class=&quot;modal-header&quot;&gt;&#10;                  &lt;h2 class=&quot;modal-title&quot;&gt;Flipping Modal Back&lt;/h2&gt;&#10;              &lt;/header&gt;&#10;              &lt;section class=&quot;modal-body&quot;&gt;&#10;                  &lt;p class=&quot;modal-text&quot;&gt;Some content for the back modal here.&#10;              &lt;/section&gt;&#10;              &lt;footer class=&quot;modal-footer edge-top&quot;&gt;&#10;                  &lt;button class=&quot;modal-btn-text&quot; ng-click=&quot;ctrl.flip(&#39;flipModal&#39;)&quot;&gt;Flip over&lt;/button&gt;&#10;                  &lt;button class=&quot;modal-btn-text-submit&quot; blt-close=&quot;&quot;&gt;Close&lt;/button&gt;&#10;              &lt;/footer&gt;&#10;          &lt;/div&gt;&#10;      &lt;/div&gt;&#10;  &lt;/blt-modal&gt;  &#10;  &#10;  &lt;div class=&quot;btn-row-left&quot;&gt;&#10;      &lt;button class=&quot;btn-solid-submit&quot; blt-open=&quot;simpleModal&quot;&gt;X-small Modal&lt;/button&gt;&#10;          &lt;button class=&quot;btn-solid-submit&quot; blt-open=&quot;mediumModal&quot;&gt;Medium Modal&lt;/button&gt;&#10;          &lt;button class=&quot;btn-solid-submit&quot; blt-open=&quot;largeModal&quot;&gt;Large Modal&lt;/button&gt;&#10;          &lt;button class=&quot;btn-solid-submit&quot; blt-open=&quot;fullScreenModal&quot;&gt;Full Screen Modal&lt;/button&gt;&#10;          &lt;button class=&quot;btn-solid-submit&quot; blt-open=&quot;flipModal&quot;&gt;Flipping Modal&lt;/button&gt;&#10;     &lt;/div&gt;&#10;&lt;/div&gt;</code></pre>
+  </div>
+  
+  <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
+    
+
+  <div ng-controller= "ModalExController as ctrl">
+
+    <blt-modal id="simpleModal" data-size="x-small">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p class="modal-text">Some simple content here, maybe asking for confirmation before taking an action.
+            </div>
+            <footer class="modal-footer">
+                <button class="modal-btn-text-submit" blt-close="">Confirm</button>
+            </footer>
+        </div>
+    </blt-modal>  
+
+    <blt-modal id="mediumModal" data-size="medium">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 class="modal-title">Medium Modal</h2>
+            </header>
+            <div class="modal-body">
+                <p class="modal-text">The medium modal is useful for showing bigger lists, small tables or forms.
+            </div>
+            <footer class="modal-footer">
+                <button class="modal-btn-text-submit" blt-close="">Close</button>
+            </footer>
+        </div>
+    </blt-modal>
+
+    <blt-modal id="largeModal" data-size="large">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 class="modal-title">Large Modal</h2>
+            </header>
+            <div class="modal-body">
+                <p class="modal-text">Large modals are useful for more complex tables or forms, or displaying large amounts of content such as code.
+            </div>
+            <footer class="modal-footer">
+                <button class="modal-btn-text-submit" blt-close="">Close</button>
+            </footer>
+        </div>
+    </blt-modal>
+
+    <blt-modal id="fullScreenModal" data-size="full-screen">
+        <div class="modal-content">
+             <header class="modal-header">
+                 <h2 class="modal-title">Full Screen Modal</h2>
+             </header>
+             <div class="modal-body">
+                 <p class="modal-text">The full screen modal is essentially a floating view. It is big enough to section off and include multiple components such as menus, complex lists, tables and forms. Full screen modals expand to the full size of the window except for 1.5rem of padding around the edge to maintain the modal look.
+             </div>
+             <footer class="modal-footer">
+                 <button class="modal-btn-text-submit" blt-close="">Close</button>
+             </footer>
+         </div>
+    </blt-modal>  
+
+    <blt-modal id="flipModal" data-flip="true" data-size="large">
+        <div class="modal-content">
+            <div class="modal-front">
+                <header class="modal-header">
+                    <h2 class="modal-title">Flipping Modal Front</h2>
+                </header>
+                <section class="modal-body">
+                    <p class="modal-text">Some content for the front modal here.
+                </section>
+                <footer class="modal-footer">
+                    <button class="modal-btn-text-submit" ng-click="ctrl.flip('flipModal')">Flip Over</button>
+                </footer>
+            </div>
+            <div class="modal-back">
+                <header class="modal-header">
+                    <h2 class="modal-title">Flipping Modal Back</h2>
+                </header>
+                <section class="modal-body">
+                    <p class="modal-text">Some content for the back modal here.
+                </section>
+                <footer class="modal-footer edge-top">
+                    <button class="modal-btn-text" ng-click="ctrl.flip('flipModal')">Flip over</button>
+                    <button class="modal-btn-text-submit" blt-close="">Close</button>
+                </footer>
+            </div>
+        </div>
+    </blt-modal>  
+    
+    <div class="btn-row-left">
+        <button class="btn-solid-submit" blt-open="simpleModal">X-small Modal</button>
+            <button class="btn-solid-submit" blt-open="mediumModal">Medium Modal</button>
+            <button class="btn-solid-submit" blt-open="largeModal">Large Modal</button>
+            <button class="btn-solid-submit" blt-open="fullScreenModal">Full Screen Modal</button>
+            <button class="btn-solid-submit" blt-open="flipModal">Flipping Modal</button>
+       </div>
+  </div>
+  
+  </div>
+  
+  
+
+</div>
+
+
+</p>
+
+  </div><div class="api-example">
     <p><caption>To use the bltModal component in your ngBoltJS application, include a blt-modal
 element in an HTML partial of your application.</caption>
 
