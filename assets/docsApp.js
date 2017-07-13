@@ -2977,22 +2977,22 @@ angular.module("blt_appViews", [])
    * @requires BltApi
    * @requires https://docs.angularjs.org/api/ng/service/$timeout
    *
-   * @param {String} data-label This attribute specifies the label for this component.
-   * @param {Two-Way} data-model This attribute is used to bind the value of this component to a property in the
+   * @param {string} data-label This attribute specifies the label for this component.
+   * @param {two-way} data-model This attribute is used to bind the value of this component to a property in the
    * containing scope. Functionality is based on the Angular ngModel directive.
-   * @param {Value} data-name This attribute indicates the name of this form element and will be used during
+   * @param {value} data-name This attribute indicates the name of this form element and will be used during
    * form traversal by the ngBoltJS framework.
-   * @param {Value} [data-autofocus] Indicates whether or not this field should autofocus on page load.
-   * @param {Expression} [data-change] This attribute is used to bind an expression in the containing scope that
+   * @param {value} [data-autofocus] Indicates whether or not this field should autofocus on page load.
+   * @param {expression} [data-change] This attribute is used to bind an expression in the containing scope that
    * will be invoked any time the value of this component changes. Functionality is based on the Angular ngChange
    * directive.
-   * @param {Value} [data-required] Indicates whether or not this field is required.
-   * @param {Value} [data-type] Indicates whether this should be presented as a checkbox or radio button. Valid
+   * @param {value} [data-required] Indicates whether or not this field is required.
+   * @param {value} [data-type] Indicates whether this should be presented as a checkbox or radio button. Valid
    * values are "checkbox" and "radio". Defaults to "checkbox" if not specified.
-   * @param {Value} [data-value] Only relevant when `data-type="radio"`. Specifies the value to apply to `data-model`
+   * @param {value} [data-value] Only relevant when `data-type="radio"`. Specifies the value to apply to `data-model`
    * when this radio button is selected.
-   * @param {Number} [data-tabindex] Specifies the tab order of an element.
-   * @param {Value} [data-disabled] Disables the field. Any value set in this attribute will cause the field to be disabled.
+   * @param {number} [data-tabindex] Specifies the tab order of an element.
+   * @param {boolean} [data-disabled] Disables the field. Any value set in this attribute will cause the field to be disabled.
    */
   function bltCheckboxRadio() {
     return {
@@ -3001,14 +3001,14 @@ angular.module("blt_appViews", [])
       controller: bltCheckboxRadioController,
       bindings: {
         model: '=',
-        autofocus: '@',
-        disabled: '=?',
+        autofocus: '<',
+        disabled: '<',
         name: '@',
         label: '@',
         type: '@',
         value: '@',
-        required: '@',
-        tabindex: '@',
+        required: '<',
+        tabindex: '<',
         change: '&'
       }
     };
@@ -3341,7 +3341,8 @@ angular.module("blt_appViews", [])
    * @param {expression} [data-validate] An expression that gets passed through to an instance of the bltValidate directive
    * to invoke custom validation on this component value. See documentation for Bolt Validate for more information.
    * @param {value} [data-required] Indicates whether or not this field is required.
-   * @param {boolean} [data-selectOnFocus] If true, selects the contents of the counter input field on focus.
+   * @param {boolean} [data-select-on-focus] If true, selects the contents of the counter input field on focus.
+   * @param {number} [data-tabindex] Specifies the tab order of an element.
    *
    * @requires BltApi
    * @requires https://docs.angularjs.org/api/ng/service/$timeout
@@ -3355,20 +3356,21 @@ angular.module("blt_appViews", [])
       templateUrl: 'components/counter/counter.template.html',
       controller: bltCounterController,
       bindings: {
-        model: '=',
-        name: '@',
-        label: '@',
-        size: '@',
-        disabled: '=?',
-        change: '&',
-        minVal: '@min',
-        maxVal: '@max',
-        selectOnFocus: '@',
-        required: '@',
-        autofocus: '@',
-        validate: '=',
+        model: '=',         
+        name: '@',          
+        label: '@',         
+        size: '<',          
+        disabled: '<', 
+        change: '&',        
+        min: '<',
+        max: '<',
+        selectOnFocus: '<',
+        required: '<',     
+        autofocus: '<',  
+        validate: '<',  
         leftIcon: '@',
-        rightIcon: '@'
+        rightIcon: '@',
+        tabindex: '<'
       }
     };
   }
@@ -3389,7 +3391,6 @@ angular.module("blt_appViews", [])
     var mouseState = MouseState();
     var lastAdjustedModel = undefined;
     var defaultVal = 0;
-    var selectOnFocus = ctrl.selectOnFocus !== 'false' && !!(ctrl.selectOnFocus);
     var adjustableSize = true;
     var tInputElem = undefined;
 
@@ -3425,7 +3426,10 @@ angular.module("blt_appViews", [])
       $scope.$watch(function() {
         return ctrl.required;
       }, function() {
-        if ( angular.isDefined(ctrl.required) && ctrl.required !== 'false' ) {
+        if ( angular.isDefined(ctrl.required) && ctrl.required !== 'false' && ctrl.required) {
+          if (angular.isUndefined(ctrl.model) || !isFinite(ctrl.model)) {
+            ctrl.model = defaultVal;
+          }
           ctrl.asterisk = "*";
         } else {
           ctrl.asterisk = "";
@@ -3439,11 +3443,11 @@ angular.module("blt_appViews", [])
 
       // Set min
       $scope.$watch(function() {
-        return ctrl.minVal;
+        return ctrl.min;
       }, function() {
         var min;
-        if ( angular.isDefined(ctrl.minVal) ) {
-          min = parseFloat(ctrl.minVal);
+        if ( angular.isDefined(ctrl.min) ) {
+          min = parseFloat(ctrl.min);
           if ( isFinite(min) ) {
             ctrl.min = min;
             if ( min > 0 ) {
@@ -3465,10 +3469,10 @@ angular.module("blt_appViews", [])
 
       // set max
       $scope.$watch(function() {
-        return ctrl.maxVal;
+        return ctrl.max;
       }, function() {
-        if ( angular.isDefined(ctrl.maxVal) ) {
-          var max = parseFloat(ctrl.maxVal);
+        if ( angular.isDefined(ctrl.max) ) {
+          var max = parseFloat(ctrl.max);
           if ( isFinite(max) ) {
             if ( !isFinite(ctrl.min) || max >= ctrl.min ) {
               ctrl.max = max;
@@ -3579,7 +3583,7 @@ angular.module("blt_appViews", [])
      * @description If selectOnFocus is true, selects the contents of the counter input field on focus.
      */
     function onFocus() {
-      if ( selectOnFocus ) {
+      if ( ctrl.selectOnFocus ) {
         if ( angular.isDefined(ctrl.model) ) {
           try {
             tInputElem[0].selectionStart = 0;
@@ -3835,7 +3839,7 @@ angular.module("blt_appViews", [])
    * interested in the month and year of birth, you would set this value to `month`.
    *
    * You can also set a min and max date available for user selection. To set the min or max date, you simply bind one
-   * of the attributes `data-min-date` or `data-max-date` to a model in your controller containing a date of some sort.
+   * of the attributes `data-min` or `data-max` to a model in your controller containing a date of some sort.
    * Valid formats include any value that can successfully be interpreted as a a date, including seconds from epoch as a
    * string or integer, or a JavaScript date object.
    *
@@ -3855,6 +3859,8 @@ angular.module("blt_appViews", [])
    * @param {date} [data-max] The maximum date to display on the calendar. Any date above the specified date will be disabled.
    * @param {date} [data-min] The minimum date to display on the calendar. Any date below the specified date will be disabled. If `data-model` is null when the datepicker opens, it will open the calendar to minimum specified date.
    * @param {boolean} [data-required=false] Specifies if the form field is required.
+   * @param {boolean} [data-disabled] Disables the field. Any value set in this attribute will cause the field to be disabled.
+   * @param {number} [data-tabindex] Specifies the tab order of an element.
    *
    * @example
    * <example runnable="true">
@@ -3884,7 +3890,7 @@ angular.module("blt_appViews", [])
    *           <div class="form-divider-vertical"></div>
    *           <blt-datepicker data-model="ctrl.dateModel2"
    *                           data-label="Date Selection with Restrictions"
-   *                           data-min-date="ctrl.mindate"
+   *                           data-min="ctrl.mindate"
    *                           data-first-view="{{ctrl.firstview}}"
    *                           data-name="datepickerTest2">
    *           </blt-datepicker>
@@ -3905,20 +3911,24 @@ angular.module("blt_appViews", [])
   function bltDatepicker( utils, api, $timeout, $document ) {
     var directive = {
       restrict: 'E',
+      require: {
+        form: '^form'
+      },
       templateUrl: 'components/datepicker/datepicker.template.html',
       scope: {
         model: '=',
         name: '@',
         label: '@',
-        autoFocus: '@?',
-        change: '&?',
-        format: '@?',
-        firstView: '@?',
-        lastView: '@?',
-        max: '=maxDate',
-        min: '=minDate',
-        required: '@?',
-        disabled: '=?'
+        autofocus: '<',
+        change: '&',
+        format: '@',
+        firstView: '@',
+        lastView: '@',
+        max: '<',
+        min: '<',
+        required: '<',
+        disabled: '<',
+        tabindex: '<'
       },
       link: link
     }
@@ -3936,19 +3946,10 @@ angular.module("blt_appViews", [])
      * @param {DOMelement} element Our directive element.
      * @param {object} attrs The raw attributes applied to our directive.
      */
-    function link( scope, element, attrs ) {
-
-      // Set up our input element based on the attributes applied to our direcitive element.
-      if ( scope.autoFocus ) {
-        element.find('input').attr('autofocus', true);
-      }
-      if ( scope.required ) {
-        element.find('input').attr('required', true);
-      }
-
+    function link( scope, element, attrs, formCtrl ) {
       // If the user defined a minDate binding, set the initial value of our scope minDate and set up a watcher
       // to update this value as the model binding updates.
-      if ( attrs.minDate != undefined ) {
+      if ( attrs.min != undefined ) {
         scope.minDate = toDate(scope.min);
         if ( angular.isFunction(scope.min) ) {
           scope.$watch(function() {
@@ -3963,7 +3964,7 @@ angular.module("blt_appViews", [])
 
       // If the user defined a maxDate binding, set the initial value of our scope maxDate and set up a watcher
       // to update this value as the model binding updates.
-      if ( attrs.maxDate != undefined ) {
+      if ( attrs.max != undefined ) {
         scope.maxDate = toDate(scope.max);
         if ( angular.isFunction(scope.max) ) {
           scope.$watch(function() {
@@ -3976,17 +3977,24 @@ angular.module("blt_appViews", [])
         }
       }
 
-
       // Public view state / model
       scope.active = false;
-      scope.current = {};
-      scope.current.view = scope.firstView || 'year';
+      scope.current = {
+        date: scope.model ? toDate(scope.model) : undefined,
+        view: scope.firstView || 'year'
+      };
       scope.format = scope.format ? scope.format : 'short';
+
+      scope.$watch(function(){
+        return scope.model;
+      }, function(){
+        if(!scope.active){
+          setCurrentDate(scope.model);
+        }
+      })
 
       // Private view and date state
       var views = ['year', 'month', 'date', 'hours', 'minutes'];
-      var step = 5;
-      var now = new Date();
       var lastViewIndex = scope.lastView ? views.indexOf(scope.lastView) : (views.length - 1);
       var selectedDate = {};
 
@@ -3999,12 +4007,14 @@ angular.module("blt_appViews", [])
       scope.canPickHour = canPickHour;
       scope.canPickMinute = canPickMinute;
       scope.close = close;
+      scope.blur = blur;
       scope.isNow = isNow;
       scope.isSameDay = isSameDay;
       scope.isSameHour = isSameHour;
       scope.isSameMinutes = isSameMinutes;
       scope.isSameMonth = isSameMonth;
       scope.isSameYear = isSameYear;
+      scope.getLabel = getLabel;
       scope.next = next;
       scope.prev = prev;
       scope.setDate = setDate;
@@ -4014,37 +4024,68 @@ angular.module("blt_appViews", [])
        * and set up our selectedDate context model. Register 'esc' to cancel close the date picker session. This
        * function will be attached to the keypress and click listeners on our input field.
        */
+
       function activate(event) {
         if( !scope.disabled ) {
-          if ( event.type == 'click' || (event.type == 'keypress' && event.keyCode == 13) ) {
+          if ( event.type == 'click' || (event.type == 'keyup' && event.keyCode == 13) ) {
             // set the current date
             if ( scope.model ) {
-              scope.current.date = toDate(scope.model);
+              selectedDate.year = scope.current.date.getFullYear();
+              selectedDate.month = scope.current.date.getMonth();
+              selectedDate.date = scope.current.date.getDate();
+              selectedDate.hours = scope.current.date.getHours();
+              selectedDate.minutes = scope.current.date.getMinutes();
             } else {
-              scope.current.date = new Date();
+              setCurrentDate(new Date());
+              selectedDate.year = null;
+              selectedDate.month = null;
+              selectedDate.date = null;
+              selectedDate.hours = null;
+              selectedDate.minutes = null;
             }
-
-            // If editing previously selected date, build the selected Date object
-            // else build an empty selected date object.
-            selectedDate.year = scope.model ? scope.current.date.getFullYear() : null;
-            selectedDate.month = scope.model ? scope.current.date.getMonth() : null;
-            selectedDate.date = scope.model ? scope.current.date.getDate() : null;
-            selectedDate.hours = scope.model ? scope.current.date.getHours() : null;
-            selectedDate.minutes = scope.model ? scope.current.date.getMinutes() : null;
-
-            document.getElementById('blt-datepicker-input').blur();
-
             update();
-
+            if ( !scope.active ) {
+              scope.active = true;
+              element.addClass('enter');
+              $timeout(function() {
+                setUntouched();
+                element.removeClass('enter');
+              }, 300);
+            }
             // add event listerner for keyup to close on esc keypress.
             $document.on('keyup', function( e ) {
               if ( e.keyCode == 27 ) {
-                scope.close();
+                scope.close(true);
               }
             });
+          } else if( event.type == 'keyup' ){
+            if( event.keyCode == 8 ){
+              scope.model = undefined;
+            }
           }
         }
-      };
+      }
+
+      function blur(){
+        if( !scope.active ){
+          setTouched();
+        }
+      }
+
+      function setTouched(){
+        formCtrl.form[scope.name].$setTouched();
+      }
+
+      function setUntouched(){
+        formCtrl.form[scope.name].$setUntouched();
+      }
+
+      function getLabel(){
+        if(scope.required && scope.required !== 'false'){
+          return scope.label + '*'
+        }
+        return scope.label;
+      }
 
       /**
        * Evaluates the given date and returns a boolean value dictating whether or not the year of the given date
@@ -4159,47 +4200,82 @@ angular.module("blt_appViews", [])
           case 'minutes':
             if ( canPickMinute(date) ) {
               selectedDate.minutes = date.getMinutes();
-              scope.current.date.setMinutes(date.getMinutes());
+              setCurrentDate(date.getMinutes(), scope.current.view);
               openNextView();
             }
             break;
           case 'hours':
             if ( canPickHour(date) ) {
               selectedDate.hours = date.getHours();
-              scope.current.date.setHours(date.getHours());
+              setCurrentDate(date.getHours(), scope.current.view);
               openNextView();
             }
             break;
           case 'date':
             if ( canPickDay(date) ) {
               selectedDate.date = date.getDate();
-              scope.current.date.setDate(date.getDate());
+              setCurrentDate(date.getDate(), scope.current.view);
               openNextView();
             }
             break;
           case 'month':
             if ( canPickMonth(date) ) {
               selectedDate.month = date.getMonth();
-              scope.current.date.setMonth(date.getMonth());
+              setCurrentDate(date.getMonth(), scope.current.view);
               openNextView();
             }
             break;
           case 'year':
             if ( canPickYear(date) ) {
               selectedDate.year = date.getFullYear();
-              scope.current.date.setFullYear(date.getFullYear());
+              setCurrentDate(date.getFullYear(), scope.current.view);
               openNextView();
             }
             break;
         }
+      }
 
-      };
+      /**
+       * Sets the current context model with the given date based on the given value and view.
+       */
+      function setCurrentDate(value, view){
+        if( value ) {
+          if ( !scope.current.date ) {
+            scope.current.date = new Date();
+          }
+          if ( view ) {
+            switch ( view ) {
+              case 'minutes':
+                scope.current.date.setMinutes(value);
+                break;
+              case 'hours':
+                scope.current.date.setHours(value);
+                break;
+              case 'date':
+                scope.current.date.setDate(value);
+                break;
+              case 'month':
+                scope.current.date.setMonth(value);
+                break;
+              case 'year':
+                scope.current.date.setFullYear(value);
+                break;
+            }
+          } else {
+            scope.current.date.setTime(toDate(value).getTime());
+          }
+          scope.current.ms = scope.current.date.getTime();
+        } else {
+          scope.current.date = undefined;
+          scope.current.ms = undefined;
+        }
+      }
 
       /**
        * Closes the date picker. Returns focus to our input field and resets the current view. Deregisters the
        * keyup listener.
        */
-      function close() {
+      function close(canceled) {
         element.addClass('leave');
 
         // reset date picker after closing animation
@@ -4207,13 +4283,20 @@ angular.module("blt_appViews", [])
           // deactivate
           scope.active = false;
 
+          // focus input field
+          document.getElementById('datepicker-toggle-'+scope.name).focus();
+
+
           // reset view to first view
           scope.current.view = scope.firstView ? scope.firstView : 'year';
 
-          // focus input field
-          document.getElementById('blt-datepicker-input').focus();
+          if( canceled ){
+            setCurrentDate(scope.model);
+          }
 
           element.removeClass('leave');
+
+          setTouched();
 
           // remove keyup event listener
           $document.off('keyup');
@@ -4226,7 +4309,7 @@ angular.module("blt_appViews", [])
        * @param delta - (Optional) The number to advance the date component by. Defaults to 1 if not provided.
        */
       function next( delta ) {
-        var date = scope.current.date;
+        var date = scope.current.date || new Date();
         delta = delta || 1;
         switch ( scope.current.view ) {
           case 'year':
@@ -4258,18 +4341,18 @@ angular.module("blt_appViews", [])
 
 
       /**
-       * Checks to see if the given date is after the time specified in the data-min-date directive attribute.
+       * Checks to see if the given date is after the time specified in the data-min directive attribute.
        * @param date - The date to check.
-       * @returns {boolean} True if the given date is after our data-min-date directive attribute.
+       * @returns {boolean} True if the given date is after our data-min directive attribute.
        */
       function isAfter( date ) {
         return !!(scope.minDate) && utils.isAfter(date, scope.minDate);
       };
 
       /**
-       * Checks to see if the given date is prior to the time specified in the data-max-date directive attribute.
+       * Checks to see if the given date is prior to the time specified in the data-max directive attribute.
        * @param date - The date to check.
-       * @returns {boolean} True if the given date is prior to our data-max-date directive attribute.
+       * @returns {boolean} True if the given date is prior to our data-max directive attribute.
        */
       function isBefore( date ) {
         return !!(scope.maxDate) && utils.isBefore(date, scope.maxDate);
@@ -4355,7 +4438,7 @@ angular.module("blt_appViews", [])
        * Updates the scope's visible date UI elements based on the current date.
        */
       function update() {
-        var date = scope.current.date;
+        var date = scope.current.date || new Date();
 
         switch ( scope.current.view ) {
           case 'year':
@@ -4374,15 +4457,6 @@ angular.module("blt_appViews", [])
             scope.minutes = utils.getVisibleMinutes(date, 5);
             break;
         }
-
-        if ( !scope.active ) {
-          scope.active = true;
-
-          element.addClass('enter');
-          $timeout(function() {
-            element.removeClass('enter');
-          }, 300);
-        }
       }
 
       /**
@@ -4399,6 +4473,7 @@ angular.module("blt_appViews", [])
           var newModel = scope.current.date.getTime().toString();
           if ( newModel != scope.model ) {
             scope.model = newModel;
+            scope.current.date = toDate(scope.model);
             onChange();
           }
           // Close the date picker
@@ -4439,12 +4514,15 @@ angular.module("blt_appViews", [])
               outDate = new Date(msFromEpoch);
             }
           } else if ( angular.isNumber(inDate) ) {
-            outDate = new Date(~~inDate);
+            outDate = new Date(Math.floor(inDate));
           } else if ( angular.isDate(inDate) ) {
             outDate = new Date(inDate.getTime());
           } else if ( angular.isFunction(inDate) ) {
             outDate = toDate(inDate());
           }
+          outDate.setMinutes(Math.floor(outDate.getMinutes() / 5) * 5);
+          outDate.setSeconds(0);
+          outDate.setMilliseconds(0);
         }
         return outDate;
       }
@@ -4744,17 +4822,23 @@ angular.module("blt_appViews", [])
    *
    * @restrict E
    *
+   * @param {string} data-label This attribute specifies the label for this component.
    * @param {string} data-name This attribute indicates the name of this form element and will be used during form
    * traversal by the ngBoltJS framework.
-   * @param {expression} data-model This attribute is used to bind the value of this component to a property in the
-   * containing scope. Functionality is based on the Angular ngModel directive.
+   * @param {boolean} [data-autofocus] Indicates whether or not this field should autofocus on page load.
+   * @param {expression} [data-change] This attribute is used to bind an expression in the containing scope that
+   * will be invoked any time the value of this component changes. Functionality is based on the Angular ngChange
+   * directive.
    * @param {boolean} [data-disabled] Disables the field. Any value set in this attribute will cause the field to be
    * disabled.
-   * @param {boolean} [data-autofocus] Indicates whether or not this field should autofocus on page load.
    * @param {value} [data-required] Indicates whether or not this field is required.
    * @param {value} [data-tabindex] Specifies the tab order of an element
+   * @param {expression} [data-validate] An expression that gets passed through to an instance of the bltValidate
+   * directive to invoke custom validation on this component value. See documentation for bltValidate for more
+   * information.
    *
    * @requires BltApi
+   * @requires https://docs.angularjs.org/api/ng/service/$timeout
    */
   function bltFileloader() {
     return {
@@ -4765,13 +4849,15 @@ angular.module("blt_appViews", [])
       controllerAs: 'File',
       templateUrl: 'components/fileloader/fileloader.template.html',
       bindings: {
-        name: '@',
+        autofocus: '<',
+        change: '&',
         data: '=model',
-        label: "@",
-        disabled: '=?',
-        autofocus: '@',
-        required: '@',
-        tabindex: '@'
+        disabled: '<',
+        label: '@',
+        name: '@',
+        required: '<',
+        tabindex: '<',
+        validate: '<'
       }
     };
   }
@@ -4786,14 +4872,16 @@ angular.module("blt_appViews", [])
    * @requires BltApi
    *
    */
-  function bltFileloaderController( api ) {
+  function bltFileloaderController( api, $timeout ) {
 
     var ctrl = this;
     ctrl.$onInit = init;
     ctrl.getFileExtension = getFileExtension;
+    ctrl.onChange = onChange;
     ctrl.data = null;
     ctrl.fileExt = '';
     ctrl.charsLimit = 30;
+
 
     /**
      * @private
@@ -4806,6 +4894,15 @@ angular.module("blt_appViews", [])
         api.error('missing name attribute for blt-fileloader. See: '
           + window.location + '/blt.fileloader.bltFileloader.html');
       }
+      // Set validator
+      if ( ctrl.validate ) {
+        if ( ctrl.validate.msg ) {
+          ctrl.errorMsg = ctrl.validate.msg;
+        } else {
+          ctrl.errorMsg = 'Invalid file.';
+        }
+      }
+
     }
 
     /**
@@ -4823,6 +4920,19 @@ angular.module("blt_appViews", [])
         }
       }
     };
+
+    /**
+     * @name bltFileloaderController#onChange
+     * @description This function will be bound to ng-change on our actual input element. When invoked, check for
+     * existence of ctrl.change. If it is defined, invoke it in a $timeout, which ensures that our parent
+     * model has had time to update.
+     */
+     function onChange() {
+          if ( ctrl.change ) {
+              $timeout(ctrl.change, 0);
+          }
+      };
+
   }
 
   /**
@@ -4906,7 +5016,7 @@ angular.module("blt_appViews", [])
   }
 
   bltFilemodel.$inject = ['$timeout'];
-  bltFileloaderController.$inject = ['BltApi'];
+  bltFileloaderController.$inject = ['BltApi', '$timeout'];
 })();
 
 (function() {
@@ -6311,7 +6421,7 @@ angular.module("blt_appViews", [])
    * @param {boolean} [data-required] Indicates whether or not this field is required.
    * @param {string} [data-type] Specifies the dropdown type (dropdown, select, or searchable).
    * @param {value} [data-tabindex] Specifies the tab order of an element.
-   * @param {value} [data-disabled] Disables the field. Any value set in this attribute will cause the field to be
+   * @param {boolean} [data-disabled] Disables the field. Any value set in this attribute will cause the field to be
    * disabled.
    *
    * @example <caption>Standard select dropdown. The user will be presented with the options contained in the
@@ -6404,12 +6514,12 @@ angular.module("blt_appViews", [])
         label: '@',
         options: '<',
         change: '&',
-        selectNoneLabel: "@",
+        selectNoneLabel: '@',
         type: '@',
-        required: '@',
-        tabindex: '@',
-        autofocus: '@',
-        disabled: '=?'
+        required: '<',
+        tabindex: '<',
+        autofocus: '<',
+        disabled: '<'
       }
     };
   }
@@ -6549,6 +6659,8 @@ angular.module("blt_appViews", [])
         var keyedOption = ctrl.keyedOptionMap[ctrl.select.model];
         if ( keyedOption ) {
           ctrl.model = getOptionValue(keyedOption);
+        } else {
+          ctrl.model = undefined;
         }
       }
       onChange();
@@ -6573,6 +6685,9 @@ angular.module("blt_appViews", [])
      * @param {object|string} option The displayed option to select.
      */
     function selectOption( option ) {
+      if( ctrl.searchable ) {
+        ctrl.form[ctrl.name].$setTouched();
+      }
       var value = getOptionValue(option);
       if ( ctrl.model != value ) {
         ctrl.model = value;
@@ -6762,14 +6877,6 @@ angular.module("blt_appViews", [])
       }
       updateInternalModel();
 
-      //If this dropdown is required, we need to make sure the value is never cleared, therefore if the
-      //the current scope.model is undefined set the model to the first available option.
-      if ( (ctrl.required && angular.isUndefined(ctrl.model)) ) {
-        if ( ctrl.keyedOptions.length > 0 ) {
-          selectOption(ctrl.keyedOptions[0]);
-        }
-      }
-
       //Update our filtered options to reflect the new options, filtering them with the current
       //search model if our options are currently open.
       if ( ctrl.open ) {
@@ -6867,26 +6974,39 @@ angular.module("blt_appViews", [])
     function scrollCurrentSelectionIntoView() {
       $timeout(function() {
         if ( ctrl.searchable && ctrl.open ) {
+          var active;
           if ( ctrl.currentSelection ) {
-            var active = document.getElementById(ctrl.currentSelection.key);
-            if ( active && active.parentElement ) {
-              active = active.parentElement;
-              var scrollTop = active.parentElement.scrollTop;
-              var scrollBottom = scrollTop + active.parentElement.clientHeight;
-              var selectedTop = active.offsetTop;
-              var selectedBottom = selectedTop + active.clientHeight;
-              if ( selectedTop < (scrollTop + 4) ) { //If the top of our selected element is above the top of the
-                // scroll window, shift the view up.
-                active.parentElement.scrollTop = selectedTop - 4;
-              } else if ( selectedBottom > (scrollBottom + 4) ) { //Else if the bottom of the selected element is
-                // below the bottom of the scroll window, shift the view down
-                active.parentElement.scrollTop = scrollTop + ((selectedBottom - scrollBottom) + 4);
-              }
-            }
+            active = document.getElementById(ctrl.currentSelection.key);
+          } else if(!ctrl.required) {
+            active = document.getElementById("searchable-select-none");
           }
+          scrollToElement(active);
         }
       });
     };
+
+    /**
+     * @private
+     * @description Scrolls the given element into view. If the element is above the current view, it will
+     * scroll up into view. If it's below, it will scroll down until the element is fully in view. We do this
+     * inside of a timeout to allow the current apply cycle to finish before analyzing and applying the scroll.
+     */
+    function scrollToElement(elem){
+      if ( elem && elem.parentElement ) {
+        elem = elem.parentElement;
+        var scrollTop = elem.parentElement.scrollTop;
+        var scrollBottom = scrollTop + elem.parentElement.clientHeight;
+        var selectedTop = elem.offsetTop;
+        var selectedBottom = selectedTop + elem.clientHeight;
+        if ( selectedTop < (scrollTop + 4) ) { //If the top of our selected element is above the top of the
+          // scroll window, shift the view up.
+          elem.parentElement.scrollTop = selectedTop - 4;
+        } else if ( selectedBottom > (scrollBottom + 4) ) { //Else if the bottom of the selected element is
+          // below the bottom of the scroll window, shift the view down
+          elem.parentElement.scrollTop = scrollTop + ((selectedBottom - scrollBottom) + 4);
+        }
+      }
+    }
 
     /**
      * @private
@@ -6965,7 +7085,7 @@ angular.module("blt_appViews", [])
     function onDocumentClick( e ) {
       $scope.$apply(function() {
         if ( ctrl.open && e.target.name != ctrl.name
-          && e.target.id != 'select-none'
+          && e.target.id != 'searchable-select-none'
           && !ctrl.keyedOptionMap.hasOwnProperty(e.target.id) ) {
           ctrl.closeOptions();
         }
@@ -7105,7 +7225,7 @@ angular.module("blt_appViews", [])
    *        data-label="Comments Field"
    *        data-model="MyCtrl5.commentsField1"
    *        data-rows="5"
-   *        data-max-length="255">
+   *        data-maxlength="255">
    *      </blt-textfield>
    *    </form>
    *   </html>
@@ -7202,7 +7322,7 @@ angular.module("blt_appViews", [])
    * @param {boolean} [data-autocomplete] Indicates whether or not this field should autocomplete.
    * @param {boolean} [data-autocorrect] Indicates whether or not this field should have autocorrect.
    * @param {boolean} [data-spellcheck] Indicates whether or not this field should have spellcheck.
-   * @param {value} [data-tabindex] Specifies the tab order of an element.
+   * @param {number} [data-tabindex] Specifies the tab order of an element.
    */
   function bltTextfield() {
     return {
@@ -7216,22 +7336,22 @@ angular.module("blt_appViews", [])
         name: '@',
         label: '@',
         type: '@',
-        minlength: '@',
-        maxlength: '@',
-        min: '@',
-        max: '@',
+        minlength: '<',
+        maxlength: '<',
+        min: '<',
+        max: '<',
         change: '&',
-        rows: '@',
-        validate: '=',
-        required: '@',
-        autofocus: '@',
-        autocomplete: '@',
-        autocorrect: '@',
-        spellcheck: '@',
-        disabled: '=?',
+        rows: '<',
+        validate: '<',
+        required: '<',
+        autofocus: '<',
+        autocomplete: '<',
+        autocorrect: '<',
+        spellcheck: '<',
+        disabled: '<',
         pattern: '@',
-        tabindex: '@',
-        step: '@'
+        tabindex: '<',
+        step: '<'
       }
     };
   }
@@ -7273,14 +7393,13 @@ angular.module("blt_appViews", [])
         ctrl.type = 'text';
       }
 
+      ctrl.asterisk =  ctrl.required ? "*" : "";
       $scope.$watch(function() {
         return ctrl.required;
       }, function() {
-        if ( angular.isDefined(ctrl.required) && ctrl.required !== 'false' ) {
-          ctrl.asterisk = "*";
-        } else {
-          ctrl.asterisk = "";
-        }
+        $timeout(function(){
+          ctrl.asterisk =  ctrl.required ? "*" : "";
+        })
       });
 
       // Warn about incorrect usage of rows attribute.
@@ -7510,6 +7629,9 @@ angular.module("blt_appViews", [])
    * @param {boolean} [data-disabled] Disables the switch. A property in the containing scope that will disable the
    * control if truthy. The Toggle Switch can be disabled in the off or on state.
    * @param {string} [data-label] An optional value to display a form control label above the Toggle Switch.
+   * @param {string} [data-name] This attribute indicates the name of this form element and will be used during form
+   * traversal by the ngBoltJS framework.
+   * @param {number} [data-tabindex] Specifies the tab order of an element.
    * @param {string} [data-justify] An optional value to justify the Toggle Switch and label (if applicable) to the 'left'
    * (default), 'right', or 'center'.
    *
@@ -7521,10 +7643,12 @@ angular.module("blt_appViews", [])
     var directive = {
       restrict: 'E',
       scope: {
-        disabled: '=?',
-        label: '@?',
+        disabled: '<',
+        label: '@',
+        name: '@',
         model: '=',
-        change: '&'
+        change: '&',
+        tabindex: '<'
       },
       templateUrl: 'components/toggleswitch/toggleswitch.template.html',
       link: linkFn
@@ -7550,9 +7674,10 @@ angular.module("blt_appViews", [])
         throw new Error("'data-model' attribute on blt-toggle-switch component is required but was undefined.");
       }
 
-      // Add toggle-switch class to our element and set role to checkbox
+      // Add toggle-switch class to our element and set role to checkbox, and allow tabindex functionality
       elem.addClass('toggle-switch');
       elem.attr('role', 'checkbox');
+      elem.attr('tabindex', scope.tabindex || 0);
 
       if ( attrs.justify && attrs.justify == 'right' ) {
         elem.addClass('toggle-right');
@@ -7583,6 +7708,7 @@ angular.module("blt_appViews", [])
     }
   }
 })();
+
 (function() {
   'use strict';
 
@@ -9473,18 +9599,17 @@ module.run(['$templateCache', function($templateCache) {
     '<div class="checkbox-radio">\n' +
     '    <!-- Checkbox or Radio Button -->\n' +
     '    <label>\n' +
-    '        <!--TODO: Implement bolt directives to handle optional attributes-->\n' +
     '        <input name="{{$ctrl.name}}"\n' +
     '               type="{{$ctrl.type}}"\n' +
     '               class="checkbox-radio-input-hidden"\n' +
     '               ng-model="$ctrl.model"\n' +
-    '               ng-change="$ctrl.onChange()"\n' +
+    '               ng-change="$ctrl.onChange()"                                                             \n' +
     '               ng-keyup="$ctrl.toggle()"\n' +
     '               ng-disabled="$ctrl.disabled"\n' +
+    '               ng-required="$ctrl.required"\n' +
     '               value="{{$ctrl.value}}"\n' +
-    '               blt-tabindex="{{$ctrl.tabindex}}"\n' +
-    '               blt-required="{{$ctrl.required}}"\n' +
-    '               blt-autofocus="{{$ctrl.autofocus}}"/>\n' +
+    '               ng-attr-tabindex="{{$ctrl.tabindex}}"\n' +
+    '               ng-attr-autofocus="{{$ctrl.autofocus}}"/>\n' +
     '\n' +
     '        <div class="checkbox-radio-input" ng-class="{\'disabled\': $ctrl.disabled}">\n' +
     '            <span class="checkbox-radio-icon fa"\n' +
@@ -9544,14 +9669,14 @@ module.run(['$templateCache', function($templateCache) {
     '               ng-show="!$ctrl.NaN"\n' +
     '               ng-disabled="$ctrl.disabled"\n' +
     '               ng-change="$ctrl.onChange()"\n' +
-    '               ng-focus="$ctrl.onFocus()"\n' +
-    '               data-max="{{$ctrl.max}}"\n' +
-    '               data-min="{{$ctrl.min}}"\n' +
     '               ng-class="{\'counter-disabled\': $ctrl.disabled}"\n' +
     '               ng-model="$ctrl.model"\n' +
-    '               blt-autofocus="{{$ctrl.autofocus}}"\n' +
-    '               blt-validate="$ctrl.validate"\n' +
-    '               blt-required="{{$ctrl.required}}">\n' +
+    '               ng-focus="$ctrl.onFocus()"\n' +
+    '               ng-attr-max="{{$ctrl.max}}"\n' +
+    '               ng-attr-min="{{$ctrl.min}}"\n' +
+    '               ng-attr-autofocus="{{$ctrl.autofocus}}"\n' +
+    '               ng-attr-tabindex="{{$ctrl.tabindex}}"\n' +
+    '               ng-required="$ctrl.required">\n' +
     '\n' +
     '        <!-- If NaN, just show a dash. -->\n' +
     '        <span class="counter-input counter-input-empty"\n' +
@@ -9588,67 +9713,130 @@ try {
 }
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('components/datepicker/datepicker.template.html',
-    '\n' +
-    '<div class="datepicker-field" ng-class="{\'is-empty\': !model}">\n' +
+    '<div class="datepicker-field"\n' +
+    '     ng-class="{\'is-empty\': !model}">\n' +
     '\n' +
     '    <!-- Input Field -->\n' +
-    '    <label class="datepicker-label">{{label}}</label>\n' +
-    '    <input type="text" class="datepicker-input-hidden" ng-model="model" ng-disabled="disabled" ng-click="activate($event)" ng-keypress="activate($event)"\n' +
-    '           id="blt-datepicker-input">\n' +
-    '    <span class="datepicker-toggle" ng-class="{\'disabled\': disabled}" ng-click="activate($event)">{{ (model|date:format) || label}}</span>\n' +
+    '    <label class="datepicker-label">{{getLabel()}}</label>\n' +
+    '    <input name="{{name}}"\n' +
+    '           type="number"\n' +
+    '           class="datepicker-input-hidden" \n' +
+    '           ng-model="current.ms"\n' +
+    '           ng-change="onChange()"\n' +
+    '           ng-disabled="disabled"\n' +
+    '           ng-required="required"\n' +
+    '           blt-validate="validate"\n' +
+    '           max="{{maxDate ? maxDate.getTime() : \'\'}}"\n' +
+    '           min="{{minDate ? minDate.getTime() : \'\'}}">\n' +
+    '    <span class="datepicker-toggle"\n' +
+    '          id="datepicker-toggle-{{name}}"\n' +
+    '          ng-class="{\'active\': active, \'disabled\': disabled}"\n' +
+    '          ng-attr-tabindex="{{tabindex || 0}}"\n' +
+    '          ng-blur="blur()"\n' +
+    '          ng-attr-autofocus="{{autofocus}}"\n' +
+    '          ng-keyup="activate($event)"\n' +
+    '          ng-click="activate($event)">{{(model|date:format) || getLabel()}}\n' +
+    '    </span>\n' +
+    '\n' +
+    '    <!-- Form Field Error Messages -->\n' +
+    '    <p class="datepicker-error">\n' +
+    '        <span class="datepicker-error-hide datepicker-error-required">This field is required.</span>\n' +
+    '        <span class="datepicker-error-hide datepicker-error-min">Cannot be before {{min|date:format}}.</span>\n' +
+    '        <span class="datepicker-error-hide datepicker-error-max">Cannot be after {{max|date:format}}.</span>\n' +
+    '        <span class="datepicker-error-hide datepicker-error-invalid-date">Invalid date.</span>\n' +
+    '    </p>\n' +
     '\n' +
     '    <!-- Overlay -->\n' +
-    '    <div class="datepicker-overlay" ng-click="close()" ng-show="active" ng-keypress="test()"></div>\n' +
+    '    <div class="datepicker-overlay" \n' +
+    '         ng-click="close(true)"\n' +
+    '         ng-show="active">\n' +
+    '    </div>\n' +
     '\n' +
     '    <!-- Picker -->\n' +
-    '    <div id="picker" class="datepicker-container" ng-switch="current.view" ng-if="active">\n' +
+    '    <div id="picker" \n' +
+    '         class="datepicker-container" \n' +
+    '         ng-switch="current.view" \n' +
+    '         ng-if="active">\n' +
     '        <!-- Year -->\n' +
-    '        <div ng-switch-when="year" class="data-picker-content">\n' +
+    '        <div ng-switch-when="year" \n' +
+    '             class="data-picker-content">\n' +
     '            <header class="datepicker-header">\n' +
-    '                <button class="datepicker-btn-icon" ng-click="prev(15)"><span class="fa fa-chevron-left"></span>\n' +
+    '                <button class="datepicker-btn-icon" \n' +
+    '                        ng-click="prev(15)">\n' +
+    '                        <span class="fa fa-chevron-left"></span>\n' +
     '                </button>\n' +
     '                <h2 class="datepicker-title"\n' +
-    '                    ng-bind="years[0].getFullYear()+\' - \'+years[years.length-1].getFullYear()"></h2>\n' +
-    '                <button class="datepicker-btn-icon" ng-click="next(15)"><span class="fa fa-chevron-right"></span>\n' +
+    '                    ng-bind="years[0].getFullYear()+\' - \'+years[years.length-1].getFullYear()">\n' +
+    '                </h2>\n' +
+    '                <button class="datepicker-btn-icon" \n' +
+    '                        ng-click="next(15)">\n' +
+    '                        <span class="fa fa-chevron-right"></span>\n' +
     '                </button>\n' +
     '            </header>\n' +
     '            <div class="datepicker-table">\n' +
     '                <span class="datepicker-year"\n' +
     '                      ng-class="{\'is-active\':isSameYear(year), \'is-now\':isNow(year), \'is-disabled\':!canPickYear(year)}"\n' +
-    '                      ng-repeat="year in years" ng-click="setDate(year)" ng-bind="year.getFullYear()"></span>\n' +
+    '                      ng-repeat="year in years" \n' +
+    '                      ng-click="setDate(year)" \n' +
+    '                      ng-bind="year.getFullYear()">\n' +
+    '                </span>\n' +
     '            </div>\n' +
     '        </div>\n' +
     '\n' +
     '        <!-- Month -->\n' +
-    '        <div ng-switch-when="month" class="datepicker-content">\n' +
+    '        <div ng-switch-when="month" \n' +
+    '             class="datepicker-content">\n' +
     '            <header class="datepicker-header">\n' +
-    '                <button class="datepicker-btn-icon" ng-click="prev()"><span class="fa fa-chevron-left"></span></button>\n' +
-    '                <h2 class="datepicker-title-link" ng-bind="current.date|date:\'yyyy\'"\n' +
-    '                    ng-click="current.view = \'year\'"></h2>\n' +
-    '                <button class="datepicker-btn-icon" ng-click="next()"><span class="fa fa-chevron-right"></span>\n' +
+    '                <button class="datepicker-btn-icon" \n' +
+    '                        ng-click="prev()">\n' +
+    '                        <span class="fa fa-chevron-left"></span>\n' +
+    '                </button>\n' +
+    '                <h2 class="datepicker-title-link" \n' +
+    '                    ng-bind="current.date|date:\'yyyy\'"\n' +
+    '                    ng-click="current.view = \'year\'">\n' +
+    '                </h2>\n' +
+    '                <button class="datepicker-btn-icon" \n' +
+    '                        ng-click="next()">\n' +
+    '                        <span class="fa fa-chevron-right"></span>\n' +
     '                </button>\n' +
     '            </header>\n' +
     '            <div class="datepicker-table">\n' +
-    '                <span class="datepicker-month" ng-repeat="month in months"\n' +
+    '                <span class="datepicker-month" \n' +
+    '                      ng-repeat="month in months"\n' +
     '                      ng-class="{\'is-active\':isSameMonth(month), \'is-now\':isNow(month), \'is-disabled\':!canPickMonth(month)}"\n' +
-    '                      ng-click="setDate(month)" ng-bind="month|date:\'MMM\'"></span>\n' +
+    '                      ng-click="setDate(month)" \n' +
+    '                      ng-bind="month|date:\'MMM\'">\n' +
+    '                </span>\n' +
     '            </div>\n' +
     '        </div>\n' +
     '\n' +
     '        <!-- Date -->\n' +
-    '        <div ng-switch-when="date" class="datepicker-content">\n' +
+    '        <div ng-switch-when="date" \n' +
+    '             class="datepicker-content">\n' +
     '            <header class="datepicker-header">\n' +
-    '                <button class="datepicker-btn-icon" ng-click="prev()"><span class="fa fa-chevron-left"></span></button>\n' +
-    '                <h2 class="datepicker-title-link" ng-bind="current.date|date:\'yyyy MMMM\'"\n' +
-    '                    ng-click="current.view = \'month\'"></h2>\n' +
-    '                <button class="datepicker-btn-icon" ng-click="next()"><span class="fa fa-chevron-right"></span>\n' +
+    '                <button class="datepicker-btn-icon" \n' +
+    '                        ng-click="prev()">\n' +
+    '                        <span class="fa fa-chevron-left"></span>\n' +
+    '                </button>\n' +
+    '                <h2 class="datepicker-title-link" \n' +
+    '                    ng-bind="current.date|date:\'yyyy MMMM\'"\n' +
+    '                    ng-click="current.view = \'month\'">\n' +
+    '                </h2>\n' +
+    '                <button class="datepicker-btn-icon" \n' +
+    '                        ng-click="next()">\n' +
+    '                        <span class="fa fa-chevron-right"></span>\n' +
     '                </button>\n' +
     '            </header>\n' +
     '            <div class="datepicker-table vertical">\n' +
-    '                <div class="datepicker-week" ng-repeat="week in weeks" ng-class="{\'six-weeks\': weeks.length == 6}">\n' +
-    '                    <span class="datepicker-day" ng-repeat="day in week"\n' +
+    '                <div class="datepicker-week" \n' +
+    '                     ng-repeat="week in weeks" \n' +
+    '                     ng-class="{\'six-weeks\': weeks.length == 6}">\n' +
+    '                    <span class="datepicker-day" \n' +
+    '                          ng-repeat="day in week"\n' +
     '                          ng-class="{\'is-active\':isSameDay(day), \'is-now\':isNow(day), \'is-disabled\':(!canPickDay(day))}"\n' +
-    '                          ng-click="setDate(day)" ng-bind="day.getDate()"></span>\n' +
+    '                          ng-click="setDate(day)" \n' +
+    '                          ng-bind="day.getDate()">\n' +
+    '                    </span>\n' +
     '                </div>\n' +
     '            </div>\n' +
     '        </div>\n' +
@@ -9656,33 +9844,52 @@ module.run(['$templateCache', function($templateCache) {
     '        <!-- Hours -->\n' +
     '        <div ng-switch-when="hours">\n' +
     '            <header class="datepicker-header">\n' +
-    '                <button class="datepicker-btn-icon" ng-click="prev(24)"><span class="fa fa-chevron-left"></span>\n' +
+    '                <button class="datepicker-btn-icon" \n' +
+    '                        ng-click="prev(24)">\n' +
+    '                        <span class="fa fa-chevron-left"></span>\n' +
     '                </button>\n' +
-    '                <h2 class="datepicker-title-link" ng-bind="current.date|date:\'dd MMMM yyyy\'"\n' +
-    '                    ng-click="current.view = \'date\'"></h2>\n' +
-    '                <button class="datepicker-btn-icon" ng-click="next(24)"><span class="fa fa-chevron-right"></span>\n' +
+    '                <h2 class="datepicker-title-link" \n' +
+    '                    ng-bind="current.date|date:\'dd MMMM yyyy\'"\n' +
+    '                    ng-click="current.view = \'date\'">\n' +
+    '                </h2>\n' +
+    '                <button class="datepicker-btn-icon" \n' +
+    '                        ng-click="next(24)">\n' +
+    '                        <span class="fa fa-chevron-right"></span>\n' +
     '                </button>\n' +
     '            </header>\n' +
     '            <div class="datepicker-table">\n' +
-    '                <span class="datepicker-hour" ng-repeat="hour in hours"\n' +
+    '                <span class="datepicker-hour" \n' +
+    '                      ng-repeat="hour in hours"\n' +
     '                      ng-class="{\'is-active\':isSameHour(hour), \'is-now\':isNow(hour), \'is-disabled\':!canPickHour(hour)}"\n' +
-    '                      ng-click="setDate(hour)" ng-bind="hour|time"></span>\n' +
+    '                      ng-click="setDate(hour)"\n' +
+    '                      ng-bind="hour|time">\n' +
+    '                </span>\n' +
     '            </div>\n' +
     '        </div>\n' +
     '\n' +
     '        <!-- Minutes -->\n' +
     '        <div ng-switch-when="minutes">\n' +
     '            <header class="datepicker-header">\n' +
-    '                <button class="datepicker-btn-icon" ng-click="prev()"><span class="fa fa-chevron-left"></span></button>\n' +
-    '                <h2 class="datepicker-title-link" ng-bind="current.date|date:\'dd MMMM yyyy\'"\n' +
-    '                    ng-click="current.view = \'hours\'"></h2>\n' +
-    '                <button class="datepicker-btn-icon" ng-click="next()"><span class="fa fa-chevron-right"></span>\n' +
+    '                <button class="datepicker-btn-icon" \n' +
+    '                        ng-click="prev()">\n' +
+    '                        <span class="fa fa-chevron-left"></span>\n' +
+    '                </button>\n' +
+    '                <h2 class="datepicker-title-link" \n' +
+    '                    ng-bind="current.date|date:\'dd MMMM yyyy\'"\n' +
+    '                    ng-click="current.view = \'hours\'">\n' +
+    '                </h2>\n' +
+    '                <button class="datepicker-btn-icon" \n' +
+    '                        ng-click="next()">\n' +
+    '                        <span class="fa fa-chevron-right"></span>\n' +
     '                </button>\n' +
     '            </header>\n' +
     '            <div class="datepicker-table">\n' +
-    '                <span class="datepicker-minute" ng-repeat="minute in minutes"\n' +
+    '                <span class="datepicker-minute" \n' +
+    '                      ng-repeat="minute in minutes"\n' +
     '                      ng-class="{\'is-active\':isSameMinutes(minute), \'is-now\':isNow(minute), \'is-disabled\':!canPickMinute(minute)}"\n' +
-    '                      ng-click="setDate(minute)" ng-bind="minute|time"></span>\n' +
+    '                      ng-click="setDate(minute)" \n' +
+    '                      ng-bind="minute|time">\n' +
+    '                </span>\n' +
     '            </div>\n' +
     '        </div>\n' +
     '    </div>\n' +
@@ -9699,7 +9906,7 @@ try {
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('components/fileloader/fileloader.template.html',
     '\n' +
-    '<div class="fileloader" ng-class="{\'fileloader-empty\': !File.data, \'disabled\': File.disabled}">\n' +
+    '<div class="fileloader" ng-class="{\'fileloader-empty\': !File.form[File.name].$viewValue, \'disabled\': File.disabled}">\n' +
     '\n' +
     '    <!-- Label -->\n' +
     '    <span class="fileloader-label">{{File.label || "Filename"}}{{File.required ? "*" : ""}}</span>\n' +
@@ -9707,16 +9914,22 @@ module.run(['$templateCache', function($templateCache) {
     '    <!-- Input -->\n' +
     '    <label>\n' +
     '        <input type="file"\n' +
-    '               ng-model="File.data" blt-filemodel\n' +
+    '               name="{{File.name}}"\n' +
+    '               ng-change="File.onChange()"\n' +
+    '               ng-model="File.data"\n' +
+    '               blt-filemodel\n' +
+    '               ng-required="File.required"\n' +
     '               ng-disabled="File.disabled"\n' +
-    '               blt-autofocus="{{File.autofocus}}"\n' +
-    '               blt-tabindex="{{File.tabindex}}">\n' +
+    '               ng-attr-autofocus="{{File.autofocus}}"\n' +
+    '               ng-attr-tabindex="{{File.tabindex}}"\n' +
+    '               blt-validate="File.validate"\n' +
+    '        >\n' +
     '\n' +
     '        <div class="fileloader-input" ng-class="{\'disabled\': File.disabled}">\n' +
     '            <span class="placeholder">{{File.label || "Select File"}}{{File.required ? "*" : ""}}</span>\n' +
     '            <span class="filename"\n' +
-    '                  title="{{ File.data.name }}">\n' +
-    '                  {{ File.data.name | characters:File.charsLimit:true || \'No File Selected.\' }}{{ File.fileExt }}\n' +
+    '                  title="{{ File.form[File.name].$viewValue.name }}">\n' +
+    '                  {{ File.form[File.name].$viewValue.name | characters:File.charsLimit:true || \'No File Selected.\' }}{{ File.fileExt }}\n' +
     '            </span>\n' +
     '        </div>\n' +
     '\n' +
@@ -9724,9 +9937,12 @@ module.run(['$templateCache', function($templateCache) {
     '\n' +
     '        <!-- Error Messages -->\n' +
     '        <p class="fileloader-error">\n' +
-    '      <span class="fileloader-error-hide fileloader-error-required">\n' +
-    '        This field is required.\n' +
-    '      </span>\n' +
+    '            <span class="fileloader-error-hide fileloader-error-required">\n' +
+    '                This field is required.\n' +
+    '            </span>\n' +
+    '            <span ng-show="File.form[File.name].$viewValue && File.form[File.name].$error[File.validate.name]">\n' +
+    '                {{File.errorMsg}}\n' +
+    '            </span>\n' +
     '        </p>\n' +
     '    </label>\n' +
     '</div>\n' +
@@ -9875,8 +10091,8 @@ module.run(['$templateCache', function($templateCache) {
     '            <button name="{{$ctrl.name}}"\n' +
     '                    class="dropdown-toggle"\n' +
     '                    ng-click="$ctrl.openOptions()"\n' +
-    '                    blt-autofocus="{{$ctrl.autofocus}}"\n' +
-    '                    blt-tabindex="{{$ctrl.tabindex}}"\n' +
+    '                    ng-attr-autofocus="{{$ctrl.autofocus}}"\n' +
+    '                    ng-attr-tabindex="{{$ctrl.tabindex}}"\n' +
     '                    ng-disabled="$ctrl.disabled">{{$ctrl.select.model ? $ctrl.getLabelForValue($ctrl.select.model) :\n' +
     '                $ctrl.label}}\n' +
     '                <span class="dropdown-icon fa fa-caret-down"></span>\n' +
@@ -9904,10 +10120,11 @@ module.run(['$templateCache', function($templateCache) {
     '                        ng-if="$ctrl.type == \'select\'"\n' +
     '                        ng-model="$ctrl.select.model"\n' +
     '                        ng-change="$ctrl.onSelectChange()"\n' +
-    '                        blt-autofocus="{{$ctrl.autofocus}}"\n' +
-    '                        blt-tabindex="{{$ctrl.tabindex}}"\n' +
+    '                        ng-attr-autofocus="{{$ctrl.autofocus}}"\n' +
+    '                        ng-attr-tabindex="{{$ctrl.tabindex}}"\n' +
+    '                        ng-required="$ctrl.required"\n' +
     '                        ng-disabled="$ctrl.disabled">\n' +
-    '                    <option ng-if="!$ctrl.required" value="">{{$ctrl.label}}</option>\n' +
+    '                    <option value="" ng-disabled="$ctrl.required">{{$ctrl.required ? $ctrl.label + \'*\' : $ctrl.label}}</option>\n' +
     '                    <option value="{{key}}" ng-repeat="(key, value) in $ctrl.keyedOptionMap">{{value.label}}</option>\n' +
     '                </select>\n' +
     '\n' +
@@ -9921,8 +10138,9 @@ module.run(['$templateCache', function($templateCache) {
     '                       ng-model="$ctrl.search.model"\n' +
     '                       ng-click="$ctrl.openOptions()"\n' +
     '                       ng-keydown="$ctrl.onKeyDown($event)"\n' +
-    '                       blt-autofocus="{{$ctrl.autofocus}}"\n' +
-    '                       blt-tabindex="{{$ctrl.tabindex}}"\n' +
+    '                       ng-attr-autofocus="{{$ctrl.autofocus}}"\n' +
+    '                       ng-attr-tabindex="{{$ctrl.tabindex}}"\n' +
+    '                       ng-required="$ctrl.required"\n' +
     '                       ng-disabled="$ctrl.disabled"/>\n' +
     '\n' +
     '                <span class="dropdown-icon fa fa-caret-down"></span>\n' +
@@ -9939,9 +10157,11 @@ module.run(['$templateCache', function($templateCache) {
     '\n' +
     '                <li ng-show="!$ctrl.required">\n' +
     '                    <a class="dropdown-option"\n' +
-    '                       ng-class="{\'is-active\': !$ctrl.currentSelection}"\n' +
+    '                       id="searchable-select-none"\n' +
+    '                       ng-class="{\'dropdown-active\': !$ctrl.currentSelection}"\n' +
     '                       ng-mousedown="$ctrl.untouched()"\n' +
-    '                       ng-mouseup="$ctrl.selectOption(undefined)">{{$ctrl.selectNoneLabel}}\n' +
+    '                       ng-mouseup="$ctrl.selectOption(\'none\')">\n' +
+    '                        {{$ctrl.selectNoneLabel}}\n' +
     '                    </a>\n' +
     '                </li>\n' +
     '\n' +
@@ -9950,7 +10170,8 @@ module.run(['$templateCache', function($templateCache) {
     '                       id="{{option.key}}"\n' +
     '                       ng-class="{\'dropdown-active\': $ctrl.isSelected(option)}"\n' +
     '                       ng-mousedown="$ctrl.untouched()"\n' +
-    '                       ng-mouseup="$ctrl.selectOption(option)">{{option.label}}\n' +
+    '                       ng-mouseup="$ctrl.selectOption(option)">\n' +
+    '                        {{option.label}}\n' +
     '                    </a>\n' +
     '                </li>\n' +
     '            </ul>\n' +
@@ -9969,48 +10190,58 @@ try {
 }
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('components/textfield/textfield.template.html',
-    '<div class="text-field" ng-class="{\'text-field-empty\': !$ctrl.form[$ctrl.name].$viewValue}" ng-disabled="$ctrl.disabled">\n' +
+    '<div class="text-field"\n' +
+    '     ng-class="{\'text-field-empty\': !$ctrl.form[$ctrl.name].$viewValue}"\n' +
+    '     ng-disabled="$ctrl.disabled">\n' +
     '\n' +
     '    <!-- Form Field Label -->\n' +
     '    <label class="text-field-label">{{$ctrl.label + $ctrl.asterisk}}</label>\n' +
     '\n' +
     '    <!-- Text area -->\n' +
     '    <textarea class="text-field-input"\n' +
-    '              name="{{$ctrl.name}}"\n' +
     '              ng-if="$ctrl.type == \'textarea\'"\n' +
+    '              name="{{$ctrl.name}}"\n' +
     '              rows="{{$ctrl.rows}}"\n' +
-    '              ng-change="$ctrl.onChange()"\n' +
-    '              ng-model="$ctrl.model"\n' +
-    '              ng-disabled="$ctrl.disabled"\n' +
     '              placeholder="{{$ctrl.label + $ctrl.asterisk}}"\n' +
+    '              ng-change="$ctrl.onChange()"\n' +
+    '              ng-disabled="$ctrl.disabled"\n' +
+    '              ng-model="$ctrl.model"\n' +
+    '              ng-required="$ctrl.required"\n' +
     '              blt-validate="$ctrl.validate"\n' +
-    '              blt-autocomplete="{{$ctrl.autocomplete}}"\n' +
-    '              blt-autocorrect="{{$ctrl.autocorrect}}"\n' +
-    '              blt-spellcheck="{{$ctrl.spellcheck}}"\n' +
-    '              blt-autofocus="{{$ctrl.autofocus}}">\n' +
-    '  </textarea>\n' +
+    '              ng-attr-autocomplete="{{$ctrl.autocomplete}}"\n' +
+    '              ng-attr-autocorrect="{{$ctrl.autocorrect}}"\n' +
+    '              ng-attr-autofocus="{{$ctrl.autofocus}}"\n' +
+    '              ng-attr-maxlength="{{$ctrl.maxlength}}"\n' +
+    '              ng-attr-minlength="{{$ctrl.minlength}}"\n' +
+    '              ng-attr-pattern="{{$ctrl.pattern}}"\n' +
+    '              ng-attr-spellcheck="{{$ctrl.spellcheck}}"\n' +
+    '              ng-attr-tabindex="{{$ctrl.tabindex}}"\n' +
+    '    >\n' +
+    '    </textarea>\n' +
     '\n' +
     '    <!-- Default Inputs -->\n' +
     '    <input class="text-field-input"\n' +
-    '           name="{{$ctrl.name}}"\n' +
     '           ng-if="$ctrl.type != \'textarea\'"\n' +
+    '           name="{{$ctrl.name}}"\n' +
     '           type="{{$ctrl.type}}"\n' +
-    '           ng-change="$ctrl.onChange()"\n' +
-    '           ng-model="$ctrl.model"\n' +
-    '           ng-disabled="$ctrl.disabled"\n' +
-    '           blt-validate="$ctrl.validate"\n' +
-    '           blt-step="{{$ctrl.step}}"\n' +
-    '           blt-pattern="{{$ctrl.pattern}}"\n' +
-    '           min="{{ $ctrl.min }}"\n' +
-    '           max="{{ $ctrl.max }}"\n' +
-    '           blt-required="{{$ctrl.required}}"\n' +
     '           placeholder="{{$ctrl.label + $ctrl.asterisk}}"\n' +
-    '           blt-autofocus="{{$ctrl.autofocus}}"\n' +
-    '           blt-minlength="{{$ctrl.minlength}}"\n' +
-    '           blt-maxlength="{{$ctrl.maxlength}}"\n' +
-    '           blt-autocomplete="{{$ctrl.autocomplete}}"\n' +
-    '           blt-autocorrect="{{$ctrl.autocorrect}}"\n' +
-    '           blt-spellcheck="{{$ctrl.spellcheck}}">\n' +
+    '           ng-change="$ctrl.onChange()"\n' +
+    '           ng-disabled="$ctrl.disabled"\n' +
+    '           ng-model="$ctrl.model"\n' +
+    '           ng-required="$ctrl.required"\n' +
+    '           blt-validate="$ctrl.validate"\n' +
+    '           ng-attr-autocomplete="{{$ctrl.autocomplete}}"\n' +
+    '           ng-attr-autocorrect="{{$ctrl.autocorrect}}"\n' +
+    '           ng-attr-autofocus="{{$ctrl.autofocus}}"\n' +
+    '           ng-attr-max="{{$ctrl.max}}"\n' +
+    '           ng-attr-maxlength="{{$ctrl.maxlength}}"\n' +
+    '           ng-attr-min="{{$ctrl.min}}"\n' +
+    '           ng-attr-minlength="{{$ctrl.minlength}}"\n' +
+    '           ng-attr-pattern="{{$ctrl.pattern}}"\n' +
+    '           ng-attr-spellcheck="{{$ctrl.spellcheck}}"\n' +
+    '           ng-attr-step="{{$ctrl.step}}"\n' +
+    '           ng-attr-tabindex="{{$ctrl.tabindex}}"\n' +
+    '    >\n' +
     '\n' +
     '    <!-- Form Field Error Messages -->\n' +
     '    <p class="text-field-error">\n' +
@@ -10041,8 +10272,8 @@ module.run(['$templateCache', function($templateCache) {
     '    {{label}}\n' +
     '</label>\n' +
     '<div class="toggle-switch-bg"\n' +
-    '     ng-class="{\'toggle-switch-on\': model, \'toggle-switch-disabled\': disabled}"\n' +
-    '     ng-click="toggle()">\n' +
+    '    ng-class="{\'toggle-switch-on\': model, \'toggle-switch-disabled\': disabled}"\n' +
+    '    ng-click="toggle()">\n' +
     '    <span class="toggle-switch-knob"></span>\n' +
     '</div>');
 }]);

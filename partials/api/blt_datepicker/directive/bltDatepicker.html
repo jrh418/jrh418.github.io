@@ -35,7 +35,7 @@ the current month.</p>
 end the user&#39;s selection when they&#39;ve completed their selection of the given view. For example, if you are only
 interested in the month and year of birth, you would set this value to <code>month</code>.</p>
 <p>You can also set a min and max date available for user selection. To set the min or max date, you simply bind one
-of the attributes <code>data-min-date</code> or <code>data-max-date</code> to a model in your controller containing a date of some sort.
+of the attributes <code>data-min</code> or <code>data-max</code> to a model in your controller containing a date of some sort.
 Valid formats include any value that can successfully be interpreted as a a date, including seconds from epoch as a
 string or integer, or a JavaScript date object.</p>
 
@@ -294,6 +294,44 @@ string or integer, or a JavaScript date object.</p>
       </td>
     </tr>
     
+    <tr>
+      <td class="td-shrink">
+        <code>data-disabled</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-boolean">boolean</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Disables the field. Any value set in this attribute will cause the field to be disabled.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-tabindex</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-number">number</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Specifies the tab order of an element.</p>
+
+        
+      </td>
+    </tr>
+    
   </tbody>
 </table>
 
@@ -352,7 +390,7 @@ string or integer, or a JavaScript date object.</p>
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;div class=&quot;datepicker-example-container&quot; ng-controller=&quot;DatePickerExCtrl as ctrl&quot;&gt;&#10;  &lt;form class=&quot;form&quot; novalidate name=&quot;dateTests&quot;&gt;&#10;    &lt;div class=&quot;form-row&quot;&gt;&#10;      &lt;blt-datepicker data-model=&quot;ctrl.dateModel&quot;&#10;                      data-label=&quot;Date Selection&quot;&#10;                      data-name=&quot;datepickerTest&quot;&gt;&#10;      &lt;/blt-datepicker&gt;&#10;      &lt;div class=&quot;form-divider-vertical&quot;&gt;&lt;/div&gt;&#10;      &lt;blt-datepicker data-model=&quot;ctrl.dateModel2&quot;&#10;                      data-label=&quot;Date Selection with Restrictions&quot;&#10;                      data-min-date=&quot;ctrl.mindate&quot;&#10;                      data-first-view=&quot;{{ctrl.firstview}}&quot;&#10;                      data-name=&quot;datepickerTest2&quot;&gt;&#10;      &lt;/blt-datepicker&gt;&#10;      &lt;div class=&quot;form-divider-vertical&quot;&gt;&lt;/div&gt;&#10;      &lt;blt-datepicker data-model=&quot;ctrl.dateModel3&quot;&#10;                      data-label=&quot;Date Selection Year and Month Only&quot;&#10;                      data-last-view=&quot;{{ctrl.lastview}}&quot;&#10;                      data-name=&quot;datepickerTest3&quot;&#10;                      data-format=&quot;MMMM yyyy&quot;&gt;&#10;      &lt;/blt-datepicker&gt;&#10;    &lt;/div&gt;&#10;  &lt;/form&gt;&#10;&lt;/div&gt;</code></pre>
+      <pre><code>&lt;div class=&quot;datepicker-example-container&quot; ng-controller=&quot;DatePickerExCtrl as ctrl&quot;&gt;&#10;  &lt;form class=&quot;form&quot; novalidate name=&quot;dateTests&quot;&gt;&#10;    &lt;div class=&quot;form-row&quot;&gt;&#10;      &lt;blt-datepicker data-model=&quot;ctrl.dateModel&quot;&#10;                      data-label=&quot;Date Selection&quot;&#10;                      data-name=&quot;datepickerTest&quot;&gt;&#10;      &lt;/blt-datepicker&gt;&#10;      &lt;div class=&quot;form-divider-vertical&quot;&gt;&lt;/div&gt;&#10;      &lt;blt-datepicker data-model=&quot;ctrl.dateModel2&quot;&#10;                      data-label=&quot;Date Selection with Restrictions&quot;&#10;                      data-min=&quot;ctrl.mindate&quot;&#10;                      data-first-view=&quot;{{ctrl.firstview}}&quot;&#10;                      data-name=&quot;datepickerTest2&quot;&gt;&#10;      &lt;/blt-datepicker&gt;&#10;      &lt;div class=&quot;form-divider-vertical&quot;&gt;&lt;/div&gt;&#10;      &lt;blt-datepicker data-model=&quot;ctrl.dateModel3&quot;&#10;                      data-label=&quot;Date Selection Year and Month Only&quot;&#10;                      data-last-view=&quot;{{ctrl.lastview}}&quot;&#10;                      data-name=&quot;datepickerTest3&quot;&#10;                      data-format=&quot;MMMM yyyy&quot;&gt;&#10;      &lt;/blt-datepicker&gt;&#10;    &lt;/div&gt;&#10;  &lt;/form&gt;&#10;&lt;/div&gt;</code></pre>
   </div>
   
   <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
@@ -367,7 +405,7 @@ string or integer, or a JavaScript date object.</p>
           <div class="form-divider-vertical"></div>
           <blt-datepicker data-model="ctrl.dateModel2"
                           data-label="Date Selection with Restrictions"
-                          data-min-date="ctrl.mindate"
+                          data-min="ctrl.mindate"
                           data-first-view="{{ctrl.firstview}}"
                           data-name="datepickerTest2">
           </blt-datepicker>

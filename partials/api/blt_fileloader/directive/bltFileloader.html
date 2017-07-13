@@ -43,6 +43,8 @@ recommended to prevent conflicts with standard HTML attributes.</div>
     
     <li class="api-dependencies-item"><a href="/#/api/blt_core/service/BltApi"><code>BltApi</code></a></li>
     
+    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$timeout">$timeout</a></li>
+    
   </ul>
 </section>
 
@@ -70,6 +72,25 @@ recommended to prevent conflicts with standard HTML attributes.</div>
     
     <tr>
       <td class="td-shrink">
+        <code>data-label</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        
+      </td>
+      <td>
+        
+        <p>This attribute specifies the label for this component.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
         <code>data-name</code>
         
       </td>
@@ -90,19 +111,39 @@ traversal by the ngBoltJS framework.</p>
     
     <tr>
       <td class="td-shrink">
-        <code>data-model</code>
+        <code>data-autofocus</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-boolean">boolean</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>Indicates whether or not this field should autofocus on page load.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-change</code>
         
       </td>
       <td class="td-shrink">
         <a href="" class="label type-hint type-hint-expression">expression</a>
       </td>
       <td class="td-shrink td-collapse-right">
-        
+        <span class="tag-optional"></span>
       </td>
       <td>
         
-        <p>This attribute is used to bind the value of this component to a property in the
-containing scope. Functionality is based on the Angular ngModel directive.</p>
+        <p>This attribute is used to bind an expression in the containing scope that
+will be invoked any time the value of this component changes. Functionality is based on the Angular ngChange
+directive.</p>
 
         
       </td>
@@ -123,25 +164,6 @@ containing scope. Functionality is based on the Angular ngModel directive.</p>
         
         <p>Disables the field. Any value set in this attribute will cause the field to be
 disabled.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-autofocus</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-boolean">boolean</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Indicates whether or not this field should autofocus on page load.</p>
 
         
       </td>
@@ -180,6 +202,27 @@ disabled.</p>
       <td>
         
         <p>Specifies the tab order of an element</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="td-shrink">
+        <code>data-validate</code>
+        
+      </td>
+      <td class="td-shrink">
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td class="td-shrink td-collapse-right">
+        <span class="tag-optional"></span>
+      </td>
+      <td>
+        
+        <p>An expression that gets passed through to an instance of the bltValidate
+directive to invoke custom validation on this component value. See documentation for bltValidate for more
+information.</p>
 
         
       </td>
