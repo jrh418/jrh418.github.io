@@ -1,0 +1,348 @@
+
+    <h1 id="application-structure">Application Structure</h1>
+<p>All ngBolt applications share a common folder / file structure which allows the
+CLI to configure and run the app. When a new ngBolt app is created using the 
+CLI, it will produce the following folders / files.</p>
+<div class="card app-structure">
+    <ul>
+        <li class="root">
+            <span class="fa fa-fw fa-folder-o"></span>
+            <span>my-app</span>
+        </li>
+        <li>
+            <span class="fa fa-fw fa-folder-o"></span>
+            <span>config</span>
+        </li>
+        <li>
+            <span class="fa fa-fw fa-folder-o"></span>
+            <span>ng-bolt-app</span>
+        </li>
+        <li>
+            <span class="fa fa-fw fa-file-text-o"></span>
+            <span>package.json</span>
+        </li>
+    </ul>
+</div>
+
+<table class="table table-collapse">
+    <thead>
+        <tr>
+            <th class="app-structure-file">Folder / File</th>
+            <th>Description</th>
+        <tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-folder-o"></span>
+                <span>my-app</span>
+            </td>
+            <td>This is the root of the ngBolt application</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-folder-o"></span>
+                <span>config</span>
+            </td>
+            <td>All configuration relating to the ngBolt project (build/deploy, styles, routes, views, etc.)</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-folder-o"></span>
+                <span>ng-bolt-app</span>
+            </td>
+            <td>All of the source code for the specific ngBolt application</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-file-text-o"></span>
+                <span>package.json</span>
+            </td>
+            <td>Description of the ngBolt application</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="note-info">
+There are more files in an ngBolt app but we will only discuss the most 
+important files in this section. You can view the 
+<a href="https://github.com/ngbolt/ng-bolt-template">template project</a> for a full 
+file list.
+</div>
+
+<h2 id="configuration">Configuration</h2>
+<p>The ngBolt CLI relies on JSON configuration files for building, running, and
+deploying applications. These configuration files are all located in the 
+<code>config</code> folder at the root of the application. The section below describes the
+function for each file within this configuration section.</p>
+<div class="card app-structure">
+    <ul>
+        <li class="root">
+            <span class="fa fa-fw fa-folder-o"></span>
+            <span>config</span>
+        </li>
+        <li>
+            <span class="fa fa-fw fa-folder-o"></span>
+            <span>profiles</span>
+            <ul>
+                <li>
+                    <span class="fa fa-fw fa-file-text-o"></span>
+                    <span>development.json</span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span class="fa fa-fw fa-file-text-o"></span>
+            <span>build.json</span>
+        </li>
+        <li>
+            <span class="fa fa-fw fa-file-text-o"></span>
+            <span>routes.json</span>
+        </li>
+        <li>
+            <span class="fa fa-fw fa-file-text-o"></span>
+            <span>styles.json</span>
+        </li>
+        <li>
+            <span class="fa fa-fw fa-file-text-o"></span>
+            <span>views.json</span>
+        </li>
+    </ul>
+</div>
+
+<table class="table table-collapse">
+    <thead>
+        <tr>
+            <th class="app-structure-file">Folder / File</th>
+            <th class="app-structure-documentation">Documentation</th>
+            <th>Description</th>
+        <tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-folder-o"></span>
+                <span>profiles</span>
+            </td>
+            <td><a href="/#!/fundamentals/cli">Bolt CLI</a></td>
+            <td>A single profile tells ngBolt which Data API to use, what Data Source to use, as well as any overrides to the <code>build.json</code> file. Use the Bolt CLI to select a profile when running or deploying an ngBolt application (it will default to <code>development.json</code> if none is specified).</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-file-text-o"></span>
+                <span>build.json</span>
+            </td>
+            <td><a href="/#!/fundamentals/build-and-deploy">Build &amp; Deploy</a></td>
+            <td>Used by the Bolt CLI to know how to build &amp; package the application (ports, additional libraries, documentation, packaging, ngBolt components, etc.).</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-file-text-o"></span>
+                <span>routes.json</span>
+            </td>
+            <td><a href="/#!/fundamentals/data-api">Data API</a></td>
+            <td>Used by the Data API to understand how to request and parse data from different sources (i.e. REST vs WAMP vs SQL).</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-file-text-o"></span>
+                <span>styles.json</span>
+            </td>
+            <td><a href="/#!/fundamentals/styles">Styles &amp; Variables</a></td>
+            <td>Used to configure the styles (i.e. colors) of the individual ngBolt Components.</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-file-text-o"></span>
+                <span>views.json</span>
+            </td>
+            <td><a href="/#!/bolt-api">Bolt API</a></td>
+            <td>A wrapper around ngRoute, which identifies and links controllers / templates to the URL / parameters.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="ngbolt-app">ngBolt App</h2>
+<p>This folder contains all the application code. By default, the template will 
+also include a <code>core</code> and <code>main</code> folder with some pre-configured application
+logic.</p>
+<div class="note-tip"> 
+As you progress through the development of your application, it is highly recommended that you refer to the <a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md">Angular 1 Style Guide by John Papa</a> for recommendations on project file structure and Angular best practices.
+</div>
+
+<div class="card app-structure">
+    <ul>
+        <li class="root">
+            <span class="fa fa-fw fa-folder-o"></span>
+            <span>ng-bolt-app</span>
+        </li>
+       <li>
+           <span class="fa fa-fw fa-folder-o"></span>
+           <span>core</span>
+           <ul>
+               <li>
+                   <span class="fa fa-fw fa-file-text-o"></span>
+                   <span>core.module.js</span>
+               </li>
+               <li>
+                   <span class="fa fa-fw fa-file-text-o"></span>
+                   <span>shared.factory.js</span>
+               </li>
+           </ul> 
+       </li>
+       <li>
+           <span class="fa fa-fw fa-folder-o"></span>
+           <span>images</span>
+           <ul>
+               <li>
+                   <span class="fa fa-fw fa-file-text-o"></span>
+                   <span>favicon.png</span>
+               </li>
+               <li>
+                   <span class="fa fa-fw fa-file-text-o"></span>
+                   <span>logo.png</span>
+               </li>
+           </ul> 
+       </li>
+       <li>
+           <span class="fa fa-fw fa-folder-o"></span>
+           <span>main</span>
+           <ul>
+               <li>
+                   <span class="fa fa-fw fa-file-text-o"></span>
+                   <span>main-appbar.template.html</span>
+               </li>
+               <li>
+                   <span class="fa fa-fw fa-file-text-o"></span>
+                   <span>main.controller.js</span>
+               </li>
+               <li>
+                   <span class="fa fa-fw fa-file-text-o"></span>
+                   <span>main.module.js</span>
+               </li>
+               <li>
+                   <span class="fa fa-fw fa-file-text-o"></span>
+                   <span>main.template.html</span>
+               </li>
+           </ul> 
+       </li>
+       <li>
+           <span class="fa fa-fw fa-file-text-o"></span>
+           <span>app.js</span>
+       </li>
+       <li>
+           <span class="fa fa-fw fa-file-text-o"></span>
+           <span>app.scss</span>
+       </li>
+       <li>
+           <span class="fa fa-fw fa-file-text-o"></span>
+           <span>index.html</span>
+       </li>
+    </ul>
+</div>
+
+<table class="table table-collapse">
+    <thead>
+        <tr>
+            <th class="app-structure-file large">Folder / File</th>
+            <th class="text-center">Required</th>
+            <th>Description</th>
+        <tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-folder-o"></span>
+                <span>core</span>
+            </td>
+            <td></td>
+            <td>This folder is used to hold any shared factories used between multiple modules within the application.</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-file-text-o"></span>
+               <span>core.module.js</span>
+            </td>
+            <td></td>
+            <td>Add any shared factories to this module.</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-file-text-o"></span>
+               <span>shared.factory.js</span>
+            </td>
+            <td></td>
+            <td>Inject this module into other modules to share data between them when needed.</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-folder-o"></span>
+                <span>images</span>
+            </td>
+            <td></td>
+            <td>Override the login icon as well as the favicon. You can also add any additional images to include in the deployment to this folder.</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-folder-o"></span>
+                <span>main</span>
+            </td>
+            <td class="text-center"><span class="fa fa-fw fa-check-circle font-success"></span></td>
+            <td>This is where all the main application code lives. This folder should not be added to, just modified as needed. Create other folders in the <code>ng-bolt-app</code> for other modules and functionality.</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-file-text-o"></span>
+                <span>main-appbar.template.html</span>
+            </td>
+            <td></td>
+            <td>This is the main appbar that&#39;s available for newly created applications. It can be removed if unused.</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-file-text-o"></span>
+                <span>main.controller.js</span>
+            </td>
+            <td class="text-center"><span class="fa fa-fw fa-check-circle font-success"></span></td>
+            <td>The top level controller for a ngBolt app which should only contain logic that&#39;s shared across every other controller in the application. It is aliased and available to templates as <code>Main</code>.</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-file-text-o"></span>
+                <span>main.template.html</span>
+            </td>
+            <td class="text-center"><span class="fa fa-fw fa-check-circle font-success"></span></td>
+            <td>The main template for your application. This will almost always contain a reference to the view (see the <a href="/#!/bolt-api">Bolt API</a> for how to setup and use views).</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-file-text-o"></span>
+                <span>app.js</span>
+            </td>
+            <td class="text-center"><span class="fa fa-fw fa-check-circle font-success"></span></td>
+            <td>This is the top level angular application which defines the ngBolt app. Inject angular dependencies here as needed.</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-file-text-o"></span>
+                <span>app.scss</span>
+            </td>
+            <td class="text-center"><span class="fa fa-fw fa-check-circle font-success"></span></td>
+            <td>This is the top level stylesheet for an ngBolt application. It typically only imports the stylesheets defined in the other modules within the project.</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fa fa-fw fa-file-text-o"></span>
+                <span>index.html</span>
+            </td>
+            <td class="text-center"><span class="fa fa-fw fa-check-circle font-success"></span></td>
+            <td>This is the index page for the application. You shouldn&#39;t need to update this file.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="note-info">
+The Bolt CLI relies on the following files: app.js, app.scss, index.html, 
+main.controller.js, main.module.js, and main.template.html. All other files can
+be removed as applicable.
+</div>

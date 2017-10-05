@@ -1,334 +1,307 @@
 <a id="top"></a>
 
 
-
-<header class="api-header">
-  <h1 class="api-header-title">
-    <a href="/#/api/blt_core">blt_core</a>
-    <span class="api-header-divider">/</span>
-    BltApi
-  </h1>
-  <div class="api-header-tags">
-    <span class="tag-service"></span>
     
-  </div>
+        <header class="api-header">
+            <h1 class="api-header-title">
+                <a href="/#!/api/blt_core">blt_core</a>
+                <span class="api-header-divider">/</span>
+                BltApi
+            </h1>
+            <div class="api-header-tags">
+                <span class="tag-service"></span>
+                
+            </div>
+
+            <ol class="api-profile-header-structure naked-list step-list">
+                
   
-  <ol class="api-profile-header-structure naked-list step-list">
+
+            </ol>
+        </header>
     
-  
 
-  </ol>
-</header>
-
-
-
-
-
-<section class="api-profile-description">
-  <p>Application-wide API for communicating between components and providing helper functions.</p>
-
-</section>
-
-
-
-<hr class="spacer">
-<p class="font-bolder">Public Methods</p>
-<ul class="list api-toc">
-  <li class="list-tile">
-    <div class="list-actions">
-      <a href="/#/api/blt_core/service/BltApi#subscribe"><code>subscribe</code></a>
-      
-    </div>
-    <div class="list-content">
-      
-      <div class="api-toc-summary"><p>Registers callbacks to a message</p>
-</div>
-      
-    </div>
-  </li>
-  
-  <li class="list-tile">
-    <div class="list-actions">
-      <a href="/#/api/blt_core/service/BltApi#unsubscribe"><code>unsubscribe</code></a>
-      
-    </div>
-    <div class="list-content">
-      
-      <div class="api-toc-summary"><p>Removes callbacks registered to a message.</p>
-</div>
-      
-    </div>
-  </li>
-  
-  <li class="list-tile">
-    <div class="list-actions">
-      <a href="/#/api/blt_core/service/BltApi#publish"><code>publish</code></a>
-      
-    </div>
-    <div class="list-content">
-      
-      <div class="api-toc-summary"><p>Publishes a message.</p>
-</div>
-      
-    </div>
-  </li>
-  
-  <li class="list-tile">
-    <div class="list-actions">
-      <a href="/#/api/blt_core/service/BltApi#switchViews"><code>switchViews</code></a>
-      
-    </div>
-    <div class="list-content">
-      
-      <div class="api-toc-summary"><p>Updates $location.path() and/or $location.searchParams().</p>
-</div>
-      
-    </div>
-  </li>
-  
-  <li class="list-tile">
-    <div class="list-actions">
-      <a href="/#/api/blt_core/service/BltApi#getCurrentView"><code>getCurrentView</code></a>
-      
-      <i class="material-icons">trending_flat</i> 
-      <a href="" class="label type-hint type-hint-string">string</a>
-      
-    </div>
-    <div class="list-content">
-      
-      <div class="api-toc-summary"><p>Gets the current view information.</p>
-</div>
-      
-    </div>
-  </li>
-  
-  <li class="list-tile">
-    <div class="list-actions">
-      <a href="/#/api/blt_core/service/BltApi#uuid"><code>uuid</code></a>
-      
-      <i class="material-icons">trending_flat</i> 
-      <a href="" class="label type-hint type-hint-string">string</a>
-      
-    </div>
-    <div class="list-content">
-      
-      <div class="api-toc-summary"><p>Gets a UUID.</p>
-</div>
-      
-    </div>
-  </li>
-  
-  <li class="list-tile">
-    <div class="list-actions">
-      <a href="/#/api/blt_core/service/BltApi#setLogLevel"><code>setLogLevel</code></a>
-      
-      <i class="material-icons">trending_flat</i> 
-      <a href="" class="label type-hint type-hint-boolean">boolean</a>
-      
-    </div>
-    <div class="list-content">
-      
-      <div class="api-toc-summary"><p>Sets application-wide console logging level.</p>
-</div>
-      
-    </div>
-  </li>
-  
-  <li class="list-tile">
-    <div class="list-actions">
-      <a href="/#/api/blt_core/service/BltApi#clearLogLevel"><code>clearLogLevel</code></a>
-      
-    </div>
-    <div class="list-content">
-      
-      <div class="api-toc-summary"><p>Resets the current console logging level.</p>
-</div>
-      
-    </div>
-  </li>
-  
-  <li class="list-tile">
-    <div class="list-actions">
-      <a href="/#/api/blt_core/service/BltApi#getLogLevel"><code>getLogLevel</code></a>
-      
-      <i class="material-icons">trending_flat</i> 
-      <a href="" class="label type-hint type-hint-string">string</a>
-      
-    </div>
-    <div class="list-content">
-      
-      <div class="api-toc-summary"><p>Returns the current log level.</p>
-</div>
-      
-    </div>
-  </li>
-  
-  <li class="list-tile">
-    <div class="list-actions">
-      <a href="/#/api/blt_core/service/BltApi#getMillisFromEpoch"><code>getMillisFromEpoch</code></a>
-      
-      <i class="material-icons">trending_flat</i> 
-      <a href="" class="label type-hint type-hint-number">number</a>
-      
-    </div>
-    <div class="list-content">
-      
-      <div class="api-toc-summary"><p>Converts date to milliseconds from epoch.</p>
-</div>
-      
-    </div>
-  </li>
-  
-  <li class="list-tile">
-    <div class="list-actions">
-      <a href="/#/api/blt_core/service/BltApi#convertToId"><code>convertToId</code></a>
-      
-      <i class="material-icons">trending_flat</i> 
-      <a href="" class="label type-hint type-hint-string">string</a>
-      
-    </div>
-    <div class="list-content">
-      
-      <div class="api-toc-summary"><p>Converts string to lowercase delimited string.</p>
-</div>
-      
-    </div>
-  </li>
-  
-  <li class="list-tile">
-    <div class="list-actions">
-      <a href="/#/api/blt_core/service/BltApi#register"><code>register</code></a>
-      
-    </div>
-    <div class="list-content">
-      
-      <div class="api-toc-summary"><p>Adds component to global space.</p>
-</div>
-      
-    </div>
-  </li>
-  
-  <li class="list-tile">
-    <div class="list-actions">
-      <a href="/#/api/blt_core/service/BltApi#unregister"><code>unregister</code></a>
-      
-    </div>
-    <div class="list-content">
-      
-      <div class="api-toc-summary"><p>Removes component from global space.</p>
-</div>
-      
-    </div>
-  </li>
-  </ul>
-
-
-
-
-
-<section class="api-dependencies edge-top">
-  <h2 id="dependencies">Dependencies</h2>
-  <ul class="api-dependencies-list">
     
-    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$window">$window</a></li>
+
     
-    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$location">$location</a></li>
+        <section class="api-profile-description">
+            <p>Application-wide API which provides a communication bus between components,
+navigating the view, generating unique ids, and defining the log levels.
+Most ngBolt components will inject the Bolt API and it is recommended that
+all controllers, factories, and components for specific applications also
+inject the Bolt API.</p>
+
+        </section>
     
-    <li class="api-dependencies-item"><a href="/#/api/blt_config"><code>blt_config</code></a></li>
+
     
-  </ul>
-</section>
+    <hr class="spacer">
+    <p class="font-bolder">Public Methods</p>
+    <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th class="text-center">Returns</th>
+                <th>Summary</th>
+            <tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>
+                        <a href="/#!/api/blt_core/service/BltApi#subscribe">
+                            <span class="font-monospace">subscribe</span>
+                        </a>
+                    </td>
+                    <td class="text-center"></td>
+                    <td class="api-toc-summary">Subscribes to a topic and registers a callback function to be
+executed when a message is received.</td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="/#!/api/blt_core/service/BltApi#unsubscribe">
+                            <span class="font-monospace">unsubscribe</span>
+                        </a>
+                    </td>
+                    <td class="text-center"></td>
+                    <td class="api-toc-summary">Removes all callback functions registered to a subscription
+topic.</td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="/#!/api/blt_core/service/BltApi#publish">
+                            <span class="font-monospace">publish</span>
+                        </a>
+                    </td>
+                    <td class="text-center"></td>
+                    <td class="api-toc-summary">Publishes a message to the Bolt API, which is then received by
+subscribers to the same topic.</td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="/#!/api/blt_core/service/BltApi#switchViews">
+                            <span class="font-monospace">switchViews</span>
+                        </a>
+                    </td>
+                    <td class="text-center"></td>
+                    <td class="api-toc-summary">A helper function for updating Angular's $location.path()
+and/or $location.searchParams().</td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="/#!/api/blt_core/service/BltApi#getCurrentView">
+                            <span class="font-monospace">getCurrentView</span>
+                        </a>
+                    </td>
+                    <td class="text-center">string</td>
+                    <td class="api-toc-summary">A helper function to get the current view.</td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="/#!/api/blt_core/service/BltApi#uuid">
+                            <span class="font-monospace">uuid</span>
+                        </a>
+                    </td>
+                    <td class="text-center">string</td>
+                    <td class="api-toc-summary">Generates and returns a new UUID.</td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="/#!/api/blt_core/service/BltApi#setLogLevel">
+                            <span class="font-monospace">setLogLevel</span>
+                        </a>
+                    </td>
+                    <td class="text-center">boolean</td>
+                    <td class="api-toc-summary">Sets application-wide console logging level.</td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="/#!/api/blt_core/service/BltApi#clearLogLevel">
+                            <span class="font-monospace">clearLogLevel</span>
+                        </a>
+                    </td>
+                    <td class="text-center"></td>
+                    <td class="api-toc-summary">Resets the current console logging level.</td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="/#!/api/blt_core/service/BltApi#getLogLevel">
+                            <span class="font-monospace">getLogLevel</span>
+                        </a>
+                    </td>
+                    <td class="text-center">string</td>
+                    <td class="api-toc-summary">Returns the current log level.</td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="/#!/api/blt_core/service/BltApi#getMillisFromEpoch">
+                            <span class="font-monospace">getMillisFromEpoch</span>
+                        </a>
+                    </td>
+                    <td class="text-center">number</td>
+                    <td class="api-toc-summary">Converts date to milliseconds from epoch.</td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="/#!/api/blt_core/service/BltApi#convertToId">
+                            <span class="font-monospace">convertToId</span>
+                        </a>
+                    </td>
+                    <td class="text-center">string</td>
+                    <td class="api-toc-summary">Converts string to lowercase delimited string.</td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="/#!/api/blt_core/service/BltApi#register">
+                            <span class="font-monospace">register</span>
+                        </a>
+                    </td>
+                    <td class="text-center"></td>
+                    <td class="api-toc-summary">Adds component to global space.</td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="/#!/api/blt_core/service/BltApi#unregister">
+                            <span class="font-monospace">unregister</span>
+                        </a>
+                    </td>
+                    <td class="text-center"></td>
+                    <td class="api-toc-summary">Removes component from global space.</td>
+                </tr>
+            </tbody>
+    </table>
 
 
+    
 
+    
+            <section class="api-dependencies edge-top">
+                <h2 id="dependencies">Dependencies</h2>
+                <ul class="api-dependencies-list">
+                    
+                        <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$window">$window</a>
+                        </li>
+                    
+                        <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$location">$location</a>
+                        </li>
+                    
+                        <li class="api-dependencies-item"><a href="/#!/api/blt_config"><code>blt_config</code></a>
+                        </li>
+                    
+                </ul>
+            </section>
+        
 
-  
+    
 
-  
-<section class="api-methods edge-top">
-<h2>Methods</h2>
-  <div id="subscribe" class="api-method">
-    <h3 class="api-method-name"><p><code>subscribe(name, callback);</code></p>
+    
+
+    
+    <section class="api-methods edge-top">
+        <h2>Methods</h2>
+            <div id="subscribe" class="api-method card">
+                <div class="card-content">
+                    <div class="card-primary">
+                        <header class="card-header edge-bottom-dark">
+                            <h3 class="card-title api-method-name"><p><code>subscribe(topic, callback);</code></p>
 
 </h3>
-    <div class="api-method-content">
-      <div><p>The subscribe method registers messages to trigger a function when the subscription is called. This is useful
-when needing to set up lines of communication between controllers and directives, or when needing to complete
-some function upon completion of an asynchronous function. Subscriptions should be made in the activate method
-of a controller&#39;s function.</p>
+                        </header>
+                        <div class="card-body">
+                            <h4>Summary</h4>
+                            <p class="card-text"><p>Subscribes to a topic and registers a callback function to be
+executed when a message is received.</p>
+</p>
+
+                            <h4>Description</h4>
+                            <p class="card-text"><p>This is useful when needing to set up lines of communication between
+controllers and directives, or when needing to complete some function
+upon completion of an asynchronous function. Subscriptions should be
+made in the activate method of a controller&#39;s function.</p>
 <div class="note-info">
-<strong>Note</strong> Subscription callback methods are not watched by Angular, therefore any changes to the model must be
-wrapped in a $timeout so that they are digested by Angular and the view is updated.
-</div></div>
+Subscription callback methods are not watched by Angular, therefore any
+changes to the model must be wrapped in a $timeout so that they are
+digested by Angular and the view is updated.
+</div></p>
 
-      
-      <h4>Parameters</h4>
-      
-<table class="table">
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th></th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>name</code>
+                            
+                                <h4>Parameters</h4>
+                                
+    <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Type</th>
+                <th></th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">String</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        
-      </td>
-      <td>
-        
-        <p>The name of the subscription. You can subscribe more than one callback to the same name.
-If the subscription is made in a controller, the name should reflect the 
-<a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#controlleras-controller-syntax">controllerAs</a>
-name of the controller (e.g. <code>name: &#39;main&#39;</code> for controller &#39;MainController&#39;).</p>
+            <tr>
+                <td class="td-shrink">
+                    <code>topic</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
 
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>callback</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-function">Function</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        
-      </td>
-      <td>
-        
-        <p>The function for handling the published message.</p>
+                    <p>The name of the subscription. You can subscribe
+more than one callback to the same name.</p>
 
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-  </tbody>
-</table>
+            <tr>
+                <td class="td-shrink">
+                    <code>callback</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    function
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
 
-      
+                    <p>The function for handling the published
+message.</p>
 
-      
+                    
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
 
-      
+                            
 
-      
-        <h4>Example</h4>
-        <div class="api-example">
-          <p>
+                            
+
+                            
+
+                            
+                                    <h4>Example</h4>
+                                <div class="api-example">
+                                        <p>
 
 
 <div class="runnable-example"
@@ -343,7 +316,54 @@ name of the controller (e.g. <code>name: &#39;main&#39;</code> for controller &#
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>angular.module(&#39;bltDocs&#39;)&#10;  .controller(&#39;MyController&#39;, MyController)&#10;;&#10;MyController.$inject = [&#39;BltApi&#39;, &#39;$timeout&#39;];&#10;function MyController(bltApi, $timeout){&#10;   var ctrl = this;&#10;&#10;   // Define controller methods and properties&#10;   activate();&#10;   function activate(){&#10;       bltApi.subscribe(&#39;MyCtrl&#39;, function(msg){&#10;&#10;         // Handle simple string msg&#10;         if( msg == &#39;new item&#39;){&#10;             // Must use timeout so Angular digests changes to the model.&#10;             $timeout(function(){&#10;                 ctrl.currentItem = {};&#10;                 ctrl.createNewItem();&#10;             });&#10;&#10;         // Handle more complex message&#10;         } else if( msg.action == &#39;edit item&#39;){&#10;             $timeout(function(){&#10;                 ctrl.currentItem = msg.data;&#10;                 ctrl.editItem();&#10;             });&#10;         }&#10;     };&#10;   }&#10;}</code></pre>
+    <pre><code class="hljs javascript">
+  // Create A Controller
+  angular.module('bltDocs')
+    .controller('MyController', MyController)
+  ;
+
+  /**
+   * @ngdoc controller
+   * @name My Controller
+   * @module bltDocs
+   * @description An example controller showing how to subscribe to the Bolt API for messages
+   * @param {BltApi} api Bolt API
+   * @param timeout Angular $timeout
+   * @constructor activate()
+   *&#47;
+  function MyController(api, $timeout) {
+    // Bind To Controller
+    var ctrl = this;
+
+    // Activate Controller On Init
+    ctrl.$onInit = activate();
+
+    // Subscribe To The Bolt API For Messages
+    function activate() {
+      // Subscribe To 'test' Messages
+      api.subscribe('test', function(message) {
+        // NOTE: This Function Is Called When Any Bolt API Message Is Received
+
+        // Check The Message
+        // NOTE: This Message Could Be Any Type That The Publisher Sent
+        if ( message == 'new') {
+          // Do Some Logic
+          // NOTE: We Wrap The Logic In A $timeout To Trigger Angular's Digest Cycle
+          $timeout(function() {
+            ctrl.currentItem = {};    // Not Implemented In This Example
+            ctrl.createNewItem();     // Not Implemented In This Example
+          });
+        }
+      }  // End Of api.subscribe
+    }  // End Of activate()
+  }  // End Of MyController
+
+  // Inject Controller Dependencies
+  MyController.$inject = [
+    'BltApi',
+    '$timeout'
+  ];
+  </code></pre>
   </div>
   
 
@@ -356,95 +376,109 @@ name of the controller (e.g. <code>name: &#39;main&#39;</code> for controller &#
 
 </p>
 
-        </div>
-
-      <!--Scroll to top button-->
-      <!-- TODO: get scroll to top working with ngView -->
-      <!--<a href="#top">Back to Top</a>-->
-    </div>
-    
-  </div>
-  
-  <div id="unsubscribe" class="api-method">
-    <h3 class="api-method-name"><p><code>unsubscribe(name, callback);</code></p>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="unsubscribe" class="api-method card">
+                <div class="card-content">
+                    <div class="card-primary">
+                        <header class="card-header edge-bottom-dark">
+                            <h3 class="card-title api-method-name"><p><code>unsubscribe(topic, callback);</code></p>
 
 </h3>
-    <div class="api-method-content">
-      <div><p>The unsubscribe method removes all subscriptions of the provided name. When the scope of a controller or
-directive is destroyed, it is considered best practice to unsubscribe any subscriptions made in that controller
-or directive. They will be re-subscribed when they are added back to the scope.</p>
+                        </header>
+                        <div class="card-body">
+                            <h4>Summary</h4>
+                            <p class="card-text"><p>Removes all callback functions registered to a subscription
+topic.</p>
+</p>
+
+                            <h4>Description</h4>
+                            <p class="card-text"><p>The unsubscribe method removes <strong>all</strong> subscriptions of the provided
+name. When the scope of a controller or directive is destroyed, it is
+considered best practice to unsubscribe any subscriptions made in that
+controller or directive. They will be re-subscribed when they are added
+back to the scope.</p>
 <div class="note-warning">
-<strong>Warning</strong> The unsubscribe method will delete all subscriptions registered to a particular name regardless if
-that subscription was made from the controller or directive being destroyed. To prevent the unwanted deletion of
-subscriptions made to the same name but from a different controller/directive, use unique names on subscriptions
-made from different controllers or directives.
-</div></div>
+The unsubscribe method will delete <strong>all</strong> subscriptions registered to a
+particular name regardless if that subscription was made from the
+controller or directive being destroyed. To prevent the unwanted
+deletion of subscriptions made to the same name but from a different
+controller/directive, use unique names on subscriptions made from
+different controllers or directives.
+</div></p>
 
-      
-      <h4>Parameters</h4>
-      
-<table class="table">
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th></th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>name</code>
+                            
+                                <h4>Parameters</h4>
+                                
+    <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Type</th>
+                <th></th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">String</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        
-      </td>
-      <td>
-        
-        <p>The name of the <a href="/#/api/blt_core/service/BltApi#subscribe">subscription</a> you wish to delete.</p>
+            <tr>
+                <td class="td-shrink">
+                    <code>topic</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
 
+                    <p>The name of the
+<a href="/#!/api/blt_core/service/BltApi#subscribe">subscription</a> you wish to delete.</p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>callback</code>
+            <tr>
+                <td class="td-shrink">
+                    <code>callback</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    function
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>An optional callback function to run after
+the subscription has been deleted.</p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-function">Function</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>An optional callback function to run after the subscription has been deleted.</p>
+        </tbody>
+    </table>
 
-        
-      </td>
-    </tr>
-    
-  </tbody>
-</table>
+                            
 
-      
+                            
 
-      
+                            
 
-      
-
-      
-        <h4>Example</h4>
-        <div class="api-example">
-          <p>
+                            
+                                    <h4>Example</h4>
+                                <div class="api-example">
+                                        <p>
 
 
 <div class="runnable-example"
@@ -459,7 +493,74 @@ made from different controllers or directives.
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>angular.module(&#39;bltDocs&#39;)&#10;  .controller(&#39;MyController&#39;, MyController)&#10;;&#10;MyController.$inject = [&#39;BltApi&#39;, &#39;$timeout&#39;, &#39;$scope&#39;];&#10;function MyController(bltApi, $timeout, $scope){&#10;    var ctrl = this;&#10;    // Define controller methods and properties&#10;    activate();&#10;    function activate(){&#10;        // set up a subscription&#10;        bltApi.subscribe(&#39;MyCtrl&#39;, function(msg){&#10;            if( msg == &#39;new item&#39; ){&#10;                $timeout(function(){&#10;                    ctrl.createNewItem();&#10;                });&#10;            }&#10;        };&#10;        // Listen to the scopes $destroy event to run clean up functions&#10;        $scope.$on(&#39;$destroy&#39;, destroy);&#10;    }&#10;    function destroy(){&#10;        // Unsubscribe subscriptions set up in activate function and run a callback function.&#10;        bltApi.unsubscribe(&#39;MyCtrl&#39;, function(){&#10;            console.log(&quot;successfully unsubscribed all subscriptions to &#39;MyCtrl&#39;.&quot;);&#10;        });&#10;        // Delete the ctrl object (&#39;MyCtrl&#39; would be what was set using controllerAs in the HTML template).&#10;        delete $scope.MyCtrl;&#10;    }&#10;}</code></pre>
+    <pre><code class="hljs javascript">
+  // Create A Controller
+  angular.module('bltDocs')
+    .controller('MyController', MyController)
+  ;
+
+  /**
+   * @ngdoc controller
+   * @name My Controller
+   * @module bltDocs
+   * @description An example controller showing how to unsubscribe from messages from the Bolt API
+   * @param {BltApi} api Bolt API
+   * @param timeout Angular $timeout
+   * @param $scope Angular $scope
+   * @constructor activate()
+   *&#47;
+  function MyController(api, $timeout) {
+    // Bind To Controller
+    var ctrl = this;
+
+    // Activate Controller On Init
+    ctrl.$onInit = activate();
+
+    // Subscribe To The Bolt API For Messages
+    function activate() {
+      // Subscribe To 'test' Messages
+      api.subscribe('test', function(message) {
+        // NOTE: This Function Is Called When Any Bolt Message Is Received
+
+        // Check The Message
+        // NOTE: This Message Could Be Any Type That The Publisher Sent
+        if ( message == 'new') {
+          // Do Some Logic
+          // NOTE: We Wrap The Logic In A $timeout To Trigger Angular's Digest Cycle
+          $timeout(function() {
+            ctrl.currentItem = {};    // Not Implemented In This Example
+            ctrl.createNewItem();     // Not Implemented In This Example
+          });
+        }
+      }  // End Of api.subscribe
+
+      // Call Destroy Function When Controller Is Destroyed
+      $scope.$on('$destroy', destroy);
+    }  // End Of activate()
+
+    // Clean Up The Controller When Destroyed
+    function destroy() {
+      // Unsubscribe From Subscriptions
+      api.unsubscribe('test', function() {
+        // NOTE: This Function Is Called When The Unsubscribe Was Successful
+
+        // Log Success
+        api.log("Successfully Removed All Subscriptions For 'test' Topic!");
+      });
+
+      // Delete Controller From Scope
+      // NOTE: This Is Only Needed If You Use controllerAs In The HTML Template
+      delete $scope.MyCtrl;
+    } // End Of destroy()
+  }  // End Of MyController
+
+  // Inject Controller Dependencies
+  MyController.$inject = [
+    'BltApi',
+    '$timeout',
+    '$scope'
+  ];
+  </code></pre>
   </div>
   
 
@@ -472,91 +573,104 @@ made from different controllers or directives.
 
 </p>
 
-        </div>
-
-      <!--Scroll to top button-->
-      <!-- TODO: get scroll to top working with ngView -->
-      <!--<a href="#top">Back to Top</a>-->
-    </div>
-    
-  </div>
-  
-  <div id="publish" class="api-method">
-    <h3 class="api-method-name"><p><code>publish(name, msg);</code></p>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="publish" class="api-method card">
+                <div class="card-content">
+                    <div class="card-primary">
+                        <header class="card-header edge-bottom-dark">
+                            <h3 class="card-title api-method-name"><p><code>publish(topic, message);</code></p>
 
 </h3>
-    <div class="api-method-content">
-      <div><p>The publish method provides a built-in ability to interact with ngBoltJS components from within a
-controller or custom directive as well as send custom messages between ngBoltJS application modules.</p>
-</div>
+                        </header>
+                        <div class="card-body">
+                            <h4>Summary</h4>
+                            <p class="card-text"><p>Publishes a message to the Bolt API, which is then received by
+subscribers to the same topic.</p>
+</p>
 
-      
-      <h4>Parameters</h4>
-      
-<table class="table">
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th></th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>name</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">String</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        
-      </td>
-      <td>
-        
-        <p>The name of the subscription you are publishing too. If opening a modal or panel,
-this will be the id of the modal or panel, otherwise it will be the name you passed to
-<a href="/#/api/blt_core/service/BltApi#subscribe">BltApi.subscribe</a>.</p>
+                            <h4>Description</h4>
+                            <p class="card-text"><p>The publish method provides a built-in ability to interact
+with ngBolt components from within a controller or custom directive as
+well as send custom messages between ngBolt application modules.</p>
+</p>
 
+                            
+                                <h4>Parameters</h4>
+                                
+    <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Type</th>
+                <th></th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>msg</code>
+            <tr>
+                <td class="td-shrink">
+                    <code>topic</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    String
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
+
+                    <p>The name of the subscription you are publishing to.
+If opening a modal or panel, this will be the ID of the modal or panel,
+otherwise it will be the name you passed to
+<a href="/#!/api/blt_core/service/BltApi#subscribe">BltApi.subscribe</a>.</p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">String</a><a href="" class="label type-hint type-hint-object">Object</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
+            <tr>
+                <td class="td-shrink">
+                    <code>message</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    String,Object
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
+
+                    <p>A string or object to be passed to the
+callback of the subscription you are publishing to. If opening a modal
+or panel, <code>message</code> will be &#39;open&#39;. Likewise, if closing a panel or
+modal, it will be &#39;close&#39;. If publishing to a custom subscription, this
+will be the string or object you expect to handle.</p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-      <td>
-        
-        <p>A string or object to be passed to the callback of the subscription you are publishing to. If opening a modal or panel, <code>msg</code> will be &#39;open&#39;. Likewise, if closing a panel or modal, it will be &#39;close&#39;. If publishing to a custom subscription, this will be the string or object you expect to handle.</p>
+        </tbody>
+    </table>
 
-        
-      </td>
-    </tr>
-    
-  </tbody>
-</table>
+                            
 
-      
+                            
 
-      
+                            
 
-      
-
-      
-        <h4>Example</h4>
-        <div class="api-example">
-          <p>
+                            
+                                    <h4>Example</h4>
+                                <div class="api-example">
+                                        <p>
 
 
 <div class="runnable-example"
@@ -571,7 +685,52 @@ this will be the id of the modal or panel, otherwise it will be the name you pas
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>angular.module(&#39;bltDocs&#39;)&#10;  .controller(&#39;MyController&#39;, MyController)&#10;;&#10;MyController.$inject = [&#39;BltApi&#39;, &#39;$timeout&#39;];&#10;function MyController(bltApi, $timeout){&#10;  var ctrl = this;&#10;  // Define controller methods and properties and activate&#10;  publishExample(){&#10;    // Open a modal with id of &#39;myModal&#39;&#10;    bltApi.publish(&#39;myModal&#39;, &#39;open&#39;);&#10;    // Close a panel with id of &#39;myPanel&#39;&#10;    bltApi.publish(&#39;myPanel&#39;, &#39;close&#39;);&#10;    // Publish a message to a custom subscription (see BltApi.subscribe below)&#10;    var msg = {&#10;      action: &#39;edit item&#39;,&#10;      data: {...}&#10;    }&#10;    bltApi.publish(&#39;MyCtrl&#39;, msg);&#10;  }&#10;}</code></pre>
+    <pre><code class="hljs javascript">
+  // Create A Controller
+  angular.module('bltDocs')
+    .controller('MyController', MyController)
+  ;
+
+  /**
+   * @ngdoc controller
+   * @name My Controller
+   * @module bltDocs
+   * @description An example controller showing how to publish a message to the Bolt API
+   * @param {BltApi} api Bolt API
+   * @param timeout Angular $timeout
+   * @constructor activate()
+   *&#47;
+  function MyController(api, $timeout) {
+    // Bind To Controller
+    var ctrl = this;
+
+    // Activate Controller On Init
+    ctrl.$onInit = activate();
+
+    // Subscribe To The Bolt API For Messages
+    function activate() {
+      // Open A Modal With An ID Of 'logout'
+      api.publish('logout', 'open');
+
+      // Close A Panel With An ID Of 'editUser'
+      api.publish('editUser', 'close');
+
+      // Publish A Custom Message To A Custom Subscriber
+      var message = {
+        action: 'edit',
+        data: {
+          name: 'Foo'
+        }
+      }
+    }  // End Of activate()
+  }  // End Of MyController
+
+  // Inject Controller Dependencies
+  MyController.$inject = [
+    'BltApi',
+    '$timeout'
+  ];
+  </code></pre>
   </div>
   
 
@@ -584,99 +743,112 @@ this will be the id of the modal or panel, otherwise it will be the name you pas
 
 </p>
 
-        </div>
-
-      <!--Scroll to top button-->
-      <!-- TODO: get scroll to top working with ngView -->
-      <!--<a href="#top">Back to Top</a>-->
-    </div>
-    
-  </div>
-  
-  <div id="switchViews" class="api-method">
-    <h3 class="api-method-name"><p><code>switchViews(path, searchParams);</code></p>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="switchViews" class="api-method card">
+                <div class="card-content">
+                    <div class="card-primary">
+                        <header class="card-header edge-bottom-dark">
+                            <h3 class="card-title api-method-name"><p><code>switchViews(path, searchParams);</code></p>
 
 </h3>
-    <div class="api-method-content">
-      <div><p>Updates $location with the provided path and searchParmas. If only <code>path</code> is provided,
-<a href="https://docs.angularjs.org/api/ng/service/$location">$location.path()</a> will be called, if <code>searchParams</code> are
-included, <a href="https://docs.angularjs.org/api/ng/service/$location">$location.url()</a> is called. If <code>searchParams</code> is
-an emtpy object, any search parameters on the current url will be removed.</p>
+                        </header>
+                        <div class="card-body">
+                            <h4>Summary</h4>
+                            <p class="card-text"><p>A helper function for updating Angular&#39;s $location.path()
+and/or $location.searchParams().</p>
+</p>
+
+                            <h4>Description</h4>
+                            <p class="card-text"><p>Updates $location with the provided path and search params. If only
+<code>path</code> is provided,
+<a href="https://docs.angularjs.org/api/ng/service/$location">$location.path()</a>
+will be called, if <code>searchParams</code> are included,
+<a href="https://docs.angularjs.org/api/ng/service/$location">$location.url()</a>
+is called. If <code>searchParams</code> is an emtpy object, any search parameters
+on the current url will be removed.</p>
 <div class="note-info">
-<strong>NOTE</strong> If the current URL has search parameters but only <code>path</code> is passed as a parameter, only the path will
-change and the search parameters will still be applied to the URL. This can be useful when switching views when
+If the current URL has search parameters but only <code>path</code> is passed as a
+parameter, only the path will change and the search parameters will
+still be applied to the URL. This can be useful when switching views when
 filtering by some value(s).
 </div>
 
-<p>See <a href="/#/api/blt_appViews"><code>blt_appViews</code></a> for more information on defining views.</p>
-</div>
+<div class="note-tip">
+See <a href="/#!/fundamentals/views">Routes &amp; Views</a> for more information on defining views.
+</div></p>
 
-      
-      <h4>Parameters</h4>
-      
-<table class="table">
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th></th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>path</code>
+                            
+                                <h4>Parameters</h4>
+                                
+    <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Type</th>
+                <th></th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
+            <tr>
+                <td class="td-shrink">
+                    <code>path</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
+
+                    <p>The path of the view you want to open.</p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-      <td>
+            <tr>
+                <td class="td-shrink">
+                    <code>searchParams</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    object
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Search parameters to append to the
+supplied path. If the object is empty, search parameters will be removed.</p>
+
+                    
+                </td>
+            </tr>
         
-        <p>The path of the view you want to open.</p>
+        </tbody>
+    </table>
 
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>searchParams</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-object">object</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Search parameters to append to the supplied path. If the object is empty, search parameters will be removed.</p>
+                            
 
-        
-      </td>
-    </tr>
-    
-  </tbody>
-</table>
+                            
 
-      
+                            
 
-      
-
-      
-
-      
-        <h4>Examples</h4>
-        <div class="api-example">
-          <p><caption>Change view</caption>
-
+                            
+                                    <h4>Example</h4>
+                                <div class="api-example">
+                                        <p>
 
 
 <div class="runnable-example"
@@ -685,13 +857,72 @@ filtering by some value(s).
     
     ng-init="exCtrl.setDefaultExample('js');"
     
-    name="switchViews1">
+    name="views">
   
   
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>// Will change url to: http://example.com/some/path&#10;bltApi.switchViews(&#39;/some/path&#39;);</code></pre>
+    <pre><code class="hljs javascript">
+  // Create A Controller
+  angular.module('bltDocs')
+    .controller('MyController', MyController)
+  ;
+
+  /**
+   * @ngdoc controller
+   * @name My Controller
+   * @module bltDocs
+   * @description An example controller showing how to switch views
+   * @param {BltApi} api Bolt API
+   * @constructor activate()
+   *&#47;
+  function MyController(api) {
+    // Bind To Controller
+    var ctrl = this;
+
+    // Activate Controller On Init
+    ctrl.$onInit = activate();
+
+    // Switch View Examples
+    function activate() {
+      // NOTE: The Following Example Assume The Base URL Is http://example.com/
+
+      // Change The URL To:
+      //   HTML5: http://example.com/some/path
+      //   Non-HTML5: http://example.com/#!/some/path
+      api.switchViews('/some/path');
+
+      // Change The URL To:
+      //   HTML5: http://example.com/some/path?foo=value1&bar=value2
+      //   Non-HTML5: http://example.com/#!/some/path?foo=value1&bar=value2
+      api.switchViews('/some/path', {foo: 'value1': bar: 'value2'});
+
+      // If The Current URL Is: http://example.com/some/path?foo=value1&bar=value2
+      // Change The URL To:
+      //   HTML5: http://example.com/some/other/path
+      //   Non-HTML5: http://example.com/#!/some/other/path
+      api.switchViews('some/other/path', {});
+
+      // If The Current URL Is: http://example.com/some/path?foo=value1&bar=value2
+      // Change The URL To:
+      //   HTML5: http://example.com/some/other/path?foo=value1&bar=value2
+      //   Non-HTML5: http://example.com/#!/some/other/path?foo=value1&bar=value2
+      api.switchViews('some/other/path');
+
+      // If The Current URL Is: http://example.com/some/path?foo=value1&bar=value2
+      // Change The URL To:
+      //   HTML5: http://example.com/some/path
+      //   Non-HTML5: http://example.com/#!/some/path
+      bltApi.switchViews(undefined, {});
+    }  // End Of activate()
+  }  // End Of MyController
+
+  // Inject Controller Dependencies
+  MyController.$inject = [
+    'BltApi'
+  ];
+  </code></pre>
   </div>
   
 
@@ -704,376 +935,330 @@ filtering by some value(s).
 
 </p>
 
-        </div><div class="api-example">
-          <p><caption>Change view with search parameters</caption>
-
-
-
-<div class="runnable-example"
-    ng-controller="RunnableExampleController as exCtrl"
-
-    
-    ng-init="exCtrl.setDefaultExample('js');"
-    
-    name="switchViews2">
-  
-  
-
-  
-  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>// Will change url to: http://example.com/some/path?foo=value1&amp;bar=value2&#10;bltApi.switchViews(&#39;/some/path&#39;, {foo: &#39;value1&#39;: bar: &#39;value2&#39;});</code></pre>
-  </div>
-  
-
-  
-
-  
-
-</div>
-
-
-</p>
-
-        </div><div class="api-example">
-          <p><caption>Change view and clear search parameters</caption>
-
-
-
-<div class="runnable-example"
-    ng-controller="RunnableExampleController as exCtrl"
-
-    
-    ng-init="exCtrl.setDefaultExample('js');"
-    
-    name="switchViews3">
-  
-  
-
-  
-  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>// Given the URL: http://example.com/some/path?foo=value1&amp;bar=value2&#10;// Will change the URL to: http://example.com/some/other/path&#10;bltApi.switchViews(&#39;some/other/path&#39;, {});</code></pre>
-  </div>
-  
-
-  
-
-  
-
-</div>
-
-
-</p>
-
-        </div><div class="api-example">
-          <p><caption>Change view and don&#39;t reset search parameters</caption>
-
-
-
-<div class="runnable-example"
-    ng-controller="RunnableExampleController as exCtrl"
-
-    
-    ng-init="exCtrl.setDefaultExample('js');"
-    
-    name="switchViews4">
-  
-  
-
-  
-  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>// Given the URL: http://example.com/some/path?foo=value1&amp;bar=value2&#10;// Will change the URL to: http://example.com/some/other/path?foo=value1&amp;bar=value2&#10;bltApi.switchViews(&#39;some/other/path&#39;);</code></pre>
-  </div>
-  
-
-  
-
-  
-
-</div>
-
-
-</p>
-
-        </div><div class="api-example">
-          <p><caption>Stay on current view, but reset search parameters</caption>
-
-
-
-<div class="runnable-example"
-    ng-controller="RunnableExampleController as exCtrl"
-
-    
-    ng-init="exCtrl.setDefaultExample('js');"
-    
-    name="switchViews5">
-  
-  
-
-  
-  <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>// Given the URL: http://example.com/some/path?foo=value1&amp;bar=value2&#10;// Will change the URL to: http://example.com/some/path&#10;bltApi.switchViews(null, {});</code></pre>
-  </div>
-  
-
-  
-
-  
-
-</div>
-
-
-</p>
-
-        </div>
-
-      <!--Scroll to top button-->
-      <!-- TODO: get scroll to top working with ngView -->
-      <!--<a href="#top">Back to Top</a>-->
-    </div>
-    
-  </div>
-  
-  <div id="getCurrentView" class="api-method">
-    <h3 class="api-method-name"><p><code>getCurrentView(getter);</code></p>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="getCurrentView" class="api-method card">
+                <div class="card-content">
+                    <div class="card-primary">
+                        <header class="card-header edge-bottom-dark">
+                            <h3 class="card-title api-method-name"><p><code>getCurrentView(getter);</code></p>
 
 </h3>
-    <div class="api-method-content">
-      <div><p>Returns the url information of the current view. Returns the absolute url if no getter is set.</p>
-</div>
+                        </header>
+                        <div class="card-body">
+                            <h4>Summary</h4>
+                            <p class="card-text"><p>A helper function to get the current view.</p>
+</p>
 
-      
-      <h4>Parameters</h4>
-      
-<table class="table">
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th></th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>getter</code>
+                            <h4>Description</h4>
+                            <p class="card-text"><p>Returns the url information of the current view. Returns the absolute
+url if no getter is set.</p>
+</p>
+
+                            
+                                <h4>Parameters</h4>
+                                
+    <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Type</th>
+                <th></th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
+            <tr>
+                <td class="td-shrink">
+                    <code>getter</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Getter method to call from Angular&#39;s
+<a href="https://docs.angularjs.org/api/ng/service/$location">$location</a> service.</p>
+
+                    
+                </td>
+            </tr>
         
-        <p>Getter method to call from Angular&#39;s <a href="https://docs.angularjs.org/api/ng/service/$location">$location</a> service.</p>
+        </tbody>
+    </table>
 
-        
-      </td>
-    </tr>
-    
-  </tbody>
-</table>
+                            
 
-      
+                            
 
-      
-
-      
-      <h4>Returns</h4>
-      <table class="table">
-  <tr>
-    <td class="td-shrink"><a href="" class="label type-hint type-hint-string">string</a></td>
-    <td><p>The result of the called getter method.</p>
+                            
+                                <h4>Returns</h4>
+                                <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-shrink">string</td>
+                <td><p>The result of the called getter method.</p>
 </td>
-  </tr>
-</table>
-      
+            </tr>
+        </tbody>
+    </table>
+                            
 
-      
-
-      <!--Scroll to top button-->
-      <!-- TODO: get scroll to top working with ngView -->
-      <!--<a href="#top">Back to Top</a>-->
-    </div>
-    
-  </div>
-  
-  <div id="uuid" class="api-method">
-    <h3 class="api-method-name"><p><code>uuid();</code></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="uuid" class="api-method card">
+                <div class="card-content">
+                    <div class="card-primary">
+                        <header class="card-header edge-bottom-dark">
+                            <h3 class="card-title api-method-name"><p><code>uuid();</code></p>
 
 </h3>
-    <div class="api-method-content">
-      <div><p>Generates and returns a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Version 4 universally unique identifier</a> conforming to <a href="https://tools.ietf.org/html/rfc4122">RFC 4122</a>.</p>
-</div>
+                        </header>
+                        <div class="card-body">
+                            <h4>Summary</h4>
+                            <p class="card-text"><p>Generates and returns a new UUID.</p>
+</p>
 
-      
+                            <h4>Description</h4>
+                            <p class="card-text"><p>Generates and returns a
+<a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Version 4 universally unique identifier</a>
+conforming to <a href="https://tools.ietf.org/html/rfc4122">RFC 4122</a>.</p>
+</p>
 
-      
+                            
 
-      
-      <h4>Returns</h4>
-      <table class="table">
-  <tr>
-    <td class="td-shrink"><a href="" class="label type-hint type-hint-string">string</a></td>
-    <td><p>Generated UUID</p>
+                            
+
+                            
+                                <h4>Returns</h4>
+                                <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-shrink">string</td>
+                <td><p>Generated UUID</p>
 </td>
-  </tr>
-</table>
-      
+            </tr>
+        </tbody>
+    </table>
+                            
 
-      
-
-      <!--Scroll to top button-->
-      <!-- TODO: get scroll to top working with ngView -->
-      <!--<a href="#top">Back to Top</a>-->
-    </div>
-    
-  </div>
-  
-  <div id="setLogLevel" class="api-method">
-    <h3 class="api-method-name"><p><code>setLogLevel(level);</code></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="setLogLevel" class="api-method card">
+                <div class="card-content">
+                    <div class="card-primary">
+                        <header class="card-header edge-bottom-dark">
+                            <h3 class="card-title api-method-name"><p><code>setLogLevel(level);</code></p>
 
 </h3>
-    <div class="api-method-content">
-      <div><p>Sets the application-wide log level, affecting the logs that are printed to the console when invoking any of the
-following BltApi logging functions: <code>trace</code>, <code>debug</code>, <code>info</code>, <code>warn</code> and <code>error</code>. The levels are listed in
-order of precedence from lowest to highest. When the log level is set, the log levels that are enabled include
-that specific level and any level of higher precedence. If you set the level to &#39;info&#39;, the levels enabled will
-be <code>info</code>, <code>warn</code> and <code>debug</code>.</p>
+                        </header>
+                        <div class="card-body">
+                            <h4>Summary</h4>
+                            <p class="card-text"><p>Sets application-wide console logging level.</p>
+</p>
+
+                            <h4>Description</h4>
+                            <p class="card-text"><p>Sets the application-wide log level, affecting the logs that are printed
+to the console when invoking any of the following BltApi logging
+functions: <code>trace</code>, <code>debug</code>, <code>info</code>, <code>warn</code> and <code>error</code>. The levels are
+listed in order of precedence from lowest to highest. When the log level
+is set, the log levels that are enabled include that specific level and
+any level of higher precedence. If you set the level to &#39;info&#39;, the
+levels enabled will be <code>info</code>, <code>warn</code> and <code>debug</code>.</p>
 <div class="note-info">
-<strong>Note</strong> The log level set does NOT affect the BltApi <code>log</code> function. That function will log to the console
-regardless of the log level assigned.
-</div>
+The log level that is assigned will remain in affect until the user
+clears it via the <a href="/#!/api/blt_core/service/BltApi#clearLogLevel"><code>BltApi</code></a> method. This will persist
+across browser and user sessions.
+</div></p>
 
-<div class="note-info">
-<strong>Note</strong> The log level that is assigned will remain in affect until the user clears it via the
-<a href="/#/api/blt_core/service/BltApi#clearLogLevel"><code>BltApi</code></a> method. This will persist across browser and user sessions.
-</div></div>
-
-      
-      <h4>Parameters</h4>
-      
-<table class="table">
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th></th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>level</code>
+                            
+                                <h4>Parameters</h4>
+                                
+    <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Type</th>
+                <th></th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-number">number</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
+            <tr>
+                <td class="td-shrink">
+                    <code>level</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    number
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
+
+                    <p>The log level to assign.</p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-      <td>
-        
-        <p>The log level to assign.</p>
+        </tbody>
+    </table>
 
-        
-      </td>
-    </tr>
-    
-  </tbody>
-</table>
+                            
 
-      
+                            
 
-      
-
-      
-      <h4>Returns</h4>
-      <table class="table">
-  <tr>
-    <td class="td-shrink"><a href="" class="label type-hint type-hint-boolean">boolean</a></td>
-    <td><p>Whether or not the given log level was successfully applied.</p>
+                            
+                                <h4>Returns</h4>
+                                <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-shrink">boolean</td>
+                <td><p>Whether or not the given log level was successfully
+applied.</p>
 </td>
-  </tr>
-</table>
-      
+            </tr>
+        </tbody>
+    </table>
+                            
 
-      
-
-      <!--Scroll to top button-->
-      <!-- TODO: get scroll to top working with ngView -->
-      <!--<a href="#top">Back to Top</a>-->
-    </div>
-    
-  </div>
-  
-  <div id="clearLogLevel" class="api-method">
-    <h3 class="api-method-name"><p><code>clearLogLevel();</code></p>
-
-</h3>
-    <div class="api-method-content">
-      <div><p>Clears the saved log level and re-assigns the default log level.</p>
-</div>
-
-      
-
-      
-
-      
-
-      
-
-      <!--Scroll to top button-->
-      <!-- TODO: get scroll to top working with ngView -->
-      <!--<a href="#top">Back to Top</a>-->
-    </div>
-    
-  </div>
-  
-  <div id="getLogLevel" class="api-method">
-    <h3 class="api-method-name"><p><code>getLogLevel();</code></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="clearLogLevel" class="api-method card">
+                <div class="card-content">
+                    <div class="card-primary">
+                        <header class="card-header edge-bottom-dark">
+                            <h3 class="card-title api-method-name"><p><code>clearLogLevel();</code></p>
 
 </h3>
-    <div class="api-method-content">
-      <div><p>Returns the current log level.</p>
-</div>
+                        </header>
+                        <div class="card-body">
+                            <h4>Summary</h4>
+                            <p class="card-text"><p>Resets the current console logging level.</p>
+</p>
 
-      
+                            <h4>Description</h4>
+                            <p class="card-text"><p>Clears the saved log level and re-assigns the default log
+level. This can be set with the defaultLogLevel in your
+<a href="/#!/api/blt_config">Configuration</a> file.</p>
+</p>
 
-      
+                            
 
-      
-      <h4>Returns</h4>
-      <table class="table">
-  <tr>
-    <td class="td-shrink"><a href="" class="label type-hint type-hint-string">string</a></td>
-    <td><p>The current log level.</p>
+                            
+
+                            
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="getLogLevel" class="api-method card">
+                <div class="card-content">
+                    <div class="card-primary">
+                        <header class="card-header edge-bottom-dark">
+                            <h3 class="card-title api-method-name"><p><code>getLogLevel();</code></p>
+
+</h3>
+                        </header>
+                        <div class="card-body">
+                            <h4>Summary</h4>
+                            <p class="card-text"><p>Returns the current log level.</p>
+</p>
+
+                            <h4>Description</h4>
+                            <p class="card-text"><p>Returns the current log level.</p>
+</p>
+
+                            
+
+                            
+
+                            
+                                <h4>Returns</h4>
+                                <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-shrink">string</td>
+                <td><p>The current log level.</p>
 </td>
-  </tr>
-</table>
-      
+            </tr>
+        </tbody>
+    </table>
+                            
 
-      
-
-      <!--Scroll to top button-->
-      <!-- TODO: get scroll to top working with ngView -->
-      <!--<a href="#top">Back to Top</a>-->
-    </div>
-    
-  </div>
-  
-  <div id="getMillisFromEpoch" class="api-method">
-    <h3 class="api-method-name"><p><code>getMillisFromEpoch(date);</code></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="getMillisFromEpoch" class="api-method card">
+                <div class="card-content">
+                    <div class="card-primary">
+                        <header class="card-header edge-bottom-dark">
+                            <h3 class="card-title api-method-name"><p><code>getMillisFromEpoch(date);</code></p>
 
 </h3>
-    <div class="api-method-content">
-      <div><p>Attempts to convert the given date parameter to milliseconds from epoch. Acceptable formats include:</p>
+                        </header>
+                        <div class="card-body">
+                            <h4>Summary</h4>
+                            <p class="card-text"><p>Converts date to milliseconds from epoch.</p>
+</p>
+
+                            <h4>Description</h4>
+                            <p class="card-text"><p>Attempts to convert the given date parameter to milliseconds from epoch. Acceptable formats include:</p>
 <ul>
 <li><code>number</code> - will be interpreted as ms from epoch.</li>
 <li><code>string</code> - will attempt to interpret as a formatted string, or a string containing ms from epoch if that
@@ -1082,299 +1267,331 @@ fails</li>
 <li><code>function</code> - will convert the output of the given date function to ms from epoch.</li>
 <li><code>null</code> - if no parameter is provided, will return current ms from epoch. <code>new Date().getTime()</code></li>
 </ul>
-</div>
+</p>
 
-      
-      <h4>Parameters</h4>
-      
-<table class="table">
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th></th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>date</code>
+                            
+                                <h4>Parameters</h4>
+                                
+    <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Type</th>
+                <th></th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-object">Object</a><a href="" class="label type-hint type-hint-number">Number</a><a href="" class="label type-hint type-hint-string">String</a><a href="" class="label type-hint type-hint-function">function()</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
+            <tr>
+                <td class="td-shrink">
+                    <code>date</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    Object,Number,String,function()
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>The date or date-like object to convert to ms from epoch.</p>
+
+                    
+                </td>
+            </tr>
         
-        <p>The date or date-like object to convert to ms from epoch.</p>
+        </tbody>
+    </table>
 
-        
-      </td>
-    </tr>
-    
-  </tbody>
-</table>
+                            
 
-      
+                            
 
-      
-
-      
-      <h4>Returns</h4>
-      <table class="table">
-  <tr>
-    <td class="td-shrink"><a href="" class="label type-hint type-hint-number">number</a></td>
-    <td><p>Milliseconds from epoch.</p>
+                            
+                                <h4>Returns</h4>
+                                <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-shrink">number</td>
+                <td><p>Milliseconds from epoch.</p>
 </td>
-  </tr>
-</table>
-      
+            </tr>
+        </tbody>
+    </table>
+                            
 
-      
-
-      <!--Scroll to top button-->
-      <!-- TODO: get scroll to top working with ngView -->
-      <!--<a href="#top">Back to Top</a>-->
-    </div>
-    
-  </div>
-  
-  <div id="convertToId" class="api-method">
-    <h3 class="api-method-name"><p><code>convertToId(Text, Delimeter);</code></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="convertToId" class="api-method card">
+                <div class="card-content">
+                    <div class="card-primary">
+                        <header class="card-header edge-bottom-dark">
+                            <h3 class="card-title api-method-name"><p><code>convertToId(Text, Delimeter);</code></p>
 
 </h3>
-    <div class="api-method-content">
-      <div><p>Generates an id as a delimited string.</p>
-</div>
+                        </header>
+                        <div class="card-body">
+                            <h4>Summary</h4>
+                            <p class="card-text"><p>Converts string to lowercase delimited string.</p>
+</p>
 
-      
-      <h4>Parameters</h4>
-      
-<table class="table">
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th></th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>Text</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        
-      </td>
-      <td>
-        
-        <p>string to convert to id.</p>
+                            <h4>Description</h4>
+                            <p class="card-text"><p>Generates an id as a delimited string.</p>
+</p>
 
+                            
+                                <h4>Parameters</h4>
+                                
+    <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Type</th>
+                <th></th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>Delimeter</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        
-      </td>
-      <td>
-        
-        <p>The character to use as a delimeter.</p>
+            <tr>
+                <td class="td-shrink">
+                    <code>Text</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
 
+                    <p>string to convert to id.</p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-  </tbody>
-</table>
+            <tr>
+                <td class="td-shrink">
+                    <code>Delimeter</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
 
-      
+                    <p>The character to use as a delimeter.</p>
 
-      
+                    
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
 
-      
-      <h4>Returns</h4>
-      <table class="table">
-  <tr>
-    <td class="td-shrink"><a href="" class="label type-hint type-hint-string">string</a></td>
-    <td><p>The generated id.</p>
+                            
+
+                            
+
+                            
+                                <h4>Returns</h4>
+                                <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-shrink">string</td>
+                <td><p>The generated id.</p>
 </td>
-  </tr>
-</table>
-      
+            </tr>
+        </tbody>
+    </table>
+                            
 
-      
-
-      <!--Scroll to top button-->
-      <!-- TODO: get scroll to top working with ngView -->
-      <!--<a href="#top">Back to Top</a>-->
-    </div>
-    
-  </div>
-  
-  <div id="register" class="api-method">
-    <h3 class="api-method-name"><p><code>register(obj, name);</code></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="register" class="api-method card">
+                <div class="card-content">
+                    <div class="card-primary">
+                        <header class="card-header edge-bottom-dark">
+                            <h3 class="card-title api-method-name"><p><code>register(obj, name);</code></p>
 
 </h3>
-    <div class="api-method-content">
-      <div><p>Register an angular controller, service, or factory as a global object on the window. Will only
-succeed if the <a href="/#/api/blt_config">config debug setting</a> is set to true.</p>
-</div>
+                        </header>
+                        <div class="card-body">
+                            <h4>Summary</h4>
+                            <p class="card-text"><p>Adds component to global space.</p>
+</p>
 
-      
-      <h4>Parameters</h4>
-      
-<table class="table">
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th></th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>obj</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-obj">obj</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        
-      </td>
-      <td>
-        
-        <p>The object to register to the global window object.</p>
+                            <h4>Description</h4>
+                            <p class="card-text"><p>Register an angular controller, service, or factory as a global object on the window. Will only
+succeed if the <a href="/#!/api/blt_config">config debug setting</a> is set to true.</p>
+</p>
 
+                            
+                                <h4>Parameters</h4>
+                                
+    <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Type</th>
+                <th></th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>name</code>
+            <tr>
+                <td class="td-shrink">
+                    <code>obj</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    obj
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
+
+                    <p>The object to register to the global window object.</p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
+            <tr>
+                <td class="td-shrink">
+                    <code>name</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
+
+                    <p>The name to use as the key on the window object.</p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-      <td>
+        </tbody>
+    </table>
+
+                            
+
+                            
+
+                            
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
         
-        <p>The name to use as the key on the window object.</p>
-
-        
-      </td>
-    </tr>
-    
-  </tbody>
-</table>
-
-      
-
-      
-
-      
-
-      
-
-      <!--Scroll to top button-->
-      <!-- TODO: get scroll to top working with ngView -->
-      <!--<a href="#top">Back to Top</a>-->
-    </div>
-    
-  </div>
-  
-  <div id="unregister" class="api-method">
-    <h3 class="api-method-name"><p><code>unregister(name);</code></p>
+            <div id="unregister" class="api-method card">
+                <div class="card-content">
+                    <div class="card-primary">
+                        <header class="card-header edge-bottom-dark">
+                            <h3 class="card-title api-method-name"><p><code>unregister(name);</code></p>
 
 </h3>
-    <div class="api-method-content">
-      <div><p>Removes the Angular controller, service, or factory from the window if anything
+                        </header>
+                        <div class="card-body">
+                            <h4>Summary</h4>
+                            <p class="card-text"><p>Removes component from global space.</p>
+</p>
+
+                            <h4>Description</h4>
+                            <p class="card-text"><p>Removes the Angular controller, service, or factory from the window if anything
 was registered by that the given name.</p>
-</div>
+</p>
 
-      
-      <h4>Parameters</h4>
-      
-<table class="table">
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th></th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
+                            
+                                <h4>Parameters</h4>
+                                
+    <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Type</th>
+                <th></th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>name</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
+
+                    <p>The name that was used as the key on the window object.</p>
+
+                    
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
+
+                            
+
+                            
+
+                            
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     
-    <tr>
-      <td class="td-shrink">
-        <code>name</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        
-      </td>
-      <td>
-        
-        <p>The name that was used as the key on the window object.</p>
-
-        
-      </td>
-    </tr>
     
-  </tbody>
-</table>
 
-      
 
-      
 
-      
-
-      
-
-      <!--Scroll to top button-->
-      <!-- TODO: get scroll to top working with ngView -->
-      <!--<a href="#top">Back to Top</a>-->
-    </div>
     
-  </div>
-  </section>
-  
-  
-
-
-
-
 
 

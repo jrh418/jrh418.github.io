@@ -1,77 +1,84 @@
 <a id="top"></a>
 
 
-
-<header class="api-header">
-  <h1 class="api-header-title">
-    <a href="/#/api/blt_notifications">blt_notifications</a>
-    <span class="api-header-divider">/</span>
-    bltNotifications
-  </h1>
-  <div class="api-header-tags">
-    <span class="tag-directive"></span>
     
-    <span class="tag-since">since 1.0.0</span>
+        <header class="api-header">
+            <h1 class="api-header-title">
+                <a href="/#!/api/blt_notifications">blt_notifications</a>
+                <span class="api-header-divider">/</span>
+                bltNotifications
+            </h1>
+            <div class="api-header-tags">
+                <span class="tag-directive"></span>
+                
+                    <span class="tag-since">since 1.0.0</span>
+                
+            </div>
+
+            <ol class="api-profile-header-structure naked-list step-list">
+                
+            </ol>
+        </header>
     
-  </div>
-  
-  <ol class="api-profile-header-structure naked-list step-list">
+
     
-  </ol>
-</header>
 
-
-
-
-
-<section class="api-profile-description">
-  <p>The bltNotifications component is used to display
+    
+        <section class="api-profile-description">
+            <p>The bltNotifications component is used to display
 <a href="http://developer.android.com/guide/topics/ui/notifiers/toasts.html">toast notifications</a> in the bottom left corner
 of your ngBoltJS application. This component will subscribe to a <code>notify</code> subscription and will open as many
 notification panels as necessary to present all current notifications. When a notification is received on that
 subscription, a new notification panel will be presented with an <code>OK</code> button and, optionally, a callback button
 depending on the configuration of the notification.</p>
 <div class="note-info">
-<strong>Note</strong> The <a href="/#/api/blt_core/service/BltApi"><code>BltApi</code></a> must be injected into your controller in order to publish messages.
+<strong>Note</strong> The <a href="/#!/api/blt_core/service/BltApi"><code>BltApi</code></a> must be injected into your controller in order to publish messages.
 </div>
-</section>
-
-
-
-
-
-
-
-
-<section class="api-dependencies edge-top">
-  <h2 id="dependencies">Dependencies</h2>
-  <ul class="api-dependencies-list">
+        </section>
     
-    <li class="api-dependencies-item"><a href="/#/api/blt_core/service/BltApi"><code>BltApi</code></a></li>
-    
-    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$timeout">$timeout</a></li>
-    
-  </ul>
-</section>
 
-
-
-
-  
-  
-  <section class="api-usage edge-top">
-    <h2 id="usage">Basic Usage</h2>
     
-    <div class="note-info">
-      <p><strong>NOTE</strong>Restrict directive to an HTML  Element tag Element tag or Attribute Attribute.</p>
-    </div>
     
-    <div class="usage">
-      <caption>To use the Notifications, include the component in your <code>main.template.html</code> file or any view
+
+    
+
+    
+            <section class="api-dependencies edge-top">
+                <h2 id="dependencies">Dependencies</h2>
+                <ul class="api-dependencies-list">
+                    
+                        <li class="api-dependencies-item"><a href="/#!/api/blt_core/service/BltApi"><code>BltApi</code></a>
+                        </li>
+                    
+                        <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$timeout">$timeout</a>
+                        </li>
+                    
+                </ul>
+            </section>
+        
+
+    
+
+    
+        
+            <section class="api-usage edge-top">
+                <h2 id="usage">Basic Usage</h2>
+                
+                    <div class="note-info">
+                        <p><strong>NOTE</strong>Restrict directive to an HTML
+                             Element tag
+                            
+                                Element tag or Attribute
+                             Attribute
+                            .</p>
+                    </div>
+                
+                <div class="usage">
+                    <caption>To use the Notifications, include the component in your <code>main.template.html</code> file or any view
 template and publish them via the Bolt API.</caption>
 <code>html
 &lt;blt-notifications&gt;&lt;/blt-notifications&gt;</code>
-<caption>To publish a notification, use the ngBoltJS API <a href="/#/api/blt_core/service/BltApi#publish"><code>BltApi</code></a> method, using <code>&#39;notify&#39;</code> as your
+<caption>To publish a notification, use the ngBoltJS API <a href="/#!/api/blt_core/service/BltApi#publish"><code>BltApi</code></a> method, using <code>&#39;notify&#39;</code> as your
 first parameter.The second argument should be your notification in the format shown below. The <code>text</code> of the
 notification will be presented, along with an OK button that the user can click to dismiss the notification. If
 the <code>callback</code> is defined, the <code>text</code> of the <code>callback</code> will be presented in the notification beside the <code>OK</code>
@@ -91,19 +98,19 @@ notification. If the <code>callback</code> is not defined, the notification will
 }
 </code></pre>
 
-    <div>
-  </section>
-  
-  
-  
+                    <div>
+            </section>
+        
+    
+    
 
 
-
-<section class="api-examples edge-top">
-  
-  <h2 id="example">Example</h2>
-  <div class="api-example">
-    <p>
+    
+            <section class="api-examples edge-top">
+                
+                    <h2 id="example">Example</h2>
+                <div class="api-example">
+                        <p>
 
 
 <div class="runnable-example"
@@ -135,7 +142,40 @@ notification. If the <code>callback</code> is not defined, the notification will
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;NotifyExCtrl&quot;, NotifyExCtrl)&#10;;&#10;NotifyExCtrl.$inject = [&quot;BltApi&quot;];&#10;function NotifyExCtrl(bltApi){&#10;  var ctrl = this;&#10;  //Create a controller function to publish a simple notification.&#10;  ctrl.simpleNotify = function(){&#10;    var notification = {&#10;      text: &#39;Successfully completed request.&#39;&#10;    }&#10;    bltApi.publish(&#39;notify&#39;, notification);&#10;  }&#10;  //Create controller function to publish a notification with a callback.&#10;  ctrl.notifyWithCallback = function(){&#10;    var notification = {&#10;      text: &#39;Failed to complete request.&#39;,&#10;      callback: {&#10;        name: &#39;notifyCallbackEx&#39;,&#10;        action: {&#10;          error: &quot;Error Message&quot;&#10;        },&#10;        text: &#39;handle error&#39;&#10;      }&#10;    }&#10;    bltApi.publish(&#39;notify&#39;, notification);&#10;  }&#10;  //Subscribe to the &#39;notifyCallbackEx&#39; channel to handle notification callbacks from the above notification.&#10;  bltApi.subscribe(&#39;notifyCallbackEx&#39;, function(notificationAction){&#10;    alert(notificationAction.error);&#10;  });&#10;}</code></pre>
+    <pre><code class="hljs javascript">
+    angular.module("bltDocs")
+      .controller("NotifyExCtrl", NotifyExCtrl)
+    ;
+    NotifyExCtrl.$inject = ["BltApi"];
+    function NotifyExCtrl(bltApi){
+      var ctrl = this;
+      //Create a controller function to publish a simple notification.
+      ctrl.simpleNotify = function(){
+        var notification = {
+          text: 'Successfully completed request.'
+        }
+        bltApi.publish('notify', notification);
+      }
+      //Create controller function to publish a notification with a callback.
+      ctrl.notifyWithCallback = function(){
+        var notification = {
+          text: 'Failed to complete request.',
+          callback: {
+            name: 'notifyCallbackEx',
+            action: {
+              error: "Error Message"
+            },
+            text: 'handle error'
+          }
+        }
+        bltApi.publish('notify', notification);
+      }
+      //Subscribe to the 'notifyCallbackEx' channel to handle notification callbacks from the above notification.
+      bltApi.subscribe('notifyCallbackEx', function(notificationAction){
+        alert(notificationAction.error);
+      });
+    }
+  </code></pre>
   </div>
   
 
@@ -143,7 +183,13 @@ notification. If the <code>callback</code> is not defined, the notification will
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;div class=&quot;grid-block grid-center&quot; ng-controller=&quot;NotifyExCtrl as ctrl&quot;&gt;&#10;  &lt;button class=&quot;btn-solid&quot; ng-click=&quot;ctrl.simpleNotify()&quot;&gt;Simple Notification&lt;/button&gt;&#10;  &lt;button class=&quot;btn-solid&quot; ng-click=&quot;ctrl.notifyWithCallback()&quot;&gt;Notify with Callback&lt;/button&gt;&#10;&lt;/div&gt;&#10;&lt;blt-notifications&gt;&lt;/blt-notifications&gt;</code></pre>
+      <pre><code class="hljs html">
+    <div class="grid-block grid-center" ng-controller="NotifyExCtrl as ctrl">
+      <button class="btn-solid" ng-click="ctrl.simpleNotify()">Simple Notification</button>
+      <button class="btn-solid" ng-click="ctrl.notifyWithCallback()">Notify with Callback</button>
+    </div>
+    <blt-notifications></blt-notifications>
+  </code></pre>
   </div>
   
   <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
@@ -163,8 +209,8 @@ notification. If the <code>callback</code> is not defined, the notification will
 
 </p>
 
-  </div></section>
+                    </div></section>
 
-
+        
 
 

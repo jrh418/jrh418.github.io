@@ -1,43 +1,126 @@
 
-  <section class="hero">
-  <p class="hero-slogan text-center">Front-end dev for back-end devs.</p>
-  <div class="hero-logo">
-    <img src="assets/logo.png" alt="ngBoltJS logo">
-  </div>
-  <h2 class="hero-title text-center">ngBoltJS</h2>
-  <p class="hero-subtitle text-center">A Web Application Framework for Rapid Development</p>
-  <div class="hero-cta text-center">
-    <a href="/#/guides">Get Started</a>
-  </div>
-</section>
-
-<!--<section class="wrapper">
-  <div class="grid-block">
-    <div class="grid-content">
+    <div class="grid-block grid-content">
+    <div id="home-animation" class="grid-block grid-vertical page-wrapper">
+        <div class="grid-block grid-vertical text-center">
+            <!-- TODO: Pick One -->
+            <h2 class="tagline">single app development for multi-platform architectures</h2>
+            <h2 class="tagline" ng-show="false">front-end development for back-end developers</h2>
+            <h2 class="tagline" ng-show="false">front-end development for multi-platform architectures</h2>
+            <h2 class="tagline" ng-show="false">combined app development for multi-platform architectures</h2>
+            <h2 class="tagline" ng-show="false">rapid app development for multi-platform architectures</h2>
+            <div class="console" ng-class="{'skip': $ctrl.skip.console}">
+                <div class="close"></div>
+                <div class="minimize"></div>
+                <div class="expand"></div>
+                <div class="console-text-wrapper">
+                    <div class="first">
+                        <h2>$ npm install ng-bolt-cli -g</h2>
+                    </div>
+                    <div class="second">
+                        <h2>$ bolt new hello-world</h2>
+                    </div>
+                    <div class="third">
+                        <h2>$ cd hello-world</h2>
+                    </div>
+                    <div class="forth">
+                        <h2>$ bolt run</h2>
+                    </div>
+                    <div class="fifth">
+                        <h2>ngBolt App Started: <a href="http://localhost:9000">http://localhost:9000</a></h2>
+                    </div>
+                    <div class="sixth">
+                        <h2>Docs Available: <a href="http://localhost:9001">http://localhost:9001</a></h2>
+                    </div>
+                    <div class="seventh">
+                        <h2>Live Reload Running On Port 35729</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="app" ng-class="{'skip': $ctrl.skip.console}">
+                <div class="close"></div>
+                <div class="minimize"></div>
+                <div class="expand"></div>
+                <form class="app-wrapper edge-top-dark">
+                    <div class="classification-bar"></div>
+                    <img src="/images/logo.png"/>
+                    <blt-textfield name="username" 
+                                   type="text"
+                                   label="Username" 
+                                   model="$ctrl.username">
+                    </blt-textfield>
+                    <hr class="login-form-divider">
+                    <blt-textfield name="password"  
+                                   type="password"
+                                   label="Password" 
+                                   model="$ctrl.password">
+                    </blt-textfield>
+                    <button class="login">Login</button>
+                    <span>Hello World App 0.1.0</span>
+                </form>
+            </div>
+            <h2 class="description"><em>ngBolt</em> is a component-based framework for rapid development of web applications<br>against a multi-platform architecture utilizing a single source code baseline</h2>
+            <button class="btn text-center" ng-click="$main.open('getting-started')">
+                <a>Get Started</a>
+            </button>
+        </div>
     </div>
-    <div class="grid-content">
-      <h3>One Framework for all your Devices</h3>
-      <p></p>
+    <div id="home-features" class="grid-block page-wrapper">
+        <div class="grid-block grid-vertical">
+            <div class="grid-block">
+                <div class="feature grid-block grid-vertical text-center">
+                    <img src="images/features/rapid-development.png"/>
+                    <h2>Rapid Development</h2>
+                    <p><em>ngBolt</em> provides a CLI for creating, building, running, packaging, and deploying applications to multiple environments.</p>
+                </div>
+                <div class="feature grid-block grid-vertical text-center">
+                    <img src="images/features/lightweight.png"/>
+                    <h2>Lightweight Components</h2>
+                    <p>With a focus on extensibility and configuration, <em>ngBolt</em> provides common UI components and packages them on demand.</p>
+                </div>
+                <div class="feature grid-block grid-vertical text-center">
+                    <img src="images/features/application-logic.png"/>
+                    <h2>Application Logic</h2>
+                    <p>Since UI components and data access are included in <em>ngBolt</em>, the developer can focus on the application logic.</p>
+                </div>
+            </div>
+            <div class="grid-block">
+                <div class="feature grid-block grid-vertical text-center">
+                    <img src="images/features/consistent-ui.png"/>
+                    <h2>Consistent UI</h2>
+                    <p><em>ngBolt</em> is based on Google&#39;s Material Design, which provides a consistent interface across many developers and languages.</p>
+                </div>
+                <div class="feature grid-block grid-vertical text-center">
+                    <img src="images/features/intuitive-design.png"/>
+                    <h2>Intuitive Design</h2>
+                    <p>By utilizing common components, animations, and layouts from <em>ngBolt</em>, developers can easily create intuitive application designs.</p>
+                </div>
+                <div class="feature grid-block grid-vertical text-center">
+                    <img src="images/features/platform-agnostic.png"/>
+                    <h2>Platform Agnostic</h2>
+                    <p>Using the <em>ngBolt</em> Data API for data access abstraction with responsive UI layouts, a single baseline can deploy to many environments.</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</section>-->
-<!--<section class="wrapper">
-  <div class="grid-block">
-    <div class="grid-content">
-      <h3>Light and Flexible</h3>
-      <p></p>
+    <div id="home-examples" class="grid-block page-wrapper">
+        <div class="grid-block grid-vertical">
+            <div class="grid-block">
+                <img src="images/apps/chat.png"/>
+                <img src="images/apps/map.png"/>
+                <img src="images/apps/todo.png"/>
+            </div>
+            <p class="quote">&quot;Our goal is to provide an easy way for developers to <br>create, maintain, deploy, and build applications <br>for many different architectures&quot;</p>
+            <p class="attribution">ngBolt Team</p>
+        </div>
     </div>
-    <div class="grid-content">
-    </div>
-  </div>
-</section>-->
-<!--<section class="wrapper">
-  <div class="grid-block">
-    <div class="grid-content">
-    </div>
-    <div class="grid-content">
-      <h3>Powered by Angular, built by Gulp</h3>
-      <p></p>
-    </div>
-  </div>
-</section>-->
+    <footer id="home-footer" class="grid-block page-wrapper grid-shrink" style="background-color: #e6e9ea;">
+        <div class="grid-block">
+            <div class="grid-block">
+                <span>Copyright © 2017 <a href="http://www.psu.edu/">The Pennsylvania State University</a> and <a href="https://github.com/orgs/ngbolt/people">ngBolt Contributors</a></span>
+            </div>
+            <div class="grid-block justify-right">
+                <span>Licenced under <a href="https://github.com/ngbolt/ng-bolt/blob/master/LICENSE.md">BSD 3-Clause</a></span>
+            </div>
+        </div>
+    </footer>
+</div>

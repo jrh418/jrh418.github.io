@@ -12,8 +12,12 @@
       </tr>
       
       <tr>
-        <td><a href="/#/api/blt_core/service/BltApi">BltApi</a></td>
-        <td><p>Application-wide API for communicating between components and providing helper functions.</p>
+        <td><a href="/#!/api/blt_core/service/BltApi">BltApi</a></td>
+        <td><p>Application-wide API which provides a communication bus between components,
+navigating the view, generating unique ids, and defining the log levels.
+Most ngBolt components will inject the Bolt API and it is recommended that
+all controllers, factories, and components for specific applications also
+inject the Bolt API.</p>
 </td>
       </tr>
       

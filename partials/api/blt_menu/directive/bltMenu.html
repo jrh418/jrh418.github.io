@@ -1,31 +1,31 @@
 <a id="top"></a>
 
 
-
-<header class="api-header">
-  <h1 class="api-header-title">
-    <a href="/#/api/blt_menu">blt_menu</a>
-    <span class="api-header-divider">/</span>
-    bltMenu
-  </h1>
-  <div class="api-header-tags">
-    <span class="tag-directive"></span>
     
-    <span class="tag-since">since 1.0.0</span>
+        <header class="api-header">
+            <h1 class="api-header-title">
+                <a href="/#!/api/blt_menu">blt_menu</a>
+                <span class="api-header-divider">/</span>
+                bltMenu
+            </h1>
+            <div class="api-header-tags">
+                <span class="tag-directive"></span>
+                
+                    <span class="tag-since">since 1.0.0</span>
+                
+            </div>
+
+            <ol class="api-profile-header-structure naked-list step-list">
+                
+            </ol>
+        </header>
     
-  </div>
-  
-  <ol class="api-profile-header-structure naked-list step-list">
+
     
-  </ol>
-</header>
 
-
-
-
-
-<section class="api-profile-description">
-  <p>The bltMenu component is primarily used for navigation within the application or for opening and closing
+    
+        <section class="api-profile-description">
+            <p>The bltMenu component is primarily used for navigation within the application or for opening and closing
 different sections of the application. It is displayed as a vertical list of buttons and can contain sub-menus. The
 presentation of the menu options can be customized through the class elements and modifiers supported by this
 component.</p>
@@ -33,29 +33,34 @@ component.</p>
 <code>&lt;ul&gt;</code> element in your application and use the
 <a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click directive</a> to complete some action.</p>
 
-</section>
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <section class="api-usage edge-top">
-    <h2 id="usage">Basic Usage</h2>
+        </section>
     
-    <div class="note-info">
-      <p><strong>NOTE</strong>Restrict directive to an HTML  Element tag Element tag or Attribute Attribute.</p>
-    </div>
+
     
-    <div class="usage">
-      <p><caption>Minimal Usage</caption></p>
+    
+
+    
+
+    
+
+    
+
+    
+        
+            <section class="api-usage edge-top">
+                <h2 id="usage">Basic Usage</h2>
+                
+                    <div class="note-info">
+                        <p><strong>NOTE</strong>Restrict directive to an HTML
+                             Element tag
+                            
+                                Element tag or Attribute
+                             Attribute
+                            .</p>
+                    </div>
+                
+                <div class="usage">
+                    <p><caption>Minimal Usage</caption></p>
 <pre><code class="lang-html">&lt;ul class=&quot;menu&quot;&gt;
  &lt;li class=&quot;menu-item&quot;&gt;
      &lt;button class=&quot;menu-link&quot; ng-click=&quot;Main.openItem(&#39;item1&#39;)&quot;&gt;Item 1&lt;/button&gt;
@@ -69,493 +74,514 @@ component.</p>
 &lt;/ul&gt;
 </code></pre>
 
-    <div>
-  </section>
-  
-  
-<section class="api-params edge-top">
-  <h2>CSS Classes</h2>
-  
-<table class="table">
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th></th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
+                    <div>
+            </section>
+        
     
-    <tr>
-      <td class="td-shrink">
-        <code>menu</code>
+    <section class="api-params edge-top">
+        <h2>CSS Classes</h2>
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-element">element</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
+    <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Type</th>
+                <th></th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
         
-      </td>
-      <td>
-        
-        <p>The main containing element. Should be placed on the HTML <code>&lt;ul&gt;</code> tag. Can be modified with: <code>.menu–thin</code>, <code>.menu–wide</code>, <code>.menu–condensed</code>, <code>.menu–borders</code>, <code>.menu–icons</code>, <code>.menu–accordion</code>, <code>.menu–floating</code>, <code>.menu-hide-active</code>.</p>
+            <tr>
+                <td class="td-shrink">
+                    <code>menu</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    element
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
 
+                    <p>The main containing element. Should be placed on the HTML <code>&lt;ul&gt;</code> tag. Can be modified with: <code>.menu–thin</code>, <code>.menu–wide</code>, <code>.menu–condensed</code>, <code>.menu–borders</code>, <code>.menu–icons</code>, <code>.menu–accordion</code>, <code>.menu–floating</code>, <code>.menu-hide-active</code>.</p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-item</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    element
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
+
+                    <p>The menu list item. Should be used on the HTML <code>&lt;li&gt;</code> tag. Contains the <code>.menu-link</code> element and, optionally, another menu in an accordion menu. Can be modified with <code>.menu-active</code>.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-link</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    element
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
+
+                    <p>The actionable content of a <code>.menu-item</code> content. Should be used on the HTML <code>&lt;button&gt;</code> tag and must be the child of a <code>.menu-item</code> element. Use an Angular expression on the <a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click directive</a> to trigger the action.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-icon</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    element
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>An optional icon to add to the text of a <code>.menu-link</code> element. Must be the child of a <code>.menu-link</code> and should be used on the HTML <code>&lt;span&gt;</code> tag.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-text</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    element
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>The text of the <code>.menu-link</code> element. Is only required when a <code>.menu-icon</code> is also present. Must be a child of a <code>.menu-link</code> element and should be used on a HTML <code>&lt;span&gt;</code> tag.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-divider</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    element
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>A horizontal border useful for dividing groups of <code>.menu-items</code>. Should be used on an HTML <code>&lt;hr&gt;</code> tag.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-container</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    element
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>A required wrapper for floating menus so the menu is positioned correctly. Should contain a button element for toggling the menu and a floating menu.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-thin</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Narrows the default width of a menu component to 8rem (128px). Add to the <code>.menu</code> element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-wide</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Widens the default width of a menu component to 15rem (240px). Add to the <code>.menu</code> element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-condensed</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Lessens the padding of <code>.menu-item</code> elements to condense the height of the menu. Add to the <code>.menu</code> element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-condensed-&#39;bp&#39;-&#39;dir&#39;</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p><code>menu-condensed</code> with media query support for various screen sizes (see example) where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-borders</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Adds a border to each <code>.menu-item</code> element and thickens the width of a <code>.menu-divider</code> border. Add to the <code>.menu</code> element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-borders-&#39;bp&#39;-&#39;dir&#39;</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p><code>menu-borders</code> with media query support for various screen sizes (see example) where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-icons</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Narrows the width of a menu to 3rem (48px). Requires that all <code>.menu-link</code> elements use icons only and no text. Add to the <code>.menu</code> element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-icons-&#39;bp&#39;-&#39;dir&#39;</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p><code>menu-icons</code> with media query support for various screen sizes (see example) where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-accordion</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Creates a collapsing set of menus. Sub menus have a darker background to set them apart from their parent <code>.menu-items</code>. Each <code>.menu-item</code> should contain another menu. Use the <a href="https://docs.angularjs.org/api/ng/directive/ngShow">ng-show</a> and <a href="https://docs.angularjs.org/api/ng/directive/ngHide">ng-hide</a> directives to show/hide the sub menus. Add to the <code>.menu</code> element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-accordion-&#39;bp&#39;-&#39;dir&#39;</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p><code>menu-accordion</code> with media query support for various screen sizes (see example) where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-floating</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Creates an absolutely positioned menu like a simple dropdown. Use the <a href="https://docs.angularjs.org/api/ng/directive/ngShow">ng-show</a> and <a href="https://docs.angularjs.org/api/ng/directive/ngHide">ng-hide</a> directives to show/hide the floating menu and toggle with a <code>.btn-text</code> or <code>.btn-solid</code> component. Add to the <code>.menu</code> element. Must be the child of a <code>.menu-container</code> element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-floating-&#39;bp&#39;-&#39;dir&#39;</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p><code>menu-floating</code> with media query support for various screen sizes (see example) where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-left</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Align a floating menu to the left. Add to a <code>.menu</code> <code>.menu-floating</code> element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-right</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Align a floating menu to the right. Add to a <code>.menu</code> <code>.menu-floating</code> element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-active</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Add this class to the selected <code>.menu-item</code> using <a href="https://docs.angularjs.org/api/ng/directive/ngClass">ng-class</a>. Highlights the selected <code>.menu-item</code> with the <code>$btn-link-color</code> (blue by default). Add to the <code>.menu-item</code> element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-hide-active</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Use this modifier to hide the active <code>.menu-item</code> elements. Add to the <code>.menu element</code>.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>menu-hide-active-&#39;bp&#39;-&#39;dir&#39;</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p><code>menu-hide-active</code> with media query support for various screen sizes (see example) where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+                    
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
+
+    </section>
     
-    <tr>
-      <td class="td-shrink">
-        <code>menu-item</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-element">element</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        
-      </td>
-      <td>
-        
-        <p>The menu list item. Should be used on the HTML <code>&lt;li&gt;</code> tag. Contains the <code>.menu-link</code> element and, optionally, another menu in an accordion menu. Can be modified with <code>.menu-active</code>.</p>
 
-        
-      </td>
-    </tr>
+
     
-    <tr>
-      <td class="td-shrink">
-        <code>menu-link</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-element">element</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        
-      </td>
-      <td>
-        
-        <p>The actionable content of a <code>.menu-item</code> content. Should be used on the HTML <code>&lt;button&gt;</code> tag and must be the child of a <code>.menu-item</code> element. Use an Angular expression on the <a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click directive</a> to trigger the action.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-icon</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-element">element</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>An optional icon to add to the text of a <code>.menu-link</code> element. Must be the child of a <code>.menu-link</code> and should be used on the HTML <code>&lt;span&gt;</code> tag.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-text</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-element">element</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>The text of the <code>.menu-link</code> element. Is only required when a <code>.menu-icon</code> is also present. Must be a child of a <code>.menu-link</code> element and should be used on a HTML <code>&lt;span&gt;</code> tag.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-divider</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-element">element</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>A horizontal border useful for dividing groups of <code>.menu-items</code>. Should be used on an HTML <code>&lt;hr&gt;</code> tag.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-container</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-element">element</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>A required wrapper for floating menus so the menu is positioned correctly. Should contain a button element for toggling the menu and a floating menu.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-thin</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Narrows the default width of a menu component to 8rem (128px). Add to the <code>.menu</code> element.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-wide</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Widens the default width of a menu component to 15rem (240px). Add to the <code>.menu</code> element.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-condensed</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Lessens the padding of <code>.menu-item</code> elements to condense the height of the menu. Add to the <code>.menu</code> element.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-condensed-&#39;bp&#39;-&#39;dir&#39;</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p><code>menu-condensed</code> with media query support for various screen sizes (see example) where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-borders</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Adds a border to each <code>.menu-item</code> element and thickens the width of a <code>.menu-divider</code> border. Add to the <code>.menu</code> element.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-borders-&#39;bp&#39;-&#39;dir&#39;</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p><code>menu-borders</code> with media query support for various screen sizes (see example) where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-icons</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Narrows the width of a menu to 3rem (48px). Requires that all <code>.menu-link</code> elements use icons only and no text. Add to the <code>.menu</code> element.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-icons-&#39;bp&#39;-&#39;dir&#39;</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p><code>menu-icons</code> with media query support for various screen sizes (see example) where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-accordion</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Creates a collapsing set of menus. Sub menus have a darker background to set them apart from their parent <code>.menu-items</code>. Each <code>.menu-item</code> should contain another menu. Use the <a href="https://docs.angularjs.org/api/ng/directive/ngShow">ng-show</a> and <a href="https://docs.angularjs.org/api/ng/directive/ngHide">ng-hide</a> directives to show/hide the sub menus. Add to the <code>.menu</code> element.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-accordion-&#39;bp&#39;-&#39;dir&#39;</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p><code>menu-accordion</code> with media query support for various screen sizes (see example) where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-floating</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Creates an absolutely positioned menu like a simple dropdown. Use the <a href="https://docs.angularjs.org/api/ng/directive/ngShow">ng-show</a> and <a href="https://docs.angularjs.org/api/ng/directive/ngHide">ng-hide</a> directives to show/hide the floating menu and toggle with a <code>.btn-text</code> or <code>.btn-solid</code> component. Add to the <code>.menu</code> element. Must be the child of a <code>.menu-container</code> element.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-floating-&#39;bp&#39;-&#39;dir&#39;</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p><code>menu-floating</code> with media query support for various screen sizes (see example) where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-left</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Align a floating menu to the left. Add to a <code>.menu</code> <code>.menu-floating</code> element.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-right</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Align a floating menu to the right. Add to a <code>.menu</code> <code>.menu-floating</code> element.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-active</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Add this class to the selected <code>.menu-item</code> using <a href="https://docs.angularjs.org/api/ng/directive/ngClass">ng-class</a>. Highlights the selected <code>.menu-item</code> with the <code>$btn-link-color</code> (blue by default). Add to the <code>.menu-item</code> element.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-hide-active</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Use this modifier to hide the active <code>.menu-item</code> elements. Add to the <code>.menu element</code>.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>menu-hide-active-&#39;bp&#39;-&#39;dir&#39;</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p><code>menu-hide-active</code> with media query support for various screen sizes (see example) where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
-
-        
-      </td>
-    </tr>
-    
-  </tbody>
-</table>
-
-</section>
-  
-
-
-
-<section class="api-examples edge-top">
-  
-  <h2 id="example">Examples</h2>
-  <div class="api-example">
-    <p><caption><h3>Triggering Actions</h3></p>
+            <section class="api-examples edge-top">
+                
+                    <h2 id="example">Examples</h2>
+                <div class="api-example">
+                        <p><caption><h3>Triggering Actions</h3></p>
 <p><p>Use the <a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click directive</a> to trigger actions
 when clicking a <code>.menu-link</code>. Additionally, use the
 <a href="https://docs.angularjs.org/api/ng/directive/ngClass">ng-class</a> directive to add the
@@ -594,7 +620,13 @@ you can disable a menu link by passing some expression to the
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;MenuExCtrl&quot;, function(){&#10;    var ctrl = this;&#10;    ctrl.disableItem4 = true;&#10;  });</code></pre>
+    <pre><code class="hljs javascript">
+    angular.module("bltDocs")
+      .controller("MenuExCtrl", function(){
+        var ctrl = this;
+        ctrl.disableItem4 = true;
+      });
+  </code></pre>
   </div>
   
 
@@ -602,7 +634,21 @@ you can disable a menu link by passing some expression to the
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;!-- This link will be highlighted when clicked --&gt;&#10;&lt;ul class=&quot;menu&quot; ng-controller=&quot;MenuExCtrl as ctrl&quot;&gt;&#10;  &lt;li class=&quot;menu-item&quot; ng-class=&quot;{&#39;menu-active&#39;: ctrl.currentItem == &#39;item2&#39;}&quot;&gt;&#10;    &lt;button class=&quot;menu-link&quot; ng-click=&quot;ctrl.currentItem = &#39;item2&#39;;&quot;&gt;Item 2&lt;/button&gt;&#10;  &lt;/li&gt;&#10;  &lt;li class=&quot;menu-item&quot; ng-class=&quot;{&#39;menu-active&#39;: ctrl.currentItem == &#39;item3&#39;}&quot;&gt;&#10;    &lt;button class=&quot;menu-link&quot; ng-click=&quot;ctrl.currentItem = &#39;item3&#39;;&quot;&gt;Item 3&lt;/button&gt;&#10;  &lt;/li&gt;&#10;  &lt;!-- This link will be disabled when the ng-disabled expression is true --&gt;&#10;  &lt;li class=&quot;menu-item&quot;&gt;&#10;    &lt;button class=&quot;menu-link&quot; ng-click=&quot;ctrl.currentItem = &#39;item4&#39;;&quot; ng-disabled=&quot;ctrl.disableItem4&quot;&gt;Item 4&lt;/button&gt;&#10;  &lt;/li&gt;&#10;&lt;/ul&gt;</code></pre>
+      <pre><code class="hljs html">
+    <!-- This link will be highlighted when clicked -->
+    <ul class="menu" ng-controller="MenuExCtrl as ctrl">
+      <li class="menu-item" ng-class="{'menu-active': ctrl.currentItem == 'item2'}">
+        <button class="menu-link" ng-click="ctrl.currentItem = 'item2';">Item 2</button>
+      </li>
+      <li class="menu-item" ng-class="{'menu-active': ctrl.currentItem == 'item3'}">
+        <button class="menu-link" ng-click="ctrl.currentItem = 'item3';">Item 3</button>
+      </li>
+      <!-- This link will be disabled when the ng-disabled expression is true -->
+      <li class="menu-item">
+        <button class="menu-link" ng-click="ctrl.currentItem = 'item4';" ng-disabled="ctrl.disableItem4">Item 4</button>
+      </li>
+    </ul>
+  </code></pre>
   </div>
   
   <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
@@ -630,8 +676,8 @@ you can disable a menu link by passing some expression to the
 
 </p>
 
-  </div><div class="api-example">
-    <p><caption><h3>Menu Sizes</h3></p>
+                    </div><div class="api-example">
+                        <p><caption><h3>Menu Sizes</h3></p>
 <p><p>Menus have three sizes: Default (200px), Thin (128px) and Wide (240px). Use the <code>.menu-thin</code> or
 <code>.menu-wide</code> to adjust the size of the menu.</p></caption>
 
@@ -652,7 +698,13 @@ you can disable a menu link by passing some expression to the
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;!-- Thin Menu (128px) --&gt;&#10;&lt;ul class=&quot;menu menu-thin&quot;&gt; ... &lt;/ul&gt;&#10;&#10;&lt;!-- Wide Menu (240px) --&gt;&#10;&lt;ul class=&quot;menu menu-wide&quot;&gt; ... &lt;/ul&gt;</code></pre>
+      <pre><code class="hljs html">
+    <!-- Thin Menu (128px) -->
+    <ul class="menu menu-thin"> ... </ul>
+
+    <!-- Wide Menu (240px) -->
+    <ul class="menu menu-wide"> ... </ul>
+  </code></pre>
   </div>
   
   
@@ -662,8 +714,8 @@ you can disable a menu link by passing some expression to the
 
 </p>
 
-  </div><div class="api-example">
-    <p><caption><h3>Custom Width</h3></p>
+                    </div><div class="api-example">
+                        <p><caption><h3>Custom Width</h3></p>
 <p><p>To manually set the width of the menu, add an id to your <code>.menu</code> element and set the width in a
 <code>.scss</code> or a <code>.css</code> file.</p></caption>
 
@@ -682,13 +734,20 @@ you can disable a menu link by passing some expression to the
 
   
   <div class="runnable-example-css" ng-show="exCtrl.showExample == 'css'">
-    <pre><code>#customMenu{&#10;  // Set the menu width to 400px;&#10;  width: 25rem; //400px&#10;}</code></pre>
+    <pre><code class="hljs css">
+    #customMenu{
+      // Set the menu width to 400px;
+      width: 25rem; //400px
+    }
+  </code></pre>
   </div>
   
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;ul id=&quot;customMenu&quot; class=&quot;menu&quot;&gt; ... &lt;/ul&gt;</code></pre>
+      <pre><code class="hljs html">
+    <ul id="customMenu" class="menu"> ... </ul>
+  </code></pre>
   </div>
   
   
@@ -698,8 +757,8 @@ you can disable a menu link by passing some expression to the
 
 </p>
 
-  </div><div class="api-example">
-    <p><caption><h3>Options</h3></p>
+                    </div><div class="api-example">
+                        <p><caption><h3>Options</h3></p>
 <p><p>Menus have multiple display options including: <code>.menu-borders</code>, <code>.menu-condensed</code>,
 <code>.menu-icons</code>, <code>.menu-hide-active</code>.</p></caption>
 
@@ -720,7 +779,31 @@ you can disable a menu link by passing some expression to the
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;!-- Menu with borders between each menu item --&gt;&#10; &lt;ul class=&quot;menu menu-borders&quot;&gt; ... &lt;/ul&gt;&#10;&#10; &lt;!-- Menu with less padding between each item --&gt;&#10; &lt;ul class=&quot;menu menu-condensed&quot;&gt; ... &lt;/ul&gt;&#10;&#10; &lt;!-- Menu with only icons for .menu-links --&gt;&#10; &lt;ul class=&quot;menu menu-icons&quot;&gt;&#10; &lt;li class=&quot;menu-item&quot;&gt;&#10; &lt;button class=&quot;menu-link&quot;&gt;&#10; &lt;span class=&quot;menu-icon fa fa-home&quot;&gt;&lt;/span&gt;&#10; &lt;/button&gt;&#10; &lt;/li&gt;&#10; &lt;/ul&gt;&#10;&#10; &lt;!-- Hide active menu items --&gt;&#10; &lt;ul class=&quot;menu menu-hide-active&quot;&gt; ... &lt;/ul&gt;&#10;&#10; &lt;!-- Include Icons with a menu-link --&gt;&#10; &lt;button class=&quot;menu-link&quot;&gt;&#10; &lt;span class=&quot;menu-icon fa fa-home&quot;&gt;&lt;/span&gt;&#10; &lt;span class=&quot;menu-text&quot;&gt;Home&lt;/span&gt;&#10; &lt;/button&gt;</code></pre>
+      <pre><code class="hljs html">
+<!-- Menu with borders between each menu item -->
+ <ul class="menu menu-borders"> ... </ul>
+
+ <!-- Menu with less padding between each item -->
+ <ul class="menu menu-condensed"> ... </ul>
+
+ <!-- Menu with only icons for .menu-links -->
+ <ul class="menu menu-icons">
+ <li class="menu-item">
+ <button class="menu-link">
+ <span class="menu-icon fa fa-home"></span>
+ </button>
+ </li>
+ </ul>
+
+ <!-- Hide active menu items -->
+ <ul class="menu menu-hide-active"> ... </ul>
+
+ <!-- Include Icons with a menu-link -->
+ <button class="menu-link">
+ <span class="menu-icon fa fa-home"></span>
+ <span class="menu-text">Home</span>
+ </button>
+ </code></pre>
   </div>
   
   
@@ -730,8 +813,8 @@ you can disable a menu link by passing some expression to the
 
 </p>
 
-  </div><div class="api-example">
-    <p><caption><h3>Grouping Menu Content</h3></p>
+                    </div><div class="api-example">
+                        <p><caption><h3>Grouping Menu Content</h3></p>
 <p><p>You can make groups of <code>.menu-items</code> by using a <code>.menu-divider</code> on an empty HTML
 <code>&lt;li&gt;</code> tag.</p></caption>
 
@@ -752,7 +835,18 @@ you can disable a menu link by passing some expression to the
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;ul class=&quot;menu&quot;&gt;&#10; &lt;li class=&quot;menu-item&quot;&gt; ... &lt;/li&gt;&#10; &lt;li class=&quot;menu-item&quot;&gt; ... &lt;/li&gt;&#10;&#10; &lt;!-- use a divider to group menu items --&gt;&#10; &lt;li class=&quot;menu-divider&quot;&gt;&lt;/li&gt;&#10;&#10; &lt;li class=&quot;menu-item&quot;&gt; ... &lt;/li&gt;&#10; &lt;li class=&quot;menu-item&quot;&gt; ... &lt;/li&gt;&#10; &lt;/ul&gt;</code></pre>
+      <pre><code class="hljs html">
+<ul class="menu">
+ <li class="menu-item"> ... </li>
+ <li class="menu-item"> ... </li>
+
+ <!-- use a divider to group menu items -->
+ <li class="menu-divider"></li>
+
+ <li class="menu-item"> ... </li>
+ <li class="menu-item"> ... </li>
+ </ul>
+ </code></pre>
   </div>
   
   
@@ -762,8 +856,8 @@ you can disable a menu link by passing some expression to the
 
 </p>
 
-  </div><div class="api-example">
-    <p><caption><h3>Accordion Menu</h3></p>
+                    </div><div class="api-example">
+                        <p><caption><h3>Accordion Menu</h3></p>
 <p><p>Accordion menus contain at least two layers of navigation. Simply add another <code>.menu</code> element inside
 a <code>.menu-item</code> and use <a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click</a>,
 <a href="https://docs.angularjs.org/api/ng/directive/ngShow">ng-show</a> and
@@ -786,7 +880,18 @@ a <code>.menu-item</code> and use <a href="https://docs.angularjs.org/api/ng/dir
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;ul class=&quot;menu menu-accordion&quot;&gt;&#10; &lt;li class=&quot;menu-item&quot;&gt;&#10; &lt;button class=&quot;menu-link&quot; ng-click=&quot;Main.currentMenu = 1;&quot;&gt;Menu 1&lt;/button&gt;&#10; &lt;ul class=&quot;menu&quot; ng-show=&quot;Main.currentMenu == 1&quot;&gt; ... &lt;/ul&gt;&#10; &lt;/li&gt;&#10; &lt;li class=&quot;menu-item&quot;&gt;&#10; &lt;button class=&quot;menu-link&quot; ng-click=&quot;Main.currentMenu = 2;&quot;&gt;Menu 2&lt;/button&gt;&#10; &lt;ul class=&quot;menu&quot; ng-show=&quot;Main.currentMenu == 2&quot;&gt; ... &lt;/ul&gt;&#10; &lt;/li&gt;&#10; &lt;/ul&gt;</code></pre>
+      <pre><code class="hljs html">
+<ul class="menu menu-accordion">
+ <li class="menu-item">
+ <button class="menu-link" ng-click="Main.currentMenu = 1;">Menu 1</button>
+ <ul class="menu" ng-show="Main.currentMenu == 1"> ... </ul>
+ </li>
+ <li class="menu-item">
+ <button class="menu-link" ng-click="Main.currentMenu = 2;">Menu 2</button>
+ <ul class="menu" ng-show="Main.currentMenu == 2"> ... </ul>
+ </li>
+ </ul>
+ </code></pre>
   </div>
   
   
@@ -796,10 +901,10 @@ a <code>.menu-item</code> and use <a href="https://docs.angularjs.org/api/ng/dir
 
 </p>
 
-  </div><div class="api-example">
-    <p><caption><h3>Floating Menu</h3></p>
+                    </div><div class="api-example">
+                        <p><caption><h3>Floating Menu</h3></p>
 <p><p>Use floating menus combined with a toggle button to create a simple dropdowns anywhere in your application.
-(For a more robust dropdown use <a href="/#/api/blt_dropdown/directive/bltDropdown"><code>bltDropdown</code></a>).</p></caption>
+(For a more robust dropdown use <a href="/#!/api/blt_dropdown/directive/bltDropdown"><code>bltDropdown</code></a>).</p></caption>
 
 
 
@@ -818,7 +923,17 @@ a <code>.menu-item</code> and use <a href="https://docs.angularjs.org/api/ng/dir
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;div class=&quot;menu-container&quot;&gt;&#10; &lt;button class=&quot;btn-solid&quot; ng-click=&quot;Main.showDropdown = !Main.showDropdown&quot;&gt;Toggle Menu&lt;/button&gt;&#10;&#10; &lt;!-- Use .menu-left to align the floating menu to the left. --&gt;&#10; &lt;ul class=&quot;menu menu-floating menu-left&quot; ng-show=&quot;Main.showDropdown == true&quot;&gt; ... &lt;/ul&gt;&#10;&#10; &lt;!-- Use .menu-right to align the floating menu to the right. --&gt;&#10; &lt;ul class=&quot;menu menu-floating menu-right&quot; ng-show=&quot;Main.showDropdown == true&quot;&gt; ... &lt;/ul&gt;&#10; &lt;/div&gt;</code></pre>
+      <pre><code class="hljs html">
+<div class="menu-container">
+ <button class="btn-solid" ng-click="Main.showDropdown = !Main.showDropdown">Toggle Menu</button>
+
+ <!-- Use .menu-left to align the floating menu to the left. -->
+ <ul class="menu menu-floating menu-left" ng-show="Main.showDropdown == true"> ... </ul>
+
+ <!-- Use .menu-right to align the floating menu to the right. -->
+ <ul class="menu menu-floating menu-right" ng-show="Main.showDropdown == true"> ... </ul>
+ </div>
+ </code></pre>
   </div>
   
   
@@ -828,9 +943,9 @@ a <code>.menu-item</code> and use <a href="https://docs.angularjs.org/api/ng/dir
 
 </p>
 
-  </div><div class="api-example">
-    <p><caption><h3>Using Media Queries</h3></p>
-<p><p>See the <a href="/#/guides/breakpoints">Media Queries Guide</a> for more information on using media queries.
+                    </div><div class="api-example">
+                        <p><caption><h3>Using Media Queries</h3></p>
+<p><p>See the <a href="/#!/breakpoints">Media Queries Guide</a> for more information on using media queries.
 </p></caption>
 
 
@@ -850,7 +965,18 @@ a <code>.menu-item</code> and use <a href="https://docs.angularjs.org/api/ng/dir
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;!-- Condensed menu for screens medium size and smaller --&gt;&#10;&lt;ul class=&quot;menu menu-condensed-md-down&quot;&gt; ... &lt;/ul&gt;&#10;&lt;!-- Menu with borders between each item for small screens only --&gt;&#10;&lt;ul class=&quot;menu menu-borders-sm-only&quot;&gt; ... &lt;/ul&gt;&#10;&lt;!-- Menu with only icons for screens medium size and larger --&gt;&#10;&lt;ul class=&quot;menu menu-icons-md-up&quot;&gt; ... &lt;/ul&gt;&#10;&lt;!-- Accordion menu for xxl screens only --&gt;&#10;&lt;ul class=&quot;menu menu-accordion-xxl-only&quot;&gt; ... &lt;/ul&gt;&#10;&lt;!-- Floating menu for screens large and smaller --&gt;&#10;&lt;ul class=&quot;menu menu-floating-lg-down&quot;&gt; ... &lt;/ul&gt;</code></pre>
+      <pre><code class="hljs html">
+<!-- Condensed menu for screens medium size and smaller -->
+<ul class="menu menu-condensed-md-down"> ... </ul>
+<!-- Menu with borders between each item for small screens only -->
+<ul class="menu menu-borders-sm-only"> ... </ul>
+<!-- Menu with only icons for screens medium size and larger -->
+<ul class="menu menu-icons-md-up"> ... </ul>
+<!-- Accordion menu for xxl screens only -->
+<ul class="menu menu-accordion-xxl-only"> ... </ul>
+<!-- Floating menu for screens large and smaller -->
+<ul class="menu menu-floating-lg-down"> ... </ul>
+</code></pre>
   </div>
   
   
@@ -860,8 +986,8 @@ a <code>.menu-item</code> and use <a href="https://docs.angularjs.org/api/ng/dir
 
 </p>
 
-  </div></section>
+                    </div></section>
 
-
+        
 
 

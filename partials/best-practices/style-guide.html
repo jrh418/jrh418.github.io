@@ -1,0 +1,39 @@
+
+    <h1 id="style-guide">Style Guide</h1>
+<h1 id="editing-an-ngboltjs-application-s-theme">Editing an ngBoltJS Application&#39;s Theme</h1>
+<ul>
+<li><a href="/#/guides/theme#overview">Overview</a></li>
+<li><a href="/#/guides/theme#configuring-theme-settings">Configuring Theme Settings</a></li>
+</ul>
+<hr>
+<h2 id="overview">Overview</h2>
+<p>The ngBoltJS Framework is considered an &#39;opinionated&#39; framework and comes with pre-styled components that are influenced by the <a href="https://material.io/guidelines/">Material Design guidelines</a>. However, because the theme styles are defined with <a href="http://sass-lang.com">SASS</a>, you can change many of the theme settings by overriding the default Sass variables in your app&#39;s <code>styles.json</code> configuration file. </p>
+<hr>
+<h2 id="configuring-theme-settings">Configuring Theme Settings</h2>
+<p>To edit theme variables, simply change the desired property in the <code>styles.json</code> configuration file. When your app compiles, it will read the <code>styles.json</code> file, convert it to a <code>.scss</code> settings file, and override ngBoltJS defaults.</p>
+<div class="note-tip">
+<strong>Tip</strong> Many of the Sass variables are set to automatically adjust in relation to other variables. For example, if you changed the <code>$body-bg</code> for the application to a dark color, all components and font colors would adjust in relation to the darker <code>$body-bg</code> to maintain contrast.
+</div>
+
+<h3 id="examples">Examples</h3>
+<p><strong>Change the app&#39;s <code>body-bg</code></strong></p>
+<pre><code class="lang-json">{
+  &quot;body-bg&quot;: &quot;#545e64&quot;
+}
+</code></pre>
+<p><strong>Change the color used for submit buttons and links</strong></p>
+<pre><code class="lang-json">{
+  &quot;global-link-color&quot;: &quot;#f39c12&quot;
+}
+</code></pre>
+<p><strong>Change the default <code>font-family</code></strong></p>
+<pre><code class="lang-json">{
+  &quot;global-font-family&quot;: &quot;Arial, sans-serif&quot;
+}
+</code></pre>
+<p><strong>Change the minimum width of menus</strong></p>
+<pre><code class="lang-json">{
+  &quot;menu-min-width&quot;: &quot;300px&quot;
+}
+</code></pre>
+

@@ -1,78 +1,83 @@
 <a id="top"></a>
 
 
-
-<header class="api-header">
-  <h1 class="api-header-title">
-    <a href="/#/api/blt_core">blt_core</a>
-    <span class="api-header-divider">/</span>
-    bltIfBp
-  </h1>
-  <div class="api-header-tags">
-    <span class="tag-directive"></span>
     
-    <span class="tag-since">since 2.0.0</span>
+        <header class="api-header">
+            <h1 class="api-header-title">
+                <a href="/#!/api/blt_core">blt_core</a>
+                <span class="api-header-divider">/</span>
+                bltIfBp
+            </h1>
+            <div class="api-header-tags">
+                <span class="tag-directive"></span>
+                
+                    <span class="tag-since">since 2.0.0</span>
+                
+            </div>
+
+            <ol class="api-profile-header-structure naked-list step-list">
+                
+            </ol>
+        </header>
     
-  </div>
-  
-  <ol class="api-profile-header-structure naked-list step-list">
+
     
-  </ol>
-</header>
 
-
-
-
-
-<section class="api-profile-description">
-  <p>Provides <a href="https://docs.angularjs.org/api/ng/directive/ngIf">ng-if</a> functionality tied to viewport width via
+    
+        <section class="api-profile-description">
+            <p>Provides <a href="https://docs.angularjs.org/api/ng/directive/ngIf">ng-if</a> functionality tied to viewport width via
 a set of defined media-query breakpoints. These breakpoints are as follows: &#39;sm&#39;, &#39;md&#39;, &#39;lg&#39;, &#39;xl&#39;, and &#39;xxl&#39;.
 Breakpoints can be used in this directive by assigning a string or model reference to the directive. The
 assignment of a breakpoint can also include a direction: &#39;down&#39;, &#39;up&#39; or &#39;only&#39;. If no direction is defined, the
 breakpoint is interpreted as &#39;only&#39;. It is important to note that, like ng-if, the blt-if-bp directive will add or
 remove your element from the DOM based on the breakpoint configuration and viewport width.</p>
 
-</section>
-
-
-
-
-
-
-
-
-<section class="api-dependencies edge-top">
-  <h2 id="dependencies">Dependencies</h2>
-  <ul class="api-dependencies-list">
+        </section>
     
-    <li class="api-dependencies-item"><a href="/#/api/blt_core/service/BltApi"><code>BltApi</code></a></li>
+
     
-    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$window">$window</a></li>
     
-    <li class="api-dependencies-item"><a href="/#/api/blt_config#breakpoints"><code>blt_config</code></a></li>
+
     
-    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$compile">$compile</a></li>
+
     
-    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$animate">$animate</a></li>
+            <section class="api-dependencies edge-top">
+                <h2 id="dependencies">Dependencies</h2>
+                <ul class="api-dependencies-list">
+                    
+                        <li class="api-dependencies-item"><a href="/#!/api/blt_core/service/BltApi"><code>BltApi</code></a>
+                        </li>
+                    
+                        <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$window">$window</a>
+                        </li>
+                    
+                        <li class="api-dependencies-item"><a href="/#!/api/blt_config#breakpoints"><code>blt_config</code></a>
+                        </li>
+                    
+                        <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$compile">$compile</a>
+                        </li>
+                    
+                        <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$animate">$animate</a>
+                        </li>
+                    
+                </ul>
+            </section>
+        
+
     
-  </ul>
-</section>
+
+    
+        
+    
+    
 
 
-
-
-  
-  
-  
-  
-
-
-
-<section class="api-examples edge-top">
-  
-  <h2 id="example">Example</h2>
-  <div class="api-example">
-    <p><caption>The following example demonstrates the various ways in which a breakpoint can be
+    
+            <section class="api-examples edge-top">
+                
+                    <h2 id="example">Example</h2>
+                <div class="api-example">
+                        <p><caption>The following example demonstrates the various ways in which a breakpoint can be
 specified. To view the various breakpoints in action, please resize your browser window.</caption>
 
 
@@ -106,7 +111,16 @@ specified. To view the various breakpoints in action, please resize your browser
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>angular.module(&#39;bltDocs&#39;)&#10;  .controller(&#39;BPCtrl&#39;, function(){&#10;    var ctrl = this;&#10;    ctrl.bp = {&#10;      bp: &#39;md&#39;,&#10;      dir: &#39;down&#39;&#10;     }&#10;  });</code></pre>
+    <pre><code class="hljs javascript">
+  angular.module('bltDocs')
+    .controller('BPCtrl', function(){
+      var ctrl = this;
+      ctrl.bp = {
+        bp: 'md',
+        dir: 'down'
+       }
+    });
+</code></pre>
   </div>
   
 
@@ -114,7 +128,19 @@ specified. To view the various breakpoints in action, please resize your browser
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;div class=&quot;grid-content text-center&quot; ng-controller=&quot;BPCtrl as ctrl&quot;&gt;&#10;  &lt;div blt-if-bp=&quot;ctrl.bp&quot;&gt;&#10;    &lt;h2 class=&quot;font-title&quot;&gt;Medium or Smaller Viewport Display&lt;/h2&gt;&#10;  &lt;/div&gt;&#10;  &lt;div blt-if-bp=&quot;lg&quot;&gt;&#10;    &lt;h2 class=&quot;font-title&quot;&gt;Large Viewport Display Only&lt;/h2&gt;&#10;  &lt;/div&gt;&#10;  &lt;div blt-if-bp=&#39;{bp: &quot;xl&quot;, dir: &quot;up&quot;}&#39;&gt;&#10;    &lt;h2 class=&quot;font-title&quot;&gt;Extra Large or Larger Viewport Display&lt;/h2&gt;&#10;  &lt;/div&gt;&#10;&lt;/div&gt;</code></pre>
+      <pre><code class="hljs html">
+  <div class="grid-content text-center" ng-controller="BPCtrl as ctrl">
+    <div blt-if-bp="ctrl.bp">
+      <h2 class="font-title">Medium or Smaller Viewport Display</h2>
+    </div>
+    <div blt-if-bp="lg">
+      <h2 class="font-title">Large Viewport Display Only</h2>
+    </div>
+    <div blt-if-bp='{bp: "xl", dir: "up"}'>
+      <h2 class="font-title">Extra Large or Larger Viewport Display</h2>
+    </div>
+  </div>
+</code></pre>
   </div>
   
   <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
@@ -140,8 +166,8 @@ specified. To view the various breakpoints in action, please resize your browser
 
 </p>
 
-  </div></section>
+                    </div></section>
 
-
+        
 
 

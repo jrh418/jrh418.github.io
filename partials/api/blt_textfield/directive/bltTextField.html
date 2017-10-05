@@ -1,488 +1,509 @@
 <a id="top"></a>
 
 
-
-<header class="api-header">
-  <h1 class="api-header-title">
-    <a href="/#/api/blt_textfield">blt_textfield</a>
-    <span class="api-header-divider">/</span>
-    bltTextField
-  </h1>
-  <div class="api-header-tags">
-    <span class="tag-directive"></span>
     
-  </div>
-  
-  <ol class="api-profile-header-structure naked-list step-list">
+        <header class="api-header">
+            <h1 class="api-header-title">
+                <a href="/#!/api/blt_textfield">blt_textfield</a>
+                <span class="api-header-divider">/</span>
+                bltTextField
+            </h1>
+            <div class="api-header-tags">
+                <span class="tag-directive"></span>
+                
+            </div>
+
+            <ol class="api-profile-header-structure naked-list step-list">
+                
+            </ol>
+        </header>
     
-  </ol>
-</header>
 
+    
 
-
-
-
-<section class="api-profile-description">
-  <p>The bltTextField component is used to collect text or numeric input from the user. This component is
+    
+        <section class="api-profile-description">
+            <p>The bltTextField component is used to collect text or numeric input from the user. This component is
 essentially a combination of the standard HTML <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code> elements along with the incorporation of
 a label. The bltTextField component provides a clean and simple way to collect free text data.</p>
 <div class="note-tip">
 <strong>Best Practice</strong> The <code>data-</code> prefix is not required for ngBoltJS attributes, but is highly recommended to prevent
 conflicts with standard HTML attributes.
 </div>
-</section>
-
-
-
-
-
-
-
-
-<section class="api-dependencies edge-top">
-  <h2 id="dependencies">Dependencies</h2>
-  <ul class="api-dependencies-list">
+        </section>
     
-    <li class="api-dependencies-item"><a href="/#/api/blt_core/service/BltApi"><code>BltApi</code></a></li>
-    
-    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$timeout">$timeout</a></li>
-    
-    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope">$rootScope.Scope</a></li>
-    
-  </ul>
-</section>
 
-
-
-
-  
-  
-  
-<section class="api-params edge-top">
-  
-  <h2>Attributes</h2>
-  
-  
-<table class="table">
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th></th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
     
-    <tr>
-      <td class="td-shrink">
-        <code>data-name</code>
+    
+
+    
+
+    
+            <section class="api-dependencies edge-top">
+                <h2 id="dependencies">Dependencies</h2>
+                <ul class="api-dependencies-list">
+                    
+                        <li class="api-dependencies-item"><a href="/#!/api/blt_core/service/BltApi"><code>BltApi</code></a>
+                        </li>
+                    
+                        <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$timeout">$timeout</a>
+                        </li>
+                    
+                        <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope">$rootScope.Scope</a>
+                        </li>
+                    
+                </ul>
+            </section>
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
+
+    
+
+    
         
-      </td>
-      <td>
+    
+    <section class="api-params edge-top">
         
-        <p>This attribute indicates the name of this form element and will be used during form
+            <h2>Attributes</h2>
+        
+        
+    <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Type</th>
+                <th></th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-name</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
+
+                    <p>This attribute indicates the name of this form element and will be used during form
 traversal by the ngBoltJS framework.</p>
 
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-label</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        
-      </td>
-      <td>
-        
-        <p>This attribute specifies the label for this component.</p>
+            <tr>
+                <td class="td-shrink">
+                    <code>data-label</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
 
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-autofocus</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-boolean">boolean</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Indicates whether or not this field should autofocus on page load.</p>
+                    <p>This attribute specifies the label for this component.</p>
 
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-change</code>
+            <tr>
+                <td class="td-shrink">
+                    <code>data-autofocus</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    boolean
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Indicates whether or not this field should autofocus on page load.</p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-expression">expression</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>This attribute is used to bind an expression in the containing scope that
+            <tr>
+                <td class="td-shrink">
+                    <code>data-change</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    expression
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>This attribute is used to bind an expression in the containing scope that
 will be invoked any time the value of this component changes. Functionality is based on the Angular ngChange
 directive.</p>
 
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-disabled</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-boolean">boolean</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Disables the field. Any value set in this attribute will cause the field to be
+            <tr>
+                <td class="td-shrink">
+                    <code>data-disabled</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    boolean
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Disables the field. Any value set in this attribute will cause the field to be
 disabled.</p>
 
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-max</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-number">number</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>The maximum numeric value of the component. This is only valid with <code>data-type=&quot;number&quot;</code>.
+            <tr>
+                <td class="td-shrink">
+                    <code>data-max</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    number
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>The maximum numeric value of the component. This is only valid with <code>data-type=&quot;number&quot;</code>.
 It will be ignored in all other cases.</p>
 
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-maxlength</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-number">number</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>The maximum number of characters to accept as valid in this component.</p>
+            <tr>
+                <td class="td-shrink">
+                    <code>data-maxlength</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    number
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
 
+                    <p>The maximum number of characters to accept as valid in this component.</p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-min</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-number">number</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>The minimum numeric value of the component. This is only valid with <code>data-type=&quot;number&quot;</code>.
+            <tr>
+                <td class="td-shrink">
+                    <code>data-min</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    number
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>The minimum numeric value of the component. This is only valid with <code>data-type=&quot;number&quot;</code>.
 It will be ignored in all other cases.</p>
 
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-minlength</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-number">number</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>The minimum number of characters to accept as valid in this component.</p>
+            <tr>
+                <td class="td-shrink">
+                    <code>data-minlength</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    number
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
 
+                    <p>The minimum number of characters to accept as valid in this component.</p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-model</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-expression">expression</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>This attribute is used to bind the value of this component to a property in the
+            <tr>
+                <td class="td-shrink">
+                    <code>data-model</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    expression
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>This attribute is used to bind the value of this component to a property in the
 containing scope. Functionality is based on the Angular ngModel directive.</p>
 
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-pattern</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Defines a pattern to use in validation of this component&#39;s value. Can be any valid
+            <tr>
+                <td class="td-shrink">
+                    <code>data-pattern</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Defines a pattern to use in validation of this component&#39;s value. Can be any valid
 regular expression.</p>
 
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-required</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-boolean">boolean</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Indicates whether or not this field is required.</p>
+            <tr>
+                <td class="td-shrink">
+                    <code>data-required</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    boolean
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
 
+                    <p>Indicates whether or not this field is required.</p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-rows</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-number">number</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>The number of rows to present in a multi-line text area. This is only valid with
+            <tr>
+                <td class="td-shrink">
+                    <code>data-rows</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    number
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>The number of rows to present in a multi-line text area. This is only valid with
 <code>data-type=&quot;textarea&quot;</code>. It will be ignored in all other cases.</p>
 
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-step</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-number">number</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Defines the intervals to use when changing the value of a number component. This is
+            <tr>
+                <td class="td-shrink">
+                    <code>data-step</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    number
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Defines the intervals to use when changing the value of a number component. This is
 only valid with <code>data-type=&quot;number&quot;</code>. It will be ignored in all other cases. See W3C documentation on step for
 more information.</p>
 
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-type</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>This attribute defines the type of data that will be collected in this component.
+            <tr>
+                <td class="td-shrink">
+                    <code>data-type</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>This attribute defines the type of data that will be collected in this component.
 All HTML input types are technically supported, but the intended use case of this component includes the
 following standard types: <code>text</code>, <code>password</code>, <code>tel</code>, <code>email</code>, <code>number</code>, and <code>url</code> with the addition of <code>textarea</code>.
 Will default to <code>text</code> if no value is defined.</p>
 
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-validate</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-expression">expression</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>An expression that gets passed through to an instance of the bltValidate
+            <tr>
+                <td class="td-shrink">
+                    <code>data-validate</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    expression
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>An expression that gets passed through to an instance of the bltValidate
 directive to invoke custom validation on this component value. See documentation for bltValidate for more
 information.</p>
 
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
+            <tr>
+                <td class="td-shrink">
+                    <code>data-autocomplete</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    boolean
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Indicates whether or not this field should autocomplete.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-autocorrect</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    boolean
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Indicates whether or not this field should have autocorrect.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-spellcheck</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    boolean
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Indicates whether or not this field should have spellcheck.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-tabindex</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    number
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Specifies the tab order of an element.</p>
+
+                    
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
+
+    </section>
     
-    <tr>
-      <td class="td-shrink">
-        <code>data-autocomplete</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-boolean">boolean</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Indicates whether or not this field should autocomplete.</p>
 
-        
-      </td>
-    </tr>
+
     
-    <tr>
-      <td class="td-shrink">
-        <code>data-autocorrect</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-boolean">boolean</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Indicates whether or not this field should have autocorrect.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-spellcheck</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-boolean">boolean</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Indicates whether or not this field should have spellcheck.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-tabindex</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-number">number</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Specifies the tab order of an element.</p>
-
-        
-      </td>
-    </tr>
-    
-  </tbody>
-</table>
-
-</section>
-  
-
-
-
-<section class="api-examples edge-top">
-  
-  <h2 id="example">Examples</h2>
-  <div class="api-example">
-    <p><caption>A simple text field labeled &quot;Text Field&quot; and bound to the scope property <code>MyCtrl.textField1.</code></caption>
+            <section class="api-examples edge-top">
+                
+                    <h2 id="example">Examples</h2>
+                <div class="api-example">
+                        <p><caption>A simple text field labeled &quot;Text Field&quot; and bound to the scope property <code>MyCtrl.textField1.</code></caption>
 
 
 
@@ -515,7 +536,12 @@ information.</p>
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;MyCtrl&quot;, function(){&#10;    var ctrl = this;&#10;  });</code></pre>
+    <pre><code class="hljs javascript">
+    angular.module("bltDocs")
+      .controller("MyCtrl", function(){
+        var ctrl = this;
+      });
+  </code></pre>
   </div>
   
 
@@ -523,7 +549,14 @@ information.</p>
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;form name=&quot;MyCtrl.myForm&quot; class=&quot;form&quot; novalidate&gt;&#10;  &lt;blt-textfield data-name=&quot;myFirstTextField&quot;&#10;    data-label=&quot;Text Field&quot;&#10;    data-model=&quot;MyCtrl.textField1&quot;&gt;&#10;  &lt;/blt-textfield&gt;&#10;&lt;/form&gt;</code></pre>
+      <pre><code class="hljs html">
+   <form name="MyCtrl.myForm" class="form" novalidate>
+     <blt-textfield data-name="myFirstTextField"
+       data-label="Text Field"
+       data-model="MyCtrl.textField1">
+     </blt-textfield>
+   </form>
+  </code></pre>
   </div>
   
   <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
@@ -544,8 +577,8 @@ information.</p>
 
 </p>
 
-  </div><div class="api-example">
-    <p><caption>A more complex text field labeled &quot;Required Text Field&quot; and bound to the scope property
+                    </div><div class="api-example">
+                        <p><caption>A more complex text field labeled &quot;Required Text Field&quot; and bound to the scope property
   <code>MyCtrl2.textField2</code>. This field is marked as required and has a pattern defined. Valid values would be ABC123,
   XYZ789, etc. Must click inside and then out of the text field to see red &quot;This field is required.&quot; 
   text.</caption>
@@ -581,7 +614,12 @@ information.</p>
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;MyCtrl2&quot;, function(){&#10;    var ctrl = this;&#10;  });</code></pre>
+    <pre><code class="hljs javascript">
+    angular.module("bltDocs")
+      .controller("MyCtrl2", function(){
+        var ctrl = this;
+      });
+  </code></pre>
   </div>
   
 
@@ -589,7 +627,16 @@ information.</p>
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;form name=&quot;MyCtrl2.myForm&quot; class=&quot;form&quot; novalidate&gt;&#10;  &lt;blt-textfield data-name=&quot;mySecondTextField&quot;&#10;    data-required=&quot;true&quot;&#10;    data-pattern=&quot;[A-Z]{3}[0-9]{3}&quot;&#10;    data-label=&quot;Required Text Field&quot;&#10;    data-model=&quot;MyCtrl2.textField2&quot;&gt;&#10;  &lt;/blt-textfield&gt;&#10;&lt;/form&gt;</code></pre>
+      <pre><code class="hljs html">
+    <form name="MyCtrl2.myForm" class="form" novalidate>
+      <blt-textfield data-name="mySecondTextField"
+        data-required="true"
+        data-pattern="[A-Z]{3}[0-9]{3}"
+        data-label="Required Text Field"
+        data-model="MyCtrl2.textField2">
+      </blt-textfield>
+    </form>
+  </code></pre>
   </div>
   
   <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
@@ -612,8 +659,8 @@ information.</p>
 
 </p>
 
-  </div><div class="api-example">
-    <p><caption>A simple numeric field labeled &quot;Numeric Field&quot; and bound to the scope property
+                    </div><div class="api-example">
+                        <p><caption>A simple numeric field labeled &quot;Numeric Field&quot; and bound to the scope property
   <code>MyCtrl3.numericField1</code>. The value must be between 0.0 and 10.0. Arrow up and arrow down keystrokes will adjust
   the value by 0.01. </caption>
 
@@ -648,7 +695,12 @@ information.</p>
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;MyCtrl3&quot;, function(){&#10;    var ctrl = this;&#10;  });</code></pre>
+    <pre><code class="hljs javascript">
+    angular.module("bltDocs")
+      .controller("MyCtrl3", function(){
+        var ctrl = this;
+      });
+  </code></pre>
   </div>
   
 
@@ -656,7 +708,18 @@ information.</p>
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;form name=&quot;MyCtrl3.myForm&quot; class=&quot;form&quot; novalidate&gt;&#10;  &lt;blt-textfield data-name=&quot;myFirstNumericField&quot;&#10;    data-type=&quot;number&quot;&#10;    data-step=&quot;0.01&quot;&#10;    data-min=&quot;0.0&quot;&#10;    data-max=&quot;10.0&quot;&#10;    data-label=&quot;Numeric Field&quot;&#10;    data-model=&quot;MyCtrl3.numericField1&quot;&gt;&#10;  &lt;/blt-textfield&gt;&#10;&lt;/form&gt;</code></pre>
+      <pre><code class="hljs html">
+   <form name="MyCtrl3.myForm" class="form" novalidate>
+     <blt-textfield data-name="myFirstNumericField"
+       data-type="number"
+       data-step="0.01"
+       data-min="0.0"
+       data-max="10.0"
+       data-label="Numeric Field"
+       data-model="MyCtrl3.numericField1">
+     </blt-textfield>
+   </form>
+  </code></pre>
   </div>
   
   <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
@@ -681,8 +744,8 @@ information.</p>
 
 </p>
 
-  </div><div class="api-example">
-    <p><caption>An email field labeled &quot;Email Field&quot; and bound to the scope property <code>MyCtrl4.emailField1</code>. The
+                    </div><div class="api-example">
+                        <p><caption>An email field labeled &quot;Email Field&quot; and bound to the scope property <code>MyCtrl4.emailField1</code>. The
   value must be in valid email format.</caption>
 
 
@@ -716,7 +779,12 @@ information.</p>
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;MyCtrl4&quot;, function(){&#10;    var ctrl = this;&#10;  });</code></pre>
+    <pre><code class="hljs javascript">
+    angular.module("bltDocs")
+      .controller("MyCtrl4", function(){
+        var ctrl = this;
+      });
+  </code></pre>
   </div>
   
 
@@ -724,7 +792,15 @@ information.</p>
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;form name=&quot;MyCtrl4.myForm&quot; class=&quot;form&quot; novalidate&gt;&#10;  &lt;blt-textfield data-name=&quot;myFirstEmailField&quot;&#10;    data-type=&quot;email&quot;&#10;    data-label=&quot;Email Field&quot;&#10;    data-model=&quot;MyCtrl4.emailField1&quot;&gt;&#10;  &lt;/blt-textfield&gt;&#10;&lt;/form&gt;</code></pre>
+      <pre><code class="hljs html">
+   <form name="MyCtrl4.myForm" class="form" novalidate>
+     <blt-textfield data-name="myFirstEmailField"
+       data-type="email"
+       data-label="Email Field"
+       data-model="MyCtrl4.emailField1">
+     </blt-textfield>
+   </form>
+  </code></pre>
   </div>
   
   <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
@@ -746,8 +822,8 @@ information.</p>
 
 </p>
 
-  </div><div class="api-example">
-    <p><caption>A Text Area labeled &quot;Comments Field&quot; and bound to the scope property <code>MyCtrl5.commentsField1</code>.
+                    </div><div class="api-example">
+                        <p><caption>A Text Area labeled &quot;Comments Field&quot; and bound to the scope property <code>MyCtrl5.commentsField1</code>.
   The max length of the input is 255 characters.</caption>
 
 
@@ -781,7 +857,12 @@ information.</p>
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;MyCtrl5&quot;, function(){&#10;    var ctrl = this;&#10;  });</code></pre>
+    <pre><code class="hljs javascript">
+    angular.module("bltDocs")
+      .controller("MyCtrl5", function(){
+        var ctrl = this;
+      });
+  </code></pre>
   </div>
   
 
@@ -789,7 +870,17 @@ information.</p>
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;form name=&quot;MyCtrl5.myForm&quot; class=&quot;form&quot; novalidate&gt;&#10;  &lt;blt-textfield data-name=&quot;myFirstTextArea&quot;&#10;    data-type=&quot;textarea&quot;&#10;    data-label=&quot;Comments Field&quot;&#10;    data-model=&quot;MyCtrl5.commentsField1&quot;&#10;    data-rows=&quot;5&quot;&#10;    data-maxlength=&quot;255&quot;&gt;&#10;  &lt;/blt-textfield&gt;&#10;&lt;/form&gt;</code></pre>
+      <pre><code class="hljs html">
+   <form name="MyCtrl5.myForm" class="form" novalidate>
+     <blt-textfield data-name="myFirstTextArea"
+       data-type="textarea"
+       data-label="Comments Field"
+       data-model="MyCtrl5.commentsField1"
+       data-rows="5"
+       data-maxlength="255">
+     </blt-textfield>
+   </form>
+  </code></pre>
   </div>
   
   <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
@@ -813,8 +904,8 @@ information.</p>
 
 </p>
 
-  </div><div class="api-example">
-    <p><caption>A telephone input field labeled via the controller property <code>phoneLabel</code>. Notice the use of
+                    </div><div class="api-example">
+                        <p><caption>A telephone input field labeled via the controller property <code>phoneLabel</code>. Notice the use of
   handlebars, which is required for any of the &quot;Value&quot; attributes. This field is bound to the scope property
   <code>MyCtrl6.phoneField1</code>.</caption>
 
@@ -849,7 +940,18 @@ information.</p>
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;MyCtrl6&quot;, MyCtrl6); &#10;&#10; MyCtrl6.$inject = [&#39;BltApi&#39;]; &#10;&#10; function MyCtrl6(api){&#10;   var ctrl = this;&#10;   var phoneLabel;&#10;   ctrl.phoneLabel = &quot;Telephone Field&quot;;&#10; }</code></pre>
+    <pre><code class="hljs javascript">
+    angular.module("bltDocs")
+      .controller("MyCtrl6", MyCtrl6); 
+
+     MyCtrl6.$inject = ['BltApi']; 
+
+     function MyCtrl6(api){
+       var ctrl = this;
+       var phoneLabel;
+       ctrl.phoneLabel = "Telephone Field";
+     }
+  </code></pre>
   </div>
   
 
@@ -857,7 +959,17 @@ information.</p>
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code> &lt;div ng-controller=&quot;MyCtrl6 as ctrl&quot;&gt;&#10;  &lt;form name=&quot;MyCtrl6.myForm&quot; class=&quot;form&quot; novalidate&gt;&#10;    &lt;blt-textfield data-name=&quot;myFirstPhoneField&quot;&#10;      data-type=&quot;tel&quot;&#10;      data-label=&quot;{{ctrl.phoneLabel}}&quot;&#10;      data-model=&quot;MyCtrl6.phoneField1&quot;&gt;&#10;    &lt;/blt-textfield&gt;&#10;  &lt;/form&gt; &#10;&lt;/div&gt;</code></pre>
+      <pre><code class="hljs html">
+    <div ng-controller="MyCtrl6 as ctrl">
+     <form name="MyCtrl6.myForm" class="form" novalidate>
+       <blt-textfield data-name="myFirstPhoneField"
+         data-type="tel"
+         data-label="{{ctrl.phoneLabel}}"
+         data-model="MyCtrl6.phoneField1">
+       </blt-textfield>
+     </form> 
+   </div>
+  </code></pre>
   </div>
   
   <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
@@ -881,8 +993,8 @@ information.</p>
 
 </p>
 
-  </div><div class="api-example">
-    <p><caption>A url input field labeled &quot;URL&quot; and bound to the scope property <code>MyCtrl7.urlField1</code>. Notice there
+                    </div><div class="api-example">
+                        <p><caption>A url input field labeled &quot;URL&quot; and bound to the scope property <code>MyCtrl7.urlField1</code>. Notice there
   is also a change listener attached to this field that will fire as the user changes the value of this field.
   </caption>
 
@@ -917,7 +1029,12 @@ information.</p>
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;MyCtrl7&quot;, function(){&#10;    var ctrl = this;&#10;  });</code></pre>
+    <pre><code class="hljs javascript">
+    angular.module("bltDocs")
+      .controller("MyCtrl7", function(){
+        var ctrl = this;
+      });
+  </code></pre>
   </div>
   
 
@@ -925,7 +1042,15 @@ information.</p>
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;form name=&quot;MyCtrl7.myForm&quot; class=&quot;form&quot; novalidate&gt;&#10;  &lt;blt-textfield data-name=&quot;myFirstURLField&quot;&#10;    data-label=&quot;URL&quot;&#10;    data-model=&quot;MyCtrl7.urlField1&quot;&#10;    data-change=&quot;MyCtrl7.onUrlChanged()&quot;&gt;&#10;  &lt;/blt-textfield&gt;&#10;&lt;/form&gt;</code></pre>
+      <pre><code class="hljs html">
+   <form name="MyCtrl7.myForm" class="form" novalidate>
+     <blt-textfield data-name="myFirstURLField"
+       data-label="URL"
+       data-model="MyCtrl7.urlField1"
+       data-change="MyCtrl7.onUrlChanged()">
+     </blt-textfield>
+   </form>
+  </code></pre>
   </div>
   
   <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
@@ -947,8 +1072,8 @@ information.</p>
 
 </p>
 
-  </div></section>
+                    </div></section>
 
-
+        
 
 

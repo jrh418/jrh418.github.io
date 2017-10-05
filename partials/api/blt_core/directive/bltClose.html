@@ -1,75 +1,76 @@
 <a id="top"></a>
 
 
-
-<header class="api-header">
-  <h1 class="api-header-title">
-    <a href="/#/api/blt_core">blt_core</a>
-    <span class="api-header-divider">/</span>
-    bltClose
-  </h1>
-  <div class="api-header-tags">
-    <span class="tag-directive"></span>
     
-  </div>
-  
-  <ol class="api-profile-header-structure naked-list step-list">
+        <header class="api-header">
+            <h1 class="api-header-title">
+                <a href="/#!/api/blt_core">blt_core</a>
+                <span class="api-header-divider">/</span>
+                bltClose
+            </h1>
+            <div class="api-header-tags">
+                <span class="tag-directive"></span>
+                
+            </div>
+
+            <ol class="api-profile-header-structure naked-list step-list">
+                
+            </ol>
+        </header>
     
-  </ol>
-</header>
 
+    
 
-
-
-
-<section class="api-profile-description">
-  <p>Closes modals and panels. To close a modal or panel, pass the
+    
+        <section class="api-profile-description">
+            <p>Closes modals and panels. To close a modal or panel, pass the
 <code>id</code> of the modal or panel as the value of the directive. This directive
-should be used on an ngBoltJS <a href="/#/api/blt_core/directive/bltButton">button</a> in place of an
+should be used on an ngBoltJS <a href="/#!/api/blt_core/directive/bltButton">button</a> in place of an
 <a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click</a>.</p>
 <div class="note-info">
 <strong>Note</strong> If other functions need to be triggered when closing a component,
 use <code>ng-click</code>. Call a function in your controller and use
-<code><a href="/#/api/blt_core/service/BltApi#publish"><code>BltApi</code></a></code> to close the component instead.
+<code><a href="/#!/api/blt_core/service/BltApi#publish"><code>BltApi</code></a></code> to close the component instead.
 </div>
 
 <div class="note-tip">
 <strong>Tip</strong> If the close button is a child element of a modal or panel, you do
 not need to pass the id of the modal or panel.
 </div>
-</section>
-
-
-
-
-
-
-
-
-<section class="api-dependencies edge-top">
-  <h2 id="dependencies">Dependencies</h2>
-  <ul class="api-dependencies-list">
+        </section>
     
-    <li class="api-dependencies-item"><a href="/#/api/blt_core/service/BltApi"><code>BltApi</code></a></li>
+
     
-  </ul>
-</section>
+    
+
+    
+
+    
+            <section class="api-dependencies edge-top">
+                <h2 id="dependencies">Dependencies</h2>
+                <ul class="api-dependencies-list">
+                    
+                        <li class="api-dependencies-item"><a href="/#!/api/blt_core/service/BltApi"><code>BltApi</code></a>
+                        </li>
+                    
+                </ul>
+            </section>
+        
+
+    
+
+    
+        
+    
+    
 
 
-
-
-  
-  
-  
-  
-
-
-
-<section class="api-examples edge-top">
-  
-  <h2 id="example">Examples</h2>
-  <div class="api-example">
-    <p><caption>Close a panel with an id of &#39;myPanel&#39;</caption>
+    
+            <section class="api-examples edge-top">
+                
+                    <h2 id="example">Examples</h2>
+                <div class="api-example">
+                        <p><caption>Close a panel with an id of &#39;myPanel&#39;</caption>
 
 
 
@@ -84,7 +85,9 @@ not need to pass the id of the modal or panel.
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>&lt;button class=&quot;btn-text&quot; blt-close=&quot;myPanel&quot;&gt;Close Panel&lt;/button&gt;</code></pre>
+    <pre><code class="hljs javascript">
+     <button class="btn-text" blt-close="myPanel">Close Panel</button>
+  </code></pre>
   </div>
   
 
@@ -97,8 +100,8 @@ not need to pass the id of the modal or panel.
 
 </p>
 
-  </div><div class="api-example">
-    <p><caption>Close panel from within panel</caption>
+                    </div><div class="api-example">
+                        <p><caption>Close panel from within panel</caption>
 
 
 
@@ -113,7 +116,13 @@ not need to pass the id of the modal or panel.
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>&lt;blt-panel&gt;&#10;...&#10;&lt;button class=&quot;btn-text&quot; blt-close=&quot;&quot;&gt;Close&lt;/button&gt;&#10;...&#10;&lt;/blt-panel&gt;</code></pre>
+    <pre><code class="hljs javascript">
+    <blt-panel>
+    ...
+    <button class="btn-text" blt-close="">Close</button>
+    ...
+    </blt-panel>
+  </code></pre>
   </div>
   
 
@@ -126,8 +135,8 @@ not need to pass the id of the modal or panel.
 
 </p>
 
-  </div></section>
+                    </div></section>
 
-
+        
 
 

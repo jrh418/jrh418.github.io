@@ -1,0 +1,206 @@
+
+    <h1 id="quick-start">Quick Start</h1>
+<p>The <a href="/#!/fundamentals/cli">ngBolt CLI</a> is a <strong><em>command line interface</em></strong> tool 
+that can create a new project, add modules to existing projects, and aid 
+development tasks such as testing, bundling, and deployment.</p>
+<p>The goal of this quick start guide is to use the ngBolt CLI to build and run a 
+simple application while adhering to the 
+<a href="/#!/best-practices/style-guide">Style Guide</a>.</p>
+<p>By the end of the chapter, you should have a basic understanding of the CLI and 
+be ready to move on to the tutorial to create a more complex application.</p>
+<div class="note-tip">
+<strong>Before you begin:</strong> It is expected that ngBolt developers know and understand
+<a href="https://angularjs.org/">Angular JS (1.x)</a>. If you don&#39;t, please take the time 
+to learn because it will not be explained in the ngBolt documentation.
+</div>
+
+
+<h2 id="step-1-set-up-your-development-environment">Step 1. Set up your development environment</h2>
+<p>Before any development can be started, you need to set up your environment.</p>
+<p>Install <a href="https://nodejs.org/en/download/">Node.js, npm</a>, and 
+<a href="https://git-scm.com/downloads">git</a> if they are not already on your machine.</p>
+<p>If you are developing using Microsoft Windows, you will also need to install
+<a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">VC++ Build Tools</a>
+and <a href="https://www.python.org/download/releases/2.7/">python 2.7</a>.</p>
+<div class="note-info">
+Verify that you are running at least node <code>6.9.x</code>, npm <code>3.x.x</code>, and python 
+<code>2.7.x</code> by running <code>node -v</code>, <code>npm -v</code>, and <code>python --version</code> in a 
+terminal/console window.
+</div>
+
+<div class="note-warning">
+Windows users will also need to configure npm to use python and VC++ by running
+the following commands:
+
+<div class="console">
+<code>npm config set python python 2.7
+npm config set msvs_version 2015 --global</code>
+</div>
+</div>
+
+<p>Once these dependencies are configured, install the 
+<a href="https://github.com/ngbolt/ng-bolt-cli">ngBolt CLI</a> globally.</p>
+<div class="console">
+<code>npm install -g ng-bolt-cli</code>
+</div>
+
+<h2 id="step-2-create-a-new-project">Step 2. Create a new project</h2>
+<p>Open a terminal window and generate a new project and skeleton application by 
+running the following command:</p>
+<div class="console">
+<code>bolt new hello-world-app --template https://github.com/ngbolt/ng-bolt-example</code>
+</div>
+
+<div class="note-tip">
+Normally, you won&#39;t need to add the <code>--template</code> flag, but this will add a few
+extra examples to the application for you to review.
+</div>
+
+<p>After executing this command, the following questions will appear for you to 
+answer (defaults will be in parentheses):</p>
+<div class="console">
+<code>Using template: https://github.com/ngbolt/ng-bolt-example
+What is the title of the project? This will be the title displayed in your application. (optional) Hello World
+What is the project version? (semver) (0.1.0)
+What is the project&#39;s description? (optional)
+Name of the company. (optional)
+List project contributors. (separate with commas. optional)</code>
+</div>
+
+<div class="note-info">
+This process can take some time. The npm dependencies need to install and the 
+<a href="fundamentals/app-templates">template project</a> will be cloned from the 
+<a href="https://github.com/ngbolt/ng-bolt-example">ngBolt Example Template</a>.
+</div>
+
+<h2 id="step-3-run-the-application">Step 3. Run the application</h2>
+<p>Go to the project directory and launch the server.</p>
+<div class="console">
+<code>cd hello-world-app
+bolt run</code>
+</div>
+
+<p>The <code>bolt run</code> command launches the server, watches your files, and rebuilds 
+the app as you make changes to those files using <a href="https://gulpjs.com/">gulp</a>.</p>
+<p>Open your web browser to <code>http://localhost:9000/</code>.</p>
+<p>Your app should greet you with the login page:</p>
+<p><img src="images/getting-started/bolt-run.png" 
+     onload="this.width/=1.5;this.onload=null;"/></p>
+<p>You can log in to your application with the default credentials of <code>admin</code> / 
+<code>password</code>. After you log in, you will see the landing page of the application:</p>
+<p><img src="images/getting-started/landing-page.png" 
+     onload="this.width/=1.5;this.onload=null;"/></p>
+<p>Go ahead and click the &quot;GET STARTED&quot; button to load the home page.</p>
+<h2 id="step-4-make-some-changes">Step 4. Make some changes</h2>
+<p>Now that the application is cloned and ready, we can make some common changes.</p>
+<p>Let&#39;s start by changing the title on the app bar. Open the following file and 
+replace the first section with the following:</p>
+<div class="snip">
+    <div class="file">
+        ng-bolt-app/main/main-appbar.template.html
+    </div>
+    <pre class="content">
+<code>&lt;div class=&quot;appbar-section appbar-shrink&quot;&gt;
+    &lt;img class=&quot;appbar-logo&quot; src=&quot;images/logo.png&quot;&gt;
+    &lt;h1 class=&quot;appbar-title&quot;&gt;
+        &lt;!-- Update The Title Here --&gt;
+        &lt;span&gt;@@title&lt;/span&gt;
+    &lt;/h1&gt;
+&lt;/div&gt;</code>
+    </div>
+</div>
+
+<p>As soon as you save the file, gulp will rebuild your app and you should now see
+the title of your application on the app bar.</p>
+<p><img src="images/getting-started/app-bar.png" 
+     onload="this.width/=1.5;this.onload=null;"/></p>
+<p>The next step will be to use the configuration files to update the colors.</p>
+<div class="snip">
+    <div class="file">
+        config/styles.json
+    </div>
+    <pre class="content">
+<code>&quot;primary-color&quot;: &quot;$black&quot;,</code>
+    </div>
+</div>
+
+<p>Once saved, you should see the app bar has changed colors. Play around with the
+different colors and notice the color of the app bar text automatically updates
+based on the lighter / darker backgrounds.</p>
+<p><img src="images/getting-started/app-bar-color.png" 
+     onload="this.width/=1.5;this.onload=null;"/></p>
+<p>Finally, we can update a view by modifying the following file:</p>
+<div class="snip">
+    <div class="file">
+        ng-bolt-app/view1/view1.template.html
+    </div>
+    <pre class="content">
+<code>&lt;div class=&quot;grid-content grid-wrapper&quot;&gt;
+    &lt;!-- Update The Page Title &amp; Body Text --&gt;
+    &lt;h1 class=&quot;font-title&quot;&gt;Hello World!&lt;/h1&gt;
+    &lt;p class=&quot;font-body&quot;&gt;I&#39;ve just updated my first ngBolt Application!&lt;/p&gt;
+
+    &lt;!-- Add A User Form --&gt;
+    &lt;form&gt;
+        &lt;!-- The Form Has A Row --&gt;
+        &lt;div class=&quot;form-row&quot;&gt;
+            &lt;!-- Create A Text Field &amp; Mark It Required --&gt;
+            &lt;blt-textfield data-type=&quot;text&quot; 
+                        data-name=&quot;name&quot;
+                        data-model=&quot;Main.name&quot; 
+                        data-required=&quot;true&quot;
+                        data-label=&quot;Enter Your Name&quot;&gt;
+            &lt;/blt-textfield&gt;
+
+            &lt;!-- Add A Submit Button With An Angular Function Callback --&gt;
+            &lt;button class=&quot;btn-solid-submit&quot; ng-click=&quot;Main.sayHello()&quot;&gt;Go&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+
+    &lt;!-- Add A Divider --&gt;
+    &lt;hr&gt;
+
+    &lt;div class=&quot;btn-row&quot;&gt;
+        &lt;button class=&quot;btn-solid&quot; ng-click=&quot;Main.openView(&#39;/view2&#39;)&quot;&gt;View 2&lt;/button&gt;
+        &lt;button class=&quot;btn-solid&quot; ng-click=&quot;Main.openView(&#39;/view3&#39;)&quot;&gt;View 3&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+    </div>
+</div>
+
+<p>Add the appropriate function to the controller:</p>
+<div class="snip">
+    <div class="file">
+        ng-bolt-app/main/main.controller.js
+    </div>
+    <pre class="content">
+<code>// Within The `function MainController`
+ctrl.getStarted = getStarted;
+ctrl.openView = openView;
+ctrl.logout = logout;
+
+// Add This Extra Function
+ctrl.sayHello = function() {
+    if(ctrl.name) {
+        console.alert(&quot;Hello &quot; + ctrl.name + &quot;!&quot;);
+    }
+}</code>
+    </div>
+</div>
+
+<p>Once these files are saved, the updated view should look as follows:</p>
+<p><img src="images/getting-started/form.png" 
+     onload="this.width/=1.5;this.onload=null;"/></p>
+<h2 id="next-steps">Next Steps</h2>
+<p>The <a href="/#!/tutorial/introduction">Tutorial</a> is your next step, which will walk new
+developers through creating a new application using the CLI. Developers will 
+learn how to configure new applications, add modules, access data from multiple 
+sources, design for multiple screen sizes, and package the application in 
+multiple formats.</p>
+<p>By the end of the tutorial, developers should feel comfortable with the CLI as 
+well as have a general understanding of an ngBolt project.</p>
+<p>For questions, there&#39;s an <a href="/#!/resources/faq">FAQ</a> page as well as a 
+<a href="/#!/resources/troubleshooting">Troubleshooting</a> guide.</p>
+<p>If you&#39;re stuck and looking for specific documentation, use the 
+<a href="/#!/table-of-contents">Table of Contents</a>.</p>
+

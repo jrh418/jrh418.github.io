@@ -1,31 +1,31 @@
 <a id="top"></a>
 
 
-
-<header class="api-header">
-  <h1 class="api-header-title">
-    <a href="/#/api/blt_datepicker">blt_datepicker</a>
-    <span class="api-header-divider">/</span>
-    bltDatepicker
-  </h1>
-  <div class="api-header-tags">
-    <span class="tag-directive"></span>
     
-    <span class="tag-since">since 1.0.0</span>
+        <header class="api-header">
+            <h1 class="api-header-title">
+                <a href="/#!/api/blt_datepicker">blt_datepicker</a>
+                <span class="api-header-divider">/</span>
+                bltDatepicker
+            </h1>
+            <div class="api-header-tags">
+                <span class="tag-directive"></span>
+                
+                    <span class="tag-since">since 1.0.0</span>
+                
+            </div>
+
+            <ol class="api-profile-header-structure naked-list step-list">
+                
+            </ol>
+        </header>
     
-  </div>
-  
-  <ol class="api-profile-header-structure naked-list step-list">
+
     
-  </ol>
-</header>
 
-
-
-
-
-<section class="api-profile-description">
-  <p>Provides a pop-up date selection control that allows users to select year, month, day, hour, and minutes based on
+    
+        <section class="api-profile-description">
+            <p>Provides a pop-up date selection control that allows users to select year, month, day, hour, and minutes based on
 the attributes defined on the directive.</p>
 <p>Use the <code>data-first-view</code> attribute to specifiy the initial granularity of the picker. For example, if you expect
 your users to only pick days within the current month, it would make sense to set this value to <code>date</code> (valid
@@ -39,312 +39,331 @@ of the attributes <code>data-min</code> or <code>data-max</code> to a model in y
 Valid formats include any value that can successfully be interpreted as a a date, including seconds from epoch as a
 string or integer, or a JavaScript date object.</p>
 
-</section>
-
-
-
-
-
-
-
-
-<section class="api-dependencies edge-top">
-  <h2 id="dependencies">Dependencies</h2>
-  <ul class="api-dependencies-list">
+        </section>
     
-    <li class="api-dependencies-item"><a href="/#/api/blt_datepicker/service/BltDatepickerUtils"><code>BltDatepickerUtils</code></a></li>
+
     
-    <li class="api-dependencies-item"><a href="/#/api/blt_core/service/BltApi"><code>BltApi</code></a></li>
     
-    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$timeout">$timeout</a></li>
+
     
-    <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$document">$document</a></li>
+
     
-  </ul>
-</section>
+            <section class="api-dependencies edge-top">
+                <h2 id="dependencies">Dependencies</h2>
+                <ul class="api-dependencies-list">
+                    
+                        <li class="api-dependencies-item"><a href="/#!/api/blt_datepicker/service/BltDatepickerUtils"><code>BltDatepickerUtils</code></a>
+                        </li>
+                    
+                        <li class="api-dependencies-item"><a href="/#!/api/blt_core/service/BltApi"><code>BltApi</code></a>
+                        </li>
+                    
+                        <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$timeout">$timeout</a>
+                        </li>
+                    
+                        <li class="api-dependencies-item"><a href="https://docs.angularjs.org/api/ng/service/$document">$document</a>
+                        </li>
+                    
+                </ul>
+            </section>
+        
 
-
-
-
-  
-  
-  
-<section class="api-params edge-top">
-  
-  <h2>Attributes</h2>
-  
-  
-<table class="table">
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th></th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
     
-    <tr>
-      <td class="td-shrink">
-        <code>data-model</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        
-      </td>
-      <td>
-        
-        <p>Binds the value of this form field to a property in the containing scope. Functionality is based on the Angular <a href="https://docs.angularjs.org/api/ng/directive/ngModel">ngModel</a> directive.</p>
 
-        
-      </td>
-    </tr>
     
-    <tr>
-      <td class="td-shrink">
-        <code>data-name</code>
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        
-      </td>
-      <td>
-        
-        <p>Assigns a value to the name attribute of the form field that will be used during form traversal by ngBoltJS.</p>
-
-        
-      </td>
-    </tr>
     
-    <tr>
-      <td class="td-shrink">
-        <code>data-label</code>
+    <section class="api-params edge-top">
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
+            <h2>Attributes</h2>
         
-      </td>
-      <td>
         
-        <p>Assigns a value to the form field&#39;s label.</p>
+    <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Type</th>
+                <th></th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-model</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
 
+                    <p>Binds the value of this form field to a property in the containing scope. Functionality is based on the Angular <a href="https://docs.angularjs.org/api/ng/directive/ngModel">ngModel</a> directive.</p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
+            <tr>
+                <td class="td-shrink">
+                    <code>data-name</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
+
+                    <p>Assigns a value to the name attribute of the form field that will be used during form traversal by ngBoltJS.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-label</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                </td>
+                <td>
+
+                    <p>Assigns a value to the form field&#39;s label.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-autofocus</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    boolean
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Indicates whether or not this field should autofocus on page load.</p>
+
+                    
+                        <p class="font-caption"><strong>default:</strong> false</p>
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-change</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Expression in the containing scope to invoke any time the value of this component changes. Based on the Angular <a href="https://docs.angularjs.org/api/ng/directive/ngChange">ngChange</a> directive.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-format</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>The <a href="https://docs.angularjs.org/api/ng/filter/date">date filter format</a> to use.</p>
+
+                    
+                        <p class="font-caption"><strong>default:</strong> short</p>
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-first-view</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>The first calendar view to display (year|month|date|hours|minutes).</p>
+
+                    
+                        <p class="font-caption"><strong>default:</strong> year</p>
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-last-view</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    string
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>The last calendar view to display before closing and updating the model (year|month|date|hours|minutes).</p>
+
+                    
+                        <p class="font-caption"><strong>default:</strong> minutes</p>
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-max</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    date
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>The maximum date to display on the calendar. Any date above the specified date will be disabled.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-min</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    date
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>The minimum date to display on the calendar. Any date below the specified date will be disabled. If <code>data-model</code> is null when the datepicker opens, it will open the calendar to minimum specified date.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-required</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    boolean
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Specifies if the form field is required.</p>
+
+                    
+                        <p class="font-caption"><strong>default:</strong> false</p>
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-disabled</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    boolean
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Disables the field. Any value set in this attribute will cause the field to be disabled.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>data-tabindex</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    number
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Specifies the tab order of an element.</p>
+
+                    
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
+
+    </section>
     
-    <tr>
-      <td class="td-shrink">
-        <code>data-autofocus</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-boolean">boolean</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Indicates whether or not this field should autofocus on page load.</p>
 
-        <p class="font-caption"><strong>default:</strong> false</p>
-      </td>
-    </tr>
+
     
-    <tr>
-      <td class="td-shrink">
-        <code>data-change</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Expression in the containing scope to invoke any time the value of this component changes. Based on the Angular <a href="https://docs.angularjs.org/api/ng/directive/ngChange">ngChange</a> directive.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-format</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>The <a href="https://docs.angularjs.org/api/ng/filter/date">date filter format</a> to use.</p>
-
-        <p class="font-caption"><strong>default:</strong> short</p>
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-first-view</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>The first calendar view to display (year|month|date|hours|minutes).</p>
-
-        <p class="font-caption"><strong>default:</strong> year</p>
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-last-view</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-string">string</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>The last calendar view to display before closing and updating the model (year|month|date|hours|minutes).</p>
-
-        <p class="font-caption"><strong>default:</strong> minutes</p>
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-max</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-date">date</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>The maximum date to display on the calendar. Any date above the specified date will be disabled.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-min</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-date">date</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>The minimum date to display on the calendar. Any date below the specified date will be disabled. If <code>data-model</code> is null when the datepicker opens, it will open the calendar to minimum specified date.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-required</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-boolean">boolean</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Specifies if the form field is required.</p>
-
-        <p class="font-caption"><strong>default:</strong> false</p>
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-disabled</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-boolean">boolean</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Disables the field. Any value set in this attribute will cause the field to be disabled.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>data-tabindex</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-number">number</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Specifies the tab order of an element.</p>
-
-        
-      </td>
-    </tr>
-    
-  </tbody>
-</table>
-
-</section>
-  
-
-
-
-<section class="api-examples edge-top">
-  
-  <h2 id="example">Example</h2>
-  <div class="api-example">
-    <p>
+            <section class="api-examples edge-top">
+                
+                    <h2 id="example">Example</h2>
+                <div class="api-example">
+                        <p>
 
 
 <div class="runnable-example"
@@ -378,19 +397,57 @@ string or integer, or a JavaScript date object.</p>
 
   
   <div class="runnable-example-javascript" ng-show="exCtrl.showExample == 'js'">
-    <pre><code>angular.module(&quot;bltDocs&quot;)&#10;  .controller(&quot;DatePickerExCtrl&quot;, function(){&#10;    var ctrl = this;&#10;    ctrl.mindate = new Date();&#10;    ctrl.firstview = &quot;hours&quot;&#10;    ctrl.lastview = &quot;month&quot;&#10;  });</code></pre>
+    <pre><code class="hljs javascript">
+    angular.module("bltDocs")
+      .controller("DatePickerExCtrl", function(){
+        var ctrl = this;
+        ctrl.mindate = new Date();
+        ctrl.firstview = "hours"
+        ctrl.lastview = "month"
+      });
+  </code></pre>
   </div>
   
 
   
   <div class="runnable-example-css" ng-show="exCtrl.showExample == 'css'">
-    <pre><code>.datepicker-example-container {&#10;  overflow: visible;&#10;  min-height: 16rem;&#10;}</code></pre>
+    <pre><code class="hljs css">
+    .datepicker-example-container {
+      overflow: visible;
+      min-height: 16rem;
+    }
+  </code></pre>
   </div>
   
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;div class=&quot;datepicker-example-container&quot; ng-controller=&quot;DatePickerExCtrl as ctrl&quot;&gt;&#10;  &lt;form class=&quot;form&quot; novalidate name=&quot;dateTests&quot;&gt;&#10;    &lt;div class=&quot;form-row&quot;&gt;&#10;      &lt;blt-datepicker data-model=&quot;ctrl.dateModel&quot;&#10;                      data-label=&quot;Date Selection&quot;&#10;                      data-name=&quot;datepickerTest&quot;&gt;&#10;      &lt;/blt-datepicker&gt;&#10;      &lt;div class=&quot;form-divider-vertical&quot;&gt;&lt;/div&gt;&#10;      &lt;blt-datepicker data-model=&quot;ctrl.dateModel2&quot;&#10;                      data-label=&quot;Date Selection with Restrictions&quot;&#10;                      data-min=&quot;ctrl.mindate&quot;&#10;                      data-first-view=&quot;{{ctrl.firstview}}&quot;&#10;                      data-name=&quot;datepickerTest2&quot;&gt;&#10;      &lt;/blt-datepicker&gt;&#10;      &lt;div class=&quot;form-divider-vertical&quot;&gt;&lt;/div&gt;&#10;      &lt;blt-datepicker data-model=&quot;ctrl.dateModel3&quot;&#10;                      data-label=&quot;Date Selection Year and Month Only&quot;&#10;                      data-last-view=&quot;{{ctrl.lastview}}&quot;&#10;                      data-name=&quot;datepickerTest3&quot;&#10;                      data-format=&quot;MMMM yyyy&quot;&gt;&#10;      &lt;/blt-datepicker&gt;&#10;    &lt;/div&gt;&#10;  &lt;/form&gt;&#10;&lt;/div&gt;</code></pre>
+      <pre><code class="hljs html">
+    <div class="datepicker-example-container" ng-controller="DatePickerExCtrl as ctrl">
+      <form class="form" novalidate name="dateTests">
+        <div class="form-row">
+          <blt-datepicker data-model="ctrl.dateModel"
+                          data-label="Date Selection"
+                          data-name="datepickerTest">
+          </blt-datepicker>
+          <div class="form-divider-vertical"></div>
+          <blt-datepicker data-model="ctrl.dateModel2"
+                          data-label="Date Selection with Restrictions"
+                          data-min="ctrl.mindate"
+                          data-first-view="{{ctrl.firstview}}"
+                          data-name="datepickerTest2">
+          </blt-datepicker>
+          <div class="form-divider-vertical"></div>
+          <blt-datepicker data-model="ctrl.dateModel3"
+                          data-label="Date Selection Year and Month Only"
+                          data-last-view="{{ctrl.lastview}}"
+                          data-name="datepickerTest3"
+                          data-format="MMMM yyyy">
+          </blt-datepicker>
+        </div>
+      </form>
+    </div>
+  </code></pre>
   </div>
   
   <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
@@ -429,8 +486,8 @@ string or integer, or a JavaScript date object.</p>
 
 </p>
 
-  </div></section>
+                    </div></section>
 
-
+        
 
 

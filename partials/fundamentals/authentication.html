@@ -1,0 +1,171 @@
+
+    <h1 id="authentication">Authentication</h1>
+<h1 id="authenticating-an-ngboltjs-application">Authenticating an ngBoltJS Application</h1>
+<ul>
+<li><a href="/#/guides/authentication#generic-wamp-authentication">Generic WAMP Authentication</a><ul>
+<li><a href="/#/guides/authentication#wamp-with-login">WAMP with Login</a></li>
+<li><a href="/#/guides/authentication#wamp-without-login">WAMP without Login</a></li>
+</ul>
+</li>
+<li><a href="/#/guides/authentication#custom-authentication">Custom Authentication</a></li>
+<li><a href="/#/guides/authentication#development-authentication">Development Authentication</a></li>
+</ul>
+<hr>
+<h2 id="generic-wamp-authentication">Generic WAMP Authentication</h2>
+<h3 id="wamp-with-login">WAMP with Login</h3>
+<p>WAMP user authentication provides an authentication layer between your application and your WAMP services. The user will be presented with a login screen where they will enter a username and password. To use this type of authentication, you&#39;ll need to enable the WAMP protocol in the <a href="/#!/api/blt_data/service/BltData">Data API</a>, connect to a WAMP server that is configured with <code>ticket</code> authentication, and specify WAMP RPC endpoints to acquire WAMP authentication tickets. </p>
+<p>The process is as follows: </p>
+<ol>
+<li>Application loads. Auth module reports state of <code>unauthenticated</code>. Login screen is presented. </li>
+<li>Data API connected to WAMP server with an anonymous connection.</li>
+<li>The user enters their credentials and submits login form. </li>
+<li>The Data API will invoke the <code>login</code> RPC endpoint with the credentials and will expect a response containing an authid and ticket to use for establishing a secure WAMP connection. </li>
+<li>Assuming the <code>login</code> endpoint returned successfully, the WAMP authentication service will stash the login response in a cookie and inject the authentication configuration into the <a href="/#!/api/blt_data/service/BltData">Data API</a> which will trigger a <a href="/#!/api/blt_data/service/BltData#connect">reconnect</a>.</li>
+<li>The <a href="/#!/api/blt_data/service/BltData">Data API</a> will drop its anonymous connection to the WAMP server, connect with the <code>authid</code> established in the login phase, and will specify <code>ticket</code> as the auth method. We will respond to the onchallenge callback with the ticket from the login phase.</li>
+<li>Assuming success up to this point, the <a href="/#!/api/blt_data/service/BltData">Data API</a> will now have an authenticated connection to the WAMP server. </li>
+</ol>
+<p>To enable WAMP user authentication, set the <code>auth</code> and <code>login</code> flags to <code>true</code> in your <a href="/#!/api/blt_config">build components settings</a>, specify <code>WampAuthService</code> and your <code>authService</code> in your <a href="/#!/api/blt_appProfile">application profile</a>, and specify RPC endpoints for at a minimum the <code>login</code> RPC in your <a href="/#!/api/blt_dataRoutes">routes</a>.</p>
+<p><strong>Example WAMP Authentication Profile Settings</strong> </p>
+<pre><code class="lang-json">{
+  &quot;data&quot;: {
+    &quot;protocol&quot;: &quot;wamp&quot;,
+    &quot;retryDelay&quot;: 5000
+  },
+  &quot;auth&quot;: {
+    &quot;authService&quot;: &quot;WampAuthService&quot;,
+    &quot;wampAuthMethod&quot;: &quot;ticket&quot;
+  },
+  &quot;servers&quot;: {
+    &quot;wamp&quot;: {
+      &quot;url&quot;: &quot;ws://localhost:8080&quot;,
+      &quot;realm&quot;: &quot;realm&quot;
+    }
+  }
+}
+</code></pre>
+<p><strong>Example WAMP Authentication Routes</strong> </p>
+<pre><code class="lang-json">{
+  &quot;routes&quot;: {
+    &quot;login&quot;: {
+      &quot;return&quot;: &quot;object&quot;,
+      &quot;wamp&quot;: {
+        &quot;rpc&quot;: &quot;f.realm.login&quot;,
+        &quot;args&quot;: [
+          &quot;username&quot;,
+          &quot;password&quot;
+        ],
+        &quot;kargs&quot;: []
+      }
+    },
+    &quot;logout&quot;: {
+      &quot;return&quot;: &quot;text&quot;,
+      &quot;wamp&quot;: {
+        &quot;rpc&quot;: &quot;f.realm.logout&quot;,
+        &quot;args&quot;: [],
+        &quot;kargs&quot;: []
+      }
+    }
+  }
+}
+</code></pre>
+<h3 id="wamp-without-login">WAMP without Login</h3>
+<p>WAMP static authentication provides a way to establish an authenticated connection to a WAMP server without having to provide user login. To use this type of authentication, you&#39;ll need to enable the WAMP protocol in the <a href="/#!/api/blt_data/service/BltData">Data API</a> and connect to a WAMP server that is configured with <code>ticket</code> or <code>wampcra</code> authentication. </p>
+<p>The process is as follows: </p>
+<ol>
+<li>Application loads. Authentication framework injects static authentication config into <a href="/#!/api/blt_data/service/BltData">Data API</a>.</li>
+<li>The <a href="/#!/api/blt_data/service/BltData">Data API</a> will connect with the <code>authid</code> and <code>authmethod</code> configured in your <a href="/#!/api/blt_appProfile">profile</a> and will respond to the onchallenge callback with the secret from the login phase. </li>
+<li>Assuming success up to this point, the <a href="/#!/api/blt_data/service/BltData">Data API</a> will now have an authenticated connection to the WAMP server. </li>
+</ol>
+<p>To enable WAMP user authentication, set the <code>auth</code> flag to true in your <a href="/#!/api/blt_config">build components settings</a> and specify <code>WampAuthService</code> and your <code>authService</code> in your <a href="/#!/api/blt_appProfile">application profile</a>. </p>
+<p><strong>Example WAMP Static Profile Settings</strong></p>
+<pre><code class="lang-json">{
+  &quot;data&quot;: {
+    &quot;protocol&quot;: &quot;wamp&quot;,
+    &quot;retryDelay&quot;: 5000
+  },
+  &quot;auth&quot;: {
+    &quot;authService&quot;: &quot;WampAuthService&quot;,
+    &quot;wampAuthMethod&quot;: &quot;ticket&quot;,
+    &quot;authKey&quot;: &quot;someAuthId&quot;,
+    &quot;authSecret&quot;: &quot;someTicket&quot;
+  },
+  &quot;servers&quot;: {
+    &quot;wamp&quot;: {
+      &quot;url&quot;: &quot;ws://localhost:8080&quot;,
+      &quot;realm&quot;: &quot;realm&quot;
+    }
+  }
+}
+</code></pre>
+<hr>
+<h2 id="custom-authentication">Custom Authentication</h2>
+<p>To write your own custom authentication implementation, you&#39;ll most likely want to copy the following skeleton service as a starting point. </p>
+<p><strong>Empty Custom Auth Service</strong></p>
+<pre><code class="lang-javascript">(function () {
+  &#39;use strict&#39;;
+
+  angular.module(&#39;blt.auth&#39;)
+    .factory(&#39;CustomAuthService&#39;, CustomAuthService)
+  ;
+
+  CustomAuthService.$inject = [&#39;$q&#39;];
+
+  function CustomAuthService($q){
+
+    var srv = {
+      login: login,
+      logout: logout,
+      hasCredentials: hasCredentials,
+      activate: activate,
+      authenticated: false
+    }
+
+    return srv;
+
+    //// Public Service Functions /////////////////////////////////////////////
+
+    /**
+     * This function should perform whatever operations are necessary to check 
+     * the given username and password for authentication. The &quot;BltAuthStorage&quot; 
+     * service can be used to save session cookies using the output of this
+     * function. See the DevAuthService for examples.
+     */
+    function login(username, password){
+      return $q.reject(&#39;Not implemented&#39;);
+    }
+
+    /**
+     * This function should perform whatever operations are necessary to inform 
+     * the server (if one exists) that the current user session is invalidated. 
+     * This function should also clear any session cookie that may have been 
+     * stored for this session.
+     */
+    function logout(){
+      return $q.reject(&#39;Not implemented&#39;);
+    }
+
+    /**
+     * Reject if you don&#39;t have credentials (either collected from login screen, 
+     * or pulled in from your application config) or a session cookie indicating 
+     * an successful login. Resolve if you have credentials or a session cookie.
+     */
+    function hasCredentials(){
+      return $q.reject(&#39;Not implemented&#39;);
+    }
+
+    /**
+     * Activate this service. Set the initial authenticated state.
+     */
+    function activate(){
+        //Examine current context and set initial &quot;authenticated state&quot;.
+    }
+  }
+})();
+</code></pre>
+<p>You&#39;ll then specify your <code>CustomAuthService</code> in the <code>auth</code> property of your <a href="/#!/api/blt_appProfile">application profile</a>. The authentication framework will leverage your implementation for authentication. </p>
+<hr>
+<h2 id="development-authentication">Development Authentication</h2>
+<p>If you want to experiment with the authentication framework or don&#39;t have a backend authentication system available during development, you can simply leverage the <code>DevAuthService</code>. </p>
+<div class="note-info">
+<strong>NOTE</strong> The DevAuthService does not depend on any <a href="/#!/api/blt_data/service/BltData">Data API</a> protocol, so those settings can be changed without affecting the DevAuthService. 
+</div>

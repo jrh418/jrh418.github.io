@@ -1,400 +1,417 @@
 <a id="top"></a>
 
 
-
-<header class="api-header">
-  <h1 class="api-header-title">
-    <a href="/#/api/blt_core">blt_core</a>
-    <span class="api-header-divider">/</span>
-    bltFont
-  </h1>
-  <div class="api-header-tags">
-    <span class="tag-directive"></span>
     
-    <span class="tag-since">since 1.0.0</span>
+        <header class="api-header">
+            <h1 class="api-header-title">
+                <a href="/#!/api/blt_core">blt_core</a>
+                <span class="api-header-divider">/</span>
+                bltFont
+            </h1>
+            <div class="api-header-tags">
+                <span class="tag-directive"></span>
+                
+                    <span class="tag-since">since 1.0.0</span>
+                
+            </div>
+
+            <ol class="api-profile-header-structure naked-list step-list">
+                
+            </ol>
+        </header>
     
-  </div>
-  
-  <ol class="api-profile-header-structure naked-list step-list">
+
     
-  </ol>
-</header>
 
-
-
-
-
-<section class="api-profile-description">
-  <p>Defines basic styles for fonts in ngBoltJS applications. ngBoltJS uses <a href="https://fonts.google.com/specimen/Roboto">Roboto</a>
+    
+        <section class="api-profile-description">
+            <p>Defines basic styles for fonts in ngBoltJS applications. ngBoltJS uses <a href="https://fonts.google.com/specimen/Roboto">Roboto</a>
 as its default font-family but falls back to Helvetica, Arial, and sans-serif.</p>
 <p>To use ngBoltJS Font styles in your ngBoltJS application, include the following class elements and modifiers in
 your HTML templates.</p>
 
-</section>
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-<section class="api-params edge-top">
-  <h2>CSS Classes</h2>
-  
-<table class="table">
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th></th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
+        </section>
     
-    <tr>
-      <td class="td-shrink">
-        <code>font-title</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-element">element</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Default title font. Can be used on any HTML heading tag <code>&lt;h1&gt; ... &lt;h6&gt;</code>, but would normally be found on an <code>&lt;h1&gt;</code> or <code>&lt;h2&gt;</code> tag. <em>Do not use on component titles as they have their own specific styles.</em></p>
 
-        
-      </td>
-    </tr>
     
-    <tr>
-      <td class="td-shrink">
-        <code>font-sub-title</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-element">element</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>The default sub-title font. Should be used after a <code>.font-title</code> but can be used on any text element for stylistic purposes. Is normally found on <code>&lt;h2&gt;</code> and <code>&lt;h3&gt;</code> tags but can be used on <code>&lt;span&gt;</code> tags as part of a paragraph of text.</p>
-
-        
-      </td>
-    </tr>
     
-    <tr>
-      <td class="td-shrink">
-        <code>font-body</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-element">element</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>The default text for ngBoltJS applications. Should be used on <code>&lt;p&gt;</code> and <code>&lt;span&gt;</code> tags.</p>
 
-        
-      </td>
-    </tr>
     
-    <tr>
-      <td class="td-shrink">
-        <code>font-caption</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-element">element</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Use for smaller caption sized fonts. Should be used on <code>&lt;p&gt;</code> and <code>&lt;span&gt;</code> tags.</p>
 
-        
-      </td>
-    </tr>
     
-    <tr>
-      <td class="td-shrink">
-        <code>font-icon</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-element">element</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Use on icons throughout your application. These are icons that are for display purposes only. If to be used on a button, use <a href="/#/api/blt_core/directive/bltButton"><code>.btn-icon</code></a> instead.</p>
 
-        
-      </td>
-    </tr>
     
-    <tr>
-      <td class="td-shrink">
-        <code>font-xlarge</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Use on any font element child HTML tag to increase the font size by 2%. Must be used on a nested HTML tag of the containing font element.</p>
 
-        
-      </td>
-    </tr>
     
-    <tr>
-      <td class="td-shrink">
-        <code>font-large</code>
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Use on any font element child HTML tag to increase the font size by 1.5%. Must be used on a nested HTML tag of the containing font element.</p>
-
-        
-      </td>
-    </tr>
     
-    <tr>
-      <td class="td-shrink">
-        <code>font-small</code>
+    <section class="api-params edge-top">
+        <h2>CSS Classes</h2>
         
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
+    <table class="table table-collapse">
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Type</th>
+                <th></th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
         
-        <p>Use on any font element child HTML tag to decrease the font size by .875%. Must be used on a nested HTML tag of the containing font element.</p>
+            <tr>
+                <td class="td-shrink">
+                    <code>font-title</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    element
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
 
+                    <p>Default title font. Can be used on any HTML heading tag <code>&lt;h1&gt; ... &lt;h6&gt;</code>, but would normally be found on an <code>&lt;h1&gt;</code> or <code>&lt;h2&gt;</code> tag. <em>Do not use on component titles as they have their own specific styles.</em></p>
+
+                    
+                </td>
+            </tr>
         
-      </td>
-    </tr>
+            <tr>
+                <td class="td-shrink">
+                    <code>font-sub-title</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    element
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>The default sub-title font. Should be used after a <code>.font-title</code> but can be used on any text element for stylistic purposes. Is normally found on <code>&lt;h2&gt;</code> and <code>&lt;h3&gt;</code> tags but can be used on <code>&lt;span&gt;</code> tags as part of a paragraph of text.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>font-body</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    element
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>The default text for ngBoltJS applications. Should be used on <code>&lt;p&gt;</code> and <code>&lt;span&gt;</code> tags.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>font-caption</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    element
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Use for smaller caption sized fonts. Should be used on <code>&lt;p&gt;</code> and <code>&lt;span&gt;</code> tags.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>font-icon</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    element
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Use on icons throughout your application. These are icons that are for display purposes only. If to be used on a button, use <a href="/#!/api/blt_core/directive/bltButton"><code>.btn-icon</code></a> instead.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>font-xlarge</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Use on any font element child HTML tag to increase the font size by 2%. Must be used on a nested HTML tag of the containing font element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>font-large</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Use on any font element child HTML tag to increase the font size by 1.5%. Must be used on a nested HTML tag of the containing font element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>font-small</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Use on any font element child HTML tag to decrease the font size by .875%. Must be used on a nested HTML tag of the containing font element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>font-tiny</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Use on any font element child HTML tag to decrease the font size by .75%. Must be used on a nested HTML tag of the containing font element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>font-bolder</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Use on any font element child HTML tag to increase the font weight. Must be used on a nested HTML tag of the containing font element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>font-bolder-&#39;bp&#39;-&#39;dir&#39;</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>&#39;font-bolder&#39; with media query support for various screen sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>font-lighter</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Use on any font element child HTML tag to decrease the font weight. Must be used on a nested HTML tag of the containing font element.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>font-lighter-&#39;bp&#39;-&#39;dir&#39;</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>&#39;font-lighter&#39; with media query support for various screen sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>font-code</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Use on any font element to display as monospace code with a light background to offset it from it&#39;s surrounding content.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>font-error</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Use on any font element to color it red.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>font-warning</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Use on any font element to color it amber.</p>
+
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="td-shrink">
+                    <code>font-success</code>
+                    
+                </td>
+                <td class="td-shrink">
+                    modifier
+                </td>
+                <td class="td-shrink td-collapse-right">
+                    
+                        <span class="tag-optional"></span>
+                </td>
+                <td>
+
+                    <p>Use on any font element to color it green.</p>
+
+                    
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
+
+    </section>
     
-    <tr>
-      <td class="td-shrink">
-        <code>font-tiny</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Use on any font element child HTML tag to decrease the font size by .75%. Must be used on a nested HTML tag of the containing font element.</p>
 
-        
-      </td>
-    </tr>
+
     
-    <tr>
-      <td class="td-shrink">
-        <code>font-bolder</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Use on any font element child HTML tag to increase the font weight. Must be used on a nested HTML tag of the containing font element.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>font-bolder-&#39;bp&#39;-&#39;dir&#39;</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>&#39;font-bolder&#39; with media query support for various screen sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>font-lighter</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Use on any font element child HTML tag to decrease the font weight. Must be used on a nested HTML tag of the containing font element.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>font-lighter-&#39;bp&#39;-&#39;dir&#39;</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>&#39;font-lighter&#39; with media query support for various screen sizes where <code>bp</code> is the breakpoint (sm|md|lg|xl|xxl) and <code>dir</code> is the range (up|down|only).</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>font-code</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Use on any font element to display as monospace code with a light background to offset it from it&#39;s surrounding content.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>font-error</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Use on any font element to color it red.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>font-warning</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Use on any font element to color it amber.</p>
-
-        
-      </td>
-    </tr>
-    
-    <tr>
-      <td class="td-shrink">
-        <code>font-success</code>
-        
-      </td>
-      <td class="td-shrink">
-        <a href="" class="label type-hint type-hint-modifier">modifier</a>
-      </td>
-      <td class="td-shrink td-collapse-right">
-        <span class="tag-optional"></span>
-      </td>
-      <td>
-        
-        <p>Use on any font element to color it green.</p>
-
-        
-      </td>
-    </tr>
-    
-  </tbody>
-</table>
-
-</section>
-  
-
-
-
-<section class="api-examples edge-top">
-  
-  <h2 id="example">Examples</h2>
-  <div class="api-example">
-    <p><caption>Common Use Cases</caption>
+            <section class="api-examples edge-top">
+                
+                    <h2 id="example">Examples</h2>
+                <div class="api-example">
+                        <p><caption>Common Use Cases</caption>
 
 
 
@@ -429,7 +446,40 @@ your HTML templates.</p>
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;!-- Base Font Styles --&gt;&#10;&lt;h1 class=&quot;font-title&quot;&gt;Title&lt;/h1&gt;&#10;&lt;h2 class=&quot;font-sub-title&quot;&gt;Sub Title&lt;/h2&gt;&#10;&lt;p class=&quot;font-body&quot;&gt;This is a body of text.&lt;/p&gt;&#10;&lt;p class=&quot;font-caption&quot;&gt;Caption&lt;/p&gt;&#10;&#10;&lt;!-- Captions within text --&gt;&#10;&lt;h1 class=&quot;font-title&quot;&gt;Title &lt;span class=&quot;font-caption&quot;&gt;caption&lt;span&gt;&lt;/h1&gt;&#10;&lt;p class=&quot;font-body&quot;&gt;This is some information from a source. &lt;span class=&quot;font-caption&quot;&gt;- Source Name&lt;/span&gt;&lt;/p&gt;&#10;&#10;&lt;!-- Adjusting font size --&gt;&#10;&lt;h1 class=&quot;font-title&quot;&gt;&lt;span class=&quot;font-xlarge&quot;&gt;Really Big Title&lt;/span&gt;&lt;/h1&gt;&#10;&lt;h1 class=&quot;font-title&quot;&gt;&lt;span class=&quot;font-tiny&quot;&gt;Small Title&lt;/span&gt;&lt;/h1&gt;&#10;&lt;p class=&quot;font-body&quot;&gt;Just make a section of text &lt;span class=&quot;font-large&quot;&gt;bigger&lt;/span&gt;,&#10;or make it &lt;span class=&quot;font-small&quot;&gt;smaller.&lt;/span&gt;&lt;/p&gt;&#10;&#10;&lt;!--Adjusting font weight --&gt;&#10;&lt;h1 class=&quot;font-title&quot;&gt;&lt;span class=&quot;font-bolder&quot;&gt;Bolder Title&lt;/span&gt;&lt;/h1&gt;&#10;&lt;h1 class=&quot;font-title&quot;&gt;&lt;span class=&quot;font-lighter&quot;&gt;Lighter Title&lt;/span&gt;&lt;/h1&gt;&#10;&lt;p class=&quot;font-body&quot;&gt;Just make a section of text &lt;span class=&quot;font-bolder&quot;&gt;bolder&lt;/span&gt;, or make it&#10;&lt;span class=&quot;font-lighter&quot;&gt;lighter.&lt;/span&gt;&lt;/p&gt;&#10;&#10;&lt;!-- Format text as code --&gt;&#10;&lt;p class=&quot;font-body&quot;&gt;To display a bit of code inline, simple use the &lt;span class=&quot;font-code&quot;&gt;.font-code&lt;/span&gt;&#10;class on an HTML &lt;span class=&quot;font-lighter&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/pre&gt;&lt;/span&gt; tag.&lt;/p&gt;&#10;&#10;&lt;!-- Display font as a paragraph --&gt;&#10;&lt;div class=&quot;font-paragraph&quot;&gt;&#10;    &lt;h1 class=&quot;font-title&quot;&gt;Title&lt;/h1&gt;&#10;    &lt;h2 class=&quot;font-sub-title&quot;&gt;Sub Title&lt;/h2&gt;&#10;    &lt;p class=&quot;font-body&quot;&gt;This is a body of text.&lt;/p&gt;&#10;&lt;/div&gt;</code></pre>
+      <pre><code class="hljs html">
+    <!-- Base Font Styles -->
+    <h1 class="font-title">Title</h1>
+    <h2 class="font-sub-title">Sub Title</h2>
+    <p class="font-body">This is a body of text.</p>
+    <p class="font-caption">Caption</p>
+
+    <!-- Captions within text -->
+    <h1 class="font-title">Title <span class="font-caption">caption<span></h1>
+    <p class="font-body">This is some information from a source. <span class="font-caption">- Source Name</span></p>
+
+    <!-- Adjusting font size -->
+    <h1 class="font-title"><span class="font-xlarge">Really Big Title</span></h1>
+    <h1 class="font-title"><span class="font-tiny">Small Title</span></h1>
+    <p class="font-body">Just make a section of text <span class="font-large">bigger</span>,
+    or make it <span class="font-small">smaller.</span></p>
+
+    <!--Adjusting font weight -->
+    <h1 class="font-title"><span class="font-bolder">Bolder Title</span></h1>
+    <h1 class="font-title"><span class="font-lighter">Lighter Title</span></h1>
+    <p class="font-body">Just make a section of text <span class="font-bolder">bolder</span>, or make it
+    <span class="font-lighter">lighter.</span></p>
+
+    <!-- Format text as code -->
+    <p class="font-body">To display a bit of code inline, simple use the <span class="font-code">.font-code</span>
+    class on an HTML <span class="font-lighter"><pre><span></pre></span> tag.</p>
+
+    <!-- Display font as a paragraph -->
+    <div class="font-paragraph">
+        <h1 class="font-title">Title</h1>
+        <h2 class="font-sub-title">Sub Title</h2>
+        <p class="font-body">This is a body of text.</p>
+    </div>
+  </code></pre>
   </div>
   
   <div class="runnable-example-demo" ng-show="exCtrl.showExample == 'demo'">
@@ -476,10 +526,10 @@ your HTML templates.</p>
 
 </p>
 
-  </div><div class="api-example">
-    <p><caption></p>
+                    </div><div class="api-example">
+                        <p><caption></p>
 <p><h3>Using Media Queries</h3></p>
-<p><p>See the <a href="/#/guides/breakpoints">Media Queries Guide</a> for more information on using media queries.</p>
+<p><p>See the <a href="/#!/breakpoints">Media Queries Guide</a> for more information on using media queries.</p>
 </caption>
 
 
@@ -499,7 +549,13 @@ your HTML templates.</p>
 
   
   <div class="runnable-example-html" ng-show="exCtrl.showExample == 'html'">
-      <pre><code>&lt;!-- Adjusting font weight with media queries --&gt;&#10;&lt;!-- Bolder title for screens size medium and up --&gt;&#10;&lt;h1 class=&quot;font-title&quot;&gt;&lt;span class=&quot;font-bolder-md-up&quot;&gt;Bolder Title&lt;/span&gt;&lt;/h1&gt;&#10;&lt;!-- Lighter title for small screens only --&gt;&#10;&lt;h1 class=&quot;font-title&quot;&gt;&lt;span class=&quot;font-lighter-sm-only&quot;&gt;Lighter Title&lt;/span&gt;&lt;/h1&gt;</code></pre>
+      <pre><code class="hljs html">
+     <!-- Adjusting font weight with media queries -->
+     <!-- Bolder title for screens size medium and up -->
+     <h1 class="font-title"><span class="font-bolder-md-up">Bolder Title</span></h1>
+     <!-- Lighter title for small screens only -->
+     <h1 class="font-title"><span class="font-lighter-sm-only">Lighter Title</span></h1>
+  </code></pre>
   </div>
   
   
@@ -509,8 +565,8 @@ your HTML templates.</p>
 
 </p>
 
-  </div></section>
+                    </div></section>
 
-
+        
 
 

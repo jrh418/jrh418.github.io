@@ -1,0 +1,264 @@
+
+    <h1 id="documentation">Documentation</h1>
+<h1 id="writing-ngboltjs-documentation">Writing ngBoltJS Documentation</h1>
+<p>ngBoltJS documentation is generated using <a href="https://github.com/angular/dgeni">dgeni</a>, a Javascript documentation generator written by the Angular team. Dgeni supports jsdoc style comments and uses a package called ngdoc that supports a jsdoc package that adds unique tags to a basic set of jsdoc tags. </p>
+<h2 id="supported-tags">Supported tags</h2>
+<h3 id="jsdoc-tags">jsdoc tags</h3>
+<p>The jsdoc package contains definitions for a number of standard jsdoc tags including: <code>name</code>, <code>memberof</code>, <code>param</code>, <code>property</code>, <code>returns</code>, <code>module</code>, <code>description</code>, <code>summary</code>, <code>usage</code>, <code>example</code>, <code>animations</code>, <code>constructor</code>, <code>class</code>, <code>classdesc</code>, <code>global</code>, <code>namespace</code>, <code>method</code>, <code>type</code>, <code>kind</code>, <code>since</code>, <code>access</code>, <code>public</code>, <code>private</code> and <code>protected</code>. </p>
+<div class="note-tip">
+Visit <a href="http://usejsdoc.org">jsdoc</a> for a description and examples for each of the supported tags.
+</div>
+
+<h3 id="ngdoc-tags">ngdoc tags</h3>
+<p>The ngdoc package modifies and adds new tag definitions on top of those provided by the jsdoc package that are specific to angular projects: </p>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>area</td>
+<td>Specifies the area of documentation. Use &#39;app&#39; to indicate documentation relating to your application. Default to &#39;api&#39; for ngBoltJS documentation</td>
+</tr>
+<tr>
+<td>element</td>
+<td>The HTML element to use for a directive</td>
+</tr>
+<tr>
+<td>eventType</td>
+<td><code>(emit, brodcast)</code> specifies whether the event is emitted or broadcast</td>
+</tr>
+<tr>
+<td>module</td>
+<td>The name of the angular.module the documented element belongs to</td>
+</tr>
+<tr>
+<td>ngdoc</td>
+<td><code>(module, service, object, directive, filter, inputType, error, function, method, property, event)</code> The type of angular element being documented. See angular&#39;s <a href="https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation">guide</a> for more details.</td>
+</tr>
+<tr>
+<td>priority</td>
+<td>specifies the documented directive&#39;s priority</td>
+</tr>
+<tr>
+<td>restrict</td>
+<td>specifies how directives should be shown in the usage section. For example, for [E]lement, [A]ttribute, and [C]lass, use <code>@restrict ECA</code></td>
+</tr>
+<tr>
+<td>scope</td>
+<td>specifies that the documented directive will create a new scope</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ngboltjs-tags">ngBoltJS tags</h3>
+<p>We&#39;ve also added a few tags specific to the ngBoltJS project:</p>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sortorder</td>
+<td>Specifies the order in which to display the documented element in the sidebar menu. Defaults to <code>100</code></td>
+</tr>
+<tr>
+<td>classname</td>
+<td>Define a CSS classname for CSS components</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage">Usage</h2>
+<p>You can generate documentation locally for ngBoltJS and also your application. To generate ngBoltJS documentation set the <code>generateBoltDocs</code> property to <code>true</code> in your build.json file or in the build object in a profile. You can also generate documentation for your application by setting <code>generateAppDocs</code> to <code>true</code>.</p>
+<p><strong>Set documentation build settings</strong></p>
+<pre><code class="lang-json">// ./config/build.json
+{
+  &quot;generateBoltDocs&quot;: true, // generates ngBoltJS docs
+  &quot;generateAppDocs&quot;: true // generates app docs
+}
+</code></pre>
+<h3 id="options">Options</h3>
+<p>There are a few options available that you can set for your documentation build. These options can be set in both in your <code>build.json</code> file or in the build object of your profile.</p>
+<table>
+<thead>
+<tr>
+<th>option</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docsLogLevel</code></td>
+<td>warn</td>
+<td>Sets the logging level of the documentation build. (debug, info, warn, error)</td>
+</tr>
+<tr>
+<td><code>docsSrc</code></td>
+<td>./src/<em>*/</em>.js</td>
+<td>The file path of ngBoltJS src files to include. This is useful when wanting to test another set of documented source files</td>
+</tr>
+<tr>
+<td><code>docsBasePath</code></td>
+<td>./src</td>
+<td>Sets the base folder for the source files. Used in conjunction with <code>docsSrc</code></td>
+</tr>
+<tr>
+<td><code>docsDest</code></td>
+<td>build/docs</td>
+<td>Sets the file path where generated documentation will be placed</td>
+</tr>
+<tr>
+<td><code>docsPort</code></td>
+<td>9001</td>
+<td>Sets the port number to use for serving documentation app locally</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Override documentation build settings with build profile</strong></p>
+<pre><code class="lang-json">// ./config/profiles/development.json
+{
+  &quot;build&quot;: {
+    &quot;generateBoltDocs&quot;: true, // generates ngBoltJS docs
+    &quot;generateAppDocs&quot;: false // don&#39;t generate app docs
+  }
+}
+</code></pre>
+<p>Documentation can be viewed locally by default at <code>localhost:9001</code></p>
+<h2 id="documentation-examples">Documentation Examples</h2>
+<h3 id="angular-module">Angular Module</h3>
+<pre><code class="lang-js">/** 
+* @ngdoc module
+* @name moduleName 
+* @description Module description
+* @since 2.0.0
+* 
+* @requires BltApi
+* @requires https://docs.angularjs.org/api/ng/service/$filter
+*/
+</code></pre>
+<h3 id="angular-factories-services-and-providers">Angular Factories, Services, and Providers</h3>
+<p>Use <code>service</code> for both angular services and factories. Use <code>object</code> for providers.</p>
+<pre><code class="lang-js">/**
+* @ngdoc service
+* @name serviceName
+* @module moduleName
+* @description Service description
+* @since 2.0.0
+*
+* @requires BltApi
+* @requires https://docs.angularjs.org/api/ng/service/$filter
+*/
+</code></pre>
+<h3 id="public-method">Public Method</h3>
+<pre><code class="lang-js">/**
+* @ngdoc method
+* @name serviceName#methodName
+* @description Method description
+* @summary short description to be used in table of content
+* @since 2.0.0
+*
+* @param {String} param1 Param 1 description
+* @param {Boolean} [param2=false] Option param2 with default value of false
+*
+* @returns {Array} Returns description
+*/
+</code></pre>
+<h3 id="public-property">Public Property</h3>
+<pre><code class="lang-js">/**
+* @ngdoc property
+* @name serviceName.propertyName
+* @description property description
+* @since 2.0.0
+*/
+</code></pre>
+<h3 id="angular-controller">Angular Controller</h3>
+<p>Dgeni suggests using the <code>type</code> value for a constructor and controllers are constructors so use <code>type</code>.</p>
+<pre><code class="lang-js">/**
+* @ngdoc type
+* @name ControllerName
+* @module moduleName
+* @description Controller description.
+* @since 2.0.0
+*
+* @requires BltApi
+* @requires https://docs.angularjs.org/api/ng/service/$filter
+*/
+</code></pre>
+<h3 id="angular-directive">Angular Directive</h3>
+<p>Use <code>directive</code> for angular directives and components. Use the <code>@param</code> tag to document directive attributes.</p>
+<pre><code class="lang-js">/**
+* @ngdoc directive
+* @name myDirective
+* @module moduleName
+* @description Directive description.
+* @since 2.0.0
+* @restrict E
+*
+* @param {String} attribute Attribute description
+*
+* @requires BltApi
+* @requires https://docs.angularjs.org/api/ng/service/$filter
+*/
+</code></pre>
+<h3 id="ngboltjs-css-component">ngBoltJS CSS Component</h3>
+<p>Use ngdoc type of <code>directive</code> for ngBoltJS CSS components as well as css components. Use the <code>@classname</code> tag to document css classes.</p>
+<pre><code class="lang-js">/**
+* @ngdoc directive
+* @name myCssComponent
+* @module moduleName
+* @description CSS Component description.
+* @since 2.0.0
+*
+* @classname {element} appbar Classname description including the HTML `&lt;tag&gt;` to apply it to.
+* @classname {modifier} appbar-shrink Classname that modifies an element. Include which element `.classname` it can be applied to. 
+*/
+</code></pre>
+<h2 id="notes-in-documentation">Notes in Documentation</h2>
+<p>You can add <code>.note</code> styling to notes in your documentation that want to stand out from the rest of a description or example caption.
+To use a note, add an html snippet in your description or example <code>&lt;caption&gt;</code>.</p>
+<div class="note-info">
+<strong>Note:</strong> These are for basic notes.
+</div>
+
+<pre><code class="lang-html">&lt;div class=&quot;note-info&quot;&gt; ... &lt;/div&gt;
+</code></pre>
+<div class="note-warning">
+<strong>Warning:</strong> These are for warning notes.
+</div>
+
+<pre><code class="lang-html">&lt;div class=&quot;note-warning&quot;&gt; ... &lt;/div&gt;
+</code></pre>
+<div class="note-tip">
+<strong>Tip:</strong> These are for tip or best practice notes.
+</div>
+
+<pre><code class="lang-html">&lt;div class=&quot;note-tip&quot;&gt; ... &lt;/div&gt;
+</code></pre>
+<h2 id="documenting-dependencies">Documenting dependencies</h2>
+<p>You can use the <code>@requires</code> tag to document dependencies of a controller, service, factory, providor, directive or component by name. If the dependency is an external library use a full URL. Use a <code>@requires</code> tags for each dependency.</p>
+<div class="note-tip">
+
+<strong>Best Practice</strong> Even though dependencies in an angular application are passed as parameters into a Controller, Service, etc. constructor function, it is considered best practice to document these with the <code>@requires</code> tag rather than a <code>@param</code> tag.
+
+</div>
+
+<pre><code class="lang-js">/**
+* @requires BltApi
+* @requires https://docs.angularjs.org/api/ng/service/$filter
+*/
+</code></pre>
+<h2 id="documentation-links">Documentation Links</h2>
+<p>Dgeni will generate links automatically for your documented symbol based on its name. To link to another documented symbol use an inline <code>@link</code> tag followed by the name of your documented symbol. For external links use markdowns link style. Refer to jsdoc&#39;s documentation on <a href="http://usejsdoc.org/tags-inline-link.html">@link</a> for examples.</p>
+<h2 id="examples">Examples</h2>
+<p>Dgeni will process your documentation for any instances of <code>@example</code> tags and include content for that 
+tag based upon several supported internal example tags. There are two top level tags supported: <code>&lt;caption&gt;</code>
+and <code>&lt;example&gt;</code>. The <code>&lt;caption&gt;</code> tag can contain any standard markdown or HTML content and will be included
+at the top of the example output in the resulting documentation. The <code>&lt;example&gt;</code> tag is where the content of 
+your example will be specified.</p>
+

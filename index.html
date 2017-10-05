@@ -1,148 +1,303 @@
 <!doctype html>
 <html ng-app="bltDocs">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <base href="/">
+        <title>ngBolt</title>
+        <link rel="icon" href="images/favicon.png"/>
 
-<head>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>ngBoltJS - Web Application Framework</title>
+        <!-- App Libraries -->
+        <script src="libs/libs.js"></script>
+        <link rel="stylesheet" href="libs/libs.css"/>
 
-  <link rel="stylesheet" href="assets/docsApp.css">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atom-one-light.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- ngBolt Docs App Assets -->
+        <link rel="stylesheet" href="css/app.css"/>
+        <script src="js/app.js"></script>
+        <script src="js/routes.js"></script>
 
-  <!-- External JS -->
-  <script src="//use.fontawesome.com/3767854df0.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
-  <!-- <script src="assets/angular-highlightjs.min.js"></script> -->
+        <!-- TODO: Merge *-data Sections & Include In app.js -->
+        <script src="js/docs.js"></script>
 
-  <!-- ngBoltJS App Js -->
-  <script src="assets/docsApp.js"></script>
 
-  <!-- page data -->
-  <!--Uncomment the following line to support css in runnable examples.-->
-  <link rel="stylesheet" href="data/example-css.css"/>
-  <script src="data/home-data.js"></script>
-  <script src="data/api-data.js"></script>
-  <script src="data/guides-data.js"></script>
-  <script src="data/app-api-data.js"></script>
-  <script src="data/example-javascript.js"></script>
 
-</head>
+        <script src="data/api-data.js"></script>
+        <script src="data/app-api-data.js"></script>
 
-<body class="ng-bolt docs-app" ng-controller="MainController as ctrl" id="{{ctrl.currentPage}}-page">
-  <div class="grid-frame grid-vertical">
+        <!-- Inline Examples -->
+        <link rel="stylesheet" href="data/example-css.css"/>
+        <script src="data/example-javascript.js"></script>
+    </head>
 
-    <!-- Appbar -->
-    <div class="grid-block grid-shrink"
-          ng-controller="AppbarController as ctrl">
-      <header class="appbar">
-        <div class="appbar-section">
-          <img src="assets/logo.png" class="appbar-logo">
-          <h1 class="appbar-title">
-            <a href="/#/">ngBoltJS</a>
-          </h1>
-        </div>
+    <!-- Main Body (ngBolt App) -->
+    <body id="docs-app"
+          class="ng-bolt init"
+          ng-class="{'expanded': $main.current.page == 'home', 'init': $main.skip.appbar}"
+          ng-controller="MainController as $main">
 
-        <div class="appbar-section appbar-shrink appbar-collapse">
-          <a class="appbar-tab" 
-             ng-if="ctrl.guidesData.length > 0" 
-             href="/#/guides">
-             Guides
-          </a>
-          <a class="appbar-tab" 
-              href="/#/api"
-              ng-if="ctrl.apiData.length > 0">
-              <span ng-show="ctrl.appData.length > 0">BLT&nbsp;</span>Docs
-          </a>
-          <a class="appbar-tab" 
-              href="/#/app"
-              ng-if="ctrl.appData.length > 0">
-              <span ng-show="ctrl.apiData.length > 0">App&nbsp;</span>Docs
-          </a>
-        </div>
-      </header>
-    </div>
+        <!-- Grid Frame -->
+        <div class="grid-frame grid-vertical justify-center">
+            <!-- App Bar (Wrapper) -->
+            <div id="appbar-wrapper"
+                 class="page-wrapper grid-block grid-shrink">
 
-    <div class="grid-block">
+                <!-- App Bar -->
+                <header class="appbar">
 
-      <!-- Sidebar -->
-      <div class="grid-block grid-shrink grid-vertical sidebar"
-            ng-controller="SidebarController as ctrl"
-            ng-show="ctrl.show">
-        <div class="grid-content grid-shrink">
-          <form class="edge-bottom" novalidate>
-            <blt-textfield data-label="Filter"
-                          data-name="sidebarFilter"
-                          data-model="ctrl.filter">
-            </blt-textfield>
-          </form>
-        </div>
-        <div class="grid-block sidebar-menu">
-          <ul class="menu">
-            <li ng-repeat="item in ctrl.list | filter: ctrl.filter"
-                class="menu-item menu-divider"
-                ng-class="{
-                  'menu-active': item.path == ctrl.activeItem
-                }">
-              <a ng-href="{{item.path}}"
-                  class="menu-link">
-                  <span class="menu-label">{{item.name}}</span>
-                  <span class="tag-deprecated" ng-if="item.deprecated"></span>
-                  <span class="tag-{{item.type}}"></span>
-              </a>
-              
-              <ul class="menu" ng-if="item.docs.length > 0">
-                <li ng-repeat="doc in item.docs | filter: ctrl.filter"
-                    class="menu-item"
-                    ng-class="{'menu-active': doc.path == ctrl.activeItem}">
-                  <a ng-href="{{doc.path}}"
-                    class="menu-link">
-                    <span class="menu-label">{{doc.name}}</span>
-                    <span class="tag-deprecated" ng-if="doc.deprecated"></span>
-                    <span class="tag-{{doc.type}}"></span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+                    <!-- Logo / Version -->
+                    <div class="appbar-section">
+                        <h1 class="appbar-title">
+                            <a ng-click="$main.open('/')">ngBolt</a>
+                            <span class="font-caption">v3.0.0</span>
+                        </h1>
+                    </div>
 
-      <div class="grid-block grid-vertical"
-           ng-class="{'edge-left': ctrl.currentPage != 'home'}">
-        
-        <!-- View -->
-        <div class="grid-content view-container">
-          <ng-view auto-scroll class="content"></ng-view>
-        </div>
+                    <!-- Links -->
+                    <div class="appbar-section appbar-shrink appbar-collapse">
+                        <!-- ngBolt Documentation -->
+                        <a class="appbar-link"
+                           title="ngBolt Documentation"
+                           ng-click="$main.open('about')"
+                           ng-class="{'active': $main.current.page == 'docs' || $main.current.path == '/about'}">
+                            docs
+                        </a>
 
-        <!-- Footer -->
-        <div class="grid-block grid-shrink edge-top">
-          <footer class="footer grid-block grid-vertical-md-down">
-            <div class="grid-block grid-align-center">
-              <p class="footer-copyright font-caption">Copyright &copy; 2017 <a href="https://github.com/orgs/ngbolt/people">ngBoltJS Contributors</a> and Penn State University.<br>Code licensed under the <a href="https://opensource.org/licenses/BSD-3-Clause">3-Clause BSD License</a>.</p>
+                        <!-- ngBolt API -->
+                        <a class="appbar-link"
+                           title="ngBolt API"
+                           ng-click="$main.open('api')"
+                           ng-class="{'active': $main.current.page == 'api'}">
+                            api
+                        </a>
+
+                        <!-- App Documentation (For App Development) -->
+                        <!-- TODO: Only Show When App Documentation Exists -->
+                        <!-- <a href="/#/app" class="appbar-link" title="Application Documentation">app</a> -->
+
+                        <!-- Git Hub Link -->
+                        <a href="https://github.com/ngbolt/ng-bolt"
+                           class="appbar-link"
+                           title="ngBolt on GitHub">
+                            github
+                        </a>
+                    </div>
+                </header>
             </div>
-            <div class="grid-block grid-shrink">
-              <nav class="btn-row">
-                <a class="btn-text" href="https://github.com/ngbolt/ng-bolt">Github</a>
-                <a class="btn-text" href="https://github.com/ngbolt/ng-bolt/issues">Report Issues</a>
-                <!--<a class="btn-text" href="/home/contribute">Contribute</a>
-                <a class="btn-text" href="/home/tools">Tools</a>-->
-              </nav>
-            </div>
-          </footer>
-        </div>
-      </div>
-    </div>  
-  </div>
-  <script>
-    // hljs.initHighlightingOnLoad();
-  </script>
-</body>
 
+            <!-- Side Bar -->
+            <div id="sidebar">
+                <nav class="grid-block grid-vertical grid-shrink edge-bottom-dark">
+                    <ul>
+                        <li ng-class="{'selected': $main.current.path == '/getting-started'}"
+                            title="Your first introduction to ngBolt">
+                            <div ng-click="$main.open('getting-started')">Getting Started</div>
+                        </li>
+                        <li title="The To Do Tutorial walks you through creating a To Do Application using ngBolt"
+                            ng-class="{'open': $main.current.sidebar.tutorial || $main.current.path.indexOf('tutorial') > -1}">
+                            <div ng-click="$main.toggleSidebarItem('tutorial')" >
+                                <span>Tutorial</span>
+                                <span class="fa fa-chevron-right"></span>
+                            </div>
+                            <ul>
+                                <li ng-click="$main.open('tutorial/introduction')"
+                                    ng-class="{'selected': $main.current.path == '/tutorial/introduction'}">
+                                    <div>1. Introduction</div>
+                                </li>
+                                <li ng-click="$main.open('tutorial/configuration')"
+                                    ng-class="{'selected': $main.current.path == '/tutorial/configuration'}">
+                                    <div>2. Configuration</div>
+                                </li>
+                                <li ng-click="$main.open('tutorial/todo-module')"
+                                    ng-class="{'selected': $main.current.path == '/tutorial/todo-module'}">
+                                    <div>3. To Do Module</div>
+                                </li>
+                                <li ng-click="$main.open('tutorial/todo-editor')"
+                                    ng-class="{'selected': $main.current.path == '/tutorial/todo-editor'}">
+                                    <div>4. To Do Editor</div>
+                                </li>
+                                <li ng-click="$main.open('tutorial/data-access')"
+                                    ng-class="{'selected': $main.current.path == '/tutorial/data-access'}">
+                                    <div>5. Data Access</div>
+                                </li>
+                                <li ng-click="$main.open('tutorial/responsive-design')"
+                                    ng-class="{'selected': $main.current.path == '/tutorial/responsive-design'}">
+                                    <div>6. Responsive Design</div>
+                                </li>
+                                <li ng-click="$main.open('tutorial/build-and-deploy')"
+                                    ng-class="{'selected': $main.current.path == '/tutorial/build-and-deploy'}">
+                                    <div>7. Build & Deploy</div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li title="Fundamental topics which every ngBolt developer should use during development."
+                            ng-class="{'open': $main.current.sidebar.fundamentals || $main.current.path.indexOf('fundamentals') > -1}">
+                            <div ng-click="$main.toggleSidebarItem('fundamentals')" >
+                                <span>Fundamentals</span>
+                                <span class="fa fa-chevron-right"></span>
+                            </div>
+                            <ul>
+                                <li ng-click="$main.open('fundamentals/architecture')"
+                                    ng-class="{'selected': $main.current.path == '/fundamentals/architecture'}">
+                                    <div>Architecture</div>
+                                </li>
+                                <li ng-click="$main.open('fundamentals/cli')"
+                                    ng-class="{'selected': $main.current.path == '/fundamentals/cli'}">
+                                    <div>Command Line Interface</div>
+                                </li>
+                                <li ng-click="$main.open('fundamentals/app-templates')"
+                                    ng-class="{'selected': $main.current.path == '/fundamentals/app-templates'}">
+                                    <div>Application Templates</div>
+                                </li>
+                                <li ng-click="$main.open('fundamentals/app-structure')"
+                                    ng-class="{'selected': $main.current.path == '/fundamentals/app-structure'}">
+                                    <div>Application Structure</div>
+                                </li>
+                                <li ng-click="$main.open('fundamentals/authentication')"
+                                    ng-class="{'selected': $main.current.path == '/fundamentals/authentication'}">
+                                    <div>Authentication</div>
+                                </li>
+                                <li ng-click="$main.open('fundamentals/views')"
+                                    ng-class="{'selected': $main.current.path == '/fundamentals/views'}">
+                                    <div>Routes & Views</div>
+                                </li>
+                                <li ng-click="$main.open('fundamentals/grid-layout')"
+                                    ng-class="{'selected': $main.current.path == '/fundamentals/grid-layout'}">
+                                    <div>Grid Layout</div>
+                                </li>
+                                <li ng-click="$main.open('fundamentals/styles')"
+                                    ng-class="{'selected': $main.current.path == '/fundamentals/styles'}">
+                                    <div>Styles & Variables</div>
+                                </li>
+                                <li ng-click="$main.open('fundamentals/form-controls')"
+                                    ng-class="{'selected': $main.current.path == '/fundamentals/form-controls'}">
+                                    <div>Form Controls</div>
+                                </li>
+                                <li ng-click="$main.open('fundamentals/ui-components')"
+                                    ng-class="{'selected': $main.current.path == '/fundamentals/ui-components'}">
+                                    <div>UI Components</div>
+                                </li>
+                                <li ng-click="$main.open('fundamentals/data-api')"
+                                    ng-class="{'selected': $main.current.path == '/fundamentals/data-api'}">
+                                    <div>Data API</div>
+                                </li>
+                                <li ng-click="$main.open('fundamentals/build-and-deploy')"
+                                    ng-class="{'selected': $main.current.path == '/fundamentals/build-and-deploy'}">
+                                    <div>Build & Deploy</div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li title="Best Practices which have beend defined when creating ngBolt applications."
+                            ng-class="{'open': $main.current.sidebar.best || $main.current.path.indexOf('best-practices') > -1}">
+                            <div ng-click="$main.toggleSidebarItem('best')" >
+                                <span>Best Practices</span>
+                                <span class="fa fa-chevron-right"></span>
+                            </div>
+                            <ul>
+                                <li ng-click="$main.open('best-practices/documentation')"
+                                    ng-class="{'selected': $main.current.path == '/best-practices/documentation'}">
+                                    <div>Documentation</div>
+                                </li>
+                                <li ng-click="$main.open('best-practices/style-guide')"
+                                    ng-class="{'selected': $main.current.path == '/best-practices/style-guide'}">
+                                    <div>Style Guide</div>
+                                </li>
+                                <li ng-click="$main.open('best-practices/responsive-design')"
+                                    ng-class="{'selected': $main.current.path == '/best-practices/responsive-design'}">
+                                    <div>Responsive Design</div>
+                                </li>
+                                <li ng-click="$main.open('best-practices/testing')"
+                                    ng-class="{'selected': $main.current.path == '/best-practices/testing'}">
+                                    <div>Testing</div>
+                                </li>
+                                <li ng-click="$main.open('best-practices/going-to-production')"
+                                    ng-class="{'selected': $main.current.path == '/best-practices/going-to-production'}">
+                                    <div>Going To Production</div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li title="Common documentation that is useful to ngBolt developers."
+                            ng-class="{'open': $main.current.sidebar.resources || $main.current.path == '/about' || $main.current.path.indexOf('resources') > -1}">
+                            <div ng-click="$main.toggleSidebarItem('resources')" >
+                                <span>Resources</span>
+                                <span class="fa fa-chevron-right"></span>
+                            </div>
+                            <ul>
+                                <li ng-click="$main.open('about')"
+                                    ng-class="{'selected': $main.current.path == '/about'}">
+                                    <div>About</div>
+                                </li>
+                                <li ng-click="$main.open('resources/faq')"
+                                    ng-class="{'selected': $main.current.path == '/resources/faq'}">
+                                    <div>FAQ</div>
+                                </li>
+                                <li ng-click="$main.open('resources/contribute')"
+                                    ng-class="{'selected': $main.current.path == '/resources/contribute'}">
+                                    <div>Contribute</div>
+                                </li>
+                                <li ng-click="$main.open('resources/goals')"
+                                    ng-class="{'selected': $main.current.path == '/resources/goals'}">
+                                    <div>Project Goals</div>
+                                </li>
+                                <li ng-click="$main.open('resources/tools')"
+                                    ng-class="{'selected': $main.current.path == '/resources/tools'}">
+                                    <div>Development Tools</div>
+                                </li>
+                                <li ng-click="$main.open('resources/troubleshooting')"
+                                    ng-class="{'selected': $main.current.path == '/resources/troubleshooting'}">
+                                    <div>Troubleshooting</div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li title="Example applications built using ngBolt"
+                            ng-class="{'open': $main.current.sidebar.examples}"
+                            ng-if="false">
+                            <div ng-click="$main.toggleSidebarItem('examples')" >
+                                <span>Examples</span>
+                                <span class="fa fa-chevron-right"></span>
+                            </div>
+                            <ul>
+                                <li>
+                                    <!-- TODO: Add Icon -->
+                                    <div>Places App</div>
+                                    <!-- TODO: Add External Link Icon -->
+                                </li>
+                                <li>
+                                    <!-- TODO: Add Icon -->
+                                    <div>Chat App</div>
+                                    <!-- TODO: Add External Link Icon -->
+                                </li>
+                                <li>
+                                    <!-- TODO: Add Icon -->
+                                    <div>To Do App</div>
+                                    <!-- TODO: Add External Link Icon -->
+                                </li>
+                            </ul>
+                        </li>
+                        <li ng-click="$main.open('table-of-contents')"
+                            ng-class="{'selected': $main.current.path.indexOf('/table-of-contents') == 0 }"
+                            title="A reference and description of every page contained in the ngBolt documentation.">
+                            <div>Table Of Contents</div>
+                        </li>
+                        <li ng-click="$main.open('api')"
+                            ng-class="{'selected': $main.current.path.indexOf('/api') == 0 }"
+                            title="Detailed reference documentation for each ngBolt component to be used during development">
+                            <div>API</div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="grid-block">
+                    <div id="download" class="grid-block card">
+                        <a href="https://github.com/ngbolt/ng-bolt/releases/tag/v3.0.0">Download ngBolt v3.0.0</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Content Wrapper -->
+            <div class="grid-block view-container">
+                <!-- Page Content -->
+                <ng-view class="grid-block grid-vertical" auto-scroll></ng-view>
+            </div>
+        </div>
+    </body>
 </html>
